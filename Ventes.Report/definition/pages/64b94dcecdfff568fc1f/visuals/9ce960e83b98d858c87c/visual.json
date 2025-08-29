@@ -1,0 +1,16 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "name": "9ce960e83b98d858c87c",
+  "position": {
+    "x": 25,
+    "y": 150,
+    "z": 16000,
+    "height": 130,
+    "width": 290.97852028639619,
+    "tabOrder": 14000
+  },
+  "visualGroup": {
+    "displayName": "Carte Montant Devis HT",
+    "groupMode": "ScaleMode"
+  }
+}

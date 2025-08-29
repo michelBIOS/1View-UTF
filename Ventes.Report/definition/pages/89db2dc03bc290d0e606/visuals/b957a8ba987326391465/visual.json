@@ -1,0 +1,16 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "name": "b957a8ba987326391465",
+  "position": {
+    "x": 813.06794783802331,
+    "y": 150.2264927934111,
+    "z": 14000,
+    "height": 129.1420727522306,
+    "width": 291.22855181880573,
+    "tabOrder": 1000
+  },
+  "visualGroup": {
+    "displayName": "Carte Impayées TTC",
+    "groupMode": "ScaleMode"
+  }
+}

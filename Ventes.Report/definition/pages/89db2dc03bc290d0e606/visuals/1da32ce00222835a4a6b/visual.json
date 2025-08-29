@@ -1,0 +1,15 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "name": "1da32ce00222835a4a6b",
+  "position": {
+    "x": 423.00617707618392,
+    "y": 150.2264927934111,
+    "z": 15000,
+    "height": 129.1420727522306,
+    "width": 289.91077556623196
+  },
+  "visualGroup": {
+    "displayName": "Carte Marge Brute",
+    "groupMode": "ScaleMode"
+  }
+}

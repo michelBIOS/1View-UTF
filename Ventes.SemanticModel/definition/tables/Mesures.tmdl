@@ -1,0 +1,462 @@
+table Mesures
+	lineageTag: b17bd7e4-d902-4751-a383-43c863447c06
+
+	measure Soldes = -CALCULATE(SUM(Fact_GL[debit])-SUM(Fact_GL[credit]))
+		displayFolder: Ventes
+		lineageTag: eb861d62-8bd2-43ee-a62c-74b16d582d5c
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Nombre Factures' =
+			
+			CALCULATE(
+			    DISTINCTCOUNT(Fact_GL[id_ledger_entry_lines]),
+			    'Dim_Ledger Accounts'[IsVente] = 1
+			)
+		formatString: #,0
+		displayFolder: Ventes
+		lineageTag: 64df0ab0-e1e2-4228-ad70-13766b73b287
+
+	measure 'Coût Total' =
+			
+			CALCULATE(
+			    [Solde],
+			    FILTER(
+			        'Dim_Ledger Accounts',
+			        'Dim_Ledger Accounts'[IsAchat] = 1
+			    )
+			)
+		displayFolder: Ventes
+		lineageTag: 8d250f6e-62e4-42f1-9ef2-7e511599cf1d
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Marge Brute' =
+			
+			[Vente Total] - [Coût Total]
+		formatString: #,0
+		displayFolder: Ventes
+		lineageTag: 30eb5cdb-7dc0-4842-8033-867e59425275
+
+	measure 'Revenue MoM Libellé FR' = ```
+			
+			VAR _DernierMoisVisible = MAX('Dim_Date'[Mois])
+			VAR _DebutMois = 
+			    CALCULATE(
+			        MIN('Dim_Date'[Date]),
+			        Dim_Date[Mois] = _DernierMoisVisible
+			    )
+			
+			VAR _MoisCompletActuel =
+			    CALCULATE(
+			        MAX('Dim_Date'[Date]),
+			        REMOVEFILTERS('Dim_Date'),
+			        DATESBETWEEN(
+			            'Dim_Date'[Date],
+			            EOMONTH(_DebutMois, -2) + 1,
+			            EOMONTH(_DebutMois, -1)
+			        )
+			    )
+			
+			VAR _MoisCompletPrecedent =
+			    CALCULATE(
+			        MAX(Dim_Date[Date]),
+			        REMOVEFILTERS(Dim_Date),
+			        DATESBETWEEN(
+			            Dim_Date[Date],
+			            EOMONTH(_DebutMois, -3) + 1,
+			            EOMONTH(_DebutMois, -2)
+			        )
+			    )
+			
+			VAR _Resultat = 
+			    FORMAT(_MoisCompletActuel, "[$-fr-FR]mmmm yy") & 
+			    " vs " & 
+			    FORMAT(_MoisCompletPrecedent, "[$-fr-FR]mmmm yy")
+			
+			RETURN
+			    SUBSTITUTE(_Resultat, "20", "")
+			
+			```
+		displayFolder: Ventes
+		lineageTag: 508edecc-a62b-4694-81d1-4dad5d6a72a0
+
+	measure 'Factures Impayées' = CALCULATE(SUM('Customer invoices'[currency_amount_before_tax]),'Customer invoices'[status]="late")
+		formatString: 0
+		displayFolder: Ventes
+		lineageTag: 9c034085-56d1-4885-be4e-9aaf5a5e1aa8
+
+	measure 'Encours Clients' =
+			
+			CALCULATE(
+			    SUM('Customer invoices'[amount]),
+			    FILTER(
+			        'Customer invoices',
+			        'Customer invoices'[status] IN {
+			            "late","upcoming","partially_cancelled"
+			        }
+			    )
+			)
+		displayFolder: Ventes
+		lineageTag: 7e4cae93-9365-435c-a8ee-7408a2b5bf67
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'CA N-1' =
+			
+			CALCULATE(
+			    SUM(Fact_GL[-Soldes]),
+			    SAMEPERIODLASTYEAR(Dim_Date[Date])
+			)
+		displayFolder: Ventes\CA HT
+		lineageTag: e46d37b1-f27d-4075-8db3-1f2e4a3e432c
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure MAJ =
+			"MAJ : "&
+			FORMAT(
+			    MAX('Supplier invoices'[updated_at]),
+			    "dd/mm/yy HH:mm"
+			)
+		lineageTag: 01bd2ef8-f696-46f9-aea7-942e0e4ebfdf
+
+	measure 'CA Mensuel et YTD' = "CA Mensuel et YTD - "&MAX(Dim_Date[Année])-1&"/"&MAX(Dim_Date[Année])
+		displayFolder: Dynamic Title
+		lineageTag: f5b3f576-1669-4cbf-a399-7522a1bfd9f1
+
+	measure 'CA YTD' = "CA YTD - "&MAX(Dim_Date[Année])-1&"/"&MAX(Dim_Date[Année])
+		displayFolder: Dynamic Title
+		lineageTag: e4f97171-d9df-4256-9b1d-7c8f3f868d64
+
+	measure CA/Client = "CA/Client - "&MAX(Dim_Date[Année])
+		displayFolder: Dynamic Title
+		lineageTag: 6f10e060-a3aa-4458-af78-d59ab5486576
+
+	measure Détail = "Détails dans la Comptabilité - "&MAX(Dim_Date[Année])
+		displayFolder: Dynamic Title
+		lineageTag: 438ee3de-8986-4490-abf0-60714798428c
+
+	measure Factures = "Détails Factures - "&MAX(Dim_Date[Année])
+		displayFolder: Dynamic Title
+		lineageTag: c69637c3-215f-4aef-9c69-95065f2107cb
+
+	measure Status = "Montants Factures par Status - "&MAX(Dim_Date[Année])
+		displayFolder: Dynamic Title
+		lineageTag: c0fe2970-8741-4e6f-930b-f2ae8f357ced
+
+	measure 'CA Cumulés YTD' =
+			
+			CALCULATE(
+			    -CALCULATE(SUM(Fact_GL[debit])-SUM(Fact_GL[credit])),
+			    FILTER(
+			        ALL('Dim_Date'),
+			        'Dim_Date'[Année] = MAX('Dim_Date'[Année]) &&
+			        'Dim_Date'[MoisNum] <= MAX('Dim_Date'[MoisNum])
+			    )
+			)
+		displayFolder: Ventes\CA HT
+		lineageTag: 239f71c9-c7d7-43a6-9f43-9943d678e116
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'CA Cumulés YTD N-1' =
+			
+			CALCULATE(
+			    -CALCULATE(SUM(Fact_GL[debit])-SUM(Fact_GL[credit])),
+			    FILTER(
+			        ALL('Dim_Date'),
+			        'Dim_Date'[Année] = MAX('Dim_Date'[Année]) - 1 &&
+			        'Dim_Date'[MoisNum] <= MAX('Dim_Date'[MoisNum])
+			    )
+			)
+		displayFolder: Ventes\CA HT
+		lineageTag: 4bed60d8-be04-40e2-8fc4-7d71fbf3325e
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Vente Total' =
+			
+			CALCULATE(
+			    [Soldes],
+			    FILTER(
+			        'Dim_Ledger Accounts',
+			        'Dim_Ledger Accounts'[IsVente] = 1
+			    )
+			)
+		displayFolder: Ventes
+		lineageTag: 723bd834-35e4-45a7-92c8-7864ab00d7a3
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure DynLogoHtml = "<div style='text-align:center'><img src='"&FIRSTNONBLANK('Dynamic Logo'[Logo],'Dynamic Logo'[Logo])&"' style='height:100vh'></div>"
+		displayFolder: Dynamic Title
+		lineageTag: b8b1ff13-ec4e-4c36-93e5-4b57a72b49bc
+
+	measure Devis = "Détails Devis - "&MAX(Dim_Date[Année])
+		displayFolder: Dynamic Title
+		lineageTag: f7e212e5-5dee-4d21-ad09-bfbaac5e6df9
+
+	measure Devis/Client = "Montants Devis par Client - "&MAX(Dim_Date[Année])
+		displayFolder: Dynamic Title
+		lineageTag: 37660fb3-76c3-4109-bc85-89939dca47cb
+
+	measure Devis/Status = "Montants Devis par Status - "&MAX(Dim_Date[Année])
+		displayFolder: Dynamic Title
+		lineageTag: 0430c671-f25f-4b12-8649-428bfcd12cfc
+
+	measure 'Montant Devis HT' = SUM('List Quotes'[currency_amount_before_tax])
+		displayFolder: Devis
+		lineageTag: d6a4f567-c06a-49e6-9e30-0af33b21b92f
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Acceptés HT' =
+			
+			CALCULATE(
+			    SUM('List Quotes'[currency_amount_before_tax]),
+			    'List Quotes'[status] = "Accepté"
+			)
+		displayFolder: Devis
+		lineageTag: fd48d4f3-9d0e-4ee2-83f5-79a4febb64b8
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Facturés HT' =
+			
+			CALCULATE(
+			    SUM('List Quotes'[currency_amount_before_tax]),
+			    'List Quotes'[status] = "Facturé"
+			)
+		displayFolder: Devis
+		lineageTag: 7a41aff4-9312-43b4-9efe-89e9df6581e1
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Refusés HT' =
+			
+			CALCULATE(
+			    SUM('List Quotes'[currency_amount_before_tax]),
+			    'List Quotes'[status] = "Refusé"
+			)
+		displayFolder: Devis
+		lineageTag: 14a7ff44-d12b-4ce0-bbb4-3a2312ce9f14
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Expirés HT' =
+			
+			CALCULATE(
+			    SUM('List Quotes'[currency_amount_before_tax]),
+			    'List Quotes'[status] = "Expiré"
+			)
+		displayFolder: Devis
+		lineageTag: 5a9e7e13-c7c4-4f55-b387-de6e52a77981
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Taux d''Acceptation' =
+			
+			DIVIDE(
+			    [Acceptés HT],
+			    [Montant Devis HT]
+			)
+		displayFolder: Devis
+		lineageTag: 2eafbc06-6219-440c-b004-1c52b67b64c8
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Évolution Mensuelle de Devis' = "Évolution Mensuelle des Devis - "&MAX(Dim_Date[Année])
+		displayFolder: Dynamic Title
+		lineageTag: a92c95d0-dd5a-464b-8cc1-fe4cb7f25882
+
+	measure 'Impayées TTC' = SUM('Customer invoices'[amount])
+		displayFolder: Ventes
+		lineageTag: 79d7ce54-f42d-4a12-b2aa-d0cc8da53d63
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Créances TTC' = SUM('Fact_GL'[Soldes])
+		displayFolder: Ventes\Créances
+		lineageTag: 674ea598-3a21-4902-be0b-27141cacf139
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'CA HT Avg Mo' =
+			
+			VAR MoyenneCAHT =
+			    AVERAGEX(
+			        ADDCOLUMNS(
+			            VALUES('Dim_Date'[Mois]),
+			            "CA HT", [Soldes]
+			        ),
+			        [CA HT]
+			    )
+			RETURN
+			    FORMAT(MoyenneCAHT / 1000, "€#,##0") & "K avg/mo"
+		displayFolder: Ventes\CA HT
+		lineageTag: 0220e171-c10f-4221-918a-b12c17854665
+
+	measure 'Color Max Min S' = ```
+			
+			VAR CurrentValue = [Soldes]
+			VAR SelectedYear = SELECTEDVALUE('Dim_Date'[Année])
+			VAR MaxValue =
+			    SWITCH(
+			        SelectedYear,
+			        2025, 1226254,
+			        2024, 0,
+			        2023, 0,
+			        1226254  // Default fallback for 2025
+			    )
+			VAR MinValue =
+			    SWITCH(
+			        SelectedYear,
+			        2025, 55284,
+			        2024, 0,
+			        2023, 0,
+			        55284  // Default fallback for 2025
+			    )
+			RETURN 
+			    IF(
+			        ABS(CurrentValue - MaxValue) < 1 || ABS(CurrentValue - MinValue) < 1,
+			        "#9fbec3",  // Light blue for both max and min
+			        "#487888"   // Default dark blue for others
+			    )
+			```
+		lineageTag: d9c61c8c-23ec-4162-a43b-48c5b53898c3
+
+	measure 'Color Max Min MB' = ```
+			
+			VAR CurrentValue = [Marge Brute]
+			VAR SelectedYear = SELECTEDVALUE('Dim_Date'[Année])
+			VAR MaxValue =
+			    SWITCH(
+			        SelectedYear,
+			        2025, 711966,
+			        2024, 979603,
+			        2023, 269948,
+			        711966  // Default fallback for 2025
+			    )
+			VAR MinValue =
+			    SWITCH(
+			        SelectedYear,
+			        2025, -517386,
+			        2024, -1098147,
+			        2023, -74448,
+			        -517386  // Default fallback for 2025
+			    )
+			RETURN 
+			    IF(
+			        ABS(CurrentValue - MaxValue) < 1 || ABS(CurrentValue - MinValue) < 1,
+			        "#9fbec3",  // Light blue for both max and min
+			        "#487888"   // Default dark blue for others
+			    )
+			```
+		lineageTag: 0c85fd72-f82d-4614-8f42-9a0ec374827a
+
+	measure 'Color Max Min IT' = ```
+			
+			VAR CurrentValue = [Impayées TTC]
+			VAR SelectedYear = SELECTEDVALUE('Dim_Date'[Année])
+			VAR MaxValue =
+			    SWITCH(
+			        SelectedYear,
+			        2025, 1166782.16,
+			        2024, 201037.19,
+			        2023, 236479.16,
+			        1166782.16  // Default fallback for 2025
+			    )
+			VAR MinValue =
+			    SWITCH(
+			        SelectedYear,
+			        2025, 63370,
+			        2024, 69633.14,
+			        2023, 22401.36,
+			        63370  // Default fallback for 2025
+			    )
+			RETURN 
+			    IF(
+			        ABS(CurrentValue - MaxValue) < 1 || ABS(CurrentValue - MinValue) < 1,
+			        "#9fbec3",  // Light blue for both max and min
+			        "#487888"   // Default dark blue for others
+			    )
+			```
+		lineageTag: 48e86899-557d-4684-9c77-c7cd5946179d
+
+	measure 'Color Max Min CT' = ```
+			
+			VAR CurrentValue = [Créances TTC]
+			VAR SelectedYear = SELECTEDVALUE('Dim_Date'[Année])
+			VAR MaxValue =
+			    SWITCH(
+			        SelectedYear,
+			        2025, -55283.65,
+			        2024, 0,
+			        2023, 0,
+			        -55283.65  // Default fallback for 2025
+			    )
+			VAR MinValue =
+			    SWITCH(
+			        SelectedYear,
+			        2025, -1226254.06,
+			        2024, 0,
+			        2023, 0,
+			        -1226254.06  // Default fallback for 2025
+			    )
+			RETURN 
+			    IF(
+			        ABS(CurrentValue - MaxValue) < 1 || ABS(CurrentValue - MinValue) < 1,
+			        "#9fbec3",  // Light blue for both max and min
+			        "#487888"   // Default dark blue for others
+			    )
+			```
+		lineageTag: 1833d369-917f-4410-9296-92ff61f48b86
+
+	measure 'Color Max Min DMEC' = ```
+			
+			VAR CurrentValue = [DMEC]
+			VAR SelectedYear = SELECTEDVALUE('Dim_Date'[Année])
+			VAR MaxValue =
+			    SWITCH(
+			        SelectedYear,
+			        2025, 317.38,
+			        2024, 0,
+			        2023, 0,
+			        317.38  // Default fallback for 2025
+			    )
+			VAR MinValue =
+			    SWITCH(
+			        SelectedYear,
+			        2025, -0.14,
+			        2024, 0,
+			        2023, 0,
+			        -0.14  // Default fallback for 2025
+			    )
+			RETURN 
+			    IF(
+			        ABS(CurrentValue - MaxValue) < 1 || ABS(CurrentValue - MinValue) < 1,
+			        "#9fbec3",  // Light blue for both max and min
+			        "#487888"   // Default dark blue for others
+			    )
+			```
+		lineageTag: 74a2bc02-48b0-40ac-84d6-a95c069a6135
+
+	column Column
+		isHidden
+		formatString: 0
+		lineageTag: a6408794-3fc3-4f2c-a733-d02e4a1aa9bd
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Column]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Mesures = calculated
+		mode: import
+		source = Row("Column", BLANK())
+
+	annotation PBI_Id = 90d44fa8782b49559d4a8e637d46b27d
+
+	annotation 436ba87b-9c83-4389-a31b-ebd06a36be98 = {"Expression":""}
+

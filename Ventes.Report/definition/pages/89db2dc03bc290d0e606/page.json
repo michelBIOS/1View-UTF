@@ -1,0 +1,48 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.0.0/schema.json",
+  "name": "89db2dc03bc290d0e606",
+  "displayName": "Duplicate of Ventes",
+  "displayOption": "FitToWidth",
+  "height": 2500,
+  "width": 1920,
+  "pageBinding": {
+    "name": "4179bc967140a1b56471",
+    "type": "Default",
+    "parameters": [],
+    "referenceScope": "CrossReport",
+    "acceptsFilterContext": "None"
+  },
+  "visibility": "HiddenInViewMode",
+  "visualInteractions": [
+    {
+      "source": "1ca46a0dde42464cc0aa",
+      "target": "955c8e0f897a3881d8d7",
+      "type": "NoFilter"
+    },
+    {
+      "source": "1ca46a0dde42464cc0aa",
+      "target": "3f1bead91e897861ebe3",
+      "type": "NoFilter"
+    },
+    {
+      "source": "1ca46a0dde42464cc0aa",
+      "target": "a38a67767358e7027005",
+      "type": "NoFilter"
+    },
+    {
+      "source": "1ca46a0dde42464cc0aa",
+      "target": "8fb43fe8944e0da4a98e",
+      "type": "NoFilter"
+    },
+    {
+      "source": "1ca46a0dde42464cc0aa",
+      "target": "9328f617e04d715a978e",
+      "type": "DataFilter"
+    },
+    {
+      "source": "1ca46a0dde42464cc0aa",
+      "target": "6bc5d32d32a1720e67b6",
+      "type": "NoFilter"
+    }
+  ]
+}

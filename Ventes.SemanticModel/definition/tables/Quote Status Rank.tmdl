@@ -1,0 +1,37 @@
+table 'Quote Status Rank'
+	lineageTag: d5d54668-1736-442f-9c89-2a3dd80f7e9a
+
+	column StatusRank
+		formatString: 0
+		lineageTag: ea4e822c-91e2-4b15-9db3-e47987a35a45
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [StatusRank]
+
+		annotation SummarizationSetBy = Automatic
+
+	column StatusName
+		lineageTag: 0e881dd4-48e6-4d90-895d-64a0763f41b9
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [StatusName]
+		sortByColumn: StatusRank
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Quote Status Rank' = calculated
+		mode: import
+		source =
+				DATATABLE(
+				    "StatusRank",INTEGER,
+				    "StatusName",STRING,
+				    {
+				        {1,"Refusé"},
+				        {2,"Expiré"},
+				        {3,"Accepté"},
+				        {4,"Facturé"}
+				    }
+				)
+
+	annotation PBI_Id = fc12ac3a875a4c4f87957f5a069786b5
+

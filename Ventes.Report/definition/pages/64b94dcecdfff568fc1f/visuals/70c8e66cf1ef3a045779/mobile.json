@@ -1,0 +1,198 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainerMobileState/2.1.0/schema.json",
+  "position": {
+    "x": 1,
+    "y": 1103,
+    "z": 13000,
+    "height": 334,
+    "width": 322,
+    "tabOrder": 8000
+  },
+  "objects": {
+    "values": [
+      {
+        "properties": {
+          "fontSize": {
+            "expr": {
+              "Literal": {
+                "Value": "8D"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "total": [
+      {
+        "properties": {
+          "fontFamily": {
+            "expr": {
+              "Literal": {
+                "Value": "'''Segoe UI'', wf_segoe-ui_normal, helvetica, arial, sans-serif'"
+              }
+            }
+          },
+          "bold": {
+            "expr": {
+              "Literal": {
+                "Value": "true"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "columnHeaders": [
+      {
+        "properties": {
+          "fontSize": {
+            "expr": {
+              "Literal": {
+                "Value": "9D"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "columnWidth": [
+      {
+        "properties": {
+          "value": {
+            "expr": {
+              "Literal": {
+                "Value": "87.72042949223865D"
+              }
+            }
+          }
+        },
+        "selector": {
+          "metadata": "List Quotes.name"
+        }
+      },
+      {
+        "properties": {
+          "value": {
+            "expr": {
+              "Literal": {
+                "Value": "51.74553448686636D"
+              }
+            }
+          }
+        },
+        "selector": {
+          "metadata": "Sum(List Quotes.currency_amount_before_tax)"
+        }
+      },
+      {
+        "properties": {
+          "value": {
+            "expr": {
+              "Literal": {
+                "Value": "53.390885291611404D"
+              }
+            }
+          }
+        },
+        "selector": {
+          "metadata": "Sum(List Quotes.currency_amount)"
+        }
+      },
+      {
+        "properties": {
+          "value": {
+            "expr": {
+              "Literal": {
+                "Value": "53D"
+              }
+            }
+          }
+        },
+        "selector": {
+          "metadata": "List Quotes.status"
+        }
+      },
+      {
+        "properties": {
+          "value": {
+            "expr": {
+              "Literal": {
+                "Value": "54.7672889208502D"
+              }
+            }
+          }
+        },
+        "selector": {
+          "metadata": "Sum(List Quotes.currency_tax)"
+        }
+      },
+      {
+        "properties": {
+          "value": {
+            "expr": {
+              "Literal": {
+                "Value": "67.46054201793241D"
+              }
+            }
+          }
+        },
+        "selector": {
+          "metadata": "List Quotes.deadline"
+        }
+      },
+      {
+        "properties": {
+          "value": {
+            "expr": {
+              "Literal": {
+                "Value": "86.92248251716775D"
+              }
+            }
+          }
+        },
+        "selector": {
+          "metadata": "List Quotes.quote_number"
+        }
+      },
+      {
+        "properties": {
+          "value": {
+            "expr": {
+              "Literal": {
+                "Value": "53.79666999112263D"
+              }
+            }
+          }
+        },
+        "selector": {
+          "metadata": "Dim_Date.Date"
+        }
+      }
+    ],
+    "columnFormatting": []
+  },
+  "visualContainerObjects": {
+    "title": [
+      {
+        "properties": {
+          "fontSize": {
+            "expr": {
+              "Literal": {
+                "Value": "10D"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "background": [],
+    "padding": [],
+    "border": [],
+    "dropShadow": [],
+    "visualTooltip": [],
+    "visualHeader": [],
+    "visualHeaderTooltip": [],
+    "spacing": [],
+    "divider": []
+  }
+}
