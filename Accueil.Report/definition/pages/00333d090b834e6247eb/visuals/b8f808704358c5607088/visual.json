@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
   "name": "b8f808704358c5607088",
   "position": {
     "x": 25.714285714285715,
@@ -523,7 +523,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Encours par Clients'"
+                  "Value": "'Outstanding Receivables per Customer'"
                 }
               }
             },

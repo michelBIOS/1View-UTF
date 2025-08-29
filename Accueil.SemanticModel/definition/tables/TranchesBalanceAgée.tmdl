@@ -27,12 +27,12 @@ table TranchesBalanceAgée
 				    "Tranche", STRING,
 				    "Index", INTEGER,
 				    {
-				        {"Non échue", 0},
-				        {"30 j", 1},
-				        {"60 j", 2},
-				        {"90 j", 3},
-				        {"180 j", 4},
-				        {"+180 j", 5}
+				        {"Not yet due", 0},
+				        {"30 d", 1},
+				        {"60 d", 2},
+				        {"90 d", 3},
+				        {"180 d", 4},
+				        {"+180 d", 5}
 				    }
 				)
 

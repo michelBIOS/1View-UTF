@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
   "name": "1d6e955e408006840c93",
   "position": {
     "x": 20.625,
@@ -27,8 +27,8 @@
                 }
               },
               "queryRef": "Mesures.Trésorerie",
-              "nativeQueryRef": "Solde Banques",
-              "displayName": "Solde Banques",
+              "nativeQueryRef": "Bank Balance",
+              "displayName": "Bank Balance",
               "format": "#,0€"
             }
           ]
