@@ -1,0 +1,138 @@
+table 'CAT Customer invoices'
+	lineageTag: 36724a8b-2e4d-48ab-967f-a6f4d9d73ad8
+
+	measure DMPD =
+			
+			DIVIDE(
+			    CALCULATE(
+			        SUM('Supplier invoices'[amount]),
+			        'Supplier invoices'[Payé] = "Non"   -- factures non réglées
+			    ),
+			    SUM('Supplier invoices'[amount])        -- total achats facturés
+			) * 360
+		formatString: 0
+		lineageTag: 3735f129-7596-4bca-9d68-5f3def7615bf
+
+	column ID_Ste
+		dataType: string
+		lineageTag: 7cd6718d-3991-4c51-ae5c-b4aa6bc3f68f
+		summarizeBy: none
+		sourceColumn: ID_Ste
+
+		annotation SummarizationSetBy = Automatic
+
+	column customer_invoice_id
+		dataType: int64
+		formatString: 0
+		lineageTag: a6ce2c04-83ad-42b6-8cb5-b099c3daeb6c
+		summarizeBy: sum
+		sourceColumn: customer_invoice_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column category_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 3c740164-07e5-40ca-b1e7-f83e6040750d
+		summarizeBy: sum
+		sourceColumn: category_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column label
+		dataType: string
+		lineageTag: 1a848b32-6572-458f-ad68-611195ddb565
+		summarizeBy: none
+		sourceColumn: label
+
+		annotation SummarizationSetBy = Automatic
+
+	column weight
+		dataType: double
+		lineageTag: 9f1508eb-ff76-4760-82ef-83a546bc6dbf
+		summarizeBy: sum
+		sourceColumn: weight
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column category_group_id
+		dataType: int64
+		formatString: 0
+		lineageTag: d6bb22d5-5e6d-48e8-928a-77b13a96784d
+		summarizeBy: sum
+		sourceColumn: category_group_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column analytical_code
+		dataType: string
+		lineageTag: 1ea81e3c-8caa-4de0-91b3-eddd5ac4d6f9
+		summarizeBy: none
+		sourceColumn: analytical_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column created_at
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: d7766f9c-f70b-4df5-873c-159d27fdeccb
+		summarizeBy: none
+		sourceColumn: created_at
+
+		variation Variation
+			isDefault
+			relationship: f6419f04-4ebc-4c0a-bc04-89797f5ec6eb
+			defaultHierarchy: LocalDateTable_da954483-3700-4002-9e03-e20ff61c31fe.'Hiérarchie de dates'
+
+		annotation SummarizationSetBy = Automatic
+
+	column updated_at
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 59626882-8f2c-4003-9cc8-def6f33cbc55
+		summarizeBy: none
+		sourceColumn: updated_at
+
+		variation Variation
+			isDefault
+			relationship: 902621de-7315-4877-a7d3-523b628614d2
+			defaultHierarchy: LocalDateTable_bd421030-6095-4483-ade5-66d759d03e28.'Hiérarchie de dates'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'id customer invoices'
+		dataType: string
+		lineageTag: 2d373ece-d901-44e5-b83f-14198256d6f0
+		summarizeBy: none
+		sourceColumn: id customer invoices
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'CAT Customer invoices' = m
+		mode: import
+		queryGroup: 'model tables'
+		source =
+				let
+				    Source = Sql.Databases("mhirzqqnk57e7anmxqvc3cldyq-ad6po2r4ekrefdnhlqka77jyjq.datawarehouse.fabric.microsoft.com"),
+				    Fact_2 = Source{[Name="Fact_1"]}[Data],
+				    Query = "
+				        SELECT *
+				        FROM dbo.fact_1_customer_invoice_categories
+				        WHERE ID_Ste IN (21912624, 21915510, 22276641, 21917322, 21918011)
+				    ",
+				    NativeQuery = Value.NativeQuery(Fact_2, Query),
+				    #"ID extrait" = Table.TransformColumns(
+				        NativeQuery,
+				        {{"categories_url", each Text.BetweenDelimiters(_, "/customer_invoices/", "/categories"), type text}}
+				    ),
+				    #"Colonne renommée" = Table.RenameColumns(#"ID extrait", {{"categories_url", "id customer invoices"}}),
+				    #"Capitalized Each Word" = Table.TransformColumns(#"Colonne renommée",{{"ID_Ste", Text.Proper, type text}, {"label", Text.Proper, type text}})
+				in
+				    #"Capitalized Each Word"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

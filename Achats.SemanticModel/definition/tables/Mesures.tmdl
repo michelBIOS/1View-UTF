@@ -1,0 +1,1816 @@
+table Mesures
+	lineageTag: b17bd7e4-d902-4751-a383-43c863447c06
+
+	measure 'Capitaux Propres' =
+			
+			CALCULATE(
+			    [Soldes],
+			    FILTER(
+			        'Dim_Ledger Accounts',
+			        LEFT('Dim_Ledger Accounts'[number], 3) IN {
+			            "101", "102", "103", "104", "105", "106",
+			            "110", "111", "112", "113", "114", "115", "116", "117", "118", "119"
+			        }
+			    )
+			)
+		formatString: #,0
+		displayFolder: Comptabilité
+		lineageTag: 5247595d-ae4c-46e0-b3a2-b81149a1028a
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure 'Dettes Financières' =
+			
+			CALCULATE(
+			    [Soldes],
+			    FILTER(
+			        'Dim_Ledger Accounts',
+			        LEFT('Dim_Ledger Accounts'[number], 2) = "16" &&
+			        NOT LEFT('Dim_Ledger Accounts'[number], 4) = "1688"
+			    )
+			)
+		displayFolder: Comptabilité
+		lineageTag: d3027ceb-144b-48f9-a1b6-0c7cc0d143a6
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Trésorerie =
+			
+			CALCULATE(
+			    [Soldes],
+			    FILTER(
+			        'Dim_Ledger Accounts',
+			        LEFT('Dim_Ledger Accounts'[number], 2) IN {"50", "51", "52", "53"}
+			    )
+			)
+		displayFolder: Comptabilité\tresorerie
+		lineageTag: e9ac0c6c-7df6-4952-8d84-e5f31552113c
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Endettement Financier Net' =
+			
+			[Dettes Financières] - [Trésorerie]
+		displayFolder: Comptabilité
+		lineageTag: 6ab34653-91c7-4942-90dc-338f0095e7ef
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Ratio Endettement' =
+			
+			DIVIDE(
+			    [Endettement Financier Net],
+			    [Capitaux Propres]
+			)
+		formatString: #,0\ %;-#,0\ %;#,0\ %
+		displayFolder: Comptabilité
+		lineageTag: ff97a871-8229-4ea4-b890-1fa8f04950c0
+
+	measure 'Total Actif' =
+			
+			CALCULATE(
+			    [Soldes],
+			    FILTER(
+			        'Dim_Ledger Accounts',
+			        LEFT('Dim_Ledger Accounts'[number], 1) IN {"2", "3", "4", "5"}
+			    )
+			)
+		displayFolder: Comptabilité
+		lineageTag: 1ccd0abe-e7d4-4e4b-bab9-9d5cc8fefc65
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Total Passif' =
+			
+			CALCULATE(
+			    [Soldes],
+			    FILTER(
+			        'Dim_Ledger Accounts',
+			        LEFT('Dim_Ledger Accounts'[number], 1) IN {"1", "2", "4", "5"}
+			    )
+			)
+		displayFolder: Comptabilité
+		lineageTag: 77d0d442-e719-4e5c-9c7c-4aea9f718942
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Ratio de Solvabilité' =
+			
+			DIVIDE(
+			    [Capitaux Propres],
+			    [Total Passif]
+			)
+		formatString: #,0\ %;-#,0\ %;#,0\ %
+		displayFolder: Comptabilité
+		lineageTag: 25d4fa5e-6a4b-4810-aeab-5f4e7f94df01
+
+	measure 'Autonomie Financière' =
+			
+			DIVIDE(
+			    [Capitaux Propres],
+			    [Total Actif]
+			)
+		formatString: 0\ %;-0\ %;0\ %
+		displayFolder: Comptabilité
+		lineageTag: ef30962a-f4ad-4d6b-8cfc-4688d5b2b0a8
+
+	measure Soldes = -CALCULATE(SUM(Fact_GL[debit])-SUM(Fact_GL[credit]))
+		displayFolder: Comptabilité
+		lineageTag: eb861d62-8bd2-43ee-a62c-74b16d582d5c
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Total Ventes' =
+			
+			CALCULATE(
+			    [Soldes],
+			    FILTER(
+			        'Dim_Ledger Accounts',
+			        'Dim_Ledger Accounts'[IsVente] = 1
+			    )
+			)
+		formatString: #,0
+		displayFolder: Ventes
+		lineageTag: 7bb180f0-3372-4661-8188-ddea7cd9432d
+
+	measure 'Nombre Factures' =
+			
+			CALCULATE(
+			    DISTINCTCOUNT(Fact_GL[id_ledger_entry_lines]),
+			    'Dim_Ledger Accounts'[IsVente] = 1
+			)
+		formatString: #,0
+		displayFolder: Ventes
+		lineageTag: 64df0ab0-e1e2-4228-ad70-13766b73b287
+
+	measure 'Ventes Mois' =
+			
+			CALCULATE(
+			    [Total Ventes],
+			    DATESMTD('Dim_Date'[Date])
+			)
+		formatString: #,0
+		displayFolder: Ventes
+		lineageTag: 91d50c94-4758-4beb-bd76-6e006428e9ba
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure 'Ventes Mois Précédent' =
+			
+			CALCULATE(
+			    [Total Ventes],
+			    PREVIOUSMONTH(Dim_Date[Date])
+			)
+		formatString: #,0
+		displayFolder: Ventes
+		lineageTag: c608996b-d627-4ab2-b340-6253d284da79
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure 'Coût Total' =
+			
+			CALCULATE(
+			    [Solde],
+			    FILTER(
+			        'Dim_Ledger Accounts',
+			        'Dim_Ledger Accounts'[IsAchat] = 1
+			    )
+			)
+		displayFolder: Ventes
+		lineageTag: 8d250f6e-62e4-42f1-9ef2-7e511599cf1d
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Marge Brute' =
+			
+			[Total Ventes] - [Coût Total]
+		formatString: #,0
+		displayFolder: Ventes
+		lineageTag: 30eb5cdb-7dc0-4842-8033-867e59425275
+
+	measure 'MoM % Revenus' = ```
+			
+			VAR Revenus_Courant = [Total Ventes]
+			VAR Revenus_Mois_Prec = 
+			    CALCULATE(
+			        [Total Ventes],
+			        DATEADD('Dim_Date'[Date], -1, MONTH)
+			    )
+			RETURN
+			    DIVIDE(Revenus_Courant - Revenus_Mois_Prec, Revenus_Mois_Prec, 0)
+			```
+		displayFolder: Ventes
+		lineageTag: f32d570d-738e-488e-8cdc-301feda0a9ab
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Revenue Avg Mo' =
+			
+			FORMAT(
+			    AVERAGEX(
+			        ADDCOLUMNS(
+			            VALUES('Dim_Date'[Mois]),
+			            "Revenue", [Total Ventes]
+			        ),
+			        [Revenue]
+			    ),
+			    "€#,##0,.0K" & " avg/mo"
+			)
+		displayFolder: Ventes
+		lineageTag: 12ef7f84-e192-410d-acc5-babe5353cda9
+
+	measure 'Revenue MoM % Text' = ```
+			
+			VAR _MoM = [MoM % Revenus]
+			VAR _Result =
+			    SWITCH(
+			        TRUE(),
+			        ISBLANK(_MoM), "",
+			        _MoM < 0, "▼ " & FORMAT(_MoM, "0.0%"), 
+			        _MoM >= 0, "▲ " & FORMAT(_MoM, "0.0%")
+			    )
+			RETURN
+			    _Result
+			```
+		displayFolder: Ventes
+		lineageTag: a1971613-1594-482c-a8d5-39ece53ef5bc
+
+	measure 'Revenue MoM Libellé FR' = ```
+			
+			VAR _DernierMoisVisible = MAX('Dim_Date'[Mois])
+			VAR _DebutMois = 
+			    CALCULATE(
+			        MIN('Dim_Date'[Date]),
+			        Dim_Date[Mois] = _DernierMoisVisible
+			    )
+			
+			VAR _MoisCompletActuel =
+			    CALCULATE(
+			        MAX('Dim_Date'[Date]),
+			        REMOVEFILTERS('Dim_Date'),
+			        DATESBETWEEN(
+			            'Dim_Date'[Date],
+			            EOMONTH(_DebutMois, -2) + 1,
+			            EOMONTH(_DebutMois, -1)
+			        )
+			    )
+			
+			VAR _MoisCompletPrecedent =
+			    CALCULATE(
+			        MAX(Dim_Date[Date]),
+			        REMOVEFILTERS(Dim_Date),
+			        DATESBETWEEN(
+			            Dim_Date[Date],
+			            EOMONTH(_DebutMois, -3) + 1,
+			            EOMONTH(_DebutMois, -2)
+			        )
+			    )
+			
+			VAR _Resultat = 
+			    FORMAT(_MoisCompletActuel, "[$-fr-FR]mmmm yy") & 
+			    " vs " & 
+			    FORMAT(_MoisCompletPrecedent, "[$-fr-FR]mmmm yy")
+			
+			RETURN
+			    SUBSTITUTE(_Resultat, "20", "")
+			
+			```
+		displayFolder: Ventes
+		lineageTag: 508edecc-a62b-4694-81d1-4dad5d6a72a0
+
+	measure 'Marge Brut Avg Mo' =
+			
+			FORMAT(
+			    AVERAGEX(
+			        ADDCOLUMNS(
+			            VALUES('Dim_Date'[Mois]),
+			            "Marge Brut", [Marge Brute]
+			        ),
+			        [Marge Brut]
+			    ),
+			    "€#,##0,.0K" & " avg/mo"
+			)
+		displayFolder: Ventes
+		lineageTag: 855e3609-9d8e-4f24-861c-d3385993e1b0
+
+	measure 'MoM % Marge' = ```
+			
+			VAR Marge_Courant = [Marge Brute]
+			VAR Marge_Mois_Prec = 
+			    CALCULATE(
+			        [Marge Brute],
+			        DATEADD('Dim_Date'[Date], -1, MONTH)
+			    )
+			RETURN
+			    DIVIDE(Marge_Courant - Marge_Mois_Prec, Marge_Mois_Prec, 0)
+			```
+		displayFolder: Ventes
+		lineageTag: 78b037df-0f1e-4743-944d-ea9bcabca612
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Marge MoM % Text' = ```
+			
+			VAR _MoM = [MoM % Marge]
+			VAR _Result =
+			    SWITCH(
+			        TRUE(),
+			        ISBLANK(_MoM), "",
+			        _MoM < 0, "▼ " & FORMAT(_MoM, "0.0%"), 
+			        _MoM >= 0, "▲ " & FORMAT(_MoM, "0.0%")
+			    )
+			RETURN
+			    _Result
+			```
+		displayFolder: Ventes
+		lineageTag: 9732c294-99aa-43f4-ac1f-31996bbfc22e
+
+	measure 'MoM % CP' = ```
+			
+			VAR Revenus_Courant = [Capitaux Propres]
+			VAR Revenus_Mois_Prec = 
+			    CALCULATE(
+			        [Capitaux Propres],
+			        DATEADD('Dim_Date'[Date], -1, MONTH)
+			    )
+			RETURN
+			    DIVIDE(Revenus_Courant - Revenus_Mois_Prec, Revenus_Mois_Prec, 0)
+			```
+		displayFolder: Comptabilité
+		lineageTag: 941ab62c-f8dc-4c25-b8fc-ce4c66f3c2de
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'CP MoM % Text' = ```
+			
+			VAR _MoM = [MoM % CP]
+			VAR _Result =
+			    SWITCH(
+			        TRUE(),
+			        ISBLANK(_MoM), "",
+			        _MoM < 0, "▼ " & FORMAT(_MoM, "0.0%"), 
+			        _MoM >= 0, "▲ " & FORMAT(_MoM, "0.0%")
+			    )
+			RETURN
+			    _Result
+			```
+		displayFolder: Comptabilité
+		lineageTag: f9c14240-2ff4-4430-89d0-0992b4c3611a
+
+	measure 'CP Avg Mo' =
+			
+			FORMAT(
+			    AVERAGEX(
+			        ADDCOLUMNS(
+			            VALUES('Dim_Date'[Mois]),
+			            "Capitaux Propres", [Capitaux Propres]
+			        ),
+			        [Capitaux Propres]
+			    ),
+			    "€#,##0,.0K" & " avg/mo"
+			)
+		displayFolder: Comptabilité
+		lineageTag: 999dd723-64ba-4966-a823-0c96dfa5b03b
+
+	measure 'MoM % EFN' = ```
+			
+			VAR EFN_Courant = [Endettement Financier Net]
+			VAR EFN_Mois_Prec = 
+			    CALCULATE(
+			        [Endettement Financier Net],
+			        DATEADD('Dim_Date'[Date], -1, MONTH)
+			    )
+			RETURN
+			    DIVIDE(EFN_Courant - EFN_Mois_Prec, EFN_Mois_Prec, 0)
+			```
+		displayFolder: Comptabilité
+		lineageTag: e308e6ff-052c-4dc7-abe5-9c0ac360926e
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'EFN MoM % Text' = ```
+			
+			VAR _MoM = [MoM % EFN]
+			VAR _Result =
+			    SWITCH(
+			        TRUE(),
+			        ISBLANK(_MoM), "",
+			        _MoM < 0, "▼ " & FORMAT(_MoM, "0.0%"), 
+			        _MoM >= 0, "▲ " & FORMAT(_MoM, "0.0%")
+			    )
+			RETURN
+			    _Result
+			```
+		displayFolder: Comptabilité
+		lineageTag: 09e6da1f-1fab-41df-bf33-9f861a101c85
+
+	measure 'EFN Avg Mo' =
+			
+			FORMAT(
+			    AVERAGEX(
+			        ADDCOLUMNS(
+			            VALUES('Dim_Date'[Mois]),
+			            "Endettement Financier Net", [Endettement Financier Net]
+			        ),
+			        [Endettement Financier Net]
+			    ),
+			    "€#,##0,.0K" & " avg/mo"
+			)
+		displayFolder: Comptabilité
+		lineageTag: fc5b41ac-663f-455a-991d-e8b95f1e0005
+
+	measure 'Facture Impayées' = CALCULATE(SUM('Customer invoices'[amount]),'Customer invoices'[status]="late",USERELATIONSHIP(Dim_Date[Date],'Customer invoices'[date]))
+		formatString: 0
+		displayFolder: Ventes
+		lineageTag: 9c034085-56d1-4885-be4e-9aaf5a5e1aa8
+
+	measure 'MoM % FI' = ```
+			
+			VAR Marge_Courant = [Facture Impayées]
+			VAR Marge_Mois_Prec = 
+			    CALCULATE(
+			        [Facture Impayées],
+			        DATEADD(Dim_Date[Date], -1, MONTH)
+			    )
+			RETURN
+			    DIVIDE(Marge_Courant - Marge_Mois_Prec, Marge_Mois_Prec, 0)
+			```
+		displayFolder: Ventes
+		lineageTag: a7e16473-7e5d-440f-a0a1-9e9e431b7c17
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'FI MoM % Text' = ```
+			
+			VAR _MoM = [MoM % FI]
+			VAR _Result =
+			    SWITCH(
+			        TRUE(),
+			        ISBLANK(_MoM), "",
+			        _MoM < 0, "▼ " & FORMAT(_MoM, "0.0%"), 
+			        _MoM >= 0, "▲ " & FORMAT(_MoM, "0.0%")
+			    )
+			RETURN
+			    _Result
+			```
+		displayFolder: Ventes
+		lineageTag: 2d240553-e5a5-4a14-a830-14122e45e057
+
+	measure 'FI Avg Mo' =
+			
+			FORMAT(
+			    AVERAGEX(
+			        ADDCOLUMNS(
+			            VALUES('Dim_Date'[Mois]),
+			            "Facture Impayées", [Facture Impayées]
+			        ),
+			        [Facture Impayées]
+			    ),
+			    "€#,##0,.0K" & " avg/mo"
+			)
+		displayFolder: Ventes
+		lineageTag: 85792436-0ec6-4d23-a33d-287455d3dac6
+
+	measure 'Résultat Opérationnel' =
+			
+			CALCULATE(
+			    [Soldes],
+			    FILTER(
+			        'Dim_Ledger Accounts',
+			        LEFT('Dim_Ledger Accounts'[number], 1) IN {
+			            "7",
+			            "6"
+			        }
+			    )
+			)
+		displayFolder: Comptabilité
+		lineageTag: 3abc58fe-83f5-4e52-9604-64069795112d
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'MoM % Résultat' = ```
+			
+			VAR Revenus_Courant = [Résultat Opérationnel]
+			VAR Revenus_Mois_Prec = 
+			    CALCULATE(
+			        [Résultat Opérationnel],
+			        DATEADD('Dim_Date'[Date], -1, MONTH)
+			    )
+			RETURN
+			    DIVIDE(Revenus_Courant - Revenus_Mois_Prec, Revenus_Mois_Prec, 0)
+			```
+		displayFolder: Comptabilité
+		lineageTag: a333e10b-3b09-45cc-9539-0b9949059adb
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Résultat MoM % Text' = ```
+			
+			VAR _MoM = [MoM % Résultat]
+			VAR _Result =
+			    SWITCH(
+			        TRUE(),
+			        ISBLANK(_MoM), "",
+			        _MoM < 0, "▼ " & FORMAT(_MoM, "0.0%"), 
+			        _MoM >= 0, "▲ " & FORMAT(_MoM, "0.0%")
+			    )
+			RETURN
+			    _Result
+			```
+		displayFolder: Comptabilité
+		lineageTag: 0da3abdc-0f11-46a6-8191-6555450ebaa5
+
+	measure 'Résultat Avg Mo' =
+			
+			FORMAT(
+			    AVERAGEX(
+			        ADDCOLUMNS(
+			            VALUES('Dim_Date'[Mois]),
+			            "Résultat Opérationnel", [Résultat Opérationnel]
+			        ),
+			        [Résultat Opérationnel]
+			    ),
+			    "€#,##0,.0K" & " avg/mo"
+			)
+		displayFolder: Comptabilité
+		lineageTag: 19b90703-9514-4d60-9bb6-b8aa597badcb
+
+	measure EBITDA =
+			
+			CALCULATE(
+			    [Soldes],
+			    FILTER(
+			        'Dim_Ledger Accounts',
+			        LEFT('Dim_Ledger Accounts'[number], 2) IN {
+			            "70", "71", "72", "74", "75",
+			            "60", "61", "62", "63", "64", "65"
+			        }
+			    )
+			)
+		displayFolder: Comptabilité
+		lineageTag: 2842ac58-b260-41f1-8689-0a36cabcf6a7
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'MoM % EBITDA' = ```
+			
+			VAR EFN_Courant = [EBITDA]
+			VAR EFN_Mois_Prec = 
+			    CALCULATE(
+			        [EBITDA],
+			        DATEADD('Dim_Date'[Date], -1, MONTH)
+			    )
+			RETURN
+			    DIVIDE(EFN_Courant - EFN_Mois_Prec, EFN_Mois_Prec, 0)
+			```
+		displayFolder: Comptabilité
+		lineageTag: 08fc66af-cc1d-4b20-bb4e-766a5ea1ccb3
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'EBITDA MoM % Text' = ```
+			
+			VAR _MoM = [MoM % EBITDA]
+			VAR _Result =
+			    SWITCH(
+			        TRUE(),
+			        ISBLANK(_MoM), "",
+			        _MoM < 0, "▼ " & FORMAT(_MoM, "0.0%"), 
+			        _MoM >= 0, "▲ " & FORMAT(_MoM, "0.0%")
+			    )
+			RETURN
+			    _Result
+			```
+		displayFolder: Comptabilité
+		lineageTag: 758eb47a-3301-4e98-bbc1-08d484132888
+
+	measure 'EBITDA Avg Mo' =
+			
+			FORMAT(
+			    AVERAGEX(
+			        ADDCOLUMNS(
+			            VALUES('Dim_Date'[Mois]),
+			            "EBITDA", [EBITDA]
+			        ),
+			        [EBITDA]
+			    ),
+			    "€#,##0,.0K" & " avg/mo"
+			)
+		displayFolder: Comptabilité
+		lineageTag: 71a562f2-008e-4dfa-bcef-2ed3458b6063
+
+	measure Fournisseurs =
+			
+			CALCULATE(
+			    DISTINCTCOUNT('Supplier invoices'[supplier_id]),
+			    NOT ISBLANK('Supplier invoices'[amount])
+			)
+		formatString: #,0
+		displayFolder: Achats\Fournisseurs
+		lineageTag: 0a9e0e08-bdb0-4692-a84c-daad5b3a38ab
+
+	measure 'Nb Factures Impayées' =
+			
+			CALCULATE(
+			    COUNTROWS('Supplier invoices'),
+			    'Supplier invoices'[reconciled] = FALSE(),
+			    'Supplier invoices'[deadline] < TODAY()
+			)
+		formatString: 0
+		displayFolder: Achats\Factures Impayées Nb
+		lineageTag: 22c38d61-94bf-4207-a48a-f0efb8701a33
+
+	measure 'Total Achats HT' = SUM('Supplier invoices'[currency_amount_before_tax])
+		displayFolder: Achats\Achats
+		lineageTag: bceb22b4-bbdb-4197-8a89-bbb8cd2b4c58
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Achats HT MoM % Text' = ```
+			
+			VAR _MoM = [MoM % Achats HT]
+			VAR _Result =
+			    SWITCH(
+			        TRUE(),
+			        ISBLANK(_MoM), "",
+			        _MoM < 0, "▼ " & FORMAT(_MoM, "0.0%"), 
+			        _MoM >= 0, "▲ " & FORMAT(_MoM, "0.0%")
+			    )
+			RETURN
+			    _Result
+			```
+		displayFolder: Achats\Achats
+		lineageTag: 56049e6c-54a1-4f39-980b-85d3909ce3c2
+
+	measure 'MoM % Achats HT' =
+			
+			VAR Achats_Courant = [Total Achats HT]
+			VAR Achats_Mois_Prec =
+			    CALCULATE(
+			        [Total Achats HT],
+			        DATEADD('Dim_Date'[Date], -1, MONTH)
+			    )
+			RETURN
+			    DIVIDE(Achats_Courant - Achats_Mois_Prec, Achats_Mois_Prec, 0)
+		displayFolder: Achats\Achats
+		lineageTag: f945005a-1d3d-4bfa-b9bd-4a17729ce3a6
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Achats HT Avg Mo' = ```
+			
+			VAR MoyenneAchats = 
+			    AVERAGEX(
+			        ADDCOLUMNS(
+			            VALUES('Dim_Date'[Mois]),
+			            "Achats", [Total Achats HT]
+			        ),
+			        [Achats]
+			    )
+			RETURN
+			    FORMAT(MoyenneAchats / 1000000, "€#,##0.00") & "M avg/mo"
+			```
+		displayFolder: Achats\Achats
+		lineageTag: db5d5518-324c-461b-80bb-e9118a77d85e
+
+	measure 'Nb Factures Impayées Avg Mo' =
+			
+			VAR MoyenneNbFacturesImpayees =
+			    AVERAGEX(
+			        ADDCOLUMNS(
+			            VALUES('Dim_Date'[Mois]),
+			            "Impayees", [Nb Factures Impayées]
+			        ),
+			        [Impayees]
+			    )
+			RETURN
+			    FORMAT(MoyenneNbFacturesImpayees, "#,##0") & " avg/mo"
+		displayFolder: Achats\Factures Impayées Nb
+		lineageTag: eb43bb64-df87-4aaa-839f-eeb094276750
+
+	measure 'Nb Factures Impayées MoM % Text' = ```
+			
+			VAR _MoM = [MoM % Nb Factures Impayées]
+			VAR _Result =
+			    SWITCH(
+			        TRUE(),
+			        ISBLANK(_MoM), "",
+			        _MoM < 0, "▼ " & FORMAT(_MoM, "0.0%"), 
+			        _MoM >= 0, "▲ " & FORMAT(_MoM, "0.0%")
+			    )
+			RETURN
+			    _Result
+			```
+		displayFolder: Achats\Factures Impayées Nb
+		lineageTag: 91d463f0-1dca-4cc7-8af4-34b69ade72fb
+
+	measure 'Fournisseurs Avg Mo' =
+			
+			VAR MoyenneFournisseurs =
+			    AVERAGEX(
+			        ADDCOLUMNS(
+			            VALUES('Dim_Date'[Mois]),
+			            "NbFournisseurs", [Fournisseurs]
+			        ),
+			        [NbFournisseurs]
+			    )
+			RETURN
+			    FORMAT(MoyenneFournisseurs, "#,##0") & " avg/mo"
+		displayFolder: Achats\Fournisseurs
+		lineageTag: 97514d74-7f03-43a4-abfb-cf534d7bf16f
+
+	measure 'Montant Encours Fournisseurs MoM % Text' = ```
+			
+			VAR _MoM = [MoM % Montant Encours Fournisseurs]
+			VAR _Result =
+			    SWITCH(
+			        TRUE(),
+			        ISBLANK(_MoM), "",
+			        _MoM < 0, "▼ " & FORMAT(_MoM, "0.0%"), 
+			        _MoM >= 0, "▲ " & FORMAT(_MoM, "0.0%")
+			    )
+			RETURN
+			    _Result
+			```
+		displayFolder: Achats\Encours Fournisseurs Montant
+		lineageTag: 8c05737c-99fd-4748-ae23-ed58c92693df
+
+	measure 'MoM % Nb Factures Impayées' =
+			
+			VAR Impayees_Courant = [Nb Factures Impayées]
+			VAR Impayees_Mois_Prec =
+			    CALCULATE(
+			        [Nb Factures Impayées],
+			        DATEADD('Dim_Date'[Date], -1, MONTH)
+			    )
+			RETURN
+			    DIVIDE(Impayees_Courant - Impayees_Mois_Prec, Impayees_Mois_Prec, 0)
+		displayFolder: Achats\Factures Impayées Nb
+		lineageTag: 5f6eeba7-1b47-4518-b295-0677d9890417
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'MoM % Fournisseurs' =
+			
+			VAR Fournisseurs_Courant = [Fournisseurs]
+			VAR Fournisseurs_Mois_Prec =
+			    CALCULATE(
+			        [Fournisseurs],
+			        DATEADD('Dim_Date'[Date], -1, MONTH)
+			    )
+			RETURN
+			    DIVIDE(Fournisseurs_Courant - Fournisseurs_Mois_Prec, Fournisseurs_Mois_Prec, 0)
+		displayFolder: Achats\Fournisseurs
+		lineageTag: 5e1d3466-2501-4a5e-9abd-bb361f539a00
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'MoM % tresor' = ```
+			
+			VAR tresor_Courant = [Trésorerie]
+			VAR tresor_Mois_Prec = 
+			    CALCULATE(
+			        [Trésorerie],
+			        DATEADD('Dim_Date'[Date], -1, MONTH)
+			    )
+			RETURN
+			    DIVIDE(tresor_Courant - tresor_Mois_Prec, tresor_Mois_Prec, 0)
+			```
+		displayFolder: Comptabilité\tresorerie
+		lineageTag: 950e6aaf-4ab7-44fe-a82a-1a818d09337a
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'tresor MoM % Text' = ```
+			
+			VAR _MoM = [MoM % tresor]
+			VAR _Result =
+			    SWITCH(
+			        TRUE(),
+			        ISBLANK(_MoM), "",
+			        _MoM < 0, "▼ " & FORMAT(_MoM, "0.0%"), 
+			        _MoM >= 0, "▲ " & FORMAT(_MoM, "0.0%")
+			    )
+			RETURN
+			    _Result
+			```
+		displayFolder: Comptabilité\tresorerie
+		lineageTag: 33108c8b-067d-40fb-9258-cb2c3ec9f4eb
+
+	measure 'tresor Avg Mo' =
+			
+			FORMAT(
+			    AVERAGEX(
+			        ADDCOLUMNS(
+			            VALUES('Dim_Date'[Mois]),
+			            "Endettement Financier Net", [Trésorerie]
+			        ),
+			        [Endettement Financier Net]
+			    ),
+			    "€#,##0,.0K" & " avg/mo"
+			)
+		displayFolder: Comptabilité\tresorerie
+		lineageTag: 01b2f8a1-2082-43ec-aa13-b3f8726532ea
+
+	measure 'Encours Clients' =
+			
+			CALCULATE(
+			    [Soldes Customer Invoices],
+			    FILTER(
+			        'Customer invoices',
+			        'Customer invoices'[status] IN {
+			            "late","upcoming","partially_cancelled"
+			        }
+			    )
+			)
+		displayFolder: Ventes\Client
+		lineageTag: 7e4cae93-9365-435c-a8ee-7408a2b5bf67
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Client Avg Mo' =
+			
+			FORMAT(
+			    AVERAGEX(
+			        ADDCOLUMNS(
+			            VALUES('Dim_Date'[Mois]),
+			            "Capitaux Propres", [Encours Clients]
+			        ),
+			        [Capitaux Propres]
+			    ),
+			    "€#,##0,.0K" & " avg/mo"
+			)
+		displayFolder: Ventes\Client
+		lineageTag: c4bfc80d-7a77-4600-98cf-6b260d5288ee
+
+	measure 'MoM % Client' = ```
+			
+			VAR Client_Courant = [Encours Clients]
+			VAR Client_Mois_Prec = 
+			    CALCULATE(
+			        [Encours Clients],
+			        DATEADD('Dim_Date'[Date], -1, MONTH)
+			    )
+			RETURN
+			    DIVIDE(Client_Courant - Client_Mois_Prec, Client_Mois_Prec, 0)
+			```
+		displayFolder: Ventes\Client
+		lineageTag: 52df7f24-0fd1-47c4-9275-4dc7c1bc9b2e
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Client MoM % Text' = ```
+			
+			VAR _MoM = [MoM % Client]
+			VAR _Result =
+			    SWITCH(
+			        TRUE(),
+			        ISBLANK(_MoM), "",
+			        _MoM < 0, "▼ " & FORMAT(_MoM, "0.0%"), 
+			        _MoM >= 0, "▲ " & FORMAT(_MoM, "0.0%")
+			    )
+			RETURN
+			    _Result
+			```
+		displayFolder: Ventes\Client
+		lineageTag: 3913ea0a-9509-48c2-8674-740959603f1e
+
+	measure 'Montant Encours Fournisseurs' =
+			
+			CALCULATE(
+			    SUM('Supplier invoices'[amount]),
+			    'Supplier invoices'[reconciled] = FALSE()
+			)
+		displayFolder: Achats\Encours Fournisseurs Montant
+		lineageTag: 4dfe525d-7cfd-4208-99a2-99d49a40467c
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'MoM % Montant Encours Fournisseurs' =
+			
+			VAR Achats_Courant = [Montant Encours Fournisseurs]
+			VAR Achats_Mois_Prec =
+			    CALCULATE(
+			        [Montant Encours Fournisseurs],
+			        DATEADD('Dim_Date'[Date], -1, MONTH)
+			    )
+			RETURN
+			    DIVIDE(Achats_Courant - Achats_Mois_Prec, Achats_Mois_Prec, 0)
+		displayFolder: Achats\Encours Fournisseurs Montant
+		lineageTag: 38fa4aa0-0159-4069-9ad7-4ccd06d23397
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Montant Encours Fournisseurs Avg Mo' =
+			
+			VAR MoyenneMontantEncoursFournisseurs =
+			    AVERAGEX(
+			        ADDCOLUMNS(
+			            VALUES('Dim_Date'[Mois]),
+			            "Encours Fournisseurs", [Montant Encours Fournisseurs]
+			        ),
+			        [Encours Fournisseurs]
+			    )
+			RETURN
+			    FORMAT(MoyenneMontantEncoursFournisseurs / 1000, "€#,##0") & "K avg/mo"
+		displayFolder: Achats\Encours Fournisseurs Montant
+		lineageTag: 4436830c-e18f-4a4e-8f93-81915bda6af9
+
+	measure 'Soldes Customer Invoices' = SUM('Customer invoices'[amount])
+		displayFolder: Ventes\Client
+		lineageTag: 8d9970c6-3501-4aaf-bd77-4b767f2e4542
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Trésorerie Nette' = [Trésorerie] + [Encours Clients] - [Montant Encours Fournisseurs]
+		displayFolder: Comptabilité\tresorerie
+		lineageTag: 5cec1534-a323-4491-93b0-b936fae187ae
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Total Ventes n-1' =
+			
+			CALCULATE(
+			    [Soldes],
+			    SAMEPERIODLASTYEAR(Dim_Date[Date]),
+			    FILTER(
+			        'Dim_Ledger Accounts',
+			        'Dim_Ledger Accounts'[IsVente] = 1
+			    )
+			)
+		displayFolder: Ventes
+		lineageTag: e46d37b1-f27d-4075-8db3-1f2e4a3e432c
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Total Achats HT N-1' = CALCULATE(SUM('Supplier invoices'[currency_amount_before_tax]),SAMEPERIODLASTYEAR(Dim_Date[Date]))
+		displayFolder: Achats\Achats
+		lineageTag: 24849206-2f38-4361-a5c3-a35e0b649c31
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Fournisseurs MoM % Text' = ```
+			
+			VAR _MoM = [MoM % Fournisseurs]
+			VAR _Result =
+			    SWITCH(
+			        TRUE(),
+			        ISBLANK(_MoM), "",
+			        _MoM < 0, "▼ " & FORMAT(_MoM, "0.0%"), 
+			        _MoM >= 0, "▲ " & FORMAT(_MoM, "0.0%")
+			    )
+			RETURN
+			    _Result
+			```
+		displayFolder: Achats\Fournisseurs
+		lineageTag: 7d8d72dd-6121-41a6-abba-492145c68f89
+
+	measure 'Montant Factures Impayées' =
+			
+			CALCULATE(
+			    SUM('Supplier invoices'[amount]),
+			    'Supplier invoices'[reconciled] = FALSE(),
+			    'Supplier invoices'[deadline] < TODAY()
+			)
+		displayFolder: Achats\Factures Impayées Montant
+		lineageTag: 13a83e09-7202-4588-ab00-3a7b93a8312f
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Montant Factures Impayées Avg Mo' =
+			
+			VAR MoyenneMontantFacturesImpayees =
+			    AVERAGEX(
+			        ADDCOLUMNS(
+			            VALUES('Dim_Date'[Mois]),
+			            "Impayees", [Montant Factures Impayées]
+			        ),
+			        [Impayees]
+			    )
+			RETURN
+			    FORMAT(MoyenneMontantFacturesImpayees / 1000, "€#,##0") & "K avg/mo"
+		displayFolder: Achats\Factures Impayées Montant
+		lineageTag: 38f3a949-3383-4c6a-8102-e346cc39162c
+
+	measure 'MoM % Montant Factures Impayées' =
+			
+			VAR Impayees_Courant = [Montant Factures Impayées]
+			VAR Impayees_Mois_Prec =
+			    CALCULATE(
+			        [Montant Factures Impayées],
+			        DATEADD('Dim_Date'[Date], -1, MONTH)
+			    )
+			RETURN
+			    DIVIDE(Impayees_Courant - Impayees_Mois_Prec, Impayees_Mois_Prec, 0)
+		displayFolder: Achats\Factures Impayées Montant
+		lineageTag: 831a1fd6-16c2-4459-8163-5ccd1a1c8041
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Nb Encours Fournisseurs' =
+			
+			CALCULATE(
+			    COUNTROWS('Supplier invoices'),
+			    'Supplier invoices'[reconciled] = FALSE()
+			)
+		formatString: 0
+		displayFolder: Achats\Encours Fournisseurs Nb
+		lineageTag: 0666d9e4-23ad-427f-aaab-d68c77300c3a
+
+	measure 'Montant Factures Impayées MoM % Text' = ```
+			
+			VAR _MoM = [MoM % Montant Factures Impayées]
+			VAR _Result =
+			    SWITCH(
+			        TRUE(),
+			        ISBLANK(_MoM), "",
+			        _MoM < 0, "▼ " & FORMAT(_MoM, "0.0%"), 
+			        _MoM >= 0, "▲ " & FORMAT(_MoM, "0.0%")
+			    )
+			RETURN
+			    _Result
+			```
+		displayFolder: Achats\Factures Impayées Montant
+		lineageTag: 3383a7a4-7334-40bc-a3c5-957421409ea1
+
+	measure 'Nb Encours Fournisseurs Avg Mo' =
+			
+			VAR MoyenneNbEncoursFournisseurs =
+			    AVERAGEX(
+			        ADDCOLUMNS(
+			            VALUES('Dim_Date'[Mois]),
+			            "Impayees", [Nb Encours Fournisseurs]
+			        ),
+			        [Impayees]
+			    )
+			RETURN
+			    FORMAT(MoyenneNbEncoursFournisseurs, "#,##0") & " avg/mo"
+		displayFolder: Achats\Encours Fournisseurs Nb
+		lineageTag: 647248b4-afe4-4625-8205-112bc827cd85
+
+	measure 'MoM % Nb Encours Fournisseurs' =
+			
+			VAR Impayees_Courant = [Nb Encours Fournisseurs]
+			VAR Impayees_Mois_Prec =
+			    CALCULATE(
+			        [Nb Encours Fournisseurs],
+			        DATEADD('Dim_Date'[Date], -1, MONTH)
+			    )
+			RETURN
+			    DIVIDE(Impayees_Courant - Impayees_Mois_Prec, Impayees_Mois_Prec, 0)
+		displayFolder: Achats\Encours Fournisseurs Nb
+		lineageTag: 18b02249-f336-4e58-8bd8-2c9d1b064c7e
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Nb Encours Fournisseurs MoM % Text' = ```
+			
+			VAR _MoM = [MoM % Nb Encours Fournisseurs]
+			VAR _Result =
+			    SWITCH(
+			        TRUE(),
+			        ISBLANK(_MoM), "",
+			        _MoM < 0, "▼ " & FORMAT(_MoM, "0.0%"), 
+			        _MoM >= 0, "▲ " & FORMAT(_MoM, "0.0%")
+			    )
+			RETURN
+			    _Result
+			```
+		displayFolder: Achats\Encours Fournisseurs Nb
+		lineageTag: e45b23f5-3403-4287-8d21-a9e83e2040fd
+
+	measure 'Dernière MAJ' =
+			
+			"MAJ : " &
+			FORMAT(
+			    CALCULATE(
+			        MAX('Supplier invoices'[updated_at]),
+			        ALL('Supplier invoices')
+			    ),
+			    "dd/mm/yy HH:mm"
+			)
+		lineageTag: 666e7450-48fa-401c-b36f-ca39ce78d08f
+
+	measure 'Dette Nette' =
+			
+			CALCULATE(
+			    SUM('Supplier invoices'[currency_amount_before_tax]),
+			    'Supplier invoices'[reconciled] = FALSE()
+			)
+		displayFolder: Achats\Dette Nette
+		lineageTag: 5cef3656-9fd1-41ef-85f8-18dacb2e858f
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Dette Nette Avg Mo' =
+			
+			VAR MoyenneDetteNette =
+			    AVERAGEX(
+			        ADDCOLUMNS(
+			            VALUES('Dim_Date'[Mois]),
+			            "Dette Nette HT", [Dette Nette]
+			        ),
+			        [Dette Nette HT]
+			    )
+			RETURN
+			    FORMAT(MoyenneDetteNette / 1000, "€#,##0") & "K avg/mo"
+		displayFolder: Achats\Dette Nette
+		lineageTag: d6aa7f58-20df-464b-a27c-1d05bfbe2d42
+
+	measure 'MoM % Dette Nette' =
+			
+			VAR Dette_Nette = [Dette Nette]
+			VAR Dette_Nette_Mois_Prec =
+			    CALCULATE(
+			        [Dette Nette],
+			        DATEADD('Dim_Date'[Date], -1, MONTH)
+			    )
+			RETURN
+			    DIVIDE(Dette_Nette - Dette_Nette_Mois_Prec, Dette_Nette_Mois_Prec, 0)
+		displayFolder: Achats\Dette Nette
+		lineageTag: a8513035-2da3-43ff-a805-05077b4e9f93
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Dette Nette MoM % Text' = ```
+			
+			VAR _MoM = [MoM % Dette Nette]
+			VAR _Result =
+			    SWITCH(
+			        TRUE(),
+			        ISBLANK(_MoM), "",
+			        _MoM < 0, "▼ " & FORMAT(_MoM, "0.0%"), 
+			        _MoM >= 0, "▲ " & FORMAT(_MoM, "0.0%")
+			    )
+			RETURN
+			    _Result
+			```
+		displayFolder: Achats\Dette Nette
+		lineageTag: 4f24a756-93a1-47ab-af50-0d5131b8ccec
+
+	measure ThisYear = MAX(Dim_Date[Année])
+		formatString: 0
+		displayFolder: Titres Dynamique\Year Legend
+		lineageTag: 3795332d-efd1-4bc2-bf64-c587a95c6e4e
+
+	measure PreviousYear = MAX(Dim_Date[Année])-1
+		formatString: 0
+		displayFolder: Titres Dynamique\Year Legend
+		lineageTag: c6accb76-6448-43d5-87b9-49e988d5bb52
+
+	measure 'Achats YTD' = "Achats YTD - "&[PreviousYear]&"/"&[ThisYear]
+		displayFolder: Titres Dynamique\Titres
+		lineageTag: 11a30992-6c5a-44b8-a555-7dc83e567077
+
+	measure 'Évolutions des Achats HT Mensuels' = "Évolutions des Achats HT Mensuels - "&[PreviousYear]&"/"&[ThisYear]
+		displayFolder: Titres Dynamique\Titres
+		lineageTag: d60846d9-9cd1-4959-b8ff-f47ae2a0ad62
+
+	measure 'Achats par Fournisseurs' = "Achats par Fournisseurs - "&[ThisYear]
+		displayFolder: Titres Dynamique\Titres
+		lineageTag: 5344f0bd-c12f-4f59-a9a1-be4960a80f28
+
+	measure 'Montant des Factures en Retard' = "Montant des Factures en Retard - "&[ThisYear]
+		displayFolder: Titres Dynamique\Titres
+		lineageTag: 5180b827-6e58-4d5f-862b-367b0df3a179
+
+	measure 'Dettes TTC Fournisseurs' = "Dettes TTC Fournisseurs - "&[ThisYear]
+		displayFolder: Titres Dynamique\Titres
+		lineageTag: afd03e09-b285-4b0a-8030-238c598d2d6c
+
+	measure 'Factures en Retard' = "Factures en Retard - "&[ThisYear]
+		displayFolder: Titres Dynamique\Titres
+		lineageTag: 66dac661-4a7e-4fe0-9dc9-1efe85b62fe3
+
+	measure 'Balance Agée' = "Balance Agée - "&[ThisYear]& " (€)"
+		displayFolder: Titres Dynamique\Titres
+		lineageTag: 37065df7-ebbe-4753-8384-c3b88dec6aa1
+
+	measure 'Liste des Factures' = "Liste des Factures - "&[ThisYear]
+		displayFolder: Titres Dynamique\Titres
+		lineageTag: 2f26dc3c-74a3-4b8f-8b0c-6d86bf78088e
+
+	measure 'Détails des Factures en Retard' = "Détails des Factures en Retard - "&[ThisYear]
+		displayFolder: Titres Dynamique\Titres
+		lineageTag: 05933032-672d-4e81-a183-b26ee6143fe2
+
+	measure 'Echéances Fournisseurs' = "Echéances Fournisseurs - "&[ThisYear]
+		displayFolder: Titres Dynamique\Titres
+		lineageTag: 9c398145-acc3-4635-abd1-4f10616848ed
+
+	measure 'Achats HT Cumulés YTD' =
+			
+			CALCULATE(
+			    SUM('Supplier invoices'[currency_amount_before_tax]),
+			    FILTER(
+			        ALL('Dim_Date'),
+			        'Dim_Date'[Année] = MAX('Dim_Date'[Année]) &&
+			        'Dim_Date'[MoisNum] <= MAX('Dim_Date'[MoisNum])
+			    )
+			)
+		displayFolder: Achats\Achats
+		lineageTag: bb625fca-4285-412c-bbe3-2be261bfa7e5
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Achats HT Cumulés YTD N-1' =
+			
+			CALCULATE(
+			    SUM('Supplier invoices'[currency_amount_before_tax]),
+			    FILTER(
+			        ALL('Dim_Date'),
+			        'Dim_Date'[Année] = MAX('Dim_Date'[Année]) - 1 &&
+			        'Dim_Date'[MoisNum] <= MAX('Dim_Date'[MoisNum])
+			    )
+			)
+		displayFolder: Achats\Achats
+		lineageTag: eb3b43fe-22e5-45bf-b6dc-cf3b3eed780d
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Achats par Catégories' = "Achats par Catégories - "&[ThisYear]
+		displayFolder: Titres Dynamique\Titres
+		lineageTag: 8c8c9181-6d0c-469e-946d-50b4f27f4aee
+
+	measure 'Color Max Min TA' = ```
+			
+			VAR CurrentValue = [Total Achats HT]
+			VAR SelectedYear = SELECTEDVALUE('Dim_Date'[Année])
+			VAR SelectedPayee = SELECTEDVALUE('Supplier invoices'[Payé])
+			VAR SelectedEchue = SELECTEDVALUE('Supplier invoices'[Échue])
+			
+			// Create a unique key for each combination
+			VAR FilterKey = 
+			    SelectedYear & "_" & 
+			    IF(ISBLANK(SelectedPayee), "UNCHECKED", SelectedPayee) & "_" & 
+			    IF(ISBLANK(SelectedEchue), "UNCHECKED", SelectedEchue)
+			
+			VAR MaxValue =
+			    SWITCH(
+			        FilterKey,
+			        // 2025 combinations (your default year)
+			        "2025_UNCHECKED_UNCHECKED", 276686.82,  // Default state: only year selected
+			        "2025_oui_UNCHECKED", 254218.56,        // Payée=oui, Echue=unchecked
+			        "2025_non_UNCHECKED", 81170.52,        // Payée=non, Echue=unchecked  
+			        "2025_UNCHECKED_oui", 272775.36,        // Payée=unchecked, Echue=oui
+			        "2025_UNCHECKED_non", 67599.14,        // Payée=unchecked, Echue=non
+			        "2025_oui_oui", 254218.56,              // Both filters applied
+			        "2025_oui_non", 4182.93,
+			        "2025_non_oui", 61498.31,
+			        "2025_non_non", 63807.22,
+			        
+			        // 2024 combinations
+			        "2024_UNCHECKED_UNCHECKED", 220973.76,  // Only 2024 selected
+			        "2024_oui_UNCHECKED", 207701.18,
+			        "2024_non_UNCHECKED", 18901.96,
+			        "2024_UNCHECKED_oui", 220973.76,
+			        "2024_oui_oui", 207701.18,
+			        "2024_non_oui", 18901.96,
+			        
+			        // 2023 combinations
+			        "2023_UNCHECKED_UNCHECKED", 120248.47,  // Only 2023 selected
+			        "2023_oui_UNCHECKED", 120248.47,
+			        "2023_non_UNCHECKED", 22.05,
+			        "2023_UNCHECKED_oui", 120248.47,
+			        "2023_UNCHECKED_non", 8.82,
+			        "2023_oui_oui", 120248.47,
+			        "2023_oui_non", 8.82,
+			        "2023_non_oui", 22.05,
+			        
+			        // Default fallback
+			        276686.82
+			    )
+			
+			VAR MinValue =
+			    SWITCH(
+			        FilterKey,
+			        // 2025 combinations
+			        "2025_UNCHECKED_UNCHECKED", 61566.27,  // Your current default values
+			        "2025_oui_UNCHECKED", 43432.92,
+			        "2025_non_UNCHECKED", 3920.36,
+			        "2025_UNCHECKED_oui", 43089.32,
+			        "2025_UNCHECKED_non", 50.04,
+			        "2025_oui_oui", 39249.99,
+			        "2025_oui_non", 50.04,
+			        "2025_non_oui", 1408.18,
+			        "2025_non_non", 2512.18,
+			        
+			        // 2024 combinations
+			        "2024_UNCHECKED_UNCHECKED", 85510.37,
+			        "2024_oui_UNCHECKED", 85510.37,
+			        "2024_non_UNCHECKED", 36.66,
+			        "2024_UNCHECKED_oui", 85510.37,
+			        "2024_oui_oui", 85510.37,
+			        "2024_non_oui", 36.66,
+			        
+			        // 2023 combinations
+			        "2023_UNCHECKED_UNCHECKED", 4923.17,
+			        "2023_oui_UNCHECKED", 4923.17,
+			        "2023_non_UNCHECKED", 0,
+			        "2023_UNCHECKED_oui", 4923.17,
+			        "2023_UNCHECKED_non", 8.82,
+			        "2023_oui_oui", 4923.17,
+			        "2023_oui_non", 8.82,
+			        "2023_non_oui", 22.05,
+			        
+			        // Default fallback
+			        61566.27
+			    )
+			
+			RETURN 
+			    IF(
+			        ABS(CurrentValue - MaxValue) < 1 || ABS(CurrentValue - MinValue) < 1,
+			        "#9fbec3",
+			        "#487888"
+			    )
+			```
+		lineageTag: 9602e2b8-84db-41b8-b208-c6fe11e67cf7
+
+	measure 'Color Max Min NEF' = ```
+			
+			VAR CurrentValue = [Nb Encours Fournisseurs]
+			VAR SelectedYear = SELECTEDVALUE('Dim_Date'[Année])
+			VAR SelectedPayee = SELECTEDVALUE('Supplier invoices'[Payé])
+			VAR SelectedEchue = SELECTEDVALUE('Supplier invoices'[Échue])
+			
+			// Create a unique key for each combination
+			VAR FilterKey = 
+			    SelectedYear & "_" & 
+			    IF(ISBLANK(SelectedPayee), "UNCHECKED", SelectedPayee) & "_" & 
+			    IF(ISBLANK(SelectedEchue), "UNCHECKED", SelectedEchue)
+			
+			VAR MaxValue =
+			    SWITCH(
+			        FilterKey,
+			        // 2025 combinations (your default year)
+			        "2025_UNCHECKED_UNCHECKED", 60,  // Default state: only year selected
+			        "2025_oui_UNCHECKED", 0,        // Payée=oui, Echue=unchecked
+			        "2025_non_UNCHECKED", 60,        // Payée=non, Echue=unchecked  
+			        "2025_UNCHECKED_oui", 35,        // Payée=unchecked, Echue=oui
+			        "2025_UNCHECKED_non", 45,        // Payée=unchecked, Echue=non
+			        "2025_oui_oui", 0,              // Both filters applied
+			        "2025_oui_non", 0,
+			        "2025_non_oui", 35,
+			        "2025_non_non", 45,
+			        
+			        // 2024 combinations
+			        "2024_UNCHECKED_UNCHECKED", 3,  // Only 2024 selected
+			        "2024_oui_UNCHECKED", 0,
+			        "2024_non_UNCHECKED", 3,
+			        "2024_UNCHECKED_oui", 3,
+			        "2024_oui_oui", 0,
+			        "2024_non_oui", 3,
+			        
+			        // 2023 combinations
+			        "2023_UNCHECKED_UNCHECKED", 1,  // Only 2023 selected
+			        "2023_oui_UNCHECKED", 0,
+			        "2023_non_UNCHECKED", 1,
+			        "2023_UNCHECKED_oui", 1,
+			        "2023_UNCHECKED_non", 0,
+			        "2023_oui_oui", 0,
+			        "2023_oui_non", 0,
+			        "2023_non_oui", 1,
+			        
+			        // Default fallback
+			        60
+			    )
+			
+			VAR MinValue =
+			    SWITCH(
+			        FilterKey,
+			        // 2025 combinations
+			        "2025_UNCHECKED_UNCHECKED", 5,  // Your current default values
+			        "2025_oui_UNCHECKED", 0,
+			        "2025_non_UNCHECKED", 5,
+			        "2025_UNCHECKED_oui", 4,
+			        "2025_UNCHECKED_non", 1,
+			        "2025_oui_oui", 0,
+			        "2025_oui_non", 0,
+			        "2025_non_oui", 4,
+			        "2025_non_non", 1,
+			        
+			        // 2024 combinations
+			        "2024_UNCHECKED_UNCHECKED", 1,
+			        "2024_oui_UNCHECKED", 0,
+			        "2024_non_UNCHECKED", 1,
+			        "2024_UNCHECKED_oui", 1,
+			        "2024_oui_oui", 0,
+			        "2024_non_oui", 1,
+			        
+			        // 2023 combinations
+			        "2023_UNCHECKED_UNCHECKED", 1,  // Only 2023 selected
+			        "2023_oui_UNCHECKED", 0,
+			        "2023_non_UNCHECKED", 1,
+			        "2023_UNCHECKED_oui", 1,
+			        "2023_UNCHECKED_non", 0,
+			        "2023_oui_oui", 0,
+			        "2023_oui_non", 0,
+			        "2023_non_oui", 1,
+			        
+			        // Default fallback
+			        5
+			    ) 
+			
+			RETURN 
+			    IF(
+			        ABS(CurrentValue - MaxValue) < 1 || ABS(CurrentValue - MinValue) < 1,
+			        "#9fbec3",
+			        "#487888"
+			    )
+			```
+		lineageTag: 7640654f-525c-474b-9434-be02b3f5b1a2
+
+	measure 'Color Max Min MEF' = ```
+			
+			VAR CurrentValue = [Montant Encours Fournisseurs]
+			VAR SelectedYear = SELECTEDVALUE('Dim_Date'[Année])
+			VAR SelectedPayee = SELECTEDVALUE('Supplier invoices'[Payé])
+			VAR SelectedEchue = SELECTEDVALUE('Supplier invoices'[Échue])
+			
+			// Create a unique key for each combination
+			VAR FilterKey = 
+			    SelectedYear & "_" & 
+			    IF(ISBLANK(SelectedPayee), "UNCHECKED", SelectedPayee) & "_" & 
+			    IF(ISBLANK(SelectedEchue), "UNCHECKED", SelectedEchue)
+			
+			VAR MaxValue =
+			    SWITCH(
+			        FilterKey,
+			        // 2025 combinations (your default year)
+			        "2025_UNCHECKED_UNCHECKED", 85167.88,  // Default state: only year selected
+			        "2025_oui_UNCHECKED", 0,        // Payée=oui, Echue=unchecked
+			        "2025_non_UNCHECKED", 85167.88,        // Payée=non, Echue=unchecked  
+			        "2025_UNCHECKED_oui", 61765.43,        // Payée=unchecked, Echue=oui
+			        "2025_UNCHECKED_non", 64495.55,        // Payée=unchecked, Echue=non
+			        "2025_oui_oui", 0,              // Both filters applied
+			        "2025_oui_non", 0,
+			        "2025_non_oui", 61765.43,
+			        "2025_non_non", 64495.55,
+			        
+			        // 2024 combinations
+			        "2024_UNCHECKED_UNCHECKED", 18901.96,  // Only 2024 selected
+			        "2024_oui_UNCHECKED", 0,
+			        "2024_non_UNCHECKED", 18901.96,
+			        "2024_UNCHECKED_oui", 18901.96,
+			        "2024_oui_oui", 0,
+			        "2024_non_oui", 18901.96,
+			        
+			        // 2023 combinations
+			        "2023_UNCHECKED_UNCHECKED", 22.05,  // Only 2023 selected
+			        "2023_oui_UNCHECKED", 0,
+			        "2023_non_UNCHECKED", 22.05,
+			        "2023_UNCHECKED_oui", 22.05,
+			        "2023_UNCHECKED_non", 0,
+			        "2023_oui_oui", 0,
+			        "2023_oui_non", 0,
+			        "2023_non_oui", 22.05,
+			        
+			        // Default fallback
+			        85167.88
+			    )
+			
+			VAR MinValue =
+			    SWITCH(
+			        FilterKey,
+			        // 2025 combinations
+			        "2025_UNCHECKED_UNCHECKED", 4201.49,  // Your current default values
+			        "2025_oui_UNCHECKED", 0,
+			        "2025_non_UNCHECKED", 4201.49,
+			        "2025_UNCHECKED_oui", 1689.31,
+			        "2025_UNCHECKED_non", 2512.18,
+			        "2025_oui_oui", 0,
+			        "2025_oui_non", 0,
+			        "2025_non_oui", 1689.31,
+			        "2025_non_non", 2512.18,
+			        
+			        // 2024 combinations
+			        "2024_UNCHECKED_UNCHECKED", 43.99,
+			        "2024_oui_UNCHECKED", 0,
+			        "2024_non_UNCHECKED", 43.99,
+			        "2024_UNCHECKED_oui", 43.99,
+			        "2024_oui_oui", 0,
+			        "2024_non_oui", 43.99,
+			        
+			        // 2023 combinations
+			        "2023_UNCHECKED_UNCHECKED", 22.05,  // Only 2023 selected
+			        "2023_oui_UNCHECKED", 0,
+			        "2023_non_UNCHECKED", 22.05,
+			        "2023_UNCHECKED_oui", 22.05,
+			        "2023_UNCHECKED_non", 0,
+			        "2023_oui_oui", 0,
+			        "2023_oui_non", 0,
+			        "2023_non_oui", 22.05,
+			        
+			        // Default fallback
+			        4201.49
+			    ) 
+			
+			RETURN 
+			    IF(
+			        ABS(CurrentValue - MaxValue) < 1 || ABS(CurrentValue - MinValue) < 1,
+			        "#9fbec3",
+			        "#487888"
+			    )
+			```
+		lineageTag: 88f3c051-22eb-4d34-b46e-abc5658306b6
+
+	measure 'Color Max Min DMPD' = ```
+			
+			VAR CurrentValue = [DMPD]
+			VAR SelectedYear = SELECTEDVALUE('Dim_Date'[Année])
+			VAR SelectedPayee = SELECTEDVALUE('Supplier invoices'[Payé])
+			VAR SelectedEchue = SELECTEDVALUE('Supplier invoices'[Échue])
+			
+			// Create a unique key for each combination
+			VAR FilterKey = 
+			    SelectedYear & "_" & 
+			    IF(ISBLANK(SelectedPayee), "UNCHECKED", SelectedPayee) & "_" & 
+			    IF(ISBLANK(SelectedEchue), "UNCHECKED", SelectedEchue)
+			
+			VAR MaxValue =
+			    SWITCH(
+			        FilterKey,
+			        // 2025 combinations (your default year)
+			        "2025_UNCHECKED_UNCHECKED", 126,  // Default state: only year selected
+			        "2025_oui_UNCHECKED", 0,        // Payée=oui, Echue=unchecked
+			        "2025_non_UNCHECKED", 360,        // Payée=non, Echue=unchecked  
+			        "2025_UNCHECKED_oui", 95,        // Payée=unchecked, Echue=oui
+			        "2025_UNCHECKED_non", 360,        // Payée=unchecked, Echue=non
+			        "2025_oui_oui", 0,              // Both filters applied
+			        "2025_oui_non", 0,
+			        "2025_non_oui", 360,
+			        "2025_non_non", 360,
+			        
+			        // 2024 combinations
+			        "2024_UNCHECKED_UNCHECKED", 47,  // Only 2024 selected
+			        "2024_oui_UNCHECKED", 0,
+			        "2024_non_UNCHECKED", 360,
+			        "2024_UNCHECKED_oui", 47,
+			        "2024_oui_oui", 0,
+			        "2024_non_oui", 47,
+			        
+			        // 2023 combinations
+			        "2023_UNCHECKED_UNCHECKED", 0,  // Only 2023 selected
+			        "2023_oui_UNCHECKED", 0,
+			        "2023_non_UNCHECKED", 0,
+			        "2023_UNCHECKED_oui", 0,
+			        "2023_UNCHECKED_non", 0,
+			        "2023_oui_oui", 0,
+			        "2023_oui_non", 0,
+			        "2023_non_oui", 22.05,
+			        
+			        // Default fallback
+			        126
+			    )
+			
+			VAR MinValue =
+			    SWITCH(
+			        FilterKey,
+			        // 2025 combinations
+			        "2025_UNCHECKED_UNCHECKED", 7,  // Your current default values
+			        "2025_oui_UNCHECKED", 0,
+			        "2025_non_UNCHECKED", 360,
+			        "2025_UNCHECKED_oui", 3,
+			        "2025_UNCHECKED_non", 276,
+			        "2025_oui_oui", 0,
+			        "2025_oui_non", 0,
+			        "2025_non_oui", 360,
+			        "2025_non_non", 360,
+			        
+			        // 2024 combinations
+			        "2024_UNCHECKED_UNCHECKED", 0,
+			        "2024_oui_UNCHECKED", 0,
+			        "2024_non_UNCHECKED", 360,
+			        "2024_UNCHECKED_oui", 0,
+			        "2024_oui_oui", 0,
+			        "2024_non_oui", 0,
+			        
+			     	// 2023 combinations
+			        "2023_UNCHECKED_UNCHECKED", 0,  // Only 2023 selected
+			        "2023_oui_UNCHECKED", 0,
+			        "2023_non_UNCHECKED", 0,
+			        "2023_UNCHECKED_oui", 0,
+			        "2023_UNCHECKED_non", 0,
+			        "2023_oui_oui", 0,
+			        "2023_oui_non", 0,
+			        "2023_non_oui", 22.05,
+			        
+			        // Default fallback
+			        7
+			    ) 
+			
+			RETURN 
+			    IF(
+			        ABS(CurrentValue - MaxValue) < 1 || ABS(CurrentValue - MinValue) < 1,
+			        "#9fbec3",
+			        "#487888"
+			    )
+			```
+		lineageTag: 2f607271-f224-45ee-bd12-302fd3207b12
+
+	measure 'Color Max Min MFI' = ```
+			
+			VAR CurrentValue = [Montant Factures Impayées]
+			VAR SelectedYear = SELECTEDVALUE('Dim_Date'[Année])
+			VAR SelectedPayee = SELECTEDVALUE('Supplier invoices'[Payé])
+			VAR SelectedEchue = SELECTEDVALUE('Supplier invoices'[Échue])
+			
+			// Create a unique key for each combination
+			VAR FilterKey = 
+			    SelectedYear & "_" & 
+			    IF(ISBLANK(SelectedPayee), "UNCHECKED", SelectedPayee) & "_" & 
+			    IF(ISBLANK(SelectedEchue), "UNCHECKED", SelectedEchue)
+			
+			VAR MaxValue =
+			    SWITCH(
+			        FilterKey,
+			        // 2025 combinations (your default year)
+			        "2025_UNCHECKED_UNCHECKED", 61939.35,  // Default state: only year selected
+			        "2025_oui_UNCHECKED", 0,        // Payée=oui, Echue=unchecked
+			        "2025_non_UNCHECKED", 61939.35,        // Payée=non, Echue=unchecked  
+			        "2025_UNCHECKED_oui", 61939.35,        // Payée=unchecked, Echue=oui
+			        "2025_UNCHECKED_non", 0,        // Payée=unchecked, Echue=non
+			        "2025_oui_oui", 0,              // Both filters applied
+			        "2025_oui_non", 0,
+			        "2025_non_oui", 61939.35,
+			        "2025_non_non", 0,
+			        
+			        // 2024 combinations
+			        "2024_UNCHECKED_UNCHECKED", 18901.96,  // Only 2024 selected
+			        "2024_oui_UNCHECKED", 0,
+			        "2024_non_UNCHECKED", 18901.96,
+			        "2024_UNCHECKED_oui", 18901.96,
+			        "2024_oui_oui", 0,
+			        "2024_non_oui", 18901.96,
+			        
+			        // 2023 combinations
+			       	"2023_UNCHECKED_UNCHECKED", 22.05,  // Only 2023 selected
+			        "2023_oui_UNCHECKED", 0,
+			        "2023_non_UNCHECKED", 22.05,
+			        "2023_UNCHECKED_oui", 22.05,
+			        "2023_UNCHECKED_non", 0,
+			        "2023_oui_oui", 0,
+			        "2023_oui_non", 0,
+			        "2023_non_oui", 22.05,
+			        
+			        // Default fallback
+			        61939.35
+			    )
+			
+			VAR MinValue =
+			    SWITCH(
+			        FilterKey,
+			        // 2025 combinations
+			        "2025_UNCHECKED_UNCHECKED", 1689.31,  // Your current default values
+			        "2025_oui_UNCHECKED", 0,
+			        "2025_non_UNCHECKED", 1689.31,
+			        "2025_UNCHECKED_oui", 1689.31,
+			        "2025_UNCHECKED_non", 0,
+			        "2025_oui_oui", 0,
+			        "2025_oui_non", 0,
+			        "2025_non_oui", 1689.31,
+			        "2025_non_non", 0,
+			        
+			        // 2024 combinations
+			        "2024_UNCHECKED_UNCHECKED", 43.99,
+			        "2024_oui_UNCHECKED", 0,
+			        "2024_non_UNCHECKED", 43.99,
+			        "2024_UNCHECKED_oui", 43.99,
+			        "2024_oui_oui", 0,
+			        "2024_non_oui", 43.99,
+			        
+			     	// 2023 combinations
+			        "2023_UNCHECKED_UNCHECKED", 22.05,  // Only 2023 selected
+			        "2023_oui_UNCHECKED", 0,
+			        "2023_non_UNCHECKED", 22.05,
+			        "2023_UNCHECKED_oui", 22.05,
+			        "2023_UNCHECKED_non", 0,
+			        "2023_oui_oui", 0,
+			        "2023_oui_non", 0,
+			        "2023_non_oui", 22.05,
+			        
+			        // Default fallback
+			        4327.53
+			    ) 
+			
+			RETURN 
+			    IF(
+			        ABS(CurrentValue - MaxValue) < 1 || ABS(CurrentValue - MinValue) < 1,
+			        "#9fbec3",
+			        "#487888"
+			    )
+			```
+		lineageTag: db6dc4a3-3095-4d6f-8c95-66363f917583
+
+	measure 'Color Max Min NFI' = ```
+			
+			VAR CurrentValue = [Nb Factures Impayées]
+			VAR SelectedYear = SELECTEDVALUE('Dim_Date'[Année])
+			VAR SelectedPayee = SELECTEDVALUE('Supplier invoices'[Payé])
+			VAR SelectedEchue = SELECTEDVALUE('Supplier invoices'[Échue])
+			
+			// Create a unique key for each combination
+			VAR FilterKey = 
+			    SelectedYear & "_" & 
+			    IF(ISBLANK(SelectedPayee), "UNCHECKED", SelectedPayee) & "_" & 
+			    IF(ISBLANK(SelectedEchue), "UNCHECKED", SelectedEchue)
+			
+			VAR MaxValue =
+			    SWITCH(
+			        FilterKey,
+			        // 2025 combinations (your default year)
+			        "2025_UNCHECKED_UNCHECKED", 35,  // Default state: only year selected
+			        "2025_oui_UNCHECKED", 0,        // Payée=oui, Echue=unchecked
+			        "2025_non_UNCHECKED", 35,        // Payée=non, Echue=unchecked  
+			        "2025_UNCHECKED_oui", 35,        // Payée=unchecked, Echue=oui
+			        "2025_UNCHECKED_non", 0,        // Payée=unchecked, Echue=non
+			        "2025_oui_oui", 0,              // Both filters applied
+			        "2025_oui_non", 0,
+			        "2025_non_oui", 35,
+			        "2025_non_non", 0,
+			        
+			        // 2024 combinations
+			        "2024_UNCHECKED_UNCHECKED", 3,  // Only 2024 selected
+			        "2024_oui_UNCHECKED", 0,
+			        "2024_non_UNCHECKED", 3,
+			        "2024_UNCHECKED_oui", 3,
+			        "2024_oui_oui", 0,
+			        "2024_non_oui", 3,
+			        
+			        // 2023 combinations
+			       	"2023_UNCHECKED_UNCHECKED", 1,  // Only 2023 selected
+			        "2023_oui_UNCHECKED", 0,
+			        "2023_non_UNCHECKED", 1,
+			        "2023_UNCHECKED_oui", 1,
+			        "2023_UNCHECKED_non", 0,
+			        "2023_oui_oui", 0,
+			        "2023_oui_non", 0,
+			        "2023_non_oui", 1,
+			        
+			        // Default fallback
+			        35
+			    )
+			
+			VAR MinValue =
+			    SWITCH(
+			        FilterKey,
+			        // 2025 combinations
+			        "2025_UNCHECKED_UNCHECKED", 4,  // Your current default values
+			        "2025_oui_UNCHECKED", 0,
+			        "2025_non_UNCHECKED", 4,
+			        "2025_UNCHECKED_oui", 4,
+			        "2025_UNCHECKED_non", 0,
+			        "2025_oui_oui", 0,
+			        "2025_oui_non", 0,
+			        "2025_non_oui", 4,
+			        "2025_non_non", 0,
+			        
+			        // 2024 combinations
+			        "2024_UNCHECKED_UNCHECKED", 1,
+			        "2024_oui_UNCHECKED", 0,
+			        "2024_non_UNCHECKED", 1,
+			        "2024_UNCHECKED_oui", 1,
+			        "2024_oui_oui", 0,
+			        "2024_non_oui", 1,
+			        
+			     	// 2023 combinations
+			        "2023_UNCHECKED_UNCHECKED", 1,  // Only 2023 selected
+			        "2023_oui_UNCHECKED", 0,
+			        "2023_non_UNCHECKED", 1,
+			        "2023_UNCHECKED_oui", 1,
+			        "2023_UNCHECKED_non", 0,
+			        "2023_oui_oui", 0,
+			        "2023_oui_non", 0,
+			        "2023_non_oui", 1,
+			        
+			        // Default fallback
+			        4
+			    ) 
+			
+			RETURN 
+			    IF(
+			        ABS(CurrentValue - MaxValue) < 1 || ABS(CurrentValue - MinValue) < 1,
+			        "#9fbec3",
+			        "#487888"
+			    )
+			```
+		lineageTag: 7d66c56d-e78e-4f39-83ad-12ca275ab35b
+
+	column Column
+		isHidden
+		formatString: 0
+		lineageTag: a6408794-3fc3-4f2c-a733-d02e4a1aa9bd
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Column]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Mesures = calculated
+		mode: import
+		source = Row("Column", BLANK())
+
+	annotation PBI_Id = 90d44fa8782b49559d4a8e637d46b27d
+
+	annotation 436ba87b-9c83-4389-a31b-ebd06a36be98 = {"Expression":""}
+

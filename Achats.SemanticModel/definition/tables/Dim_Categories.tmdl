@@ -1,0 +1,95 @@
+table Dim_Categories
+	lineageTag: c8061f3a-a114-461e-8126-9d3c08882ace
+
+	column created_at
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: e7e28323-379c-4ff8-8874-b06cf72a78ca
+		summarizeBy: none
+		sourceColumn: created_at
+
+		variation Variation
+			isDefault
+			relationship: fdf03ad6-582f-4425-9ea8-c613032ccf71
+			defaultHierarchy: LocalDateTable_67fcdbc2-2d68-456b-b74b-29f898c64722.'Hiérarchie de dates'
+
+		annotation SummarizationSetBy = Automatic
+
+	column direction
+		dataType: string
+		lineageTag: 753ac307-e686-4c3f-b5a7-1600ee11ab38
+		summarizeBy: none
+		sourceColumn: direction
+
+		annotation SummarizationSetBy = Automatic
+
+	column id_categories
+		dataType: int64
+		formatString: 0
+		lineageTag: e74b5bbf-b999-4854-ab02-f9a588d54a89
+		summarizeBy: none
+		sourceColumn: id_categories
+
+		annotation SummarizationSetBy = Automatic
+
+	column label
+		dataType: string
+		lineageTag: c2adaa81-f058-4a99-b825-1541c30a688f
+		summarizeBy: none
+		sourceColumn: label
+
+		annotation SummarizationSetBy = Automatic
+
+	column updated_at
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: c916c3ab-51f5-40e2-92bb-69a8687d798c
+		summarizeBy: none
+		sourceColumn: updated_at
+
+		variation Variation
+			isDefault
+			relationship: bdabc51a-81d0-4cb5-9870-8517c189f8dd
+			defaultHierarchy: LocalDateTable_05b06fb6-596e-429f-90ae-a025047cdbf5.'Hiérarchie de dates'
+
+		annotation SummarizationSetBy = Automatic
+
+	column category_group_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 0a2f3352-20c6-4f86-b473-257d2c804efc
+		summarizeBy: sum
+		sourceColumn: category_group_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column ID_Ste
+		dataType: string
+		lineageTag: c0de53c7-bb3a-45d3-bc62-7a66c22c3072
+		summarizeBy: none
+		sourceColumn: ID_Ste
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Dim_Categories = m
+		mode: import
+		queryGroup: 'model tables'
+		source =
+				let
+				    Source = Sql.Databases("mhirzqqnk57e7anmxqvc3cldyq-ad6po2r4ekrefdnhlqka77jyjq.datawarehouse.fabric.microsoft.com"),
+				    Dim_1 = Source{[Name="Dim_1"]}[Data],
+				    Query = "
+				        SELECT *
+				        FROM dbo.dim_1_categories
+				        WHERE ID_Ste IN (21912624, 21915510, 22276641, 21917322, 21918011)
+				    ",
+				    NativeQuery = Value.NativeQuery(Dim_1, Query),
+				    #"Colonnes renommées" = Table.RenameColumns(NativeQuery,{{"id", "id_categories"}}),
+				    #"Capitalized Each Word" = Table.TransformColumns(#"Colonnes renommées",{{"label", Text.Proper, type text}})
+				in
+				    #"Capitalized Each Word"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,7 @@
+role 88
+	modelPermission: read
+
+	tablePermission Dim_Companies = [id] == "21918011"
+
+	annotation PBI_Id = 9bff86c1a24244c2a2cf3233c34e2930
+

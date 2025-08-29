@@ -1,0 +1,39 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "name": "899754a08420a2ecb720",
+  "position": {
+    "x": 0,
+    "y": 1620.9230769230769,
+    "z": 31001,
+    "height": 135.07692307692309,
+    "width": 974.39353535353541,
+    "tabOrder": 3000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "CAT Customer invoices"
+                    }
+                  },
+                  "Property": "DMPD"
+                }
+              },
+              "queryRef": "CAT Customer invoices.DMPD",
+              "nativeQueryRef": "DMPD"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "parentGroupName": "ee180ea82eed4b001e96"
+}

@@ -1,0 +1,58 @@
+table Dim_Journals
+	lineageTag: 0aeb72e8-a3c0-4230-a72a-decb7f920f14
+
+	column label
+		dataType: string
+		lineageTag: fcf2a091-2fab-41c5-bfe3-21e7b303b97f
+		summarizeBy: none
+		sourceColumn: label
+
+		annotation SummarizationSetBy = Automatic
+
+	column ID_Ste
+		dataType: string
+		lineageTag: fb41b03d-1d19-4f6a-b828-c5418814655e
+		summarizeBy: none
+		sourceColumn: ID_Ste
+
+		annotation SummarizationSetBy = Automatic
+
+	column code
+		dataType: string
+		lineageTag: 8e658a77-c473-4bb1-a498-1190afb70c91
+		summarizeBy: none
+		sourceColumn: code
+
+		annotation SummarizationSetBy = Automatic
+
+	column id_journal
+		dataType: string
+		lineageTag: abd27e02-1883-4970-9820-686bd2547130
+		summarizeBy: none
+		sourceColumn: id_journal
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Dim_Journals = m
+		mode: import
+		queryGroup: 'model tables'
+		source =
+				let
+				    Source = Sql.Databases("mhirzqqnk57e7anmxqvc3cldyq-ad6po2r4ekrefdnhlqka77jyjq.datawarehouse.fabric.microsoft.com"),
+				    Dim_1 = Source{[Name="Dim_1"]}[Data],
+				    Query = "
+				        SELECT *
+				        FROM dbo.journals
+				        WHERE ID_Ste IN (21912624, 21915510, 22276641, 21917322, 21918011)
+				    ",
+				    NativeQuery = Value.NativeQuery(Dim_1, Query),
+				    #"Colonnes renommées" = Table.RenameColumns(NativeQuery,{{"id", "id_journal"}}),
+				    #"Type modifié" = Table.TransformColumnTypes(#"Colonnes renommées",{{"id_journal", type text}}),
+				    #"Majuscule à chaque mot" = Table.TransformColumns(#"Type modifié",{{"label", Text.Proper, type text}})
+				in
+				    #"Majuscule à chaque mot"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Exception
+

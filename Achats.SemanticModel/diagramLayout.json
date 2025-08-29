@@ -1,0 +1,242 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 8933.1909147101778
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 820.590666852761,
+            "y": 8885.87087117884
+          },
+          "nodeIndex": "Dim_Journals",
+          "nodeLineageTag": "0aeb72e8-a3c0-4230-a72a-decb7f920f14",
+          "size": {
+            "height": 182,
+            "width": 168
+          },
+          "zIndex": 8
+        },
+        {
+          "location": {
+            "x": 621.334180681134,
+            "y": 8877.929852110603
+          },
+          "nodeIndex": "Dim_Ledger Accounts",
+          "nodeLineageTag": "4098a1dc-740b-4fbe-beaf-9100a7c62f8e",
+          "size": {
+            "height": 187.39867466872761,
+            "width": 164.08800223313324
+          },
+          "zIndex": 9
+        },
+        {
+          "location": {
+            "x": 818.59599609201666,
+            "y": 9126.4068784365245
+          },
+          "nodeIndex": "Fact_GL",
+          "nodeLineageTag": "b19373e3-81a5-40b8-9680-ce9eedfabe02",
+          "size": {
+            "height": 528.53136899999913,
+            "width": 170.58000837424993
+          },
+          "zIndex": 10
+        },
+        {
+          "location": {
+            "x": 1088.7720005582833,
+            "y": 8883.5522048843632
+          },
+          "nodeIndex": "Dim_Date",
+          "nodeLineageTag": "fbe6011e-9d94-49aa-a24a-1fcec4fc20ff",
+          "size": {
+            "height": 180.2693359386555,
+            "width": 154.12933873007205
+          },
+          "zIndex": 13
+        },
+        {
+          "location": {
+            "x": 526.78575720252138,
+            "y": 9187.7582948474483
+          },
+          "nodeIndex": "Customer invoices",
+          "nodeLineageTag": "8a7b01ae-c2e9-4eb0-8e37-0c3746849220",
+          "size": {
+            "height": 549.79010099999914,
+            "width": 169.17067522701086
+          },
+          "zIndex": 11
+        },
+        {
+          "location": {
+            "x": 267.58075112293113,
+            "y": 9190.7808759394647
+          },
+          "nodeIndex": "Dim_Customers",
+          "nodeLineageTag": "d67bf603-7704-4f77-887f-9beaa580686a",
+          "size": {
+            "height": 542.53349698775389,
+            "width": 191.72000558283321
+          },
+          "zIndex": 7
+        },
+        {
+          "location": {
+            "x": 1557.823992157759,
+            "y": 9104.5134629490949
+          },
+          "nodeIndex": "Mesures",
+          "nodeLineageTag": "b17bd7e4-d902-4751-a383-43c863447c06",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 15
+        },
+        {
+          "location": {
+            "x": 1512.6166246036332,
+            "y": 9336.4099124737077
+          },
+          "nodeIndex": "Dim_Suppliers",
+          "nodeLineageTag": "f756ce38-9ec6-4407-80c0-647742ad6873",
+          "size": {
+            "height": 303.54312200000004,
+            "width": 234
+          },
+          "zIndex": 12
+        },
+        {
+          "location": {
+            "x": 1223.829221548335,
+            "y": 9346.98061867532
+          },
+          "nodeIndex": "Supplier invoices",
+          "nodeLineageTag": "37617524-46de-4c62-9d49-0788df8d493e",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 14
+        },
+        {
+          "location": {
+            "x": 1286.3854908678047,
+            "y": 8935.2977483345476
+          },
+          "nodeIndex": "Dim_Companies",
+          "nodeLineageTag": "56fbc232-00b8-48a5-9b59-b979efc939dd",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 6
+        },
+        {
+          "location": {
+            "x": 368.76034841397563,
+            "y": 8884.7774486724375
+          },
+          "nodeIndex": "TranchesBalanceAgée",
+          "size": {
+            "height": 145,
+            "width": 186.23321176267734
+          },
+          "zIndex": 5
+        },
+        {
+          "location": {
+            "x": 1390.5875195063179,
+            "y": 9818.6014975639173
+          },
+          "nodeIndex": "Dim_Categories",
+          "nodeLineageTag": "c8061f3a-a114-461e-8126-9d3c08882ace",
+          "size": {
+            "height": 248,
+            "width": 234
+          },
+          "zIndex": 17
+        },
+        {
+          "location": {
+            "x": 1689.3707254756944,
+            "y": 9826.4005885619117
+          },
+          "nodeIndex": "Dim_Category_groups",
+          "nodeLineageTag": "a31f0ae8-8e0a-4216-ad77-4a809c1671ce",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 4
+        },
+        {
+          "location": {
+            "x": 1063.0696997174327,
+            "y": 9673.7361324137382
+          },
+          "nodeIndex": "Categories_Fact_3",
+          "nodeLineageTag": "29709fbe-b52e-4f72-98f5-04fa7305148b",
+          "size": {
+            "height": 296,
+            "width": 234
+          },
+          "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 1578.019865960968,
+            "y": 8927.6793706809076
+          },
+          "nodeIndex": "Dynamic Logo",
+          "nodeLineageTag": "0fa64fcd-f9eb-4874-a217-192713be8485",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 2
+        },
+        {
+          "location": {
+            "x": 452.85117228260606,
+            "y": 9857.25626886757
+          },
+          "nodeIndex": "CAT Customer invoices",
+          "nodeLineageTag": "36724a8b-2e4d-48ab-967f-a6f4d9d73ad8",
+          "size": {
+            "height": 296,
+            "width": 234
+          },
+          "zIndex": 3
+        },
+        {
+          "location": {
+            "x": 1392.7276980906975,
+            "y": 10122.041001903055
+          },
+          "nodeIndex": "CAT Supplier invoices",
+          "nodeLineageTag": "924f1a56-5b20-452c-ac22-d74c45841125",
+          "size": {
+            "height": 296,
+            "width": 234
+          },
+          "zIndex": 16
+        }
+      ],
+      "name": "Toutes les tables",
+      "zoomValue": 49.590342827053796,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "Toutes les tables",
+  "defaultDiagram": "Toutes les tables"
+}

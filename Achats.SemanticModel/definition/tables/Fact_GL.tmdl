@@ -1,0 +1,271 @@
+table Fact_GL
+	lineageTag: b19373e3-81a5-40b8-9680-ce9eedfabe02
+
+	measure Solde = ```
+			
+			SUMX(
+			    Fact_GL,
+			    Fact_GL[debit] - Fact_GL[credit]
+			)
+			
+			```
+		formatString: #,0.00
+		lineageTag: d9315c2a-467e-4aff-ad5b-2ca155b7d0be
+
+	column id_ledger_entry_lines
+		dataType: string
+		lineageTag: b6dcf671-4c18-4fec-9e10-9d72380a8c5d
+		summarizeBy: none
+		sourceColumn: id_ledger_entry_lines
+
+		annotation SummarizationSetBy = Automatic
+
+	column created_at
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: f0871bf6-acdc-4bce-9555-15344a09c700
+		summarizeBy: none
+		sourceColumn: created_at
+
+		variation Variation
+			isDefault
+			relationship: 3c0205b7-ad2a-44dc-a362-442549507716
+			defaultHierarchy: LocalDateTable_0f5f24ce-3fd4-4b5e-a25a-626d19f523b6.'Hiérarchie de dates'
+
+		annotation SummarizationSetBy = Automatic
+
+	column updated_at
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 0b1853d1-0d4e-411a-8dde-2866e544b458
+		summarizeBy: none
+		sourceColumn: updated_at
+
+		variation Variation
+			isDefault
+			relationship: eaf2fc9a-3ff2-480a-a95d-f561f3c8ced3
+			defaultHierarchy: LocalDateTable_70a2922b-7f60-41cd-8c7e-e4314128354f.'Hiérarchie de dates'
+
+		annotation SummarizationSetBy = Automatic
+
+	column label_ledger_entry_lines
+		dataType: string
+		lineageTag: 449491a6-ccc9-4700-834e-7c062230b77f
+		summarizeBy: none
+		sourceColumn: label_ledger_entry_lines
+
+		annotation SummarizationSetBy = Automatic
+
+	column date
+		dataType: dateTime
+		formatString: dd/mm/yy
+		lineageTag: 3a1aaf31-f148-4ff0-aef2-3174faab6f63
+		summarizeBy: none
+		sourceColumn: date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	column journal_id
+		dataType: string
+		lineageTag: 1b6479be-bce9-4bcb-924e-f7f1ab54b4aa
+		summarizeBy: none
+		sourceColumn: journal_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column debit
+		dataType: double
+		lineageTag: 1f0f3eb5-1ab5-41ba-8a86-783a1f5ee165
+		summarizeBy: sum
+		sourceColumn: debit
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column credit
+		dataType: double
+		lineageTag: 7f451b92-3e9c-4cea-a9c9-33f9cfbe7440
+		summarizeBy: sum
+		sourceColumn: credit
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Type =
+			
+			IF(
+			    [Solde] < 0,
+			    "Crédit",
+			    "Débit"
+			)
+		lineageTag: e96f6975-df5f-409f-ba8f-116135d39688
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column ID_Ste
+		dataType: string
+		lineageTag: ec921497-a2b6-4a1d-a754-f4b7a41875a2
+		summarizeBy: none
+		sourceColumn: ID_Ste
+
+		annotation SummarizationSetBy = Automatic
+
+	column ledger_account_id
+		dataType: string
+		lineageTag: 510c2d8d-ca2e-4731-956c-a2915d4c0314
+		summarizeBy: none
+		sourceColumn: ledger_account_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column ledger_entry_id
+		dataType: string
+		lineageTag: 874eb4b9-1457-4124-991b-8dfe18d22167
+		summarizeBy: none
+		sourceColumn: ledger_entry_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column id_ledger_entries
+		dataType: string
+		lineageTag: a9f6cead-a9b1-4b22-8ef1-1f7bab77f057
+		summarizeBy: none
+		sourceColumn: id_ledger_entries
+
+		annotation SummarizationSetBy = Automatic
+
+	column label_ledger_entries
+		dataType: string
+		lineageTag: 610d00d8-0e47-4dd1-9685-256130885a4e
+		summarizeBy: none
+		sourceColumn: label_ledger_entries
+
+		annotation SummarizationSetBy = Automatic
+
+	column lettered_ledger_entry_lines_ids_str
+		dataType: string
+		lineageTag: b6568afb-242c-4eaf-b572-f21e1d17fc9a
+		summarizeBy: none
+		sourceColumn: lettered_ledger_entry_lines_ids_str
+
+		annotation SummarizationSetBy = Automatic
+
+	column thirdparty_id
+		dataType: string
+		lineageTag: 69eb413a-74e5-43f1-9c64-6e9a6f131b54
+		summarizeBy: none
+		sourceColumn: thirdparty_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column thirdparty_plan_item_number
+		dataType: string
+		lineageTag: 6864658f-9aab-468d-90db-fdaccba9bdb2
+		summarizeBy: none
+		sourceColumn: thirdparty_plan_item_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column invoice_number
+		dataType: string
+		lineageTag: 17d8080e-d68b-43b9-bcec-0be94263baf8
+		summarizeBy: none
+		sourceColumn: invoice_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column invoice_id
+		dataType: string
+		lineageTag: 47b79ce2-f419-4a9a-a79e-1d464cefcf8c
+		summarizeBy: none
+		sourceColumn: invoice_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column fy_keys
+		dataType: string
+		lineageTag: 4150d7cc-6eab-4c7c-bd10-eb12cbd12fdc
+		summarizeBy: none
+		sourceColumn: fy_keys
+
+		annotation SummarizationSetBy = Automatic
+
+	column thirdparty_plan_item_label
+		dataType: string
+		lineageTag: 8ac925a5-d65b-4190-84fd-acee3611151a
+		summarizeBy: none
+		sourceColumn: thirdparty_plan_item_label
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Fact_GL = m
+		mode: import
+		queryGroup: 'model tables'
+		source = ```
+				let
+				    Source = Table.NestedJoin(
+				        #"Ledger Entry Lines",
+				        {"ledger_entry_id"},
+				        #"Ledger Entries",
+				        {"id"},
+				        "Ledger Entries",
+				        JoinKind.LeftOuter
+				    ),
+				    #"Colonnes renommées" = Table.RenameColumns(
+				        Source,
+				        {{"label", "label_ledger_entry_lines"}}
+				    ),
+				    #"Ledger Entries développé" = Table.ExpandTableColumn(
+				        #"Colonnes renommées",
+				        "Ledger Entries",
+				        {"id", "label"},
+				        {"id.1", "label"}
+				    ),
+				    #"Colonnes renommées1" = Table.RenameColumns(
+				        #"Ledger Entries développé",
+				        {
+				            {"id.1", "id_ledger_entries"},
+				            {"id", "id_ledger_entry_lines"},
+				            {"label", "label_ledger_entries"}
+				        }
+				    ),
+				    #"Ajout autre tiers" = Table.AddColumn(
+				        #"Colonnes renommées1",
+				        "thirdparty_plan_item_label_temp",
+				        each
+				            if (
+				                ([thirdparty_plan_item_number] = null or [thirdparty_plan_item_number] is null)
+				                and (
+				                    Text.From([ledger_account_id]) = "290843345"
+				                    or Text.From([ledger_account_id]) = "285413690"
+				                    or Text.From([ledger_account_id]) = "870322129"
+				                    or Text.From([ledger_account_id]) = "289309980"
+				                    or Text.From([ledger_account_id]) = "288379824"                    
+				                )
+				            )
+				            then "Autre tiers"
+				            else [thirdparty_plan_item_label],
+				        type text
+				    ),
+				    #"Suppression ancienne" = Table.RemoveColumns(
+				        #"Ajout autre tiers",
+				        {"thirdparty_plan_item_label"}
+				    ),
+				    #"Renommer colonne" = Table.RenameColumns(
+				        #"Suppression ancienne",
+				        {{"thirdparty_plan_item_label_temp", "thirdparty_plan_item_label"}}
+				    ),
+				    #"Capitalized Each Word" = Table.TransformColumns(#"Renommer colonne",{{"thirdparty_plan_item_label", Text.Proper, type text}, {"label_ledger_entries", Text.Proper, type text}, {"label_ledger_entry_lines", Text.Proper, type text}})
+				in
+				    #"Capitalized Each Word"
+				```
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Exception
+

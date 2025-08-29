@@ -1,0 +1,257 @@
+table Dim_Customers
+	lineageTag: d67bf603-7704-4f77-887f-9beaa580686a
+
+	column id
+		dataType: string
+		lineageTag: 34b11dfb-b7ff-429b-be01-25594fb6a555
+		summarizeBy: none
+		sourceColumn: id
+
+		annotation SummarizationSetBy = Automatic
+
+	column name
+		dataType: string
+		lineageTag: 68d11427-318c-403f-908c-1def8d62999c
+		summarizeBy: none
+		sourceColumn: name
+
+		annotation SummarizationSetBy = Automatic
+
+	column vat_number
+		dataType: string
+		lineageTag: bb21d77e-47fd-4faa-a4ca-dde6762edf65
+		summarizeBy: none
+		sourceColumn: vat_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column company_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 01cfec71-633f-4394-a474-a6d13d8f9461
+		summarizeBy: sum
+		sourceColumn: company_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column company_name
+		dataType: string
+		lineageTag: 9e98533a-07ff-449d-b896-26975c356db7
+		summarizeBy: none
+		sourceColumn: company_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column vat_rate
+		dataType: string
+		lineageTag: 3159206f-27d9-4e34-988d-44cf7fe94805
+		summarizeBy: none
+		sourceColumn: vat_rate
+
+		annotation SummarizationSetBy = Automatic
+
+	column plan_item_number
+		dataType: string
+		lineageTag: 2e352a98-60fd-432c-a648-5047bcb2368f
+		summarizeBy: none
+		sourceColumn: plan_item_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column pnl_plan_item_number
+		dataType: string
+		lineageTag: 30980a7e-e664-47d9-9307-9d68f78bb41e
+		summarizeBy: none
+		sourceColumn: pnl_plan_item_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column postal_code
+		dataType: string
+		lineageTag: 7dab6a2f-0699-4ee2-bfdd-73b9d18aacfe
+		summarizeBy: none
+		sourceColumn: postal_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column country_alpha2
+		dataType: string
+		lineageTag: 5b3f87b8-2bb5-4039-896b-32c534af58b0
+		summarizeBy: none
+		sourceColumn: country_alpha2
+
+		annotation SummarizationSetBy = Automatic
+
+	column city
+		dataType: string
+		lineageTag: f2b0e165-2628-4489-aa3d-1d4c2c9d7c2c
+		summarizeBy: none
+		sourceColumn: city
+
+		annotation SummarizationSetBy = Automatic
+
+	column registration_number
+		dataType: string
+		lineageTag: d34b4e71-5b0a-4c3f-96f4-c13cf2bfbd3f
+		summarizeBy: none
+		sourceColumn: registration_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column activity_code
+		dataType: string
+		lineageTag: 9abcfc70-d7c9-4119-aabc-df0ee74f09f9
+		summarizeBy: none
+		sourceColumn: activity_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column legal_name
+		dataType: string
+		lineageTag: 6b87020f-e4c6-4088-85f3-e36f07a1dabe
+		summarizeBy: none
+		sourceColumn: legal_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column registration_country_alpha2
+		dataType: string
+		lineageTag: f813a50d-edf6-4df9-bc3c-0be53a37cb23
+		summarizeBy: none
+		sourceColumn: registration_country_alpha2
+
+		annotation SummarizationSetBy = Automatic
+
+	column synchronized_at
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 306d1a9f-2c52-455e-a54b-e0b712ed618a
+		summarizeBy: none
+		sourceColumn: synchronized_at
+
+		variation Variation
+			isDefault
+			relationship: 1a0cc74a-877d-40ed-9da4-7706b6a113c9
+			defaultHierarchy: LocalDateTable_fe086e9e-1115-406b-908c-d5b3921350f1.'Hiérarchie de dates'
+
+		annotation SummarizationSetBy = Automatic
+
+	column deleted_at
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: e41a606f-b1b3-4bb7-9980-71576f12533a
+		summarizeBy: none
+		sourceColumn: deleted_at
+
+		variation Variation
+			isDefault
+			relationship: 588f5741-3ad0-4e8e-8016-679199119159
+			defaultHierarchy: LocalDateTable_5d5425f7-c760-44b8-8bdf-16f4ff2feadb.'Hiérarchie de dates'
+
+		annotation SummarizationSetBy = Automatic
+
+	column city_clean
+		dataType: string
+		lineageTag: 2bcb6322-b199-4e37-ba33-286ca7c23c82
+		summarizeBy: none
+		sourceColumn: city_clean
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Dim_Customers = m
+		mode: import
+		queryGroup: 'model tables'
+		source =
+				let
+				    Redshift = AmazonRedshift.Database(
+				        "pennylane-external.csqwamh5pldr.eu-west-1.redshift.amazonaws.com",
+				        "prod"
+				    ),
+				    Source = Value.NativeQuery(
+				        Redshift,
+				        "
+				        SELECT *
+				        FROM etl.customers
+				        WHERE company_id IN (
+				            21912624, 21915510, 22276641, 21917322, 21918011
+				        )
+				        "
+				    ),
+				    #"Type modifié" = Table.TransformColumnTypes(Source, {{"id", type text}}),
+				    #"Name normalisé" = Table.TransformColumns(
+				        #"Type modifié",
+				        {{"name", each Text.Proper(Text.Lower(_)), type text}}
+				    ),
+				
+				    RemoveDiacritics = (u as text) as text =>
+				        let
+				            charMap = {
+				                {"à","a"},{"á","a"},{"â","a"},{"ã","a"},{"ä","a"},{"å","a"},
+				                {"ç","c"},
+				                {"è","e"},{"é","e"},{"ê","e"},{"ë","e"},
+				                {"ì","i"},{"í","i"},{"î","i"},{"ï","i"},
+				                {"ñ","n"},
+				                {"ò","o"},{"ó","o"},{"ô","o"},{"õ","o"},{"ö","o"},{"ø","o"},
+				                {"ù","u"},{"ú","u"},{"û","u"},{"ü","u"},
+				                {"ý","y"},{"ÿ","y"},
+				                {"œ","oe"},{"æ","ae"}
+				            },
+				            res = List.Accumulate(charMap, u, (state, pair) => Text.Replace(state, pair{0}, pair{1}))
+				        in res,
+				
+				    fxCleanCity = (t as nullable text) as nullable text =>
+				        let
+				            s0 = if t = null then null else Text.Trim(Text.From(t)),
+				            s1 = if s0 = null or s0 = "" or s0 = "-" or s0 = "0" then null else s0,
+				            s2 = if s1 = null then null else
+				                    Text.Replace(Text.Replace(Text.Replace(Text.Replace(Text.Replace(s1, "_", " "), "’", "'"), "–", "-"), "—", "-"), "‐", "-"),
+				            s3 = if s2 = null then null else Text.Combine(List.Select(Text.Split(s2, " "), each _ <> ""), " "),
+				            lower = if s3 = null then null else Text.Lower(s3),
+				
+				            lowerA =
+				                if lower = null then null else
+				                let
+				                    a = if Text.StartsWith(lower, "st ") then "saint " & Text.Range(lower, 3) else lower,
+				                    b = if Text.StartsWith(a, "ste ") then "sainte " & Text.Range(a, 4) else a,
+				                    c = Text.Replace(Text.Replace(Text.Replace(Text.Replace(b, " st-", " saint-"), "-st-", "-saint-"), " ste-", " sainte-"), "-ste-", "-sainte-")
+				                in  c,
+				
+				            noAcc = if lowerA = null then null else RemoveDiacritics(lowerA),
+				
+				            pairs = {
+				                {"cap town","cape town"},
+				                {"pay bas","pays bas"},
+				                {"saint mande","saint mande"},
+				                {"saint herblain","saint herblain"},
+				                {"saint brieuc","saint brieuc"},
+				                {"saint pere","saint pere"},
+				                {"saint emilion","saint emilion"},
+				                {"chalon sur saone","chalon sur saone"},
+				                {"grandchamp des fontaines","grandchamp des fontaines"},
+				                {"la roche jaudy","la roche jaudy"}
+				            },
+				            std = if noAcc = null then null else List.Accumulate(pairs, noAcc, (state, pair) => Text.Replace(state, pair{0}, pair{1})),
+				
+				            hyphenParts = if std = null then null else Text.Split(std, "-"),
+				            hyphenTrimmed = if hyphenParts = null then null else List.Transform(hyphenParts, each Text.Trim(_)),
+				            s4 = if hyphenTrimmed = null then null else Text.Combine(hyphenTrimmed, " "),
+				
+				            s5 =
+				                if s4 = null then null
+				                else if Text.StartsWith(s4, "paris ") then "paris"
+				                else if Text.StartsWith(s4, "lyon ") then "lyon"
+				                else s4,
+				
+				            s6 = if s5 = null then null else Text.Combine(List.Select(Text.Split(s5, " "), each _ <> ""), " "),
+				            result = if s6 = null then null else Text.Proper(s6)
+				        in
+				            result,
+				
+				    #"City clean" = Table.AddColumn(#"Name normalisé", "city_clean", each fxCleanCity([city]), type text)
+				in
+				    #"City clean"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Exception
+
