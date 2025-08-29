@@ -1,0 +1,133 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainerMobileState/2.1.0/schema.json",
+  "position": {
+    "x": 0,
+    "y": 1600,
+    "z": 7000,
+    "height": 335,
+    "width": 323,
+    "tabOrder": 2000
+  },
+  "objects": {
+    "columnWidth": [
+      {
+        "properties": {
+          "value": {
+            "expr": {
+              "Literal": {
+                "Value": "177.09397031930024D"
+              }
+            }
+          }
+        },
+        "selector": {
+          "metadata": "Dim_Customers.city"
+        }
+      },
+      {
+        "properties": {
+          "value": {
+            "expr": {
+              "Literal": {
+                "Value": "123D"
+              }
+            }
+          }
+        },
+        "selector": {
+          "metadata": "Sum(Customer invoices.amount)"
+        }
+      }
+    ],
+    "values": [],
+    "columnHeaders": [
+      {
+        "properties": {
+          "fontSize": {
+            "expr": {
+              "Literal": {
+                "Value": "9D"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "rowHeaders": [],
+    "subTotals": [],
+    "columnTotal": [],
+    "rowTotal": []
+  },
+  "visualContainerObjects": {
+    "background": [],
+    "border": [],
+    "dropShadow": [],
+    "title": [
+      {
+        "properties": {
+          "show": {
+            "expr": {
+              "Literal": {
+                "Value": "true"
+              }
+            }
+          },
+          "fontSize": {
+            "expr": {
+              "Literal": {
+                "Value": "10D"
+              }
+            }
+          },
+          "background": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "ThemeDataColor": {
+                    "ColorId": 2,
+                    "Percent": 0
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ],
+    "visualHeader": [],
+    "visualTooltip": [],
+    "padding": [
+      {
+        "properties": {
+          "top": {
+            "expr": {
+              "Literal": {
+                "Value": "5D"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "spacing": [
+      {
+        "properties": {
+          "customizeSpacing": {
+            "expr": {
+              "Literal": {
+                "Value": "true"
+              }
+            }
+          },
+          "spaceBelowTitle": {
+            "expr": {
+              "Literal": {
+                "Value": "5D"
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}

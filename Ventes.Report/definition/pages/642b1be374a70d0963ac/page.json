@@ -1,0 +1,27 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.0.0/schema.json",
+  "name": "642b1be374a70d0963ac",
+  "displayName": "Ventes",
+  "displayOption": "FitToWidth",
+  "height": 2500,
+  "width": 1920,
+  "pageBinding": {
+    "name": "9bab6bf9d1ae81168965",
+    "type": "Default",
+    "parameters": [],
+    "referenceScope": "CrossReport",
+    "acceptsFilterContext": "None"
+  },
+  "visualInteractions": [
+    {
+      "source": "dd7ee91e2a997cf68671",
+      "target": "9135a55e47bfc34beec2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "dd7ee91e2a997cf68671",
+      "target": "1915b3018d0099e56026",
+      "type": "NoFilter"
+    }
+  ]
+}

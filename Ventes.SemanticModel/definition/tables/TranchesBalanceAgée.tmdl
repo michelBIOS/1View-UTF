@@ -1,0 +1,40 @@
+table TranchesBalanceAgée
+	lineageTag: 87c09f71-29d9-44f5-8ba0-e9782ee0d8aa
+
+	column Tranche
+		lineageTag: 808967e5-d81e-467b-9b33-8a166d007cb2
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Tranche]
+		sortByColumn: Index
+
+		annotation SummarizationSetBy = Automatic
+
+	column Index
+		formatString: 0
+		lineageTag: 2fd9147b-1319-46b2-9447-f358049b0a0e
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Index]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition TranchesBalanceAgée = calculated
+		mode: import
+		source =
+				
+				DATATABLE(
+				    "Tranche", STRING,
+				    "Index", INTEGER,
+				    {
+				        {"Non échue", 0},
+				        {"0 - 30 jours", 1},
+				        {"31 - 60 jours", 2},
+				        {"61 - 90 jours", 3},
+				        {"91 - 180 jours", 4},
+				        {"+180 jours", 5}
+				    }
+				)
+
+	annotation PBI_Id = c8bacf6cffb64602ad3d0373f6295eea
+

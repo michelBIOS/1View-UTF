@@ -1,0 +1,43 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.0.0/schema.json",
+  "name": "64b94dcecdfff568fc1f",
+  "displayName": "Devis",
+  "displayOption": "FitToWidth",
+  "height": 2500,
+  "width": 1920,
+  "pageBinding": {
+    "name": "3a3da5fac1dd632b8171",
+    "type": "Default",
+    "parameters": [],
+    "referenceScope": "CrossReport",
+    "acceptsFilterContext": "None"
+  },
+  "visibility": "HiddenInViewMode",
+  "visualInteractions": [
+    {
+      "source": "c4777359df5c112f39b9",
+      "target": "18c61e6a81f371a4e56b",
+      "type": "NoFilter"
+    },
+    {
+      "source": "c4777359df5c112f39b9",
+      "target": "3a6a460aaea77a535481",
+      "type": "NoFilter"
+    },
+    {
+      "source": "c4777359df5c112f39b9",
+      "target": "7262b2b1f246d45a59df",
+      "type": "NoFilter"
+    },
+    {
+      "source": "c4777359df5c112f39b9",
+      "target": "47d496afe286b78f2ad8",
+      "type": "NoFilter"
+    },
+    {
+      "source": "c4777359df5c112f39b9",
+      "target": "385258c9d1091cae617e",
+      "type": "DataFilter"
+    }
+  ]
+}

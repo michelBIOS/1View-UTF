@@ -1,0 +1,203 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 257.90796594471584,
+        "y": 5648.6072541334488
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 820.590666852761,
+            "y": 5630.4816302546624
+          },
+          "nodeIndex": "Dim_Journals",
+          "nodeLineageTag": "0aeb72e8-a3c0-4230-a72a-decb7f920f14",
+          "size": {
+            "height": 182,
+            "width": 168
+          },
+          "zIndex": 6
+        },
+        {
+          "location": {
+            "x": 621.334180681134,
+            "y": 5622.5406111864249
+          },
+          "nodeIndex": "Dim_Ledger Accounts",
+          "nodeLineageTag": "4098a1dc-740b-4fbe-beaf-9100a7c62f8e",
+          "size": {
+            "height": 187.39867466872761,
+            "width": 164.08800223313324
+          },
+          "zIndex": 7
+        },
+        {
+          "location": {
+            "x": 967.98530969933847,
+            "y": 5924.5722971074229
+          },
+          "nodeIndex": "Fact_GL",
+          "nodeLineageTag": "b19373e3-81a5-40b8-9680-ce9eedfabe02",
+          "size": {
+            "height": 273.44206934976114,
+            "width": 170.58000837424993
+          },
+          "zIndex": 11
+        },
+        {
+          "location": {
+            "x": 1088.7720005582833,
+            "y": 5628.1629639601852
+          },
+          "nodeIndex": "Dim_Date",
+          "nodeLineageTag": "fbe6011e-9d94-49aa-a24a-1fcec4fc20ff",
+          "size": {
+            "height": 180.2693359386555,
+            "width": 154.12933873007205
+          },
+          "zIndex": 10
+        },
+        {
+          "location": {
+            "x": 526.78575720252138,
+            "y": 5932.36905392327
+          },
+          "nodeIndex": "Customer invoices",
+          "nodeLineageTag": "8a7b01ae-c2e9-4eb0-8e37-0c3746849220",
+          "size": {
+            "height": 549.79010099999914,
+            "width": 169.17067522701086
+          },
+          "zIndex": 8
+        },
+        {
+          "location": {
+            "x": 267.58075112293113,
+            "y": 5935.3916350152867
+          },
+          "nodeIndex": "Dim_Customers",
+          "nodeLineageTag": "d67bf603-7704-4f77-887f-9beaa580686a",
+          "size": {
+            "height": 542.53349698775389,
+            "width": 191.72000558283321
+          },
+          "zIndex": 5
+        },
+        {
+          "location": {
+            "x": 1708.6664813282514,
+            "y": 5861.6944294557925
+          },
+          "nodeIndex": "Mesures",
+          "nodeLineageTag": "b17bd7e4-d902-4751-a383-43c863447c06",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 4
+        },
+        {
+          "location": {
+            "x": 1517.6447075759829,
+            "y": 6035.7679247983815
+          },
+          "nodeIndex": "Dim_Suppliers",
+          "nodeLineageTag": "f756ce38-9ec6-4407-80c0-647742ad6873",
+          "size": {
+            "height": 303.54312200000004,
+            "width": 234
+          },
+          "zIndex": 9
+        },
+        {
+          "location": {
+            "x": 1218.8011385759851,
+            "y": 6037.5394857983811
+          },
+          "nodeIndex": "Supplier invoices",
+          "nodeLineageTag": "37617524-46de-4c62-9d49-0788df8d493e",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 12
+        },
+        {
+          "location": {
+            "x": 1286.3854908678047,
+            "y": 5679.90850741037
+          },
+          "nodeIndex": "Dim_Companies",
+          "nodeLineageTag": "56fbc232-00b8-48a5-9b59-b979efc939dd",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 3
+        },
+        {
+          "location": {
+            "x": 368.76034841397563,
+            "y": 5629.3882077482594
+          },
+          "nodeIndex": "TranchesBalanceAgée",
+          "size": {
+            "height": 145,
+            "width": 186.23321176267734
+          },
+          "zIndex": 2
+        },
+        {
+          "location": {
+            "x": 947.133832929456,
+            "y": 6305.8919958202823
+          },
+          "nodeIndex": "Fact_GL2",
+          "nodeLineageTag": "07bb6ca9-4d82-47bf-8bdd-26d290e6c68d",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 1684.2150689353928,
+            "y": 5612.6229759518064
+          },
+          "nodeIndex": "Dynamic Logo",
+          "nodeLineageTag": "9ba07254-9e4a-4b48-b326-7561142a3277",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1433.3537687268711,
+            "y": 5112.6592183017056
+          },
+          "nodeIndex": "Quote Status Rank",
+          "nodeLineageTag": "d5d54668-1736-442f-9c89-2a3dd80f7e9a",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "Toutes les tables",
+      "zoomValue": 70.955543900969374,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "Toutes les tables",
+  "defaultDiagram": "Toutes les tables"
+}

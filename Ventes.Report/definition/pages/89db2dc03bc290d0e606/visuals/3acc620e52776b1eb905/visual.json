@@ -1,0 +1,16 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "name": "3acc620e52776b1eb905",
+  "position": {
+    "x": 1214.9897048730268,
+    "y": 150.2264927934111,
+    "z": 13000,
+    "height": 129.1420727522306,
+    "width": 289.91077556623196,
+    "tabOrder": 20000
+  },
+  "visualGroup": {
+    "displayName": "Carte Créances TTC",
+    "groupMode": "ScaleMode"
+  }
+}

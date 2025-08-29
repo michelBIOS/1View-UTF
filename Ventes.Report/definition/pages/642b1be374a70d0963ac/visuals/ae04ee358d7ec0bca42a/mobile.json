@@ -1,0 +1,73 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainerMobileState/2.1.0/schema.json",
+  "position": {
+    "x": 1,
+    "y": 1942,
+    "z": 9000,
+    "height": 327,
+    "width": 323
+  },
+  "objects": {
+    "categoryLabels": [],
+    "dataPoint": [],
+    "mapControls": [
+      {
+        "properties": {
+          "autoZoom": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
+              }
+            }
+          },
+          "centerLatitude": {
+            "expr": {
+              "Literal": {
+                "Value": "46.82968581119439D"
+              }
+            }
+          },
+          "centerLongitude": {
+            "expr": {
+              "Literal": {
+                "Value": "3.7986091374184072D"
+              }
+            }
+          },
+          "autoZoomIncludesReferenceLayer": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "legend": [],
+    "bubbleLayer": [],
+    "heatMapLayer": []
+  },
+  "visualContainerObjects": {
+    "background": [],
+    "border": [],
+    "dropShadow": [
+      {
+        "properties": {
+          "show": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "title": [],
+    "visualHeader": [],
+    "visualTooltip": [],
+    "divider": [],
+    "general": []
+  }
+}

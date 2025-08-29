@@ -1,0 +1,16 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "name": "58457f71a07a81d22cb4",
+  "position": {
+    "x": 25.051258154706431,
+    "y": 713.96085740913327,
+    "z": 9000,
+    "height": 597.65144454799633,
+    "width": 1179.1985088536812,
+    "tabOrder": 3000
+  },
+  "visualGroup": {
+    "displayName": "Carte Villes",
+    "groupMode": "ScaleMode"
+  }
+}

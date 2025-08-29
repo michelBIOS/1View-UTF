@@ -1,0 +1,220 @@
+table Fact_GL2
+	lineageTag: 07bb6ca9-4d82-47bf-8bdd-26d290e6c68d
+
+	column id_ledger_entry_lines
+		dataType: string
+		lineageTag: f33b4fdc-4bed-4cf9-bb7f-b14729a1c342
+		summarizeBy: none
+		sourceColumn: id_ledger_entry_lines
+
+		annotation SummarizationSetBy = Automatic
+
+	column debit
+		dataType: double
+		lineageTag: 1100f06c-804d-4eee-b4e5-37a811c51a95
+		summarizeBy: sum
+		sourceColumn: debit
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column credit
+		dataType: double
+		lineageTag: 962e7136-8293-47da-98ee-2f534805df86
+		summarizeBy: sum
+		sourceColumn: credit
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column label_ledger_entry_lines
+		dataType: string
+		lineageTag: c868dc72-228c-4f50-831f-f95284981161
+		summarizeBy: none
+		sourceColumn: label_ledger_entry_lines
+
+		annotation SummarizationSetBy = Automatic
+
+	column date
+		dataType: dateTime
+		formatString: dd/mm/yy
+		lineageTag: beac3523-fbd0-4600-9de2-fec130576330
+		summarizeBy: none
+		sourceColumn: date
+
+		variation Variation
+			isDefault
+			relationship: 2aee96d7-f52d-4e7b-82d2-31241427112b
+			defaultHierarchy: LocalDateTable_ffaa1a36-7c15-40c9-8001-3a59f27fbd82.'Hiérarchie de dates'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column created_at
+		dataType: dateTime
+		formatString: dd/mm/yy
+		lineageTag: 2b5c1c94-27be-4341-b631-459c5360beee
+		summarizeBy: none
+		sourceColumn: created_at
+
+		variation Variation
+			isDefault
+			relationship: 2153dd49-f07e-4fd6-aaa4-787c5737f259
+			defaultHierarchy: LocalDateTable_4be94b76-9155-4c96-8178-70d83e873161.'Hiérarchie de dates'
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column updated_at
+		dataType: dateTime
+		formatString: dd/mm/yy
+		lineageTag: 28be0c56-2ef5-40bb-95b5-f57a66b8d47b
+		summarizeBy: none
+		sourceColumn: updated_at
+
+		variation Variation
+			isDefault
+			relationship: eead2ed3-879c-472e-a9a8-1ff662670d4f
+			defaultHierarchy: LocalDateTable_396c4299-f256-49b4-8fa7-4aa71201261b.'Hiérarchie de dates'
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column lettered_ledger_entry_lines_ids_str
+		dataType: string
+		lineageTag: 984ee95c-86e9-4daf-855c-0dd54690936e
+		summarizeBy: none
+		sourceColumn: lettered_ledger_entry_lines_ids_str
+
+		annotation SummarizationSetBy = Automatic
+
+	column ledger_account_id
+		dataType: string
+		lineageTag: 227757bd-b72f-4a70-8305-8f58387d1380
+		summarizeBy: none
+		sourceColumn: ledger_account_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column journal_id
+		dataType: string
+		lineageTag: a76ad7a5-5b29-4a5b-814c-044221d7ce0e
+		summarizeBy: none
+		sourceColumn: journal_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column ledger_entry_id
+		dataType: string
+		lineageTag: e1a825c9-6b2e-49c1-a529-b908b1fa834b
+		summarizeBy: none
+		sourceColumn: ledger_entry_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column ID_Ste
+		dataType: string
+		lineageTag: 36b7d625-54cd-4e58-bb43-b9767a626cca
+		summarizeBy: none
+		sourceColumn: ID_Ste
+
+		annotation SummarizationSetBy = Automatic
+
+	column fy_keys
+		dataType: string
+		lineageTag: f7ffaedf-dad3-4a76-ad9f-e9f993eed174
+		summarizeBy: none
+		sourceColumn: fy_keys
+
+		annotation SummarizationSetBy = Automatic
+
+	column thirdparty_id
+		dataType: string
+		lineageTag: 6be88e02-e047-4a29-a3a0-a65f27d54c9a
+		summarizeBy: none
+		sourceColumn: thirdparty_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column thirdparty_plan_item_number
+		dataType: string
+		lineageTag: 81a9a3e1-e3f4-47de-a20d-d37e3ca9990c
+		summarizeBy: none
+		sourceColumn: thirdparty_plan_item_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column invoice_number
+		dataType: string
+		lineageTag: eec8893b-f2e2-4c3b-96f1-bb8c7661075a
+		summarizeBy: none
+		sourceColumn: invoice_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column invoice_id
+		dataType: string
+		lineageTag: d18050a0-22a9-4270-818c-4b1f39bbcda1
+		summarizeBy: none
+		sourceColumn: invoice_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column id_ledger_entries
+		dataType: string
+		lineageTag: a00eb364-fabc-4a25-b45e-d32fed05aa54
+		summarizeBy: none
+		sourceColumn: id_ledger_entries
+
+		annotation SummarizationSetBy = Automatic
+
+	column label_ledger_entries
+		dataType: string
+		lineageTag: 42930669-5c84-4f27-bca8-bb03f81ebbf5
+		summarizeBy: none
+		sourceColumn: label_ledger_entries
+
+		annotation SummarizationSetBy = Automatic
+
+	column -Soldes2 = Fact_GL2[credit] - Fact_GL2[debit]
+		lineageTag: 1c0665ee-1c87-4a0d-acd7-a30436184991
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column thirdparty_plan_item_label
+		dataType: string
+		lineageTag: 6b375abb-f102-49c0-9c31-f0f8125b8a62
+		summarizeBy: none
+		sourceColumn: thirdparty_plan_item_label
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Fact_GL2 = m
+		mode: import
+		queryGroup: 'model tables'
+		source =
+				let
+				    Source = Fact_GL
+				in
+				    Source
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Exception
+

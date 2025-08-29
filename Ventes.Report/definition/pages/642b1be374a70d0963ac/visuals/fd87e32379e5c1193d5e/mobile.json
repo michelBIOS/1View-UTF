@@ -1,0 +1,59 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainerMobileState/2.1.0/schema.json",
+  "position": {
+    "x": 113,
+    "y": 193,
+    "z": 20004,
+    "height": 60,
+    "width": 100
+  },
+  "objects": {
+    "layout": [],
+    "image": [],
+    "fillCustom": [],
+    "outline": [],
+    "smallMultiplesBorder": [],
+    "border": [],
+    "value": [
+      {
+        "properties": {
+          "fontSize": {
+            "expr": {
+              "Literal": {
+                "Value": "10D"
+              }
+            }
+          },
+          "horizontalAlignment": {
+            "expr": {
+              "Literal": {
+                "Value": "'center'"
+              }
+            }
+          }
+        },
+        "selector": {
+          "metadata": "Mesures.Créances TTC"
+        }
+      }
+    ],
+    "label": [
+      {
+        "properties": {
+          "fontSize": {
+            "expr": {
+              "Literal": {
+                "Value": "8D"
+              }
+            }
+          }
+        },
+        "selector": {
+          "metadata": "Mesures.Créances TTC"
+        }
+      }
+    ],
+    "spacing": [],
+    "smallMultiplesHeader": []
+  }
+}

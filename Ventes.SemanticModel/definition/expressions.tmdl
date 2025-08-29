@@ -1,0 +1,94 @@
+expression 'Ledger Entries' =
+		let
+		    Source = Sql.Databases("mhirzqqnk57e7anmxqvc3cldyq-ad6po2r4ekrefdnhlqka77jyjq.datawarehouse.fabric.microsoft.com"),
+		    Dim_1 = Source{[Name="Fact_4"]}[Data],
+		    Query = "
+		        SELECT *
+		        FROM dbo.fact_4_ledger_entries
+		        WHERE ID_Ste IN (21912624, 21915510, 22276641, 21917322)
+		    ",
+		    NativeQuery = Value.NativeQuery(Dim_1, Query),
+		    #"Type modifié" = Table.TransformColumnTypes(NativeQuery,{{"id", type text}, {"journal_id", type text}})
+		in
+		    #"Type modifié"
+	lineageTag: 27e3d906-a4b5-419c-ac8f-e72ea5bb0ec8
+	queryGroup: 'no loading'
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression 'Ledger Entry Lines' =
+		let
+		    Source = Sql.Databases("mhirzqqnk57e7anmxqvc3cldyq-ad6po2r4ekrefdnhlqka77jyjq.datawarehouse.fabric.microsoft.com"),
+		    Fact_3 = Source{[Name="Fact_4"]}[Data],
+		    Query = "
+		        SELECT *
+		        FROM dbo.fact_4_ledger_entry_lines
+		        WHERE ID_Ste IN (21912624, 21915510, 22276641, 21917322, 21918011)
+		
+		    ",
+		    NativeQuery = Value.NativeQuery(Fact_3, Query),
+		    #"Valeur remplacée" = Table.ReplaceValue(NativeQuery,".",",",Replacer.ReplaceText,{"debit", "credit"}),
+		    #"Type modifié" = Table.TransformColumnTypes(#"Valeur remplacée",{{"id", type text}, {"ledger_account_id", type text}, {"journal_id", type text}, {"ledger_entry_id", type text}, {"debit", type number}, {"credit", type number}, {"thirdparty_id", type text}})
+		in
+		    #"Type modifié"
+	lineageTag: 7128cbfb-d683-4f82-9481-b91810d678e1
+	queryGroup: 'no loading'
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression Products =
+		let
+		    Source = Sql.Databases("mhirzqqnk57e7anmxqvc3cldyq-ad6po2r4ekrefdnhlqka77jyjq.datawarehouse.fabric.microsoft.com"),
+		    Dim_1 = Source{[Name="Dim_1"]}[Data],
+		    Query = "
+		        SELECT *
+		        FROM dbo.products
+		        WHERE ID_Ste IN (21912624, 21915510, 22276641, 21917322, 21918011)
+		    ",
+		    NativeQuery = Value.NativeQuery(Dim_1, Query),
+		    #"Valeur remplacée" = Table.ReplaceValue(NativeQuery,".",",",Replacer.ReplaceText,{"price_before_tax", "price"}),
+		    #"Type modifié" = Table.TransformColumnTypes(#"Valeur remplacée",{{"id", type text}, {"price_before_tax", type number}, {"price", type number}, {"created_at", type datetime}, {"updated_at", type datetime}, {"ledger_account_id", type text}})
+		in
+		    #"Type modifié"
+	lineageTag: 20df523e-39b1-4e00-aa5c-99aa33446012
+	queryGroup: 'model tables'
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression 'List Quotes' = ```
+		let
+		    Source = Json.Document(Web.Contents("https://app.pennylane.com/api/external/v2/quotes?limit=100&sort=-id", [Headers=[Authorization="Bearer jXHaL70c5j5fYPSShL1u-Tdlia8D3Zs8f1fWhI95gCE"]])),
+		    items = Source[items],
+		    #"Converti en table" = Table.FromList(items, Splitter.SplitByNothing(), null, null, ExtraValues.Error),
+		    #"Column1 développé" = Table.ExpandRecordColumn(#"Converti en table", "Column1", {"id", "currency_amount", "currency_amount_before_tax", "currency_tax", "date", "deadline", "created_at", "updated_at", "status", "quote_number", "customer"}, {"Column1.id", "Column1.currency_amount", "Column1.currency_amount_before_tax", "Column1.currency_tax", "Column1.date", "Column1.deadline", "Column1.created_at", "Column1.updated_at", "Column1.status", "Column1.quote_number", "Column1.customer"}),
+		    #"Column1.customer développé" = Table.ExpandRecordColumn(#"Column1 développé", "Column1.customer", {"id"}, {"Column1.customer.id"}),
+		    #"Colonnes renommées" = Table.RenameColumns(#"Column1.customer développé",{{"Column1.id", "id"}, {"Column1.currency_amount", "currency_amount"}, {"Column1.currency_amount_before_tax", "currency_amount_before_tax"}, {"Column1.currency_tax", "currency_tax"}, {"Column1.date", "date"}, {"Column1.deadline", "deadline"}, {"Column1.created_at", "created_at"}, {"Column1.updated_at", "updated_at"}, {"Column1.status", "status"}, {"Column1.quote_number", "quote_number"}, {"Column1.customer.id", "customer_id"}}),
+		    #"Type modifié" = Table.TransformColumnTypes(#"Colonnes renommées",{{"id", type text}, {"status", type text}, {"quote_number", type text}, {"customer_id", type text}}),
+		    #"Valeur remplacée" = Table.ReplaceValue(#"Type modifié",".",",",Replacer.ReplaceText,{"currency_amount", "currency_amount_before_tax", "currency_tax"}),
+		    #"Type modifié1" = Table.TransformColumnTypes(#"Valeur remplacée",{{"currency_amount", type number}, {"currency_amount_before_tax", type number}, {"currency_tax", type number}, {"date", type date}, {"deadline", type date}, {"created_at", type datetimezone}, {"updated_at", type datetimezone}}),
+		    GetCustomer = Table.AddColumn(#"Type modifié1","CustomerName", each Json.Document(Web.Contents("https://app.pennylane.com/api/external/v2/company_customers/"&[customer_id], 
+		        [Headers = [Authorization = "Bearer jXHaL70c5j5fYPSShL1u-Tdlia8D3Zs8f1fWhI95gCE"]]))),
+		    #"CustomerDetail développé" = Table.ExpandRecordColumn(GetCustomer, "CustomerName", {"name"}, {"CustomerName.name"}),
+		    #"Erreurs remplacées" = Table.ReplaceErrorValues(#"CustomerDetail développé", {{"CustomerName.name", ""}}),
+		    #"Colonnes renommées1" = Table.RenameColumns(#"Erreurs remplacées",{{"CustomerName.name", "name"}}),
+		    #"Majuscule à chaque mot" = Table.TransformColumns(#"Colonnes renommées1",{{"name", Text.Proper, type text}}),
+		    #"Valeur remplacée1" = Table.ReplaceValue(#"Majuscule à chaque mot","expired","Expiré",Replacer.ReplaceText,{"status"}),
+		    #"Valeur remplacée2" = Table.ReplaceValue(#"Valeur remplacée1","denied","Refusé",Replacer.ReplaceText,{"status"}),
+		    #"Valeur remplacée3" = Table.ReplaceValue(#"Valeur remplacée2","invoiced","Facturé",Replacer.ReplaceText,{"status"}),
+		    #"Valeur remplacée4" = Table.ReplaceValue(#"Valeur remplacée3","accepted","Accepté",Replacer.ReplaceText,{"status"})
+		in
+		    #"Valeur remplacée4"
+		```
+	lineageTag: 5912ba83-92cf-4d32-82a9-2b0f02d641ac
+	queryGroup: 'model tables'
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Exception
+
