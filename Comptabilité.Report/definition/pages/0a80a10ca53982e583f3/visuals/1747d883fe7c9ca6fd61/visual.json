@@ -1,0 +1,17 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "name": "1747d883fe7c9ca6fd61",
+  "position": {
+    "x": 1260.6748792586357,
+    "y": 171.0095104053367,
+    "z": 5000,
+    "height": 127.43912940438531,
+    "width": 659.15640092670537,
+    "tabOrder": 2000
+  },
+  "visualGroup": {
+    "displayName": "Card-CP",
+    "groupMode": "ScaleMode"
+  },
+  "isHidden": true
+}

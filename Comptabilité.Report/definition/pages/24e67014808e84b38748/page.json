@@ -1,0 +1,57 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.0.0/schema.json",
+  "name": "24e67014808e84b38748",
+  "displayName": "51-Banque",
+  "displayOption": "FitToWidth",
+  "height": 2100,
+  "width": 1920,
+  "pageBinding": {
+    "name": "2aabfeb0b934ee717407",
+    "type": "Default",
+    "parameters": [],
+    "referenceScope": "CrossReport",
+    "acceptsFilterContext": "None"
+  },
+  "objects": {
+    "outspacePane": [
+      {
+        "properties": {
+          "width": {
+            "expr": {
+              "Literal": {
+                "Value": "300L"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "visualInteractions": [
+    {
+      "source": "f7ea52409a936081617a",
+      "target": "b93f2c448a51381639e0",
+      "type": "NoFilter"
+    },
+    {
+      "source": "1fb1a722dc6482755a57",
+      "target": "b93f2c448a51381639e0",
+      "type": "NoFilter"
+    },
+    {
+      "source": "74028671b5b554540c1d",
+      "target": "2eaaa8c8940102434500",
+      "type": "NoFilter"
+    },
+    {
+      "source": "74028671b5b554540c1d",
+      "target": "3b3f441233757220427b",
+      "type": "NoFilter"
+    },
+    {
+      "source": "74028671b5b554540c1d",
+      "target": "b93f2c448a51381639e0",
+      "type": "NoFilter"
+    }
+  ]
+}

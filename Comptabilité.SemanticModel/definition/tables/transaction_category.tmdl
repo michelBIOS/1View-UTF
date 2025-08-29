@@ -1,0 +1,121 @@
+table transaction_category
+	lineageTag: 6dd98db1-156b-4094-bdbd-0ae66a803ab7
+
+	column ID_Ste
+		dataType: string
+		lineageTag: 7ae03856-d61e-4ee1-aed7-50279a6b3d10
+		summarizeBy: none
+		sourceColumn: ID_Ste
+
+		annotation SummarizationSetBy = Automatic
+
+	column transaction_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 650de10b-43ac-4ff2-882a-d2390c536f91
+		summarizeBy: none
+		sourceColumn: transaction_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column category_id
+		dataType: int64
+		formatString: 0
+		lineageTag: cd20c6fd-c2b7-46be-8153-950b1b778c72
+		summarizeBy: sum
+		sourceColumn: category_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column category_label
+		dataType: string
+		lineageTag: a5d58a5a-6b55-45d0-adc3-c2aab3060f51
+		summarizeBy: none
+		sourceColumn: category_label
+
+		annotation SummarizationSetBy = Automatic
+
+	column category_weight
+		dataType: double
+		lineageTag: 18e424d8-d5fe-46d7-94c3-b50ac99092d2
+		summarizeBy: sum
+		sourceColumn: category_weight
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column category_analytical_code
+		dataType: string
+		lineageTag: a12df320-7dc9-4ed2-8b39-297e0728de4b
+		summarizeBy: none
+		sourceColumn: category_analytical_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column category_group_id
+		dataType: int64
+		formatString: 0
+		lineageTag: bc8802f1-d09e-48de-8efc-6c31f812642d
+		summarizeBy: sum
+		sourceColumn: category_group_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column category_created_at
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 5bd01f69-7345-40e2-a986-9a1f10ddbb97
+		summarizeBy: none
+		sourceColumn: category_created_at
+
+		variation Variation
+			isDefault
+			relationship: b7bcf73c-667d-450a-b0f2-62f6a2f4a96c
+			defaultHierarchy: LocalDateTable_bc7b3be9-f0d5-4069-839e-fa9dc27ac792.'Hiérarchie de dates'
+
+		annotation SummarizationSetBy = Automatic
+
+	column category_updated_at
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 2b340774-0847-40e0-9f9f-4a6b7320221b
+		summarizeBy: none
+		sourceColumn: category_updated_at
+
+		variation Variation
+			isDefault
+			relationship: f954e8e0-cddf-488c-b548-c405236c03e7
+			defaultHierarchy: LocalDateTable_e06986a5-e5f1-429e-8c0f-9f1572ce2a18.'Hiérarchie de dates'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Sum/Catégorie = transaction_category[category_weight]*RELATED('Transaction'[amount])
+		lineageTag: 3f4f4143-2035-42cb-b8a8-b97c6b09db8f
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition transaction_category = m
+		mode: import
+		queryGroup: 'model tables'
+		source =
+				let
+				    Source = Sql.Databases("mhirzqqnk57e7anmxqvc3cldyq-ad6po2r4ekrefdnhlqka77jyjq.datawarehouse.fabric.microsoft.com"),
+				    Dim_1 = Source{[Name="Fact_1"]}[Data],
+				    Query = "
+				        SELECT *
+				        FROM dbo.fact_1_transactions_categories
+				        WHERE ID_Ste IN (21912624, 21915510, 22276641, 21917322, 21918011)
+				    ",
+				    NativeQuery = Value.NativeQuery(Dim_1, Query),
+				    #"Capitalized Each Word" = Table.TransformColumns(NativeQuery,{{"category_label", Text.Proper, type text}})
+				in
+				    #"Capitalized Each Word"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

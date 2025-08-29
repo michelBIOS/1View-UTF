@@ -1,0 +1,64 @@
+expression Products =
+		let
+		    Source = Sql.Databases("mhirzqqnk57e7anmxqvc3cldyq-ad6po2r4ekrefdnhlqka77jyjq.datawarehouse.fabric.microsoft.com"),
+		    Dim_1 = Source{[Name="Dim_1"]}[Data],
+		    Query = "
+		        SELECT *
+		        FROM dbo.products
+		        WHERE ID_Ste IN (21912624, 21915510, 22276641, 21917322, 21918011)
+		    ",
+		    NativeQuery = Value.NativeQuery(Dim_1, Query),
+		    #"Valeur remplacée" = Table.ReplaceValue(NativeQuery,".",",",Replacer.ReplaceText,{"price_before_tax", "price"}),
+		    #"Type modifié" = Table.TransformColumnTypes(#"Valeur remplacée",{{"id", type text}, {"price_before_tax", type number}, {"price", type number}, {"created_at", type datetime}, {"updated_at", type datetime}, {"ledger_account_id", type text}}),
+		    #"Capitalized Each Word" = Table.TransformColumns(#"Type modifié",{{"label", Text.Proper, type text}, {"reference", Text.Proper, type text}})
+		in
+		    #"Capitalized Each Word"
+	lineageTag: 161a8b0e-5f41-491b-95e1-689e0848de6f
+	queryGroup: 'model tables'
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression 'Ledger Entries' =
+		let
+		    Source = Sql.Databases("mhirzqqnk57e7anmxqvc3cldyq-ad6po2r4ekrefdnhlqka77jyjq.datawarehouse.fabric.microsoft.com"),
+		    Dim_1 = Source{[Name="Fact_4"]}[Data],
+		    Query = "
+		        SELECT *
+		        FROM dbo.fact_4_ledger_entries
+		        WHERE ID_Ste IN (21912624, 21915510, 22276641, 21917322, 21918011)
+		    ",
+		    NativeQuery = Value.NativeQuery(Dim_1, Query),
+		    #"Type modifié" = Table.TransformColumnTypes(NativeQuery,{{"id", type text}, {"journal_id", type text}})
+		in
+		    #"Type modifié"
+	lineageTag: 496a72f2-9758-449d-9d5d-82576f814ef0
+	queryGroup: 'no loading'
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Exception
+
+expression 'Ledger Entry Lines' =
+		let
+		    Source = Sql.Databases("mhirzqqnk57e7anmxqvc3cldyq-ad6po2r4ekrefdnhlqka77jyjq.datawarehouse.fabric.microsoft.com"),
+		    Fact_3 = Source{[Name="Fact_4"]}[Data],
+		    Query = "
+		        SELECT *
+		        FROM dbo.fact_4_ledger_entry_lines
+		        WHERE ID_Ste IN (21912624, 21915510, 22276641, 21917322, 21918011)
+		    ",
+		    NativeQuery = Value.NativeQuery(Fact_3, Query),
+		    #"Valeur remplacée" = Table.ReplaceValue(NativeQuery,".",",",Replacer.ReplaceText,{"debit", "credit"}),
+		    #"Type modifié" = Table.TransformColumnTypes(#"Valeur remplacée",{{"id", type text}, {"ledger_account_id", type text}, {"journal_id", type text}, {"ledger_entry_id", type text}, {"debit", type number}, {"credit", type number}, {"thirdparty_id", type text}}),
+		    #"Capitalized Each Word" = Table.TransformColumns(#"Type modifié",{{"thirdparty_plan_item_label", Text.Proper, type text}})
+		in
+		    #"Capitalized Each Word"
+	lineageTag: 233a2411-c362-478a-bce7-4f8e3fbf995c
+	queryGroup: 'no loading'
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

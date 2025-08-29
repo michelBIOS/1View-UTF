@@ -1,0 +1,110 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.0.0/schema.json",
+  "name": "6dee02c7efb484390fbe",
+  "displayName": "47-Compte d'Attente",
+  "displayOption": "FitToWidth",
+  "height": 2100,
+  "width": 1920,
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "a2d7a951c308c1912d10",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "C2"
+              }
+            },
+            "Property": "C2"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "c",
+              "Entity": "C2",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "c"
+                          }
+                        },
+                        "Property": "C2"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "47L"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User"
+      },
+      {
+        "name": "4c3adebe25ac2737454f",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Fact_GL"
+              }
+            },
+            "Property": "lettered_ledger_entry_lines_ids_str"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User"
+      },
+      {
+        "name": "cf4fa8c6f56ae23f3e27",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Fact_GL"
+              }
+            },
+            "Property": "Lettré"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User"
+      }
+    ]
+  },
+  "pageBinding": {
+    "name": "f9d5e238a62b63fc8b85",
+    "type": "Default",
+    "parameters": [],
+    "referenceScope": "CrossReport",
+    "acceptsFilterContext": "None"
+  },
+  "visualInteractions": [
+    {
+      "source": "9a527dfc3f8150afe108",
+      "target": "7c650883c0af4678f836",
+      "type": "NoFilter"
+    }
+  ]
+}

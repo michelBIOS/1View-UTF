@@ -1,0 +1,16 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "name": "c7f7537a30daa6bc4776",
+  "position": {
+    "x": 543,
+    "y": 231.66666666666669,
+    "z": 7500,
+    "height": 466.66666666666669,
+    "width": 1351.6666666666667,
+    "tabOrder": 7000
+  },
+  "visualGroup": {
+    "displayName": "Détails dans la Comptabilité",
+    "groupMode": "ScaleMode"
+  }
+}

@@ -1,0 +1,1386 @@
+table Mesures
+	lineageTag: b17bd7e4-d902-4751-a383-43c863447c06
+
+	measure 'Capitaux Propres' =
+			
+			CALCULATE(
+			    [Soldes],
+			    FILTER(
+			        'Dim_Ledger Accounts',
+			        LEFT('Dim_Ledger Accounts'[Compte], 3) IN {
+			            "101", "102", "103", "104", "105", "106",
+			            "110", "111", "112", "113", "114", "115", "116", "117", "118", "119"
+			        }
+			    )
+			)
+		formatString: #,0
+		displayFolder: Comptabilité
+		lineageTag: 5247595d-ae4c-46e0-b3a2-b81149a1028a
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure 'Dettes Financières' =
+			
+			CALCULATE(
+			    [Soldes],
+			    FILTER(
+			        'Dim_Ledger Accounts',
+			        LEFT('Dim_Ledger Accounts'[Compte], 2) = "16" &&
+			        NOT LEFT('Dim_Ledger Accounts'[Compte], 4) = "1688"
+			    )
+			)
+		displayFolder: Comptabilité
+		lineageTag: d3027ceb-144b-48f9-a1b6-0c7cc0d143a6
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Trésorerie = ```
+			
+			VAR _CompanyID = SELECTEDVALUE(Dim_Companies[id])
+			 
+			VAR _DateDebut =
+			    SWITCH(
+			        TRUE(),
+			        _CompanyID = "21912624", DATE(2024, 10, 1),
+			        _CompanyID = "22276641", DATE(2024, 4, 1),
+			        DATE(2025, 1, 1)
+			    )
+			 
+			VAR _Resultat =
+			    CALCULATE(
+			        [Soldes],
+			        ALL(Dim_Date),
+			        FILTER(Dim_Date, 'Dim_Date'[Date] >= _DateDebut),
+			        FILTER('Dim_Ledger Accounts', 'Dim_Ledger Accounts'[C3] = 512)
+			    )
+			 
+			RETURN
+			    IF(
+			        NOT ISBLANK(_CompanyID),
+			        _Resultat,
+			        BLANK()
+			    )
+			```
+		displayFolder: Comptabilité\Trésorerie
+		lineageTag: e9ac0c6c-7df6-4952-8d84-e5f31552113c
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Endettement Financier Net' =
+			
+			[Dettes Financières] - [Trésorerie]
+		displayFolder: Comptabilité
+		lineageTag: 6ab34653-91c7-4942-90dc-338f0095e7ef
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Ratio Endettement' =
+			
+			DIVIDE(
+			    [Endettement Financier Net],
+			    [Capitaux Propres]
+			)
+		formatString: #,0\ %;-#,0\ %;#,0\ %
+		displayFolder: Comptabilité
+		lineageTag: ff97a871-8229-4ea4-b890-1fa8f04950c0
+
+	measure 'Total Actif' =
+			
+			CALCULATE(
+			    -[Soldes],
+			    FILTER(
+			        'Dim_Ledger Accounts',
+			        LEFT('Dim_Ledger Accounts'[Compte], 1) IN {"2", "3", "4", "5"}
+			    )
+			)
+		displayFolder: Comptabilité
+		lineageTag: 1ccd0abe-e7d4-4e4b-bab9-9d5cc8fefc65
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Total Passif' =
+			
+			CALCULATE(
+			    [Soldes],
+			    FILTER(
+			        'Dim_Ledger Accounts',
+			        LEFT('Dim_Ledger Accounts'[Compte], 1) IN {"1", "2", "4", "5"}
+			    )
+			)
+		displayFolder: Comptabilité
+		lineageTag: 77d0d442-e719-4e5c-9c7c-4aea9f718942
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Ratio de Solvabilité' =
+			
+			DIVIDE(
+			    [Capitaux Propres],
+			    [Total Passif]
+			)
+		formatString: #,0\ %;-#,0\ %;#,0\ %
+		displayFolder: Comptabilité
+		lineageTag: 25d4fa5e-6a4b-4810-aeab-5f4e7f94df01
+
+	measure 'Autonomie Financière' =
+			
+			DIVIDE(
+			    [Capitaux Propres],
+			    [Total Actif]
+			)
+		formatString: 0\ %;-0\ %;0\ %
+		displayFolder: Comptabilité
+		lineageTag: ef30962a-f4ad-4d6b-8cfc-4688d5b2b0a8
+
+	measure Soldes = -CALCULATE(SUM(Fact_GL[debit])-SUM(Fact_GL[credit]))
+		displayFolder: Comptabilité
+		lineageTag: eb861d62-8bd2-43ee-a62c-74b16d582d5c
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Total Ventes' =
+			
+			CALCULATE(
+			    [Soldes],
+			    FILTER(
+			        'Dim_Ledger Accounts',
+			        'Dim_Ledger Accounts'[Type] = "vt"
+			    )
+			)
+		formatString: #,0
+		displayFolder: Ventes
+		lineageTag: 7bb180f0-3372-4661-8188-ddea7cd9432d
+
+	measure 'Nombre Factures' =
+			
+			CALCULATE(
+			    DISTINCTCOUNT(Fact_GL[id_ledger_entry_lines]),
+			    'Dim_Ledger Accounts'[Type] = "vt"
+			)
+		formatString: #,0
+		displayFolder: Ventes
+		lineageTag: 64df0ab0-e1e2-4228-ad70-13766b73b287
+
+	measure 'Ventes Mois' =
+			
+			CALCULATE(
+			    [Total Ventes],
+			    DATESMTD('Dim_Date'[Date])
+			)
+		formatString: #,0
+		displayFolder: Ventes
+		lineageTag: 91d50c94-4758-4beb-bd76-6e006428e9ba
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure 'Ventes Mois Précédent' =
+			
+			CALCULATE(
+			    [Total Ventes],
+			    PREVIOUSMONTH(Dim_Date[Date])
+			)
+		formatString: #,0
+		displayFolder: Ventes
+		lineageTag: c608996b-d627-4ab2-b340-6253d284da79
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure 'MoM % Revenus' = ```
+			
+			VAR Revenus_Courant = [Total Ventes]
+			VAR Revenus_Mois_Prec = 
+			    CALCULATE(
+			        [Total Ventes],
+			        DATEADD('Dim_Date'[Date], -1, MONTH)
+			    )
+			RETURN
+			    DIVIDE(Revenus_Courant - Revenus_Mois_Prec, Revenus_Mois_Prec, 0)
+			```
+		displayFolder: Ventes
+		lineageTag: f32d570d-738e-488e-8cdc-301feda0a9ab
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Revenue Avg Mo' =
+			
+			FORMAT(
+			    AVERAGEX(
+			        ADDCOLUMNS(
+			            VALUES('Dim_Date'[Mois]),
+			            "Revenue", [Total Ventes]
+			        ),
+			        [Revenue]
+			    ),
+			    "€#,##0,.0K" & " avg/mo"
+			)
+		displayFolder: Ventes
+		lineageTag: 12ef7f84-e192-410d-acc5-babe5353cda9
+
+	measure 'Revenue MoM % Text' = ```
+			
+			VAR _MoM = [MoM % Revenus]
+			VAR _Result =
+			    SWITCH(
+			        TRUE(),
+			        ISBLANK(_MoM), "",
+			        _MoM < 0, "▼ " & FORMAT(_MoM, "0.0%"), 
+			        _MoM >= 0, "▲ " & FORMAT(_MoM, "0.0%")
+			    )
+			RETURN
+			    _Result
+			```
+		displayFolder: Ventes
+		lineageTag: a1971613-1594-482c-a8d5-39ece53ef5bc
+
+	measure 'Revenue MoM Libellé FR' = ```
+			
+			VAR _DernierMoisVisible = MAX('Dim_Date'[Mois])
+			VAR _DebutMois = 
+			    CALCULATE(
+			        MIN('Dim_Date'[Date]),
+			        Dim_Date[Mois] = _DernierMoisVisible
+			    )
+			
+			VAR _MoisCompletActuel =
+			    CALCULATE(
+			        MAX('Dim_Date'[Date]),
+			        REMOVEFILTERS('Dim_Date'),
+			        DATESBETWEEN(
+			            'Dim_Date'[Date],
+			            EOMONTH(_DebutMois, -2) + 1,
+			            EOMONTH(_DebutMois, -1)
+			        )
+			    )
+			
+			VAR _MoisCompletPrecedent =
+			    CALCULATE(
+			        MAX(Dim_Date[Date]),
+			        REMOVEFILTERS(Dim_Date),
+			        DATESBETWEEN(
+			            Dim_Date[Date],
+			            EOMONTH(_DebutMois, -3) + 1,
+			            EOMONTH(_DebutMois, -2)
+			        )
+			    )
+			
+			VAR _Resultat = 
+			    FORMAT(_MoisCompletActuel, "[$-fr-FR]mmmm yy") & 
+			    " vs " & 
+			    FORMAT(_MoisCompletPrecedent, "[$-fr-FR]mmmm yy")
+			
+			RETURN
+			    SUBSTITUTE(_Resultat, "20", "")
+			
+			```
+		displayFolder: Ventes
+		lineageTag: 508edecc-a62b-4694-81d1-4dad5d6a72a0
+
+	measure 'MoM % Marge' = ```
+			
+			VAR Marge_Courant = [Marge Brute]
+			VAR Marge_Mois_Prec = 
+			    CALCULATE(
+			        [Marge Brute],
+			        DATEADD('Dim_Date'[Date], -1, MONTH)
+			    )
+			RETURN
+			    DIVIDE(Marge_Courant - Marge_Mois_Prec, Marge_Mois_Prec, 0)
+			```
+		displayFolder: Ventes
+		lineageTag: 78b037df-0f1e-4743-944d-ea9bcabca612
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Marge MoM % Text' = ```
+			
+			VAR _MoM = [MoM % Marge]
+			VAR _Result =
+			    SWITCH(
+			        TRUE(),
+			        ISBLANK(_MoM), "",
+			        _MoM < 0, "▼ " & FORMAT(_MoM, "0.0%"), 
+			        _MoM >= 0, "▲ " & FORMAT(_MoM, "0.0%")
+			    )
+			RETURN
+			    _Result
+			```
+		displayFolder: Ventes
+		lineageTag: 9732c294-99aa-43f4-ac1f-31996bbfc22e
+
+	measure 'MoM % CP' = ```
+			
+			VAR Revenus_Courant = [Capitaux Propres]
+			VAR Revenus_Mois_Prec = 
+			    CALCULATE(
+			        [Capitaux Propres],
+			        DATEADD('Dim_Date'[Date], -1, MONTH)
+			    )
+			RETURN
+			    DIVIDE(Revenus_Courant - Revenus_Mois_Prec, Revenus_Mois_Prec, 0)
+			```
+		displayFolder: Comptabilité
+		lineageTag: 941ab62c-f8dc-4c25-b8fc-ce4c66f3c2de
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'CP MoM % Text' = ```
+			
+			VAR _MoM = [MoM % CP]
+			VAR _Result =
+			    SWITCH(
+			        TRUE(),
+			        ISBLANK(_MoM), "",
+			        _MoM < 0, "▼ " & FORMAT(_MoM, "0.0%"), 
+			        _MoM >= 0, "▲ " & FORMAT(_MoM, "0.0%")
+			    )
+			RETURN
+			    _Result
+			```
+		displayFolder: Comptabilité
+		lineageTag: f9c14240-2ff4-4430-89d0-0992b4c3611a
+
+	measure 'CP Avg Mo' =
+			
+			FORMAT(
+			    AVERAGEX(
+			        ADDCOLUMNS(
+			            VALUES('Dim_Date'[Mois]),
+			            "Capitaux Propres", [Capitaux Propres]
+			        ),
+			        [Capitaux Propres]
+			    ),
+			    "€#,##0,.0K" & " avg/mo"
+			)
+		displayFolder: Comptabilité
+		lineageTag: 999dd723-64ba-4966-a823-0c96dfa5b03b
+
+	measure 'MoM % EFN' = ```
+			
+			VAR EFN_Courant = [Endettement Financier Net]
+			VAR EFN_Mois_Prec = 
+			    CALCULATE(
+			        [Endettement Financier Net],
+			        DATEADD('Dim_Date'[Date], -1, MONTH)
+			    )
+			RETURN
+			    DIVIDE(EFN_Courant - EFN_Mois_Prec, EFN_Mois_Prec, 0)
+			```
+		displayFolder: Comptabilité
+		lineageTag: e308e6ff-052c-4dc7-abe5-9c0ac360926e
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'EFN MoM % Text' = ```
+			
+			VAR _MoM = [MoM % EFN]
+			VAR _Result =
+			    SWITCH(
+			        TRUE(),
+			        ISBLANK(_MoM), "",
+			        _MoM < 0, "▼ " & FORMAT(_MoM, "0.0%"), 
+			        _MoM >= 0, "▲ " & FORMAT(_MoM, "0.0%")
+			    )
+			RETURN
+			    _Result
+			```
+		displayFolder: Comptabilité
+		lineageTag: 09e6da1f-1fab-41df-bf33-9f861a101c85
+
+	measure 'EFN Avg Mo' =
+			
+			FORMAT(
+			    AVERAGEX(
+			        ADDCOLUMNS(
+			            VALUES('Dim_Date'[Mois]),
+			            "Endettement Financier Net", [Endettement Financier Net]
+			        ),
+			        [Endettement Financier Net]
+			    ),
+			    "€#,##0,.0K" & " avg/mo"
+			)
+		displayFolder: Comptabilité
+		lineageTag: fc5b41ac-663f-455a-991d-e8b95f1e0005
+
+	measure 'MoM % FI' = ```
+			
+			VAR Marge_Courant = [Facture Impayées]
+			VAR Marge_Mois_Prec = 
+			    CALCULATE(
+			        [Facture Impayées],
+			        DATEADD(Dim_Date[Date], -1, MONTH)
+			    )
+			RETURN
+			    DIVIDE(Marge_Courant - Marge_Mois_Prec, Marge_Mois_Prec, 0)
+			```
+		displayFolder: Ventes
+		lineageTag: a7e16473-7e5d-440f-a0a1-9e9e431b7c17
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Résultat Opérationnel' =
+			
+			CALCULATE(
+			    [Soldes],
+			    FILTER(
+			        'Dim_Ledger Accounts',
+			        LEFT('Dim_Ledger Accounts'[Compte], 1) IN {
+			            "7",
+			            "6"
+			        }
+			    )
+			)
+		displayFolder: Comptabilité
+		lineageTag: 3abc58fe-83f5-4e52-9604-64069795112d
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'MoM % Résultat' = ```
+			
+			VAR Revenus_Courant = [Résultat Opérationnel]
+			VAR Revenus_Mois_Prec = 
+			    CALCULATE(
+			        [Résultat Opérationnel],
+			        DATEADD('Dim_Date'[Date], -1, MONTH)
+			    )
+			RETURN
+			    DIVIDE(Revenus_Courant - Revenus_Mois_Prec, Revenus_Mois_Prec, 0)
+			```
+		displayFolder: Comptabilité
+		lineageTag: a333e10b-3b09-45cc-9539-0b9949059adb
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Résultat MoM % Text' = ```
+			
+			VAR _MoM = [MoM % Résultat]
+			VAR _Result =
+			    SWITCH(
+			        TRUE(),
+			        ISBLANK(_MoM), "",
+			        _MoM < 0, "▼ " & FORMAT(_MoM, "0.0%"), 
+			        _MoM >= 0, "▲ " & FORMAT(_MoM, "0.0%")
+			    )
+			RETURN
+			    _Result
+			```
+		displayFolder: Comptabilité
+		lineageTag: 0da3abdc-0f11-46a6-8191-6555450ebaa5
+
+	measure 'Résultat Avg Mo' =
+			
+			FORMAT(
+			    AVERAGEX(
+			        ADDCOLUMNS(
+			            VALUES('Dim_Date'[Mois]),
+			            "Résultat Opérationnel", [Résultat Opérationnel]
+			        ),
+			        [Résultat Opérationnel]
+			    ),
+			    "€#,##0,.0K" & " avg/mo"
+			)
+		displayFolder: Comptabilité
+		lineageTag: 19b90703-9514-4d60-9bb6-b8aa597badcb
+
+	measure EBITDA =
+			
+			CALCULATE(
+			    [Soldes],
+			    FILTER(
+			        'Dim_Ledger Accounts',
+			        LEFT('Dim_Ledger Accounts'[Compte], 2) IN {
+			            "70", "71", "72", "74", "75",
+			            "60", "61", "62", "63", "64", "65"
+			        }
+			    )
+			)
+		displayFolder: Comptabilité
+		lineageTag: 2842ac58-b260-41f1-8689-0a36cabcf6a7
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'MoM % EBITDA' = ```
+			
+			VAR EFN_Courant = [EBITDA]
+			VAR EFN_Mois_Prec = 
+			    CALCULATE(
+			        [EBITDA],
+			        DATEADD('Dim_Date'[Date], -1, MONTH)
+			    )
+			RETURN
+			    DIVIDE(EFN_Courant - EFN_Mois_Prec, EFN_Mois_Prec, 0)
+			```
+		displayFolder: Comptabilité
+		lineageTag: 08fc66af-cc1d-4b20-bb4e-766a5ea1ccb3
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'EBITDA MoM % Text' = ```
+			
+			VAR _MoM = [MoM % EBITDA]
+			VAR _Result =
+			    SWITCH(
+			        TRUE(),
+			        ISBLANK(_MoM), "",
+			        _MoM < 0, "▼ " & FORMAT(_MoM, "0.0%"), 
+			        _MoM >= 0, "▲ " & FORMAT(_MoM, "0.0%")
+			    )
+			RETURN
+			    _Result
+			```
+		displayFolder: Comptabilité
+		lineageTag: 758eb47a-3301-4e98-bbc1-08d484132888
+
+	measure 'EBITDA Avg Mo' =
+			
+			FORMAT(
+			    AVERAGEX(
+			        ADDCOLUMNS(
+			            VALUES('Dim_Date'[Mois]),
+			            "EBITDA", [EBITDA]
+			        ),
+			        [EBITDA]
+			    ),
+			    "€#,##0,.0K" & " avg/mo"
+			)
+		displayFolder: Comptabilité
+		lineageTag: 71a562f2-008e-4dfa-bcef-2ed3458b6063
+
+	measure 'MoM % tresor' = ```
+			
+			VAR tresor_Courant = [Trésorerie]
+			VAR tresor_Mois_Prec = 
+			    CALCULATE(
+			        [Trésorerie],
+			        DATEADD('Dim_Date'[Date], -1, MONTH)
+			    )
+			RETURN
+			    DIVIDE(tresor_Courant - tresor_Mois_Prec, tresor_Mois_Prec, 0)
+			```
+		displayFolder: Comptabilité\Trésorerie
+		lineageTag: 950e6aaf-4ab7-44fe-a82a-1a818d09337a
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'tresor MoM % Text' = ```
+			
+			VAR _MoM = [MoM % tresor]
+			VAR _Result =
+			    SWITCH(
+			        TRUE(),
+			        ISBLANK(_MoM), "",
+			        _MoM < 0, "▼ " & FORMAT(_MoM, "0.0%"), 
+			        _MoM >= 0, "▲ " & FORMAT(_MoM, "0.0%")
+			    )
+			RETURN
+			    _Result
+			```
+		displayFolder: Comptabilité\Trésorerie
+		lineageTag: 33108c8b-067d-40fb-9258-cb2c3ec9f4eb
+
+	measure 'tresor Avg Mo' =
+			
+			FORMAT(
+			    AVERAGEX(
+			        ADDCOLUMNS(
+			            VALUES('Dim_Date'[Mois]),
+			            "Endettement Financier Net", [Trésorerie]
+			        ),
+			        [Endettement Financier Net]
+			    ),
+			    "€#,##0,.0K" & " avg/mo"
+			)
+		displayFolder: Comptabilité\Trésorerie
+		lineageTag: 01b2f8a1-2082-43ec-aa13-b3f8726532ea
+
+	measure 'Client Avg Mo' =
+			
+			FORMAT(
+			    AVERAGEX(
+			        ADDCOLUMNS(
+			            VALUES('Dim_Date'[Mois]),
+			            "Capitaux Propres", [Encours Clients]
+			        ),
+			        [Capitaux Propres]
+			    ),
+			    "€#,##0,.0K" & " avg/mo"
+			)
+		displayFolder: Ventes\Client
+		lineageTag: c4bfc80d-7a77-4600-98cf-6b260d5288ee
+
+	measure 'Client MoM % Text' = ```
+			
+			VAR _MoM = [MoM % Client]
+			VAR _Result =
+			    SWITCH(
+			        TRUE(),
+			        ISBLANK(_MoM), "",
+			        _MoM < 0, "▼ " & FORMAT(_MoM, "0.0%"), 
+			        _MoM >= 0, "▲ " & FORMAT(_MoM, "0.0%")
+			    )
+			RETURN
+			    _Result
+			```
+		displayFolder: Ventes\Client
+		lineageTag: 3913ea0a-9509-48c2-8674-740959603f1e
+
+	measure 'Trésorerie Nette' = [Trésorerie] + [Encours Clients] - [Encours Fournisseurs]
+		displayFolder: Comptabilité\Trésorerie
+		lineageTag: 5cec1534-a323-4491-93b0-b936fae187ae
+
+	measure 'Total Ventes n-1' =
+			
+			CALCULATE(
+			    [Soldes],
+			    SAMEPERIODLASTYEAR(Dim_Date[Date]),
+			    FILTER(
+			        'Dim_Ledger Accounts',
+			        'Dim_Ledger Accounts'[Type] = "vt"
+			    )
+			)
+		displayFolder: Ventes
+		lineageTag: e46d37b1-f27d-4075-8db3-1f2e4a3e432c
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Période du (plage JJ/MM/AA)' =
+			
+			VAR MinDate =
+			    CALCULATE (
+			        MIN ( 'Dim_Date'[Date] ),
+			        ALLSELECTED ( 'Dim_Date' )
+			    )
+			VAR MaxDate =
+			    CALCULATE (
+			        MAX ( 'Dim_Date'[Date] ),
+			        ALLSELECTED ( 'Dim_Date' )
+			    )
+			RETURN
+			IF (
+			    ISBLANK ( MinDate ),
+			    "Aucune période sélectionnée",
+			    "Période du : "
+			        & FORMAT ( MinDate, "dd/MM/yy" )
+			        & " au "
+			        & FORMAT ( MaxDate, "dd/MM/yy" )
+			)
+		displayFolder: Comptabilité
+		lineageTag: 41db8113-eef0-4420-914f-9e4b08b3903f
+
+	measure Solde = sum(Fact_GL[debit])-SUM(Fact_GL[credit])
+		formatString: #,0
+		displayFolder: Comptabilité
+		lineageTag: fd55c008-0e9c-4e5f-9c85-d3690ae0469c
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure 'Dernière MAJ' =
+			
+			"MAJ : " &
+			FORMAT(
+			    CALCULATE(
+			        MAX('Fact_GL'[updated_at]),
+			        ALL('Fact_GL')
+			    ),
+			    "dd/mm/yy HH:mm"
+			)
+		displayFolder: Comptabilité
+		lineageTag: bb8b3617-efe9-41be-9da0-50da279611fa
+
+	measure ThisYear = MAX(Dim_Date[Année])
+		formatString: 0
+		displayFolder: Titres Dynamique\Year Legend
+		lineageTag: 353d5419-1add-40f0-aff8-ac8346aee794
+
+	measure 'Titre Balance' = "Balance - "&[ThisYear]& " (€)"
+		displayFolder: Titres Dynamique\Titres
+		lineageTag: 28030f8c-dd09-41d5-a75e-359c1ae10a6e
+
+	measure 'Titre Detail compta' = "Écritures - " &[ThisYear]
+		displayFolder: Titres Dynamique\Titres
+		lineageTag: bed2e5e5-45a7-4679-b2a2-6dbf39055084
+
+	measure 'Solde N-1' =
+			
+			CALCULATE([Solde],
+			SAMEPERIODLASTYEAR(Dim_Date[Date]))
+		displayFolder: Comptabilité
+		lineageTag: 80f9bbbb-f7fd-49f0-ab9d-904a8479d5fc
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Variation Solde' = [Solde]-[Solde N-1]
+		displayFolder: Comptabilité
+		lineageTag: 5584343e-9275-44f7-81e6-fd376b2306e9
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Capacité d''autofinancement (CAF)' =
+			
+			VAR ResultatNet =
+			[Résultat Opérationnel]
+			
+			VAR DotationsAmortissements =
+			    CALCULATE(
+			        -[Soldes],
+			        FILTER(
+			            'Dim_Ledger Accounts',
+			            LEFT('Dim_Ledger Accounts'[Compte], 3) IN {"681", "687"}
+			        )
+			    )
+			
+			VAR DotationsProvisions =
+			    CALCULATE(
+			        -[Soldes],
+			        FILTER(
+			            'Dim_Ledger Accounts',
+			            LEFT('Dim_Ledger Accounts'[Compte], 3) IN {"685", "686"}
+			        )
+			    )
+			
+			VAR ReprisesAmortissements =
+			    CALCULATE(
+			        -[Soldes],
+			        FILTER(
+			            'Dim_Ledger Accounts',
+			            LEFT('Dim_Ledger Accounts'[Compte], 3) IN {"781", "787"}
+			        )
+			    )
+			
+			VAR ReprisesProvisions =
+			    CALCULATE(
+			        -[Soldes],
+			        FILTER(
+			            'Dim_Ledger Accounts',
+			            LEFT('Dim_Ledger Accounts'[Compte], 3) IN {"785", "786"}
+			        )
+			    )
+			
+			RETURN
+			    ResultatNet + DotationsAmortissements + DotationsProvisions - ReprisesAmortissements - ReprisesProvisions
+		displayFolder: Comptabilité
+		lineageTag: 1202ea25-62b5-4016-91dc-e1ecf8326989
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Soldes Balance' =
+			
+			VAR Compte = SELECTEDVALUE('Dim_Ledger Accounts'[C1])
+			VAR PremierChiffre = LEFT(Compte, 1)
+			
+			RETURN
+			    IF(
+			        PremierChiffre IN {"6","7"},
+			        -[Solde],
+			        [Solde]
+			    )
+		displayFolder: Comptabilité
+		lineageTag: a8a1012c-cae9-4693-bd87-26b2bf9211fb
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Soldes Balance n-1' =
+			
+			CALCULATE (
+			    [Soldes Balance],
+			    FILTER (
+			        ALL(Dim_Date),
+			        Dim_Date[Année] = MAX(Dim_Date[Année]) - 1
+			    )
+			)
+		displayFolder: Comptabilité
+		lineageTag: cf874833-1719-4329-b773-d253bb89e515
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Titre Balance Mensuelle' = "Balance Mensuelle - "&[ThisYear]& " (€)"
+		displayFolder: Titres Dynamique\Titres
+		lineageTag: 13089393-a405-4127-8b2d-6e8e0a5bccbe
+
+	measure 'Nb Ecriture' =
+			
+			VAR NbDebit = calculate(COUNTROWS(Fact_GL),FILTER(Fact_GL,Fact_GL[debit]<>0))
+			VAR NbCredit = calculate(COUNTROWS(Fact_GL),FILTER(Fact_GL,Fact_GL[credit]<>0))
+			RETURN NbDebit+NbCredit
+		formatString: 0
+		displayFolder: Comptabilité
+		lineageTag: 82cbe677-0743-4ccd-822d-a7b22e44cec0
+
+	measure 'Titre nb attent' = "Nb Ecriture Attente par Mois "&[ThisYear]
+		displayFolder: Titres Dynamique\Titres
+		lineageTag: 0c8703ce-9d8b-41b8-87b0-842989b416a3
+
+	measure 'Abs Solde' = ABS([Solde])
+		formatString: #,0
+		displayFolder: Comptabilité
+		lineageTag: 7469ee38-3001-44ee-9154-3291915b6398
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure 'Titre Frns deb' = "Fournisseurs Débiteurs - "&[ThisYear]
+		displayFolder: Titres Dynamique\Titres
+		lineageTag: 22214b37-aeac-411f-9f77-32a014c7f40b
+
+	measure 'Titre Clt Créditeur' = "Clients Créditeurs - "&[ThisYear]
+		displayFolder: Titres Dynamique\Titres
+		lineageTag: b8cbec31-e570-4fd9-b630-b47ae469dbd5
+
+	measure 'Titre Bal 47' = "Balance Compte 471 - "&[ThisYear]
+		displayFolder: Titres Dynamique\Titres
+		lineageTag: 1faab8fc-3664-48cb-86bc-4bbefd06cc0b
+
+	measure 'Titre Ecriture nb att' = "Nb Écritures en Attente par Mois"
+		displayFolder: Titres Dynamique\Titres
+		lineageTag: 1b9d7ca5-193f-4f3f-8ab7-0b02f9e88d9f
+
+	measure 'Solde Total clt crediteur' = CALCULATE([Solde],filter(C3,C3[C3]="411"),[Solde]<0)
+		displayFolder: Comptabilité
+		lineageTag: e57eaebe-f98a-44bb-a95f-1e514941d8f8
+
+	measure 'Titre Bal 51' = "Balance Compte 512 - "&[Mois Selectionné]&" "&[ThisYear]
+		displayFolder: Titres Dynamique\Titres
+		lineageTag: d246e64d-db15-462e-a177-55d18a080164
+
+	measure 'Titre Solde 51' = "Solde(€) par Mois - "&[ThisYear]
+		displayFolder: Titres Dynamique\Titres
+		lineageTag: c78037b7-b4a5-4bb9-bc2c-44dcf3d95400
+
+	measure CashIn = ABS(CALCULATE([Solde], Fact_GL[credit] = 0))
+		formatString: #,0
+		displayFolder: Comptabilité
+		lineageTag: ffb98db1-1f9d-478c-93dc-1d7ef4801d1d
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure CashOut = ABS(CALCULATE([Solde], Fact_GL[debit] = 0))
+		formatString: #,0
+		displayFolder: Comptabilité
+		lineageTag: 21ecef13-8e87-4ca4-a1f7-ede56088591d
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure 'Solde Trésorerie Actuel' =
+			
+			CALCULATE(
+			    [Solde],
+			    'Dim_Ledger Accounts'[C3] IN {512, 530},
+			    ALL('Dim_Ledger Accounts'[C3])
+			)
+		formatString: 0
+		displayFolder: Comptabilité
+		lineageTag: 4a6e9003-2b78-4f05-8f41-6a2f8e669881
+
+	measure 'Titre Var Solde 51' = "Solde(€) par Mois - "&[ThisYear]
+		displayFolder: Titres Dynamique\Titres
+		lineageTag: 6ae2edd1-739b-47d6-88c5-bf8428ee159b
+
+	measure 'Titre Solde-Tiers 51' = "Solde(€) par Tiers - "&[Mois Selectionné]&" "&[ThisYear]
+		displayFolder: Titres Dynamique\Titres
+		lineageTag: 0590ff9e-14db-4688-9f6c-70ac1bf0179f
+
+	measure 'Actif Circulant' =
+			
+			VAR Stocks =
+			    CALCULATE(
+			        [Solde],
+			        FILTER(
+			            'Dim_Ledger Accounts',
+			            LEFT('Dim_Ledger Accounts'[Compte], 2) IN {"31","32","33","34","35"}
+			        )
+			    )
+			
+			VAR Clients =
+			    CALCULATE(
+			        [Solde],
+			        FILTER(
+			            'Dim_Ledger Accounts',
+			            LEFT('Dim_Ledger Accounts'[Compte], 3) IN {"411", "418","416"}
+			        )
+			    )
+			
+			RETURN
+			    Stocks + Clients
+		displayFolder: Comptabilité
+		lineageTag: 0101b415-feba-46a5-85ea-eabed700a1e0
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Passif Circulant' = ```
+			
+			    CALCULATE(
+			        -[Solde],
+			        FILTER(
+			            'Dim_Ledger Accounts',
+			            LEFT('Dim_Ledger Accounts'[Compte], 3) IN {"401","408"}
+			        )
+			    )
+			```
+		displayFolder: Comptabilité
+		lineageTag: 69a69df9-0d2a-4d3f-94d2-3426539309e5
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure BFR = [Actif Circulant]-[Passif Circulant]
+		displayFolder: Comptabilité
+		lineageTag: c343c8ee-4caa-412c-aafc-c027b8f1533e
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Solde Prev Month' = CALCULATE([Solde],PREVIOUSMONTH(Dim_Date[Date]))
+		displayFolder: Comptabilité
+		lineageTag: 5980a3fc-12b8-461e-88ee-73e1a639a52a
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Créance Client' = CALCULATE([Solde],C2[C2]=41)
+		formatString: 0
+		displayFolder: Comptabilité
+		lineageTag: b870a54d-82b2-49a9-b403-74762d2afb50
+
+	measure 'Dettes Frns' = CALCULATE([Solde],C2[C2]=40)
+		formatString: 0
+		displayFolder: Comptabilité
+		lineageTag: b11e280c-d3e3-47fd-bcf4-3d6d27ae7197
+
+	measure 'Tréso A Venir' = [Créance Client]+[Dettes Frns]
+		formatString: 0
+		displayFolder: Comptabilité
+		lineageTag: fcb57a4a-69bd-4753-8ed9-9f34f4b266c4
+
+	measure 'Mois Selectionné' =
+			
+			VAR MoisSelect = SELECTEDVALUE(Dim_Date[Mois],"")
+			RETURN
+			if(
+			    MoisSelect <> "",
+			    UPPER(LEFT(MoisSelect, 1)) & MID(MoisSelect, 2, LEN(MoisSelect) - 1),
+			    "")
+		displayFolder: Comptabilité
+		lineageTag: 568410cd-a788-43ac-af5a-fed6c05c7d85
+
+	measure 'Solde Trésorerie' = ```
+			calculate(
+			    [Solde],
+			    Dim_Date[Date]>="01/10/24") 
+			```
+		formatString: 0
+		displayFolder: Comptabilité
+		lineageTag: 0c9fb934-8e5e-4892-a03d-6a689e064717
+
+	measure 'Solde tréso 512' = ```
+			
+			VAR _CompanyID = SELECTEDVALUE(Dim_Companies[id])
+			 
+			VAR _DateDebut =
+			    SWITCH(
+			        TRUE(),
+			        _CompanyID = "21912624", DATE(2024, 10, 1),
+			        _CompanyID = "22276641", DATE(2024, 4, 1),
+			        DATE(2025, 1, 1)
+			    )
+			 
+			VAR _Resultat =
+			    CALCULATE(
+			        [Solde],
+			        ALL(Dim_Date),
+			        FILTER(Dim_Date, 'Dim_Date'[Date] >= _DateDebut),
+			        FILTER('Dim_Ledger Accounts', 'Dim_Ledger Accounts'[C3] = 512)
+			    )
+			 
+			RETURN
+			    IF(
+			        NOT ISBLANK(_CompanyID),
+			        _Resultat,
+			        BLANK()
+			    )
+			```
+		formatString: #,0
+		displayFolder: Comptabilité
+		lineageTag: f9ea81af-5af0-431f-897e-059441d6c063
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure 'Soldes Balance N-1 rectif' =
+			
+			VAR Compte = SELECTEDVALUE('Dim_Ledger Accounts'[C1])
+			VAR PremierChiffre = LEFT(Compte, 1)
+			
+			RETURN
+			   CALCULATE( IF(
+			        PremierChiffre IN {"6","7"},
+			        -[Solde],
+			        [Solde]
+			    ), SAMEPERIODLASTYEAR(Dim_Date[Date]))
+		displayFolder: Comptabilité
+		lineageTag: 4b235d50-6231-4777-868a-15574f2b7442
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Total Salaires' =
+			
+			CALCULATE(
+			    SUM(Fact_GL[debit]),
+			    FILTER(
+			        RELATEDTABLE('Dim_Ledger Accounts'),
+			        LEFT('Dim_Ledger Accounts'[Compte], 3) IN { "641", "642" }
+			))
+		displayFolder: Comptabilité\Rémunérations
+		lineageTag: 91323554-9882-49b2-b63b-3f796d8b7f5b
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Effectif =
+			
+			CALCULATE(
+			    DISTINCTCOUNT('Fact_GL'[Empoyee_Name])
+			)
+		formatString: 0
+		displayFolder: Comptabilité\Rémunérations
+		lineageTag: b1db9ec1-42c4-410a-bc4c-15af6e917269
+
+	measure 'Salaire Moyen' = DIVIDE([Total Salaires], [Effectif], 0)
+		displayFolder: Comptabilité\Rémunérations
+		lineageTag: 7daf58da-b247-46b6-b665-64a90730d4c9
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Total Salaires N-1' =
+			
+			CALCULATE(
+			    SUM(Fact_GL[debit]),
+			    FILTER(
+			        RELATEDTABLE('Dim_Ledger Accounts'),
+			        LEFT('Dim_Ledger Accounts'[Compte], 3) IN { "641", "642" }
+			    ),
+			    SAMEPERIODLASTYEAR('Dim_Date'[Date])
+			)
+		displayFolder: Comptabilité\Rémunérations
+		lineageTag: cd535bb5-d840-46ee-a241-c865e11ad9da
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure PreviousYear = MAX(Dim_Date[Année])-1
+		formatString: 0
+		displayFolder: Titres Dynamique\Year Legend
+		lineageTag: 1c85749a-5f36-4832-ae6d-b8c5bda8ae90
+
+	measure 'Salaires Mensuels' = "Salaires Mensuels - "&[PreviousYear]&"/"&[ThisYear]
+		displayFolder: Titres Dynamique\Titres
+		lineageTag: 40f9964a-42f3-442d-86f6-dc7502481bdd
+
+	measure 'Charges Sociales' =
+			
+			CALCULATE(
+			    SUM(Fact_GL[debit]),
+			    FILTER(
+			        RELATEDTABLE('Dim_Ledger Accounts'),
+			        LEFT('Dim_Ledger Accounts'[Compte], 3) IN { "645", "646", "647" }
+			    )
+			)
+		displayFolder: Comptabilité\Rémunérations
+		lineageTag: 48c492b1-2e99-41eb-a4f7-7e5926dce440
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Taux Charges Sociales' = DIVIDE([Charges Sociales], [Total Salaires], 0)
+		displayFolder: Comptabilité\Rémunérations
+		lineageTag: 3740124f-552b-456f-9fdc-036d3c001bbe
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Salaires/Personnes par Mois' = "Note de Frais / Personne - "&[ThisYear]
+		displayFolder: Titres Dynamique\Titres
+		lineageTag: 50da294f-f69d-4a18-8d8a-5f95d4d80f97
+
+	measure 'Taux de Charges Sociales Mensuelles' = "Taux de Charges Sociales Mensuelles - "&[ThisYear]
+		displayFolder: Titres Dynamique\Titres
+		lineageTag: 32a5d784-6c60-4589-8164-6061f9b4bba8
+
+	measure 'Total Primes' =
+			
+			CALCULATE(
+			    SUM(Fact_GL[debit]),
+			    FILTER(
+			        RELATEDTABLE('Dim_Ledger Accounts'),
+			        LEFT('Dim_Ledger Accounts'[Compte], 4) = "6413"
+			    )
+			)
+		displayFolder: Comptabilité\Rémunérations
+		lineageTag: a122913e-761d-408b-86d7-8078a358c544
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Primes/Personnes par Mois' = "Détail Note de Frais - "&[ThisYear]
+		displayFolder: Titres Dynamique\Titres
+		lineageTag: b30e82cb-ae6f-4915-acf7-66d35e44f018
+
+	measure 'Charge Congés' =
+			
+			CALCULATE(
+			    SUM(Fact_GL[debit]),
+			    FILTER(
+			        RELATEDTABLE('Dim_Ledger Accounts'),
+			        LEFT('Dim_Ledger Accounts'[Compte], 4) = "6412"
+			    )
+			)
+		displayFolder: Comptabilité\Rémunérations
+		lineageTag: abf05d6a-198d-48d7-92ff-e959f1d0ed16
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Transaction Amount' = -sum('Transaction'[amount])
+		displayFolder: Comptabilité
+		lineageTag: c0edabce-3dca-4459-a59a-cda6e451a268
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Color Max Min TAV' = ```
+			
+			VAR CurrentValue = [Tréso A Venir]
+			VAR SelectedYear = SELECTEDVALUE('Dim_Date'[Année])
+			VAR MaxValue =
+			    SWITCH(
+			        SelectedYear,
+			        2025, 925340,
+			        2024, 841225,
+			        2023, 124346,
+			        925340  // Default fallback for 2025
+			    )
+			VAR MinValue =
+			    SWITCH(
+			        SelectedYear,
+			        2025, -89420,
+			        2024, -224033,
+			        2023, -120994,
+			        -89420  // Default fallback for 2025
+			    )
+			RETURN 
+			    IF(
+			        ABS(CurrentValue - MaxValue) < 1 || ABS(CurrentValue - MinValue) < 1,
+			        "#9fbec3",  // Light blue for both max and min
+			        "#487888"   // Default dark blue for others
+			    )
+			```
+		lineageTag: f5d53cb3-27f9-4fd0-8fe1-909d5f41ad44
+
+	measure 'Color Max Min CI' = ```
+			
+			VAR CurrentValue = [CashIn]
+			VAR SelectedYear = SELECTEDVALUE('Dim_Date'[Année])
+			VAR MaxValue =
+			    SWITCH(
+			        SelectedYear,
+			        2025, 19641574,
+			        2024, 13204274,
+			        2023, 12442044,
+			        19641574  // Default fallback for 2025
+			    )
+			VAR MinValue =
+			    SWITCH(
+			        SelectedYear,
+			        2025, 33490,
+			        2024, 2679743,
+			        2023, 1810135,
+			        33490  // Default fallback for 2025
+			    )
+			RETURN 
+			    IF(
+			        ABS(CurrentValue - MaxValue) < 1 || ABS(CurrentValue - MinValue) < 1,
+			        "#9fbec3",  // Light blue for both max and min
+			        "#487888"   // Default dark blue for others
+			    )
+			```
+		lineageTag: a50fb49f-52b9-4939-b477-147d721c1e0d
+
+	measure 'Color Max Min CO' = ```
+			
+			VAR CurrentValue = [CashOut]
+			VAR SelectedYear = SELECTEDVALUE('Dim_Date'[Année])
+			VAR MaxValue =
+			    SWITCH(
+			        SelectedYear,
+			        2025, 19641574,
+			        2024, 13204274,
+			        2023, 12442044,
+			        19641574  // Default fallback for 2025
+			    )
+			VAR MinValue =
+			    SWITCH(
+			        SelectedYear,
+			        2025, 33490,
+			        2024, 2679743,
+			        2023, 1810135,
+			        33490  // Default fallback for 2025
+			    )
+			RETURN 
+			    IF(
+			        ABS(CurrentValue - MaxValue) < 1 || ABS(CurrentValue - MinValue) < 1,
+			        "#9fbec3",  // Light blue for both max and min
+			        "#487888"   // Default dark blue for others
+			    )
+			```
+		lineageTag: 67babcad-3f3f-4d1c-9c9f-f26119fe1350
+
+	measure 'Color Max Min FBD' = ```
+			
+			VAR CurrentValue = SUM('Transaction'[amount])
+			VAR SelectedYear = SELECTEDVALUE('Dim_Date'[Année])
+			VAR MaxValue =
+			    SWITCH(
+			        SelectedYear,
+			        2025, 419981.21,
+			        2024, 722737.98,
+			        2023, 283110.02,
+			        419981.21  // Default fallback for 2025
+			    )
+			VAR MinValue =
+			    SWITCH(
+			        SelectedYear,
+			        2025, -434840.27,
+			        2024, -799031.32,
+			        2023, -236663.39,
+			        -434840.27  // Default fallback for 2025
+			    )
+			RETURN 
+			    IF(
+			        ABS(CurrentValue - MaxValue) < 1 || ABS(CurrentValue - MinValue) < 1,
+			        "#9fbec3",  // Light blue for both max and min
+			        "#487888"   // Default dark blue for others
+			    )
+			```
+		lineageTag: ee7b334e-25c9-4ec0-b073-893c9ddd4595
+
+	measure 'Color Max Min NE' = ```
+			
+			VAR CurrentValue = [Nb Ecriture]
+			VAR SelectedYear = SELECTEDVALUE('Dim_Date'[Année])
+			VAR MaxValue =
+			    SWITCH(
+			        SelectedYear,
+			        2025, 163,
+			        2024, 8,
+			        2023, 0,
+			        163 // Default fallback for 2025
+			    )
+			VAR MinValue =
+			    SWITCH(
+			        SelectedYear,
+			        2025, 1,
+			        2024, 3,
+			        2023, 0,
+			        1  // Default fallback for 2025
+			    )
+			RETURN 
+			    IF(
+			        ABS(CurrentValue - MaxValue) < 1 || ABS(CurrentValue - MinValue) < 1,
+			        "#9fbec3",  // Light blue for both max and min
+			        "#487888"   // Default dark blue for others
+			    )
+			```
+		lineageTag: 1a8127e4-574b-4394-b23a-06c6161bc92f
+
+	measure 'Color Max Min RO' = ```
+			
+			VAR CurrentValue = [Résultat Opérationnel]
+			VAR SelectedYear = SELECTEDVALUE('Dim_Date'[Année])
+			VAR MaxValue =
+			    SWITCH(
+			        SelectedYear,
+			        2025, 711965.65,
+			        2024, 979603.37,
+			        2023, 269947.91,
+			        711965.65  // Default fallback for 2025
+			    )
+			VAR MinValue =
+			    SWITCH(
+			        SelectedYear,
+			        2025, -517385.52,
+			        2024, -1098174.11,
+			        2023, -74448.32,
+			        -517385.52  // Default fallback for 2025
+			    )
+			RETURN 
+			    IF(
+			        ABS(CurrentValue - MaxValue) < 1 || ABS(CurrentValue - MinValue) < 1,
+			        "#9fbec3",  // Light blue for both max and min
+			        "#487888"   // Default dark blue for others
+			    )
+			```
+		lineageTag: 6d631da6-9f85-43f7-bd66-0e18a6709cd1
+
+	measure 'Color Max Min EBITDA' = ```
+			
+			VAR CurrentValue = [EBITDA]
+			VAR SelectedYear = SELECTEDVALUE('Dim_Date'[Année])
+			VAR MaxValue =
+			    SWITCH(
+			        SelectedYear,
+			        2025, 445528.11,
+			        2024, 752839.83,
+			        2023, 332767.44,
+			        445528.11 // Default fallback for 2025
+			    )
+			VAR MinValue =
+			    SWITCH(
+			        SelectedYear,
+			        2025, -3955.11,
+			        2024, -774385.22,
+			        2023, -75178.11,
+			        -3955.11  // Default fallback for 2025
+			    )
+			RETURN 
+			    IF(
+			        ABS(CurrentValue - MaxValue) < 1 || ABS(CurrentValue - MinValue) < 1,
+			        "#9fbec3",  // Light blue for both max and min
+			        "#487888"   // Default dark blue for others
+			    )
+			```
+		lineageTag: 898edc59-d669-45f0-a358-514dc5428fcf
+
+	measure 'Color Max Min CAF' = ```
+			
+			VAR CurrentValue = [Capacité d'autofinancement (CAF)]
+			VAR SelectedYear = SELECTEDVALUE('Dim_Date'[Année])
+			VAR MaxValue =
+			    SWITCH(
+			        SelectedYear,
+			        2025, 712249.29,
+			        2024, 983828.02,
+			        2023, 334641.57,
+			        712249.29 // Default fallback for 2025
+			    )
+			VAR MinValue =
+			    SWITCH(
+			        SelectedYear,
+			        2025, -426151.45,
+			        2024, -1028849.16,
+			        2023, -74448.32,
+			        -426151.45  // Default fallback for 2025
+			    )
+			RETURN 
+			    IF(
+			        ABS(CurrentValue - MaxValue) < 1 || ABS(CurrentValue - MinValue) < 1,
+			        "#9fbec3",  // Light blue for both max and min
+			        "#487888"   // Default dark blue for others
+			    )
+			
+			```
+		lineageTag: 45709000-3367-4a51-b1e3-30dee461ecf6
+
+	column Column
+		isHidden
+		formatString: 0
+		lineageTag: a6408794-3fc3-4f2c-a733-d02e4a1aa9bd
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Column]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Mesures = calculated
+		mode: import
+		source = Row("Column", BLANK())
+
+	annotation PBI_Id = 90d44fa8782b49559d4a8e637d46b27d
+
+	annotation 436ba87b-9c83-4389-a31b-ebd06a36be98 = {"Expression":""}
+
