@@ -1,13 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
   "name": "8e5cce1a1b9e8e7834d1",
   "position": {
-    "x": 18.771531432828045,
-    "y": 22.229133476837461,
+    "x": 18.210416077747542,
+    "y": 19.518708690984816,
     "z": 1000,
-    "height": 69.4017727221934,
-    "width": 135.33345680827713,
-    "tabOrder": 1000
+    "height": 72.47769389155799,
+    "width": 198.98421413864102
   },
   "visual": {
     "visualType": "cardVisual",
@@ -309,7 +308,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Retard TTC'"
+                  "Value": "'Overdue Amount incl. Tax'"
                 }
               }
             },

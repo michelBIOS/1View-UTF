@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
-  "name": "9bd965f0b1db29715a97",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
+  "name": "238e6398e6a8e111b498",
   "position": {
-    "x": 1528,
-    "y": 8,
-    "z": 17000,
-    "height": 118,
-    "width": 368,
-    "tabOrder": 20000
+    "x": 1593.4796238244514,
+    "y": 18.056426332288403,
+    "z": 32001,
+    "height": 84.263322884012538,
+    "width": 300.94043887147336,
+    "tabOrder": 29001
   },
   "visual": {
     "visualType": "image",
@@ -20,7 +20,7 @@
                 "ResourcePackageItem": {
                   "PackageName": "RegisteredResources",
                   "PackageType": 1,
-                  "ItemName": "Logo_UTF8407927324488135.png"
+                  "ItemName": "Logo_UTF6260967868102493.png"
                 }
               }
             }
@@ -29,19 +29,6 @@
       ]
     },
     "visualContainerObjects": {
-      "title": [
-        {
-          "properties": {
-            "text": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Logo UTF'"
-                }
-              }
-            }
-          }
-        }
-      ],
       "border": [
         {
           "properties": {

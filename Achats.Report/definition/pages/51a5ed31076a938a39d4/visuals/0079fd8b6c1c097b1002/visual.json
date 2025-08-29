@@ -1,12 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
   "name": "0079fd8b6c1c097b1002",
   "position": {
     "x": 18.000588590757385,
     "y": 21.593846542850216,
     "z": 6000,
     "height": 69.73365300338655,
-    "width": 190
+    "width": 190,
+    "tabOrder": 2000
   },
   "visual": {
     "visualType": "cardVisual",
@@ -26,8 +27,8 @@
                 }
               },
               "queryRef": "Mesures.Factures_Impayees",
-              "nativeQueryRef": "Nb Factures Impayées",
-              "displayName": "Nb Factures Impayées",
+              "nativeQueryRef": "Overdue Invoices",
+              "displayName": "Overdue Invoices",
               "format": "0"
             }
           ]
@@ -360,7 +361,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Nb Factures en Retard'"
+                  "Value": "'Overdue Invoices'"
                 }
               }
             },

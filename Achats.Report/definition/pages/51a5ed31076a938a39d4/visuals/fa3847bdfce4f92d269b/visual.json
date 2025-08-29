@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
   "name": "fa3847bdfce4f92d269b",
   "position": {
     "x": 25.714691772336863,
@@ -282,7 +282,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Période'"
+                  "Value": "'Period'"
                 }
               }
             },

@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
   "name": "4e85aa7d4374e5c66c57",
   "position": {
     "x": 1014.5352381666947,
@@ -42,8 +42,8 @@
                 }
               },
               "queryRef": "Dim_Suppliers.name",
-              "nativeQueryRef": "Fournisseur",
-              "displayName": "Fournisseur"
+              "nativeQueryRef": "Supplier",
+              "displayName": "Supplier"
             },
             {
               "field": {
@@ -57,8 +57,8 @@
                 }
               },
               "queryRef": "CAT Supplier invoices.label",
-              "nativeQueryRef": "Catégorie",
-              "displayName": "Catégorie"
+              "nativeQueryRef": "Category",
+              "displayName": "Category"
             },
             {
               "field": {
@@ -77,8 +77,8 @@
                 }
               },
               "queryRef": "Sum(Supplier invoices.currency_amount_before_tax)",
-              "nativeQueryRef": "HT (€)",
-              "displayName": "HT (€)",
+              "nativeQueryRef": "Net (€)",
+              "displayName": "Net (€)",
               "format": "#,0"
             },
             {
@@ -98,8 +98,8 @@
                 }
               },
               "queryRef": "Sum(Supplier invoices.amount)",
-              "nativeQueryRef": "TTC (€)",
-              "displayName": "TTC (€)",
+              "nativeQueryRef": "Gross (€)",
+              "displayName": "Gross (€)",
               "format": "#,0"
             },
             {
@@ -119,8 +119,8 @@
                 }
               },
               "queryRef": "Sum(Supplier invoices.remaining_amount_with_tax)",
-              "nativeQueryRef": "Solde TTC (€)",
-              "displayName": "Solde TTC (€)",
+              "nativeQueryRef": "Gross Balance (€)",
+              "displayName": "Gross Balance (€)",
               "format": "#,0"
             },
             {
@@ -135,7 +135,8 @@
                 }
               },
               "queryRef": "Supplier invoices.Payé",
-              "nativeQueryRef": "Payé",
+              "nativeQueryRef": "Paid",
+              "displayName": "Paid",
               "format": "G"
             },
             {
@@ -150,8 +151,8 @@
                 }
               },
               "queryRef": "Supplier invoices.deadline",
-              "nativeQueryRef": "Échéance",
-              "displayName": "Échéance",
+              "nativeQueryRef": "Due Date",
+              "displayName": "Due Date",
               "format": "dd/MM/yy"
             },
             {
@@ -166,8 +167,8 @@
                 }
               },
               "queryRef": "Supplier invoices.invoice_number",
-              "nativeQueryRef": "N° Facture",
-              "displayName": "N° Facture",
+              "nativeQueryRef": "Invoice Nb",
+              "displayName": "Invoice Nb",
               "format": "G"
             },
             {
@@ -182,8 +183,8 @@
                 }
               },
               "queryRef": "Supplier invoices.invoice_lines_url",
-              "nativeQueryRef": "Lien",
-              "displayName": "Lien",
+              "nativeQueryRef": "URL",
+              "displayName": "URL",
               "format": "G"
             }
           ]

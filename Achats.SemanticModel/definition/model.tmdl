@@ -19,7 +19,7 @@ annotation __PBI_TimeIntelligenceEnabled = 1
 
 annotation PBIDesktopVersion = 2.146.1254.0 (25.08)+791a7518fadc83da883d79322a2658aff57c8db3
 
-annotation PBI_QueryOrder = ["Dim_Journals","Dim_Ledger Accounts","Ledger Entries","Ledger Entry Lines","Fact_GL","Customer invoices","Dim_Customers","Products","Supplier invoices","Dim_Suppliers","Dim_Companies","Dim_Categories","Dim_Category_groups","Categories_Fact_3","Dynamic Logo","CAT Customer invoices","CAT Supplier invoices"]
+annotation PBI_QueryOrder = ["Dim_Journals","Dim_Ledger Accounts","Ledger Entries","Ledger Entry Lines","Fact_GL","Customer invoices","Dim_Customers","Products","Supplier invoices","Dim_Suppliers","Dim_Companies","Dim_Categories","Dim_Category_groups","Categories_Fact_3","CAT Customer invoices","CAT Supplier invoices"]
 
 annotation PBI_ProTooling = ["DevMode"]
 
@@ -59,7 +59,6 @@ ref table LocalDateTable_0c9be487-b570-4241-8e8c-78231eb469af
 ref table Categories_Fact_3
 ref table LocalDateTable_723e8d7a-3d6d-47fb-a35a-1214772b250c
 ref table LocalDateTable_06d411b8-64c6-4ce0-9928-14dc034e916e
-ref table 'Dynamic Logo'
 ref table 'CAT Customer invoices'
 ref table LocalDateTable_da954483-3700-4002-9e03-e20ff61c31fe
 ref table LocalDateTable_bd421030-6095-4483-ade5-66d759d03e28
