@@ -1,0 +1,53 @@
+table Cashflow_Monthly_Dataverse
+	lineageTag: 32ea4d92-bf28-45ea-ac28-821912439d75
+
+	column Description
+		dataType: string
+		sourceProviderType: nvarchar(850)
+		lineageTag: b051c759-b7e9-456a-a262-f78f88b1a2cb
+		summarizeBy: none
+		sourceColumn: Description
+
+		annotation SummarizationSetBy = Automatic
+
+	column Amount
+		dataType: double
+		sourceProviderType: decimal(38, 0)
+		lineageTag: 9ce2c816-d3f8-4b7b-a6df-61b9df956fbc
+		summarizeBy: sum
+		sourceColumn: Amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Month
+		dataType: dateTime
+		formatString: Long Date
+		sourceProviderType: date
+		lineageTag: 73746ea4-d1a1-4932-bb9f-9e63327ce3ad
+		summarizeBy: none
+		sourceColumn: Month
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	partition Cashflow_Monthly_Dataverse = m
+		mode: directQuery
+		source =
+				let
+				    Source = CommonDataService.Database("orge4820302.crm12.dynamics.com"),
+				    dbo_cr030_cashflow = Source{[Schema="dbo",Item="cr030_cashflow"]}[Data],
+				    #"Autres colonnes supprimées" = Table.SelectColumns(dbo_cr030_cashflow,{"cr030_descriptiondelatransaction", "cr030_montant", "cr030_moisdelatransaction"}),
+				    #"Personnalisée ajoutée" = Table.AddColumn(#"Autres colonnes supprimées", "Personnalisé", each [cr030_moisdelatransaction] + #duration(0,5,0,0)),
+				    #"Colonnes supprimées" = Table.RemoveColumns(#"Personnalisée ajoutée",{"cr030_moisdelatransaction"}),
+				    #"Type modifié" = Table.TransformColumnTypes(#"Colonnes supprimées",{{"Personnalisé", type date}}),
+				    #"Colonnes renommées" = Table.RenameColumns(#"Type modifié",{{"Personnalisé", "Month"}, {"cr030_montant", "Amount"}, {"cr030_descriptiondelatransaction", "Description"}})
+				in
+				    #"Colonnes renommées"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

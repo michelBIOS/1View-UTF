@@ -1,0 +1,34 @@
+relationship 567b565d-edc1-41d3-9a16-fa515aa56fda
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Data.Date
+	toColumn: LocalDateTable_c51711e1-2a9c-4df3-80c8-b13a1bb879a6.Date
+
+relationship 357c4af0-4760-4223-b5a0-d313c2a28330
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Date Table'.Date
+	toColumn: LocalDateTable_38873cb7-7310-492d-bfaa-bc34052c9bb5.Date
+
+relationship 16e07201-3475-5cde-ac28-75fd8d52aafa
+	fromColumn: P&L_Monthly_Direct.Month
+	toColumn: 'Date Table'.Date
+
+relationship ccfd8233-4693-8332-9d87-88617159da30
+	fromColumn: Cashflow_Monthly_Direct.Month
+	toColumn: 'Date Table'.Date
+
+relationship 6e52bad0-3924-d8ce-3dc0-2fa5f61b8073
+	fromColumn: P&L_Monthly_Direct.Description
+	toColumn: 'P&L Headers'.Description
+
+relationship c217a7ae-0511-c66b-f9f3-a63446ef42a2
+	fromColumn: Cashflow_Monthly_Direct.Description
+	toColumn: 'Cashflow Headers'.Description
+
+relationship 5e8f0e6f-4249-8ff7-b652-7af315fb305a
+	fromColumn: Cashflow_Monthly_Dataverse.Description
+	toColumn: 'Cashflow Headers'.Description
+
+relationship aa1913d7-0eaf-16cc-96fa-2d58e045417e
+	fromColumn: Cashflow_Monthly_Dataverse.Month
+	toColumn: 'Date Table'.Date
+

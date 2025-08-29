@@ -1,0 +1,48 @@
+table Cashflow_Monthly_Direct
+	lineageTag: 315bc529-abea-4bb0-bf38-849168501f53
+
+	column Description
+		dataType: string
+		sourceProviderType: nvarchar(max)
+		lineageTag: bc6eec1f-f0e6-466b-adb6-022701015165
+		summarizeBy: none
+		sourceColumn: Description
+
+		annotation SummarizationSetBy = Automatic
+
+	column Month
+		dataType: dateTime
+		formatString: Long Date
+		sourceProviderType: date
+		lineageTag: fbfcc21e-7b8e-453e-8226-705f70ee95eb
+		summarizeBy: none
+		sourceColumn: Month
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Amount
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 88cc9d60-e65e-4e11-92bf-3d1cdf7822a0
+		summarizeBy: sum
+		sourceColumn: Amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition Cashflow_Monthly_Direct = m
+		mode: directQuery
+		source =
+				let
+				    Source = Sql.Database("mhirzqqnk57e7anmxqvc3cldyq-ad6po2r4ekrefdnhlqka77jyjq.database.fabric.microsoft.com", "budget-8c98cbd4-310e-4559-878a-ca8a6edfe9e1"),
+				    dbo_Cashflow_Monthly = Source{[Schema="dbo",Item="Cashflow_Monthly"]}[Data]
+				in
+				    dbo_Cashflow_Monthly
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

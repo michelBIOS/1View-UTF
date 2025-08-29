@@ -1,0 +1,16 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
+  "name": "381c2b3f20c9c14d323a",
+  "position": {
+    "x": 1605,
+    "y": 150,
+    "z": 7000,
+    "height": 130,
+    "width": 290.55555555555543,
+    "tabOrder": 10000
+  },
+  "visualGroup": {
+    "displayName": "Carte Cash EOP",
+    "groupMode": "ScaleMode"
+  }
+}

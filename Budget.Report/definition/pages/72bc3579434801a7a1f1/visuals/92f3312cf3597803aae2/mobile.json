@@ -1,0 +1,152 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainerMobileState/2.2.0/schema.json",
+  "position": {
+    "x": 0,
+    "y": 1445,
+    "z": 2000,
+    "height": 313,
+    "width": 324
+  },
+  "objects": {
+    "columnHeaders": [
+      {
+        "properties": {
+          "fontSize": {
+            "expr": {
+              "Literal": {
+                "Value": "8D"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "columnWidth": [
+      {
+        "properties": {
+          "value": {
+            "expr": {
+              "Literal": {
+                "Value": "103D"
+              }
+            }
+          }
+        },
+        "selector": {
+          "metadata": "Assumptions.Domaine"
+        }
+      },
+      {
+        "properties": {
+          "value": {
+            "expr": {
+              "Literal": {
+                "Value": "260.27916060091957D"
+              }
+            }
+          }
+        },
+        "selector": {
+          "metadata": "Assumptions.Justification"
+        }
+      },
+      {
+        "properties": {
+          "value": {
+            "expr": {
+              "Literal": {
+                "Value": "334D"
+              }
+            }
+          }
+        },
+        "selector": {
+          "metadata": "Assumptions.Hypothèse"
+        }
+      }
+    ],
+    "values": [
+      {
+        "properties": {
+          "fontSize": {
+            "expr": {
+              "Literal": {
+                "Value": "8D"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "grid": [],
+    "total": []
+  },
+  "visualContainerObjects": {
+    "title": [
+      {
+        "properties": {
+          "fontSize": {
+            "expr": {
+              "Literal": {
+                "Value": "10D"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "visualHeader": [],
+    "stylePreset": [],
+    "border": [],
+    "dropShadow": [
+      {
+        "properties": {
+          "angle": {
+            "expr": {
+              "Literal": {
+                "Value": "90D"
+              }
+            }
+          },
+          "shadowDistance": {
+            "expr": {
+              "Literal": {
+                "Value": "3D"
+              }
+            }
+          },
+          "shadowBlur": {
+            "expr": {
+              "Literal": {
+                "Value": "4D"
+              }
+            }
+          },
+          "shadowSpread": {
+            "expr": {
+              "Literal": {
+                "Value": "2D"
+              }
+            }
+          },
+          "transparency": {
+            "expr": {
+              "Literal": {
+                "Value": "80D"
+              }
+            }
+          },
+          "preset": {
+            "expr": {
+              "Literal": {
+                "Value": "'Custom'"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "padding": [],
+    "divider": []
+  }
+}
