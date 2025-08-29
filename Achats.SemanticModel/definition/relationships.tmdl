@@ -106,10 +106,6 @@ relationship 92b22d72-fb1c-f36d-d634-3982732d7f5f
 	fromColumn: 'Customer invoices'.ID_Ste
 	toColumn: Dim_Companies.id
 
-relationship f883934a-aad3-a32e-72ca-5347a2c231d6
-	fromColumn: 'Customer invoices'.Catégorie_Balance_Agée
-	toColumn: TranchesBalanceAgée.Tranche
-
 relationship a959f8a6-2376-92e9-f250-48b868607635
 	fromColumn: Fact_GL.date
 	toColumn: Dim_Date.Date
@@ -126,10 +122,6 @@ relationship 9712b0a3-2a5b-4bff-8bd2-f9481d7bb87b
 	joinOnDateBehavior: datePartOnly
 	fromColumn: Dim_Date.Date
 	toColumn: LocalDateTable_6e490a31-a957-46f6-ab08-079221e1b34c.Date
-
-relationship 834874c2-c3b9-bd12-f360-e11fd17a55c4
-	fromColumn: 'Supplier invoices'.Catégorie_Balance_Agée
-	toColumn: TranchesBalanceAgée.Tranche
 
 relationship fdf03ad6-582f-4425-9ea8-c613032ccf71
 	joinOnDateBehavior: datePartOnly
@@ -194,12 +186,6 @@ relationship AutoDetected_f5bab707-45fa-4ca5-a9fa-1035762d9474
 	fromColumn: 'CAT Supplier invoices'.'id supplier invoices'
 	toColumn: 'Supplier invoices'.id
 
-relationship 28f6fbc4-1a08-f902-dded-5b8b4a32efa4
-	crossFilteringBehavior: bothDirections
-	fromCardinality: one
-	fromColumn: Dim_Companies.id
-	toColumn: 'Dynamic Logo'.id
-
 relationship f7a7c640-a0e1-0856-799b-5ada6ac1e053
 	fromColumn: 'CAT Supplier invoices'.category_group_id
 	toColumn: Dim_Category_groups.id_category_groups
@@ -207,4 +193,12 @@ relationship f7a7c640-a0e1-0856-799b-5ada6ac1e053
 relationship 9ed37175-637b-ca33-3af1-e1e371ed74a6
 	fromColumn: 'CAT Supplier invoices'.category_id
 	toColumn: Dim_Categories.id_categories
+
+relationship f883934a-aad3-a32e-72ca-5347a2c231d6
+	fromColumn: 'Customer invoices'.Catégorie_Balance_Agée
+	toColumn: TranchesBalanceAgée.Tranche
+
+relationship 834874c2-c3b9-bd12-f360-e11fd17a55c4
+	fromColumn: 'Supplier invoices'.Catégorie_Balance_Agée
+	toColumn: TranchesBalanceAgée.Tranche
 

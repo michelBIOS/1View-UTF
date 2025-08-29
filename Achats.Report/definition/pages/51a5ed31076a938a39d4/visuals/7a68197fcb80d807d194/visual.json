@@ -1,12 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
   "name": "7a68197fcb80d807d194",
   "position": {
     "x": 19.565321232385969,
     "y": 22.010986386434212,
     "z": 10000,
     "height": 68.478624313350849,
-    "width": 134.51158347265346
+    "width": 134.51158347265346,
+    "tabOrder": 2000
   },
   "visual": {
     "visualType": "cardVisual",
@@ -303,7 +304,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Dette TTC'"
+                  "Value": "'Debts incl. Tax'"
                 }
               }
             },

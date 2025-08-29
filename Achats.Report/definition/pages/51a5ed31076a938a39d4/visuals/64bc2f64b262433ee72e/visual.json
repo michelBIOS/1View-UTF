@@ -1,12 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
   "name": "64bc2f64b262433ee72e",
   "position": {
     "x": 19.565321232385941,
     "y": 22.010986386434212,
     "z": 1000,
     "height": 67,
-    "width": 201
+    "width": 201,
+    "tabOrder": 2000
   },
   "visual": {
     "visualType": "cardVisual",
@@ -26,8 +27,8 @@
                 }
               },
               "queryRef": "CAT Customer invoices.DMPD",
-              "nativeQueryRef": "Paiements de Dettes (en jours)",
-              "displayName": "Paiements de Dettes (en jours)"
+              "nativeQueryRef": "Debt Payments (Days)",
+              "displayName": "Debt Payments (Days)"
             }
           ]
         }

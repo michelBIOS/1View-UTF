@@ -1081,7 +1081,7 @@ table Mesures
 
 	measure 'Dernière MAJ' =
 			
-			"MAJ : " &
+			"Update : " &
 			FORMAT(
 			    CALCULATE(
 			        MAX('Supplier invoices'[updated_at]),
@@ -1162,39 +1162,39 @@ table Mesures
 		displayFolder: Titres Dynamique\Titres
 		lineageTag: 11a30992-6c5a-44b8-a555-7dc83e567077
 
-	measure 'Évolutions des Achats HT Mensuels' = "Évolutions des Achats HT Mensuels - "&[PreviousYear]&"/"&[ThisYear]
+	measure 'Évolutions des Achats HT Mensuels' = "Monthly Net Purchases - "&[PreviousYear]&"/"&[ThisYear]
 		displayFolder: Titres Dynamique\Titres
 		lineageTag: d60846d9-9cd1-4959-b8ff-f47ae2a0ad62
 
-	measure 'Achats par Fournisseurs' = "Achats par Fournisseurs - "&[ThisYear]
+	measure 'Achats par Fournisseurs' = "Purchases by Suppliers - "&[ThisYear]
 		displayFolder: Titres Dynamique\Titres
 		lineageTag: 5344f0bd-c12f-4f59-a9a1-be4960a80f28
 
-	measure 'Montant des Factures en Retard' = "Montant des Factures en Retard - "&[ThisYear]
+	measure 'Montant des Factures en Retard' = "Amount of Overdue Invoices - "&[ThisYear]
 		displayFolder: Titres Dynamique\Titres
 		lineageTag: 5180b827-6e58-4d5f-862b-367b0df3a179
 
-	measure 'Dettes TTC Fournisseurs' = "Dettes TTC Fournisseurs - "&[ThisYear]
+	measure 'Dettes TTC Fournisseurs' = "Accounts Payable incl. Tax - "&[ThisYear]
 		displayFolder: Titres Dynamique\Titres
 		lineageTag: afd03e09-b285-4b0a-8030-238c598d2d6c
 
-	measure 'Factures en Retard' = "Factures en Retard - "&[ThisYear]
+	measure 'Factures en Retard' = "Overdue Amount by Supplier - "&[ThisYear]
 		displayFolder: Titres Dynamique\Titres
 		lineageTag: 66dac661-4a7e-4fe0-9dc9-1efe85b62fe3
 
-	measure 'Balance Agée' = "Balance Agée - "&[ThisYear]& " (€)"
+	measure 'Balance Agée' = "Aged Payables - "&[ThisYear]& " (€)"
 		displayFolder: Titres Dynamique\Titres
 		lineageTag: 37065df7-ebbe-4753-8384-c3b88dec6aa1
 
-	measure 'Liste des Factures' = "Liste des Factures - "&[ThisYear]
+	measure 'Liste des Factures' = "Invoice list - "&[ThisYear]
 		displayFolder: Titres Dynamique\Titres
 		lineageTag: 2f26dc3c-74a3-4b8f-8b0c-6d86bf78088e
 
-	measure 'Détails des Factures en Retard' = "Détails des Factures en Retard - "&[ThisYear]
+	measure 'Détails des Factures en Retard' = "Overdue Invoices Details - "&[ThisYear]
 		displayFolder: Titres Dynamique\Titres
 		lineageTag: 05933032-672d-4e81-a183-b26ee6143fe2
 
-	measure 'Echéances Fournisseurs' = "Echéances Fournisseurs - "&[ThisYear]
+	measure 'Echéances Fournisseurs' = "Outstanding Payables - "&[ThisYear]
 		displayFolder: Titres Dynamique\Titres
 		lineageTag: 9c398145-acc3-4635-abd1-4f10616848ed
 
@@ -1228,7 +1228,7 @@ table Mesures
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	measure 'Achats par Catégories' = "Achats par Catégories - "&[ThisYear]
+	measure 'Achats par Catégories' = "Purchases by Category - "&[ThisYear]
 		displayFolder: Titres Dynamique\Titres
 		lineageTag: 8c8c9181-6d0c-469e-946d-50b4f27f4aee
 

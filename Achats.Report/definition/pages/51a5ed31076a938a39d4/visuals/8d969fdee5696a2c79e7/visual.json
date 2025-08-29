@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
   "name": "8d969fdee5696a2c79e7",
   "position": {
     "x": 23.164786041954333,
@@ -7,7 +7,7 @@
     "z": 5000,
     "height": 402.53028178872177,
     "width": 973.35986242876254,
-    "tabOrder": 2000
+    "tabOrder": 1000
   },
   "visual": {
     "visualType": "tableEx",
@@ -42,8 +42,8 @@
                 }
               },
               "queryRef": "Dim_Suppliers.name",
-              "nativeQueryRef": "Fournisseur",
-              "displayName": "Fournisseur"
+              "nativeQueryRef": "Supplier",
+              "displayName": "Supplier"
             },
             {
               "field": {
@@ -57,8 +57,8 @@
                 }
               },
               "queryRef": "CAT Supplier invoices.label",
-              "nativeQueryRef": "Catégorie",
-              "displayName": "Catégorie"
+              "nativeQueryRef": "Category",
+              "displayName": "Category"
             },
             {
               "field": {
@@ -77,8 +77,8 @@
                 }
               },
               "queryRef": "Sum(Supplier invoices.amount)",
-              "nativeQueryRef": "TTC (€)",
-              "displayName": "TTC (€)"
+              "nativeQueryRef": "Gross (€)",
+              "displayName": "Gross (€)"
             },
             {
               "field": {
@@ -97,8 +97,8 @@
                 }
               },
               "queryRef": "Sum(Supplier invoices.remaining_amount_with_tax)",
-              "nativeQueryRef": "Solde TTC (€)",
-              "displayName": "Solde TTC (€)"
+              "nativeQueryRef": "Gross Balance (€)",
+              "displayName": "Gross Balance (€)"
             },
             {
               "field": {
@@ -117,8 +117,8 @@
                 }
               },
               "queryRef": "Sum(Supplier invoices.DaysPastDeadline)",
-              "nativeQueryRef": "J de Retard",
-              "displayName": "J de Retard",
+              "nativeQueryRef": "Days Overdue",
+              "displayName": "Days Overdue",
               "format": "#,0"
             },
             {
@@ -133,8 +133,8 @@
                 }
               },
               "queryRef": "Supplier invoices.deadline",
-              "nativeQueryRef": "Échéance",
-              "displayName": "Échéance",
+              "nativeQueryRef": "Due Date",
+              "displayName": "Due Date",
               "format": "dd/MM/yy"
             },
             {
@@ -149,8 +149,8 @@
                 }
               },
               "queryRef": "Supplier invoices.invoice_number",
-              "nativeQueryRef": "N° Facture",
-              "displayName": "N° Facture"
+              "nativeQueryRef": "Invoice Nb",
+              "displayName": "Invoice Nb"
             },
             {
               "field": {
@@ -164,8 +164,8 @@
                 }
               },
               "queryRef": "Supplier invoices.invoice_lines_url",
-              "nativeQueryRef": "Lien",
-              "displayName": "Lien"
+              "nativeQueryRef": "URL",
+              "displayName": "URL"
             }
           ]
         }
@@ -228,7 +228,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "95.94157285144759D"
+                  "Value": "70.88750581405564D"
                 }
               }
             }
@@ -284,7 +284,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "92.70335603387775D"
+                  "Value": "117.82127840746512D"
                 }
               }
             }

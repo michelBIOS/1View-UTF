@@ -10038,6 +10038,16 @@ cultureInfo fr-FR
 			          }
 			        },
 			        {
+			          "Due Date": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
 			          "Échéance": {
 			            "State": "Suggested",
 			            "Source": {
@@ -10276,6 +10286,16 @@ cultureInfo fr-FR
 			              "Agent": "Thesaurus"
 			            },
 			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "Invoice Nb": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
 			          }
 			        },
 			        {
@@ -11618,12 +11638,6 @@ cultureInfo fr-FR
 			          }
 			        },
 			        {
-			          "supplier": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
 			          "supplier identification": {
 			            "Type": "Noun",
 			            "State": "Suggested",
@@ -11661,66 +11675,6 @@ cultureInfo fr-FR
 			              "Agent": "Thesaurus"
 			            },
 			            "Weight": 0.727
-			          }
-			        },
-			        {
-			          "dealer": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
-			          }
-			        },
-			        {
-			          "contractor": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
-			          }
-			        },
-			        {
-			          "provider": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
-			          }
-			        },
-			        {
-			          "trader": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
-			          }
-			        },
-			        {
-			          "seller": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
-			          }
-			        },
-			        {
-			          "purveyor": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
 			          }
 			        }
 			      ]
@@ -11991,12 +11945,6 @@ cultureInfo fr-FR
 			          }
 			        },
 			        {
-			          "supplier": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
 			          "dim dealer": {
 			            "Type": "Noun",
 			            "State": "Suggested",
@@ -12057,43 +12005,23 @@ cultureInfo fr-FR
 			          }
 			        },
 			        {
-			          "dealer": {
+			          "dim broker": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.491
+			            "Weight": 0.485
 			          }
 			        },
 			        {
-			          "contractor": {
+			          "dim merchant": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.491
-			          }
-			        },
-			        {
-			          "provider": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
-			          }
-			        },
-			        {
-			          "trader": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
+			            "Weight": 0.485
 			          }
 			        }
 			      ]
@@ -12177,6 +12105,16 @@ cultureInfo fr-FR
 			              "Agent": "Thesaurus"
 			            },
 			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "Supplier": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
 			          }
 			        },
 			        {
@@ -13587,6 +13525,16 @@ cultureInfo fr-FR
 			          "nb factures impayées": {
 			            "State": "Generated"
 			          }
+			        },
+			        {
+			          "Overdue Invoices": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
 			        }
 			      ]
 			    },
@@ -13626,6 +13574,16 @@ cultureInfo fr-FR
 			        },
 			        {
 			          "N": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "Net Purchases": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -17670,6 +17628,16 @@ cultureInfo fr-FR
 			          "payé": {
 			            "State": "Generated"
 			          }
+			        },
+			        {
+			          "Paid": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
 			        }
 			      ]
 			    },
@@ -18673,12 +18641,6 @@ cultureInfo fr-FR
 			          }
 			        },
 			        {
-			          "category": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
 			          "dim classification": {
 			            "Type": "Noun",
 			            "State": "Suggested",
@@ -18686,16 +18648,6 @@ cultureInfo fr-FR
 			              "Agent": "Thesaurus"
 			            },
 			            "Weight": 0.75
-			          }
-			        },
-			        {
-			          "classification": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.736
 			          }
 			        },
 			        {
@@ -18746,36 +18698,6 @@ cultureInfo fr-FR
 			              "Agent": "Thesaurus"
 			            },
 			            "Weight": 0.727
-			          }
-			        },
-			        {
-			          "class": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.714
-			          }
-			        },
-			        {
-			          "grouping": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.714
-			          }
-			        },
-			        {
-			          "kind": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.714
 			          }
 			        }
 			      ]
@@ -19082,12 +19004,6 @@ cultureInfo fr-FR
 			          }
 			        },
 			        {
-			          "category": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
 			          "id classification": {
 			            "Type": "Noun",
 			            "State": "Suggested",
@@ -19095,16 +19011,6 @@ cultureInfo fr-FR
 			              "Agent": "Thesaurus"
 			            },
 			            "Weight": 0.75
-			          }
-			        },
-			        {
-			          "classification": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.736
 			          }
 			        },
 			        {
@@ -19158,33 +19064,43 @@ cultureInfo fr-FR
 			          }
 			        },
 			        {
-			          "class": {
+			          "identification category": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.714
+			            "Weight": 0.6
 			          }
 			        },
 			        {
-			          "grouping": {
+			          "identity category": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.714
+			            "Weight": 0.6
 			          }
 			        },
 			        {
-			          "kind": {
+			          "identifier category": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.714
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "credential category": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
 			          }
 			        }
 			      ]
@@ -20578,12 +20494,6 @@ cultureInfo fr-FR
 			          }
 			        },
 			        {
-			          "category": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
 			          "category identification": {
 			            "Type": "Noun",
 			            "State": "Suggested",
@@ -20614,16 +20524,6 @@ cultureInfo fr-FR
 			          }
 			        },
 			        {
-			          "classification": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.736
-			          }
-			        },
-			        {
 			          "category credential": {
 			            "Type": "Noun",
 			            "State": "Suggested",
@@ -20631,36 +20531,6 @@ cultureInfo fr-FR
 			              "Agent": "Thesaurus"
 			            },
 			            "Weight": 0.727
-			          }
-			        },
-			        {
-			          "class": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.714
-			          }
-			        },
-			        {
-			          "grouping": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.714
-			          }
-			        },
-			        {
-			          "kind": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.714
 			          }
 			        },
 			        {
@@ -20675,6 +20545,36 @@ cultureInfo fr-FR
 			        },
 			        {
 			          "class id": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "type id": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "grouping id": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "kind id": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -21694,6 +21594,16 @@ cultureInfo fr-FR
 			          }
 			        },
 			        {
+			          "VAT Rate": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
 			          "Taux TVA": {
 			            "State": "Suggested",
 			            "Source": {
@@ -21817,227 +21727,6 @@ cultureInfo fr-FR
 			              "Agent": "Thesaurus"
 			            },
 			            "Weight": 0.727
-			          }
-			        }
-			      ]
-			    },
-			    "dynamic_logo": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Dynamic Logo"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "dynamic logo": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "dynamic emblem": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.5
-			          }
-			        },
-			        {
-			          "dynamic symbol": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.485
-			          }
-			        },
-			        {
-			          "dynamic sign": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.485
-			          }
-			        },
-			        {
-			          "dynamic badge": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.485
-			          }
-			        },
-			        {
-			          "dynamic insigne": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.485
-			          }
-			        },
-			        {
-			          "dynamic design": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.485
-			          }
-			        }
-			      ]
-			    },
-			    "dynamic_logo.id": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Dynamic Logo",
-			          "ConceptualProperty": "id"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "id": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "identification": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.736
-			          }
-			        },
-			        {
-			          "identity": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.736
-			          }
-			        },
-			        {
-			          "credential": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.714
-			          }
-			        }
-			      ],
-			      "NameType": "Identifier"
-			    },
-			    "dynamic_logo.logo": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Dynamic Logo",
-			          "ConceptualProperty": "Logo"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "logo": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "emblem": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
-			          }
-			        },
-			        {
-			          "symbol": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.476
-			          }
-			        },
-			        {
-			          "sign": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.476
-			          }
-			        },
-			        {
-			          "badge": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.476
-			          }
-			        },
-			        {
-			          "insigne": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.476
-			          }
-			        },
-			        {
-			          "design": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.476
-			          }
-			        }
-			      ]
-			    },
-			    "dynamic_logo.dyn_logo_html": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Dynamic Logo",
-			          "ConceptualProperty": "DynLogoHtml"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "dyn logo html": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "DynLogoHtml": {
-			            "Type": "Noun",
-			            "State": "Generated",
-			            "Weight": 0.99
 			          }
 			        }
 			      ]
@@ -22529,12 +22218,6 @@ cultureInfo fr-FR
 			          }
 			        },
 			        {
-			          "category": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
 			          "category identification": {
 			            "Type": "Noun",
 			            "State": "Suggested",
@@ -22565,16 +22248,6 @@ cultureInfo fr-FR
 			          }
 			        },
 			        {
-			          "classification": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.736
-			          }
-			        },
-			        {
 			          "category credential": {
 			            "Type": "Noun",
 			            "State": "Suggested",
@@ -22582,36 +22255,6 @@ cultureInfo fr-FR
 			              "Agent": "Thesaurus"
 			            },
 			            "Weight": 0.727
-			          }
-			        },
-			        {
-			          "class": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.714
-			          }
-			        },
-			        {
-			          "grouping": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.714
-			          }
-			        },
-			        {
-			          "kind": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.714
 			          }
 			        },
 			        {
@@ -22626,6 +22269,36 @@ cultureInfo fr-FR
 			        },
 			        {
 			          "class id": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "type id": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "grouping id": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "kind id": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -23703,12 +23376,6 @@ cultureInfo fr-FR
 			          }
 			        },
 			        {
-			          "category": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
 			          "category identification": {
 			            "Type": "Noun",
 			            "State": "Suggested",
@@ -23739,16 +23406,6 @@ cultureInfo fr-FR
 			          }
 			        },
 			        {
-			          "classification": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.736
-			          }
-			        },
-			        {
 			          "category credential": {
 			            "Type": "Noun",
 			            "State": "Suggested",
@@ -23756,36 +23413,6 @@ cultureInfo fr-FR
 			              "Agent": "Thesaurus"
 			            },
 			            "Weight": 0.727
-			          }
-			        },
-			        {
-			          "class": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.714
-			          }
-			        },
-			        {
-			          "grouping": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.714
-			          }
-			        },
-			        {
-			          "kind": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.714
 			          }
 			        },
 			        {
@@ -23800,6 +23427,36 @@ cultureInfo fr-FR
 			        },
 			        {
 			          "class id": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "type id": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "grouping id": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "kind id": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -23865,7 +23522,7 @@ cultureInfo fr-FR
 			          }
 			        },
 			        {
-			          "Catégorie": {
+			          "Category": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -23876,6 +23533,16 @@ cultureInfo fr-FR
 			        },
 			        {
 			          "Catégories": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "Catégorie": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -24647,7 +24314,17 @@ cultureInfo fr-FR
 			          }
 			        },
 			        {
-			          "Paiements de Dettes (en jours)": {
+			          "Debt Payments (Days)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "Paiements de Dettes (en Jours)": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -25208,6 +24885,72 @@ cultureInfo fr-FR
 			    }
 			  },
 			  "Relationships": {
+			    "CAT_customer_invoice_updated_at_mois_has_CAT_customer_invoice_updated_at_jour": {
+			      "Binding": {
+			        "ConceptualEntity": "CAT Customer invoices"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "CAT_customer_invoice.updated_at.mois": {
+			          "Target": {
+			            "Entity": "CAT_customer_invoice.updated_at.mois"
+			          }
+			        },
+			        "CAT_customer_invoice.updated_at.jour": {
+			          "Target": {
+			            "Entity": "CAT_customer_invoice.updated_at.jour"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "CAT_customer_invoice.updated_at.mois"
+			            },
+			            "Object": {
+			              "Role": "CAT_customer_invoice.updated_at.jour"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "moises_have_jour"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "CAT_customer_invoice.updated_at.jour"
+			            },
+			            "Object": {
+			              "Role": "CAT_customer_invoice.updated_at.mois"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "jour_have_moises"
+			        },
+			        {
+			          "Preposition": {
+			            "Subject": {
+			              "Role": "CAT_customer_invoice.updated_at.jour"
+			            },
+			            "Prepositions": [
+			              {
+			                "in": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Object": {
+			              "Role": "CAT_customer_invoice.updated_at.mois"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "jour_are_in_moises22"
+			        }
+			      ]
+			    },
 			    "CAT_customer_invoice_updated_at_trimestre_has_CAT_customer_invoice_updated_at_mois": {
 			      "Binding": {
 			        "ConceptualEntity": "CAT Customer invoices"
@@ -25534,7 +25277,7 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "moises_have_jour"
+			          "ID": "moises_have_jour1"
 			        },
 			        {
 			          "Attribute": {
@@ -25547,7 +25290,7 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "jour_have_moises"
+			          "ID": "jour_have_moises1"
 			        },
 			        {
 			          "Preposition": {
@@ -25897,7 +25640,7 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "moises_have_jour1"
+			          "ID": "moises_have_jour2"
 			        },
 			        {
 			          "Attribute": {
@@ -25910,7 +25653,7 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "jour_have_moises1"
+			          "ID": "jour_have_moises2"
 			        },
 			        {
 			          "Preposition": {
@@ -26260,7 +26003,7 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "moises_have_jour2"
+			          "ID": "moises_have_jour3"
 			        },
 			        {
 			          "Attribute": {
@@ -26273,7 +26016,7 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "jour_have_moises2"
+			          "ID": "jour_have_moises3"
 			        },
 			        {
 			          "Preposition": {
@@ -26623,7 +26366,7 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "moises_have_jour3"
+			          "ID": "moises_have_jour4"
 			        },
 			        {
 			          "Attribute": {
@@ -26636,7 +26379,7 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "jour_have_moises3"
+			          "ID": "jour_have_moises4"
 			        },
 			        {
 			          "Preposition": {
@@ -26986,7 +26729,7 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "moises_have_jour4"
+			          "ID": "moises_have_jour5"
 			        },
 			        {
 			          "Attribute": {
@@ -26999,7 +26742,7 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "jour_have_moises4"
+			          "ID": "jour_have_moises5"
 			        },
 			        {
 			          "Preposition": {
@@ -27349,7 +27092,7 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "moises_have_jour5"
+			          "ID": "moises_have_jour6"
 			        },
 			        {
 			          "Attribute": {
@@ -27362,7 +27105,7 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "jour_have_moises5"
+			          "ID": "jour_have_moises6"
 			        },
 			        {
 			          "Preposition": {
@@ -27712,7 +27455,7 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "moises_have_jour6"
+			          "ID": "moises_have_jour7"
 			        },
 			        {
 			          "Attribute": {
@@ -27725,7 +27468,7 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "jour_have_moises6"
+			          "ID": "jour_have_moises7"
 			        },
 			        {
 			          "Preposition": {
@@ -28075,7 +27818,7 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "moises_have_jour7"
+			          "ID": "moises_have_jour8"
 			        },
 			        {
 			          "Attribute": {
@@ -28088,7 +27831,7 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "jour_have_moises7"
+			          "ID": "jour_have_moises8"
 			        },
 			        {
 			          "Preposition": {
@@ -28438,7 +28181,7 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "moises_have_jour8"
+			          "ID": "moises_have_jour9"
 			        },
 			        {
 			          "Attribute": {
@@ -28451,7 +28194,7 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "jour_have_moises8"
+			          "ID": "jour_have_moises9"
 			        },
 			        {
 			          "Preposition": {
@@ -28801,7 +28544,7 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "moises_have_jour9"
+			          "ID": "moises_have_jour10"
 			        },
 			        {
 			          "Attribute": {
@@ -28814,7 +28557,7 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "jour_have_moises9"
+			          "ID": "jour_have_moises10"
 			        },
 			        {
 			          "Preposition": {
@@ -29164,7 +28907,7 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "moises_have_jour10"
+			          "ID": "moises_have_jour11"
 			        },
 			        {
 			          "Attribute": {
@@ -29177,7 +28920,7 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "jour_have_moises10"
+			          "ID": "jour_have_moises11"
 			        },
 			        {
 			          "Preposition": {
@@ -29527,7 +29270,7 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "moises_have_jour11"
+			          "ID": "moises_have_jour12"
 			        },
 			        {
 			          "Attribute": {
@@ -29540,7 +29283,7 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "jour_have_moises11"
+			          "ID": "jour_have_moises12"
 			        },
 			        {
 			          "Preposition": {
@@ -29890,7 +29633,7 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "moises_have_jour12"
+			          "ID": "moises_have_jour13"
 			        },
 			        {
 			          "Attribute": {
@@ -29903,7 +29646,7 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "jour_have_moises12"
+			          "ID": "jour_have_moises13"
 			        },
 			        {
 			          "Preposition": {
@@ -30253,7 +29996,7 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "moises_have_jour13"
+			          "ID": "moises_have_jour14"
 			        },
 			        {
 			          "Attribute": {
@@ -30266,7 +30009,7 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "jour_have_moises13"
+			          "ID": "jour_have_moises14"
 			        },
 			        {
 			          "Preposition": {
@@ -30616,7 +30359,7 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "moises_have_jour14"
+			          "ID": "moises_have_jour15"
 			        },
 			        {
 			          "Attribute": {
@@ -30629,7 +30372,7 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "jour_have_moises14"
+			          "ID": "jour_have_moises15"
 			        },
 			        {
 			          "Preposition": {
@@ -30979,7 +30722,7 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "moises_have_jour15"
+			          "ID": "moises_have_jour16"
 			        },
 			        {
 			          "Attribute": {
@@ -30992,7 +30735,7 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "jour_have_moises15"
+			          "ID": "jour_have_moises16"
 			        },
 			        {
 			          "Preposition": {
@@ -31342,7 +31085,7 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "moises_have_jour16"
+			          "ID": "moises_have_jour17"
 			        },
 			        {
 			          "Attribute": {
@@ -31355,7 +31098,7 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "jour_have_moises16"
+			          "ID": "jour_have_moises17"
 			        },
 			        {
 			          "Preposition": {
@@ -31705,7 +31448,7 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "moises_have_jour17"
+			          "ID": "moises_have_jour18"
 			        },
 			        {
 			          "Attribute": {
@@ -31718,7 +31461,7 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "jour_have_moises17"
+			          "ID": "jour_have_moises18"
 			        },
 			        {
 			          "Preposition": {
@@ -32068,7 +31811,7 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "moises_have_jour18"
+			          "ID": "moises_have_jour19"
 			        },
 			        {
 			          "Attribute": {
@@ -32081,7 +31824,7 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "jour_have_moises18"
+			          "ID": "jour_have_moises19"
 			        },
 			        {
 			          "Preposition": {
@@ -32431,7 +32174,7 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "moises_have_jour19"
+			          "ID": "moises_have_jour20"
 			        },
 			        {
 			          "Attribute": {
@@ -32444,7 +32187,7 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "jour_have_moises19"
+			          "ID": "jour_have_moises20"
 			        },
 			        {
 			          "Preposition": {
@@ -32794,7 +32537,7 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "moises_have_jour20"
+			          "ID": "moises_have_jour21"
 			        },
 			        {
 			          "Attribute": {
@@ -32807,7 +32550,7 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "jour_have_moises20"
+			          "ID": "jour_have_moises21"
 			        },
 			        {
 			          "Preposition": {
@@ -33157,7 +32900,7 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "moises_have_jour21"
+			          "ID": "moises_have_jour22"
 			        },
 			        {
 			          "Attribute": {
@@ -33170,7 +32913,7 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "jour_have_moises21"
+			          "ID": "jour_have_moises22"
 			        },
 			        {
 			          "Preposition": {
@@ -33675,39 +33418,6 @@ cultureInfo fr-FR
 			        }
 			      ]
 			    },
-			    "dynamic_logo_has_dim_company": {
-			      "Binding": {
-			        "ConceptualEntity": "Dynamic Logo"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dynamic_logo": {
-			          "Target": {
-			            "Entity": "dynamic_logo"
-			          }
-			        },
-			        "dim_company": {
-			          "Target": {
-			            "Entity": "dim_company"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dynamic_logo"
-			            },
-			            "Object": {
-			              "Role": "dim_company"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dynamic_logos_have_dim_companies"
-			        }
-			      ]
-			    },
 			    "categories_fact_3_has_supplier_invoice": {
 			      "Binding": {
 			        "ConceptualEntity": "Categories_Fact_3"
@@ -33975,26 +33685,6 @@ cultureInfo fr-FR
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "dim_suppliers_have_supplier_invoices"
-			        },
-			        {
-			          "Verb": {
-			            "Subject": {
-			              "Role": "dim_supplier"
-			            },
-			            "Verbs": [
-			              {
-			                "supply": {
-			                  "State": "Generated"
-			                }
-			              }
-			            ],
-			            "Object": {
-			              "Role": "supplier_invoice"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.75,
-			          "ID": "dim_suppliers_supply_supplier_invoices"
 			        }
 			      ]
 			    },
@@ -35487,118 +35177,6 @@ cultureInfo fr-FR
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "dim_customers_have_city_clean"
-			        }
-			      ]
-			    },
-			    "dynamic_logo_has_dyn_logo_html": {
-			      "Binding": {
-			        "ConceptualEntity": "Dynamic Logo"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dynamic_logo": {
-			          "Target": {
-			            "Entity": "dynamic_logo"
-			          }
-			        },
-			        "dynamic_logo.dyn_logo_html": {
-			          "Target": {
-			            "Entity": "dynamic_logo.dyn_logo_html"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dynamic_logo"
-			            },
-			            "Object": {
-			              "Role": "dynamic_logo.dyn_logo_html"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dynamic_logos_have_dyn_logo_html"
-			        }
-			      ]
-			    },
-			    "dynamic_logo_has_logo": {
-			      "Binding": {
-			        "ConceptualEntity": "Dynamic Logo"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dynamic_logo": {
-			          "Target": {
-			            "Entity": "dynamic_logo"
-			          }
-			        },
-			        "dynamic_logo.logo": {
-			          "Target": {
-			            "Entity": "dynamic_logo.logo"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dynamic_logo"
-			            },
-			            "Object": {
-			              "Role": "dynamic_logo.logo"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dynamic_logos_have_logos"
-			        }
-			      ]
-			    },
-			    "dynamic_logo_has_id": {
-			      "Binding": {
-			        "ConceptualEntity": "Dynamic Logo"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dynamic_logo": {
-			          "Target": {
-			            "Entity": "dynamic_logo"
-			          }
-			        },
-			        "dynamic_logo.id": {
-			          "Target": {
-			            "Entity": "dynamic_logo.id"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dynamic_logo"
-			            },
-			            "Object": {
-			              "Role": "dynamic_logo.id"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dynamic_logos_have_ids"
-			        },
-			        {
-			          "Name": {
-			            "Subject": {
-			              "Role": "dynamic_logo"
-			            },
-			            "Name": {
-			              "Role": "dynamic_logo.id"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "ids_are_names_IDs_of_dynamic_logos"
 			        }
 			      ]
 			    },
@@ -46112,72 +45690,6 @@ cultureInfo fr-FR
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "some_customer_invoices_are_paid_customer_invoices"
-			        }
-			      ]
-			    },
-			    "CAT_customer_invoice_updated_at_mois_has_CAT_customer_invoice_updated_at_jour": {
-			      "Binding": {
-			        "ConceptualEntity": "CAT Customer invoices"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "CAT_customer_invoice.updated_at.mois": {
-			          "Target": {
-			            "Entity": "CAT_customer_invoice.updated_at.mois"
-			          }
-			        },
-			        "CAT_customer_invoice.updated_at.jour": {
-			          "Target": {
-			            "Entity": "CAT_customer_invoice.updated_at.jour"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "CAT_customer_invoice.updated_at.mois"
-			            },
-			            "Object": {
-			              "Role": "CAT_customer_invoice.updated_at.jour"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "moises_have_jour22"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "CAT_customer_invoice.updated_at.jour"
-			            },
-			            "Object": {
-			              "Role": "CAT_customer_invoice.updated_at.mois"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "jour_have_moises22"
-			        },
-			        {
-			          "Preposition": {
-			            "Subject": {
-			              "Role": "CAT_customer_invoice.updated_at.jour"
-			            },
-			            "Prepositions": [
-			              {
-			                "in": {
-			                  "State": "Generated"
-			                }
-			              }
-			            ],
-			            "Object": {
-			              "Role": "CAT_customer_invoice.updated_at.mois"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "jour_are_in_moises22"
 			        }
 			      ]
 			    },

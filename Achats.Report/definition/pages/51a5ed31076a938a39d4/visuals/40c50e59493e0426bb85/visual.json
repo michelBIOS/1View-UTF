@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
   "name": "40c50e59493e0426bb85",
   "position": {
     "x": 21.94240143120145,
@@ -7,7 +7,7 @@
     "z": 21000,
     "height": 67.945610618684327,
     "width": 135.89122123736865,
-    "tabOrder": 2000
+    "tabOrder": 1000
   },
   "visual": {
     "visualType": "cardVisual",
@@ -27,8 +27,8 @@
                 }
               },
               "queryRef": "Mesures.Montant_Total_Achats",
-              "nativeQueryRef": "Total Achats HT",
-              "displayName": "Total Achats HT",
+              "nativeQueryRef": "Net Purchases",
+              "displayName": "Net Purchases",
               "format": "#,0 \"€\";-#,0 \"€\";#,0 \"€\""
             }
           ]
@@ -453,7 +453,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Achats HT'"
+                  "Value": "'Net Purchases'"
                 }
               }
             },

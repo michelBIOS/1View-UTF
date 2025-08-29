@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
   "name": "3825da790dc41aadcb6b",
   "position": {
     "x": 1605,
@@ -7,7 +7,7 @@
     "z": 15000,
     "height": 130.79565588339489,
     "width": 290.31417713918586,
-    "tabOrder": 4000
+    "tabOrder": 3000
   },
   "visualGroup": {
     "displayName": "Card Montant FI",

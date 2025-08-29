@@ -580,31 +580,6 @@
               }
             }
           },
-          "1e7eceedba942b07fdb7": {
-            "filters": {
-              "byExpr": [
-                {
-                  "name": "a3b3e8122ac0ce043159",
-                  "type": "Categorical",
-                  "expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Dynamic Logo"
-                        }
-                      },
-                      "Property": "Logo"
-                    }
-                  },
-                  "howCreated": 0
-                }
-              ]
-            },
-            "singleVisual": {
-              "visualType": "advancedSlicerVisual",
-              "objects": {}
-            }
-          },
           "1f569101e652d23c02ce": {
             "filters": {
               "byExpr": [
@@ -2466,12 +2441,6 @@
                   }
                 }
               ]
-            }
-          },
-          "9bd965f0b1db29715a97": {
-            "singleVisual": {
-              "visualType": "image",
-              "objects": {}
             }
           },
           "a39418190b79d0454a6e": {
