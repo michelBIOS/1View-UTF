@@ -1,0 +1,48 @@
+table 'Date Table'
+	lineageTag: 44d8c28a-988a-48dd-9b69-423a5eb4af9f
+
+	column Date
+		formatString: General Date
+		lineageTag: 3987e2f0-a633-44c9-b94c-9bea108e17b2
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Date]
+
+		variation Variation
+			isDefault
+			relationship: 357c4af0-4760-4223-b5a0-d313c2a28330
+			defaultHierarchy: LocalDateTable_38873cb7-7310-492d-bfaa-bc34052c9bb5.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Mois
+		lineageTag: aaa0b158-bcdd-49b6-93d6-147be2fa6180
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Mois]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Année
+		formatString: 0
+		lineageTag: 00d76b24-d4d3-4158-a724-b4d4fd3e8fc6
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Année]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Date Table' = calculated
+		mode: import
+		source = ```
+				
+				ADDCOLUMNS (
+				    CALENDAR (DATE(2025, 1, 1), DATE(2025, 12, 31)),
+				    "Année", YEAR([Date]),
+				    "Mois", FORMAT([Date], "MM")
+				)
+				
+				```
+
+	annotation PBI_Id = d43013b47b2f4f07bd5ad0f83c6f11f6
+

@@ -1,0 +1,38 @@
+table 'P&L Headers'
+	lineageTag: bfb386e7-39a2-4bb3-8d31-4bb846899516
+
+	column Description
+		dataType: string
+		lineageTag: c1b2b9dd-e8fb-4532-a3bf-960f53cfa423
+		summarizeBy: none
+		sourceColumn: Description
+		sortByColumn: Index
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column Index
+		dataType: int64
+		formatString: 0
+		lineageTag: 9fb9f0f5-3d1c-497b-881a-0b39a0497068
+		summarizeBy: none
+		sourceColumn: Index
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'P&L Headers' = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(Web.Contents("https://biosexpertise.sharepoint.com/sites/Expertise/Documents%20partages/1Bex/Pennylane/1View\Sources\Référentiels\Headers.xlsx"), null, true),
+				    #"P&L Headers_Sheet" = Source{[Item="P&L Headers",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(#"P&L Headers_Sheet", [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Description", type text}, {"Index", Int64.Type}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,44 @@
+table Assumptions
+	lineageTag: ccb89b39-7fd0-4dda-91f7-f05169f288b7
+
+	column Domaine
+		dataType: string
+		lineageTag: 7dbc81f8-9f5d-4cc9-bec4-0d4a7747e293
+		summarizeBy: none
+		sourceColumn: Domaine
+
+		annotation SummarizationSetBy = Automatic
+
+	column Hypothèse
+		dataType: string
+		lineageTag: 5a7c068f-1b95-4ab6-a79a-62bb805ce184
+		summarizeBy: none
+		sourceColumn: Hypothèse
+
+		annotation SummarizationSetBy = Automatic
+
+	column Justification
+		dataType: string
+		lineageTag: 6a836ac0-0c8e-4d8b-ad2b-8b157cae88c8
+		summarizeBy: none
+		sourceColumn: Justification
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Assumptions = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(Web.Contents("https://biosexpertise.sharepoint.com/sites/Expertise/Documents%20partages/1Bex/Pennylane/1View\Sources\Faits\Maquette budgétaire simplifié - UTF.xlsx"), null, true),
+				    Assumptions_Sheet = Source{[Item="Assumptions",Kind="Sheet"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(Assumptions_Sheet,{{"Column1", type text}, {"Column2", type text}, {"Column3", type text}}),
+				    #"Removed Top Rows" = Table.Skip(#"Changed Type",2),
+				    #"Promoted Headers" = Table.PromoteHeaders(#"Removed Top Rows", [PromoteAllScalars=true]),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Promoted Headers",{{"Domaine", type text}, {"Hypothèse", type text}, {"Justification", type text}})
+				in
+				    #"Changed Type1"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

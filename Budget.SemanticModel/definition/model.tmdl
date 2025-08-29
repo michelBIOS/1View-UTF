@@ -1,0 +1,31 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: fr-FR
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["Assumptions","Data","Cashflow Headers","P&L Headers","Cashflow_Monthly_Direct","P&L_Monthly_Direct","Cashflow_Monthly_Dataverse"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBIDesktopVersion = 2.146.1254.0 (25.08)+791a7518fadc83da883d79322a2658aff57c8db3
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table Assumptions
+ref table Data
+ref table DateTableTemplate_16a64cfb-4069-416a-862d-eddc36f1714f
+ref table LocalDateTable_c51711e1-2a9c-4df3-80c8-b13a1bb879a6
+ref table 'Cashflow Headers'
+ref table 'P&L Headers'
+ref table 'Date Table'
+ref table LocalDateTable_38873cb7-7310-492d-bfaa-bc34052c9bb5
+ref table 'Key metrics'
+ref table Cashflow_Monthly_Direct
+ref table P&L_Monthly_Direct
+ref table Cashflow_Monthly_Dataverse
+
+ref cultureInfo en-US
+

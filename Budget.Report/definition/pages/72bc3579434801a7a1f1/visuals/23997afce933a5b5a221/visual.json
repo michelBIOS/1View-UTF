@@ -1,0 +1,16 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
+  "name": "23997afce933a5b5a221",
+  "position": {
+    "x": 1079,
+    "y": 150.30754892823859,
+    "z": 8000,
+    "height": 130,
+    "width": 290.58295964125546,
+    "tabOrder": 9000
+  },
+  "visualGroup": {
+    "displayName": "Carte Marge Nette Budgétée",
+    "groupMode": "ScaleMode"
+  }
+}

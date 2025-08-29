@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Budget"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "a5503eb7-acb6-4724-a3e4-d94cf6c28625"
+  }
+}

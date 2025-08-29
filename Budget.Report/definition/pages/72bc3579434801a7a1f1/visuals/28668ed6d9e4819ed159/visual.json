@@ -1,0 +1,16 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
+  "name": "28668ed6d9e4819ed159",
+  "position": {
+    "x": 25,
+    "y": 150,
+    "z": 10000,
+    "height": 130,
+    "width": 290.05125815470643,
+    "tabOrder": 7000
+  },
+  "visualGroup": {
+    "displayName": "Carte CA Prévisionnel",
+    "groupMode": "ScaleMode"
+  }
+}

@@ -1,0 +1,38 @@
+table 'Cashflow Headers'
+	lineageTag: ee942457-1c61-4ef9-b12f-db2d5db4e89e
+
+	column Description
+		dataType: string
+		lineageTag: 5c8afe9d-3687-4e4f-8d8d-1fd5e11b44f6
+		summarizeBy: none
+		sourceColumn: Description
+		sortByColumn: Index
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column Index
+		dataType: int64
+		formatString: 0
+		lineageTag: abed4192-d718-45de-95b2-fb31feb83164
+		summarizeBy: sum
+		sourceColumn: Index
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Cashflow Headers' = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(Web.Contents("https://biosexpertise.sharepoint.com/sites/Expertise/Documents%20partages/1Bex/Pennylane/1View\Sources\Référentiels\Headers.xlsx"), null, true),
+				    #"Cashflow Headers_Sheet" = Source{[Item="Cashflow Headers",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(#"Cashflow Headers_Sheet", [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Description", type text}, {"Index", Int64.Type}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

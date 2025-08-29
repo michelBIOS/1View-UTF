@@ -1,0 +1,48 @@
+table P&L_Monthly_Direct
+	lineageTag: 674ce98a-468c-4031-83a4-4ea5dd33ab68
+
+	column Description
+		dataType: string
+		sourceProviderType: nvarchar(max)
+		lineageTag: 70e0bbde-db44-4c50-a721-f83878245270
+		summarizeBy: none
+		sourceColumn: Description
+
+		annotation SummarizationSetBy = Automatic
+
+	column Month
+		dataType: dateTime
+		formatString: Long Date
+		sourceProviderType: date
+		lineageTag: 40cf1ef1-1abf-4b13-a2e9-8c9461eac116
+		summarizeBy: none
+		sourceColumn: Month
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Amount
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 3d7ea562-8805-4404-87c4-e470f207d874
+		summarizeBy: sum
+		sourceColumn: Amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition P&L_Monthly_Direct = m
+		mode: directQuery
+		source =
+				let
+				    Source = Sql.Database("mhirzqqnk57e7anmxqvc3cldyq-ad6po2r4ekrefdnhlqka77jyjq.database.fabric.microsoft.com", "budget-8c98cbd4-310e-4559-878a-ca8a6edfe9e1"),
+				    #"dbo_P&L_Monthly" = Source{[Schema="dbo",Item="P&L_Monthly"]}[Data]
+				in
+				    #"dbo_P&L_Monthly"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

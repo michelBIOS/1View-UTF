@@ -1,0 +1,48 @@
+table 'Key metrics'
+	lineageTag: 32527d3b-815e-4098-ab0b-39a1b3ce30ac
+
+	measure 'Closing cashflow' = CALCULATE(SUM(Cashflow_Monthly_Direct[Amount]),'Cashflow Headers'[Description]="Closing Cash")
+		formatString: " #0,0 €"
+		lineageTag: 7c43215c-d99a-4bd5-a74b-4cd914d72c15
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'CA Prévisionnel' = CALCULATE(SUM('P&L_Monthly_Direct'[Amount]),'P&L Headers'[Description]="Sales")
+		formatString: #,0€
+		lineageTag: cba0553f-7770-41c1-8c81-073ea4ee9821
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'EBITDA Budgété' = CALCULATE(SUM('P&L_Monthly_Direct'[Amount]),'P&L Headers'[Description]="EBIT")+CALCULATE(SUM('P&L_Monthly_Direct'[Amount]),'P&L Headers'[Description]="Amortisation")
+		formatString: " #,0€"
+		lineageTag: ec10b3d5-1d71-4b3d-b37a-d4088ed81064
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Marge Nette Budgétée' = DIVIDE(CALCULATE(SUM('P&L_Monthly_Direct'[Amount]),'P&L Headers'[Description]="Net Result"),[CA Prévisionnel])
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		lineageTag: ea54ef9d-afe1-4ca2-9d39-3b3d5471dc6b
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Cash EOP' = CALCULATE([Closing cashflow],'Date Table'[Mois]="Dec")
+		formatString: " #,0€"
+		lineageTag: cc505b38-ea54-4821-bf16-90a0161dbc49
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	column Value
+		formatString: 0
+		lineageTag: 6f6629d3-1c9f-4404-8498-04cdc1655c28
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Value]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Key metrics' = calculated
+		mode: import
+		source = {BLANK()}
+
+	annotation PBI_Id = 463802f15e3840aaaea8b3a042c60570
+

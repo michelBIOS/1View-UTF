@@ -1,0 +1,64 @@
+table Data
+	lineageTag: b67e61f3-4fcc-4c1d-9e2b-32d071ce1a62
+
+	column Date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: e2c3ef7d-4009-4278-af60-0df8bffaef02
+		summarizeBy: none
+		sourceColumn: Date
+
+		variation Variation
+			isDefault
+			relationship: 567b565d-edc1-41d3-9a16-fa515aa56fda
+			defaultHierarchy: LocalDateTable_c51711e1-2a9c-4df3-80c8-b13a1bb879a6.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Compte
+		dataType: int64
+		formatString: 0
+		lineageTag: 14560649-008f-4263-b906-51671b5cf8db
+		summarizeBy: sum
+		sourceColumn: Compte
+
+		annotation SummarizationSetBy = Automatic
+
+	column Libellé
+		dataType: string
+		lineageTag: 38d64c17-f3d2-4fd1-9a80-0257940cdb4f
+		summarizeBy: none
+		sourceColumn: Libellé
+
+		annotation SummarizationSetBy = Automatic
+
+	column Solde
+		dataType: double
+		lineageTag: a0e95f69-585b-4c6e-bf8f-3b34b1682875
+		summarizeBy: sum
+		sourceColumn: Solde
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition Data = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(Web.Contents("https://biosexpertise.sharepoint.com/sites/Expertise/Documents%20partages/1Bex/Pennylane/1View\Sources\Faits\Maquette budgétaire simplifié - UTF.xlsx"), null, true),
+				    Data_Sheet = Source{[Item="Data",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(Data_Sheet, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Data Budget", type any}, {"Column2", type any}, {"Column3", type text}, {"Column4", type any}}),
+				    #"Removed Top Rows" = Table.Skip(#"Changed Type",1),
+				    #"Promoted Headers1" = Table.PromoteHeaders(#"Removed Top Rows", [PromoteAllScalars=true]),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Promoted Headers1",{{"Date", type date}, {"Compte", Int64.Type}, {"Libellé", type text}, {"Solde", type number}})
+				in
+				    #"Changed Type1"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
