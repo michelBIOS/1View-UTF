@@ -1,0 +1,230 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 56397.210009263559
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 1816.8573602694237,
+            "y": 57044.67102850409
+          },
+          "nodeIndex": "Dim_Journals",
+          "nodeLineageTag": "a39822cc-9b87-42f7-91bf-0d682e232817",
+          "size": {
+            "height": 327.1895588846819,
+            "width": 168
+          },
+          "zIndex": 7
+        },
+        {
+          "location": {
+            "x": 1548.5108004724718,
+            "y": 57042.7230504906
+          },
+          "nodeIndex": "Dim_Ledger Accounts",
+          "nodeLineageTag": "d24951ba-e7af-4071-8682-7912596e436f",
+          "size": {
+            "height": 318.63540015265767,
+            "width": 218.93843259381731
+          },
+          "zIndex": 8
+        },
+        {
+          "location": {
+            "x": 1286.4229892427072,
+            "y": 57492.575012129186
+          },
+          "nodeIndex": "Fact_GL",
+          "nodeLineageTag": "7b58cd8e-7cf0-4df0-91a1-425db7f4909b",
+          "size": {
+            "height": 328.88274923519521,
+            "width": 214.5757343823102
+          },
+          "zIndex": 9
+        },
+        {
+          "location": {
+            "x": 1056.17702451537,
+            "y": 57051.410256536234
+          },
+          "nodeIndex": "Dim_Date",
+          "nodeLineageTag": "fbe6011e-9d94-49aa-a24a-1fcec4fc20ff",
+          "size": {
+            "height": 305.29367831157441,
+            "width": 206.12917157084439
+          },
+          "zIndex": 16
+        },
+        {
+          "location": {
+            "x": 563.64658719203408,
+            "y": 56453.5400652464
+          },
+          "nodeIndex": "Mesures",
+          "nodeLineageTag": "b17bd7e4-d902-4751-a383-43c863447c06",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 6
+        },
+        {
+          "location": {
+            "x": 1291.624604769054,
+            "y": 57042.200879914031
+          },
+          "nodeIndex": "Dim_Companies",
+          "nodeLineageTag": "bf86ce6f-4b52-4a5c-9172-2d67c6de6637",
+          "size": {
+            "height": 314.26422573642049,
+            "width": 229.62637827076969
+          },
+          "zIndex": 5
+        },
+        {
+          "location": {
+            "x": 314.26149277132106,
+            "y": 56454.602265939386
+          },
+          "nodeIndex": "TranchesBalanceAgée",
+          "nodeLineageTag": "87c09f71-29d9-44f5-8ba0-e9782ee0d8aa",
+          "size": {
+            "height": 197.42956293057796,
+            "width": 226.56364478619957
+          },
+          "zIndex": 4
+        },
+        {
+          "location": {
+            "x": 1585.0536967785365,
+            "y": 56325.882697855421
+          },
+          "nodeIndex": "C1",
+          "nodeLineageTag": "f7d378fe-32ff-42ec-a845-668d7181ba09",
+          "size": {
+            "height": 176.28571428571377,
+            "width": 145
+          },
+          "zIndex": 10
+        },
+        {
+          "location": {
+            "x": 1587.2403861787609,
+            "y": 56567.203334814447
+          },
+          "nodeIndex": "C2",
+          "nodeLineageTag": "392af8bc-6089-4506-a9eb-7d955c8fcd64",
+          "size": {
+            "height": 176.42857142856883,
+            "width": 145
+          },
+          "zIndex": 3
+        },
+        {
+          "location": {
+            "x": 1584.7932812906274,
+            "y": 56803.986568103661
+          },
+          "nodeIndex": "C3",
+          "nodeLineageTag": "5a6c21f3-08e7-4076-867e-ee0e2b00325a",
+          "size": {
+            "height": 173.57142857142753,
+            "width": 145
+          },
+          "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 1314.0874922301539,
+            "y": 56710.23039673618
+          },
+          "nodeIndex": "Dynamic Logo",
+          "nodeLineageTag": "b4dc28af-103e-488c-897e-ae088189a3b2",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 2
+        },
+        {
+          "location": {
+            "x": 0,
+            "y": 57040.6226843876
+          },
+          "nodeIndex": "bank accounts",
+          "nodeLineageTag": "e2deed86-4315-476f-9a3f-0dc7a0ccdf8c",
+          "size": {
+            "height": 294.60862297424319,
+            "width": 234
+          },
+          "zIndex": 11
+        },
+        {
+          "location": {
+            "x": 849.74627353516928,
+            "y": 57477.051385754159
+          },
+          "nodeIndex": "Transaction",
+          "nodeLineageTag": "63c04fb2-df12-4e17-b499-0b7b3ef8f128",
+          "size": {
+            "height": 340.69552135364938,
+            "width": 234
+          },
+          "zIndex": 13
+        },
+        {
+          "location": {
+            "x": 350.07464910730005,
+            "y": 57804.124415966406
+          },
+          "nodeIndex": "transaction_category",
+          "nodeLineageTag": "6dd98db1-156b-4094-bdbd-0ae66a803ab7",
+          "size": {
+            "height": 296,
+            "width": 234
+          },
+          "zIndex": 12
+        },
+        {
+          "location": {
+            "x": 525.94137206984942,
+            "y": 57043.042685852255
+          },
+          "nodeIndex": "Dim_Customer",
+          "nodeLineageTag": "25f029b1-dd30-4aca-9f11-549fbe92867d",
+          "size": {
+            "height": 310.04294771202694,
+            "width": 234
+          },
+          "zIndex": 15
+        },
+        {
+          "location": {
+            "x": 793.88290950267333,
+            "y": 57045.185952849839
+          },
+          "nodeIndex": "Dim_Supplier",
+          "nodeLineageTag": "ca69a5a5-6578-4ce5-bccc-5ab2c8421cb6",
+          "size": {
+            "height": 312,
+            "width": 234
+          },
+          "zIndex": 14
+        }
+      ],
+      "name": "Toutes les tables",
+      "zoomValue": 44.230911415480733,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "Toutes les tables",
+  "defaultDiagram": "Toutes les tables"
+}

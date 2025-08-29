@@ -1,0 +1,176 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainerMobileState/2.1.0/schema.json",
+  "position": {
+    "x": 0,
+    "y": 1574,
+    "z": 5000,
+    "height": 319,
+    "width": 324,
+    "tabOrder": 1000
+  },
+  "objects": {
+    "columnWidth": [
+      {
+        "properties": {
+          "value": {
+            "expr": {
+              "Literal": {
+                "Value": "81D"
+              }
+            }
+          }
+        },
+        "selector": {
+          "metadata": "transaction_category.category_label"
+        }
+      },
+      {
+        "properties": {
+          "value": {
+            "expr": {
+              "Literal": {
+                "Value": "81.00000241873917D"
+              }
+            }
+          }
+        },
+        "selector": {
+          "metadata": "bank accounts.name"
+        }
+      },
+      {
+        "properties": {
+          "value": {
+            "expr": {
+              "Literal": {
+                "Value": "53.49834073619688D"
+              }
+            }
+          }
+        },
+        "selector": {
+          "metadata": "Dim_Date.Date"
+        }
+      },
+      {
+        "properties": {
+          "value": {
+            "expr": {
+              "Literal": {
+                "Value": "237.35448016826498D"
+              }
+            }
+          }
+        },
+        "selector": {
+          "metadata": "Min(Transaction.label)"
+        }
+      },
+      {
+        "properties": {
+          "value": {
+            "expr": {
+              "Literal": {
+                "Value": "70D"
+              }
+            }
+          }
+        },
+        "selector": {
+          "metadata": "Sum(Transaction.amount)"
+        }
+      },
+      {
+        "properties": {
+          "value": {
+            "expr": {
+              "Literal": {
+                "Value": "58.99999821186073D"
+              }
+            }
+          }
+        },
+        "selector": {
+          "metadata": "Sum(Transaction.outstanding_balance)"
+        }
+      },
+      {
+        "properties": {
+          "value": {
+            "expr": {
+              "Literal": {
+                "Value": "79.50078760169035D"
+              }
+            }
+          }
+        },
+        "selector": {
+          "metadata": "Transaction.card_masked_number"
+        }
+      },
+      {
+        "properties": {
+          "value": {
+            "expr": {
+              "Literal": {
+                "Value": "92.37071647687651D"
+              }
+            }
+          }
+        },
+        "selector": {
+          "metadata": "Transaction.Prénom&Nom"
+        }
+      }
+    ],
+    "values": [
+      {
+        "properties": {
+          "fontSize": {
+            "expr": {
+              "Literal": {
+                "Value": "8D"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "columnHeaders": [
+      {
+        "properties": {
+          "fontSize": {
+            "expr": {
+              "Literal": {
+                "Value": "8D"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "columnFormatting": [],
+    "total": []
+  },
+  "visualContainerObjects": {
+    "title": [
+      {
+        "properties": {
+          "fontSize": {
+            "expr": {
+              "Literal": {
+                "Value": "10D"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "dropShadow": [],
+    "border": [],
+    "background": [],
+    "visualTooltip": [],
+    "visualHeader": [],
+    "visualHeaderTooltip": []
+  }
+}

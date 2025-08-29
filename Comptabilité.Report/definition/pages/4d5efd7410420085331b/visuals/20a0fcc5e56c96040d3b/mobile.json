@@ -1,0 +1,59 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainerMobileState/2.1.0/schema.json",
+  "position": {
+    "x": 170,
+    "y": 120,
+    "z": 14000,
+    "height": 60,
+    "width": 154,
+    "tabOrder": 14000
+  },
+  "objects": {
+    "value": [
+      {
+        "properties": {
+          "fontSize": {
+            "expr": {
+              "Literal": {
+                "Value": "12D"
+              }
+            }
+          },
+          "horizontalAlignment": {
+            "expr": {
+              "Literal": {
+                "Value": "'center'"
+              }
+            }
+          }
+        },
+        "selector": {
+          "metadata": "C1.Sum Transaction"
+        }
+      }
+    ],
+    "outline": [],
+    "label": [
+      {
+        "properties": {
+          "fontSize": {
+            "expr": {
+              "Literal": {
+                "Value": "8D"
+              }
+            }
+          }
+        },
+        "selector": {
+          "metadata": "C1.Sum Transaction"
+        }
+      }
+    ],
+    "spacing": [],
+    "border": [],
+    "fillCustom": [],
+    "image": [],
+    "layout": [],
+    "smallMultiplesBorder": []
+  }
+}

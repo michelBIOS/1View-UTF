@@ -1,0 +1,104 @@
+table 'bank accounts'
+	lineageTag: e2deed86-4315-476f-9a3f-0dc7a0ccdf8c
+
+	column id
+		dataType: string
+		lineageTag: 3581dcd5-9e99-40e9-985d-4a3d85e97a30
+		summarizeBy: none
+		sourceColumn: id
+
+		annotation SummarizationSetBy = Automatic
+
+	column name
+		dataType: string
+		lineageTag: 617c5d5b-7c80-47e5-812c-d0c41f1d1b27
+		summarizeBy: none
+		sourceColumn: name
+
+		annotation SummarizationSetBy = Automatic
+
+	column currency
+		dataType: string
+		lineageTag: 095baddb-4667-43d5-81b0-115bc41dfa81
+		summarizeBy: none
+		sourceColumn: currency
+
+		annotation SummarizationSetBy = Automatic
+
+	column created_at
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 69031449-ed42-46b4-8341-bd4038668ebb
+		summarizeBy: none
+		sourceColumn: created_at
+
+		variation Variation
+			isDefault
+			relationship: 87c0fa6f-c1fe-4224-b600-480697625246
+			defaultHierarchy: LocalDateTable_e6f1bfde-f38b-41c0-98a4-092eb055d9cf.'Hiérarchie de dates'
+
+		annotation SummarizationSetBy = Automatic
+
+	column updated_at
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: dd7d810a-3e4f-4d20-87f1-e3c37555efc3
+		summarizeBy: none
+		sourceColumn: updated_at
+
+		variation Variation
+			isDefault
+			relationship: 9344c8fe-db09-4c70-a630-e355d0e08b18
+			defaultHierarchy: LocalDateTable_921a5928-0c42-416a-b2d1-3b18d5fbadfd.'Hiérarchie de dates'
+
+		annotation SummarizationSetBy = Automatic
+
+	column journal_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 032683e9-a23e-41e8-939d-544bbab46723
+		summarizeBy: none
+		sourceColumn: journal_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column ledger_account_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 8774bded-5be5-404e-bdc9-3c7186b0ef0c
+		summarizeBy: sum
+		sourceColumn: ledger_account_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column ID_Ste
+		dataType: string
+		lineageTag: acd6e706-bbd4-4a51-89b8-dac00b7cef34
+		summarizeBy: none
+		sourceColumn: ID_Ste
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'bank accounts' = m
+		mode: import
+		queryGroup: 'model tables'
+		source = ```
+				let
+				    Source = Sql.Databases("mhirzqqnk57e7anmxqvc3cldyq-ad6po2r4ekrefdnhlqka77jyjq.datawarehouse.fabric.microsoft.com"),
+				    Dim_1 = Source{[Name="Fact_1"]}[Data],
+				    Query = "
+				        SELECT *
+				        FROM dbo.fact_1_bank_accounts
+				        WHERE ID_Ste IN (21912624, 21915510, 22276641, 21917322, 21918011)
+				    ",
+				    NativeQuery = Value.NativeQuery(Dim_1, Query),
+				    #"Changed Type" = Table.TransformColumnTypes(NativeQuery,{{"id", type text}}),
+				    #"Capitalized Each Word" = Table.TransformColumns(#"Changed Type",{{"name", Text.Proper, type text}}) 
+				
+				in #"Capitalized Each Word"
+				```
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Exception
+

@@ -1,0 +1,132 @@
+relationship 0bc69fcd-36e8-4bd8-9019-ce3c92322090
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Fact_GL.created_at
+	toColumn: LocalDateTable_70dbc206-b82b-468a-bcb6-99c6563e5401.Date
+
+relationship f900de84-2c0f-4a98-8b75-61c0a7c0b638
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Fact_GL.updated_at
+	toColumn: LocalDateTable_bb3cc849-1c69-4392-8ff7-dad418d072d7.Date
+
+relationship AutoDetected_2395acf1-77f7-403e-a444-7d40f3b37b2f
+	fromColumn: Fact_GL.journal_id
+	toColumn: Dim_Journals.id_journal
+
+relationship 41146d1e-e110-758a-3222-a044a7b7d9f3
+	crossFilteringBehavior: bothDirections
+	fromColumn: Fact_GL.ledger_account_id
+	toColumn: 'Dim_Ledger Accounts'.id
+
+relationship 038f52bd-327c-bc25-c50a-71a88a3f0f2e
+	fromColumn: Fact_GL.ID_Ste
+	toColumn: Dim_Companies.id
+
+relationship 8b302533-ddd3-4d14-bc17-fd0427188cc4
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Dim_Date.Date
+	toColumn: LocalDateTable_6e490a31-a957-46f6-ab08-079221e1b34c.Date
+
+relationship e7e90638-049a-1e5e-d59a-b95d0b5a69bc
+	fromColumn: Fact_GL.date
+	toColumn: Dim_Date.Date
+
+relationship f23143f8-93ec-9c22-62f2-f22afeadb217
+	fromColumn: 'Dim_Ledger Accounts'.C3
+	toColumn: C3.C3
+
+relationship AutoDetected_5311e053-8da4-4f74-9737-c7f83157c9bc
+	fromColumn: C2.C1
+	toColumn: C1.C1
+
+relationship AutoDetected_3b15df84-a981-4c02-8f5d-8a850abb4cb6
+	fromColumn: C3.C2
+	toColumn: C2.C2
+
+relationship 87c0fa6f-c1fe-4224-b600-480697625246
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'bank accounts'.created_at
+	toColumn: LocalDateTable_e6f1bfde-f38b-41c0-98a4-092eb055d9cf.Date
+
+relationship 9344c8fe-db09-4c70-a630-e355d0e08b18
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'bank accounts'.updated_at
+	toColumn: LocalDateTable_921a5928-0c42-416a-b2d1-3b18d5fbadfd.Date
+
+relationship bce80e7f-10f1-40a5-a4ef-569c5d250868
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Transaction.created_at
+	toColumn: LocalDateTable_72e79fec-718c-4361-a39f-f30318a0751f.Date
+
+relationship 9ca513d6-c84e-47d0-bbf8-86206cb7c9a8
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Transaction.updated_at
+	toColumn: LocalDateTable_736a00bb-90fc-414f-80a0-056906ead77d.Date
+
+relationship AutoDetected_1dec11f1-99ef-459b-b380-b163876ffa0d
+	crossFilteringBehavior: bothDirections
+	fromColumn: Transaction.journal_id
+	toColumn: 'bank accounts'.journal_id
+
+relationship 117b382c-99d4-bc86-b88f-03d34a16836d
+	fromColumn: Transaction.ID_Ste
+	toColumn: Dim_Companies.id
+
+relationship b1af18c4-de3c-7b2d-5265-7fa12ca82782
+	fromColumn: Transaction.date
+	toColumn: Dim_Date.Date
+
+relationship 7a96980c-2aba-fa62-8d42-892dc4253361
+	fromColumn: Transaction.journal_id
+	toColumn: Dim_Journals.id_journal
+
+relationship b7bcf73c-667d-450a-b0f2-62f6a2f4a96c
+	joinOnDateBehavior: datePartOnly
+	fromColumn: transaction_category.category_created_at
+	toColumn: LocalDateTable_bc7b3be9-f0d5-4069-839e-fa9dc27ac792.Date
+
+relationship f954e8e0-cddf-488c-b548-c405236c03e7
+	joinOnDateBehavior: datePartOnly
+	fromColumn: transaction_category.category_updated_at
+	toColumn: LocalDateTable_e06986a5-e5f1-429e-8c0f-9f1572ce2a18.Date
+
+relationship dcde3fbe-9ccb-2bb8-d124-560d6620c2fa
+	fromColumn: transaction_category.transaction_id
+	toColumn: Transaction.id
+
+relationship 1acd7762-4c92-4cb1-a56e-fc5c60f5081c
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Dim_Supplier.synchronized_at
+	toColumn: LocalDateTable_d4065de6-c79d-40ce-b1bc-2ffb50dd7dfb.Date
+
+relationship 4f9e5f5f-a280-4b30-9792-262e2b3b1541
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Dim_Supplier.deleted_at
+	toColumn: LocalDateTable_17fefa79-930a-4317-9a43-f7bb83d0f48f.Date
+
+relationship 795b352f-d21f-4202-83b2-3647864e8ff7
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Dim_Customer.synchronized_at
+	toColumn: LocalDateTable_6e7cc737-29aa-4371-9066-990da6fe3ad8.Date
+
+relationship 675c89b2-c7cb-4e8e-b689-113781962679
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Dim_Customer.deleted_at
+	toColumn: LocalDateTable_433991e1-3312-4941-8379-8940ceddb87b.Date
+
+relationship 6f25af85-1572-fad5-206e-4e3c8666f12b
+	fromColumn: Transaction.customer_id
+	toColumn: Dim_Customer.id
+
+relationship 9b63c14b-6d47-08f0-d9eb-abc5f8d783d7
+	fromColumn: Transaction.supplier_id
+	toColumn: Dim_Supplier.id
+
+relationship 40465c96-c142-3596-77f0-52a80a44cbb5
+	isActive: false
+	fromColumn: Fact_GL.id_transaction
+	toColumn: Transaction.id
+
+relationship 78d7ada6-a6de-c374-2058-b02151db9072
+	fromColumn: 'Dynamic Logo'.id
+	toColumn: Dim_Companies.id
+

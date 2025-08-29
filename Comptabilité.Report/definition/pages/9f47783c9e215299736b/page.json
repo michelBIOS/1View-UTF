@@ -1,0 +1,93 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.0.0/schema.json",
+  "name": "9f47783c9e215299736b",
+  "displayName": "Dup 51-Banque",
+  "displayOption": "FitToWidth",
+  "height": 2100,
+  "width": 1920,
+  "pageBinding": {
+    "name": "ed1d45cf5f7abcfd6088",
+    "type": "Default",
+    "parameters": [],
+    "referenceScope": "CrossReport",
+    "acceptsFilterContext": "None"
+  },
+  "objects": {
+    "outspacePane": [
+      {
+        "properties": {
+          "width": {
+            "expr": {
+              "Literal": {
+                "Value": "300L"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "visibility": "HiddenInViewMode",
+  "visualInteractions": [
+    {
+      "source": "e546730a857f100f5dc8",
+      "target": "5311717bf113f5235bd1",
+      "type": "NoFilter"
+    },
+    {
+      "source": "e546730a857f100f5dc8",
+      "target": "6f8b550260b24beeb087",
+      "type": "NoFilter"
+    },
+    {
+      "source": "569cbb4059721932bfe1",
+      "target": "5311717bf113f5235bd1",
+      "type": "NoFilter"
+    },
+    {
+      "source": "569cbb4059721932bfe1",
+      "target": "6f8b550260b24beeb087",
+      "type": "NoFilter"
+    },
+    {
+      "source": "2aa65923510648dce267",
+      "target": "60301a8a0377d7f67177",
+      "type": "NoFilter"
+    },
+    {
+      "source": "2aa65923510648dce267",
+      "target": "6f8b550260b24beeb087",
+      "type": "NoFilter"
+    },
+    {
+      "source": "2aa65923510648dce267",
+      "target": "f57e9f402c38202dd4e2",
+      "type": "NoFilter"
+    },
+    {
+      "source": "2aa65923510648dce267",
+      "target": "5311717bf113f5235bd1",
+      "type": "NoFilter"
+    },
+    {
+      "source": "60301a8a0377d7f67177",
+      "target": "6f8b550260b24beeb087",
+      "type": "NoFilter"
+    },
+    {
+      "source": "e455251d122950fac82e",
+      "target": "6f8b550260b24beeb087",
+      "type": "NoFilter"
+    },
+    {
+      "source": "5311717bf113f5235bd1",
+      "target": "6f8b550260b24beeb087",
+      "type": "NoFilter"
+    },
+    {
+      "source": "f57e9f402c38202dd4e2",
+      "target": "6f8b550260b24beeb087",
+      "type": "NoFilter"
+    }
+  ]
+}

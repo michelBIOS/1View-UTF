@@ -1,0 +1,20 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.0.0/schema.json",
+  "name": "4d5efd7410420085331b",
+  "displayName": "Journal",
+  "displayOption": "FitToWidth",
+  "height": 1920,
+  "width": 1920,
+  "visualInteractions": [
+    {
+      "source": "f1a533c18a4893aee6da",
+      "target": "d916af1583767d120b00",
+      "type": "NoFilter"
+    },
+    {
+      "source": "d916af1583767d120b00",
+      "target": "f1a533c18a4893aee6da",
+      "type": "NoFilter"
+    }
+  ]
+}

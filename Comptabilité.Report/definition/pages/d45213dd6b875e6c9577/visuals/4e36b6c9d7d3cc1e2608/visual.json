@@ -1,0 +1,16 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "name": "4e36b6c9d7d3cc1e2608",
+  "position": {
+    "x": 650,
+    "y": 150,
+    "z": 12000,
+    "height": 130,
+    "width": 290,
+    "tabOrder": 8000
+  },
+  "visualGroup": {
+    "displayName": "Carte Nb Écritures",
+    "groupMode": "ScaleMode"
+  }
+}

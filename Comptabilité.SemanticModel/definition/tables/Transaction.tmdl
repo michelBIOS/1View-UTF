@@ -1,0 +1,237 @@
+table Transaction
+	lineageTag: 63c04fb2-df12-4e17-b499-0b7b3ef8f128
+
+	column amount
+		dataType: double
+		lineageTag: 8bc9dddd-bb0f-4034-8038-c64cccee921d
+		summarizeBy: sum
+		sourceColumn: amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column attachment_required
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 0680f541-0f23-4f75-9c87-d0d660e33f8d
+		summarizeBy: none
+		sourceColumn: attachment_required
+
+		annotation SummarizationSetBy = Automatic
+
+	column created_at
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 2adee4d0-4898-4f86-9580-deea96b74a23
+		summarizeBy: none
+		sourceColumn: created_at
+
+		variation Variation
+			isDefault
+			relationship: bce80e7f-10f1-40a5-a4ef-569c5d250868
+			defaultHierarchy: LocalDateTable_72e79fec-718c-4361-a39f-f30318a0751f.'Hiérarchie de dates'
+
+		annotation SummarizationSetBy = Automatic
+
+	column currency_amount
+		dataType: double
+		lineageTag: 2b3e1020-2b64-43ca-8c9c-709f62474a1f
+		summarizeBy: sum
+		sourceColumn: currency_amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column currency_fee
+		dataType: double
+		lineageTag: 40bb92e2-03e4-45e0-bf6c-7d8d7b315d0b
+		summarizeBy: sum
+		sourceColumn: currency_fee
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column currency
+		dataType: string
+		lineageTag: 3146dbcf-137b-46eb-9229-2610a074cb18
+		summarizeBy: none
+		sourceColumn: currency
+
+		annotation SummarizationSetBy = Automatic
+
+	column date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: a4f4828a-072a-4c87-9778-0f49e2e42760
+		summarizeBy: none
+		sourceColumn: date
+
+		annotation SummarizationSetBy = Automatic
+
+	column fee
+		dataType: double
+		lineageTag: 22bad8c4-4728-48c8-9ce8-5394fa2d5e07
+		summarizeBy: sum
+		sourceColumn: fee
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column id
+		dataType: string
+		lineageTag: 49f51b89-51ea-4296-8335-e8b9681c7c54
+		summarizeBy: none
+		sourceColumn: id
+
+		annotation SummarizationSetBy = Automatic
+
+	column journal_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 78abcb27-8ca8-4f9a-92f8-065cc485dceb
+		summarizeBy: none
+		sourceColumn: journal_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column label
+		dataType: string
+		lineageTag: 43689ded-37a2-48c5-b22d-f06de0ed481f
+		summarizeBy: none
+		sourceColumn: label
+
+		annotation SummarizationSetBy = Automatic
+
+	column outstanding_balance
+		dataType: double
+		lineageTag: 35f10c2c-9d73-4958-81bb-900b2a630cbe
+		summarizeBy: sum
+		sourceColumn: outstanding_balance
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column updated_at
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 072e3b19-3cd5-4880-8896-ba4658ebd45b
+		summarizeBy: none
+		sourceColumn: updated_at
+
+		variation Variation
+			isDefault
+			relationship: 9ca513d6-c84e-47d0-bbf8-86206cb7c9a8
+			defaultHierarchy: LocalDateTable_736a00bb-90fc-414f-80a0-056906ead77d.'Hiérarchie de dates'
+
+		annotation SummarizationSetBy = Automatic
+
+	column bank_account_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 55a0ed80-e6a0-46e6-8222-e60cabaedd57
+		summarizeBy: sum
+		sourceColumn: bank_account_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column employee_id
+		dataType: int64
+		formatString: 0
+		lineageTag: a5cfb7f9-04b3-4933-b572-c1932801bac6
+		summarizeBy: sum
+		sourceColumn: employee_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column employee_first_name
+		dataType: string
+		lineageTag: 3fb37e6e-83e2-44b6-ad8a-a56907f5bcd9
+		summarizeBy: none
+		sourceColumn: employee_first_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column employee_last_name
+		dataType: string
+		lineageTag: 730137b8-aa7c-4fb9-8d13-73bdbec01546
+		summarizeBy: none
+		sourceColumn: employee_last_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column card_masked_number
+		dataType: string
+		lineageTag: 629af299-2ecc-44f9-9bae-f4f72158fa3c
+		summarizeBy: none
+		sourceColumn: card_masked_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column customer_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 16b9725c-b0f7-44b6-a5e1-be224dd4654c
+		summarizeBy: none
+		sourceColumn: customer_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column supplier_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 362a94cb-5dc1-492e-aa8b-1876bdc6d719
+		summarizeBy: none
+		sourceColumn: supplier_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column matched_invoices_url
+		dataType: string
+		lineageTag: 9ba38cdf-0633-4166-9fa8-5a12d4f1d06e
+		summarizeBy: none
+		sourceColumn: matched_invoices_url
+
+		annotation SummarizationSetBy = Automatic
+
+	column ID_Ste
+		dataType: string
+		lineageTag: 0d7da6e1-8dfa-407c-9b07-069e27c2abc7
+		summarizeBy: none
+		sourceColumn: ID_Ste
+
+		annotation SummarizationSetBy = Automatic
+
+	column Prénom&Nom = 'Transaction'[employee_first_name]&" "&'Transaction'[employee_last_name]
+		lineageTag: 45012c8c-ace5-40fb-916c-f7b8c40590a3
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Transaction = m
+		mode: import
+		queryGroup: 'model tables'
+		source = ```
+				let
+				    Source = Sql.Databases("mhirzqqnk57e7anmxqvc3cldyq-ad6po2r4ekrefdnhlqka77jyjq.datawarehouse.fabric.microsoft.com"),
+				    Dim_1 = Source{[Name="Fact_1"]}[Data],
+				    Query = "
+				        SELECT *
+				        FROM dbo.fact_1_transactions
+				        WHERE ID_Ste IN (21912624, 21915510, 22276641, 21917322, 21918011)
+				    ",
+				    NativeQuery = Value.NativeQuery(Dim_1, Query),
+				    #"Changed Type" = Table.TransformColumnTypes(NativeQuery,{{"id", type text}}),
+				    #"Capitalized Each Word" = Table.TransformColumns(#"Changed Type",{{"label", Text.Proper, type text}}) 
+				
+				in #"Capitalized Each Word"
+				```
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Exception
+
