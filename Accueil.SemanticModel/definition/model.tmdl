@@ -1,0 +1,62 @@
+model Model
+	culture: fr-FR
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: fr-FR
+	dataAccessOptions
+		fastCombine
+		legacyRedirects
+		returnErrorValuesAsNull
+
+queryGroup 'no loading'
+
+	annotation PBI_QueryGroupOrder = 2
+
+queryGroup 'model tables'
+
+	annotation PBI_QueryGroupOrder = 3
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBIDesktopVersion = 2.146.1254.0 (25.08)+791a7518fadc83da883d79322a2658aff57c8db3
+
+annotation PBI_QueryOrder = ["Dim_Journals","Dim_Ledger Accounts","Ledger Entries","Ledger Entry Lines","Fact_GL","Customer invoices","Dim_Customers","Products","Supplier invoices","Dim_Suppliers","Dim_Companies","Dynamic Logo"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table Dim_Journals
+ref table 'Dim_Ledger Accounts'
+ref table DateTableTemplate_1e855a0c-d942-457b-ad9e-0f384d3ad173
+ref table Dim_Date
+ref table Fact_GL
+ref table LocalDateTable_0f5f24ce-3fd4-4b5e-a25a-626d19f523b6
+ref table LocalDateTable_70a2922b-7f60-41cd-8c7e-e4314128354f
+ref table 'Customer invoices'
+ref table LocalDateTable_96ef29bb-473a-4437-a65f-bc3e21b14a19
+ref table LocalDateTable_5e9d6374-6dd5-4060-93e9-4b4596c6d76e
+ref table LocalDateTable_fae4e73d-82f0-4dc6-bf0f-497264d9af25
+ref table LocalDateTable_0514eefc-25d7-4e5c-b7db-591a94ce7f68
+ref table Dim_Customers
+ref table Mesures
+ref table 'Supplier invoices'
+ref table LocalDateTable_bef92955-a610-49b0-a3d4-3012df64d73d
+ref table LocalDateTable_95473425-04b6-4f3f-9ad0-457509a62bd0
+ref table LocalDateTable_b4373266-dbe7-41af-8d58-4182ae84605e
+ref table Dim_Suppliers
+ref table LocalDateTable_db65fc09-6b15-491d-954e-49bb6431e05c
+ref table LocalDateTable_98fdeaa4-8f57-4d1f-a6f0-04fbc1ebeae3
+ref table LocalDateTable_fe086e9e-1115-406b-908c-d5b3921350f1
+ref table LocalDateTable_5d5425f7-c760-44b8-8bdf-16f4ff2feadb
+ref table Dim_Companies
+ref table LocalDateTable_7fb07494-9ac8-47fc-bf21-4b33bbac8759
+ref table TranchesBalanceAgée
+ref table 'Dynamic Logo'
+ref table LocalDateTable_6e490a31-a957-46f6-ab08-079221e1b34c
+
+ref role Interfast
+ref role 'United Tables France'
+ref role Kalite
+ref role 'Ami Voyages'
+ref role 88
+
+ref cultureInfo fr-FR
+

@@ -1,0 +1,83 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainerMobileState/2.1.0/schema.json",
+  "position": {
+    "x": 112,
+    "y": 187,
+    "z": 9000,
+    "height": 60,
+    "width": 100,
+    "tabOrder": 3000
+  },
+  "objects": {
+    "layout": [],
+    "image": [],
+    "fillCustom": [],
+    "outline": [],
+    "value": [
+      {
+        "properties": {
+          "fontSize": {
+            "expr": {
+              "Literal": {
+                "Value": "10D"
+              }
+            }
+          },
+          "horizontalAlignment": {
+            "expr": {
+              "Literal": {
+                "Value": "'center'"
+              }
+            }
+          }
+        },
+        "selector": {
+          "id": "default"
+        }
+      }
+    ],
+    "smallMultiplesBorder": [],
+    "label": [
+      {
+        "properties": {
+          "fontSize": {
+            "expr": {
+              "Literal": {
+                "Value": "8D"
+              }
+            }
+          }
+        },
+        "selector": {
+          "id": "default"
+        }
+      }
+    ],
+    "spacing": [],
+    "accentBar": [],
+    "border": []
+  },
+  "visualContainerObjects": {
+    "border": [
+      {
+        "properties": {
+          "radius": {
+            "expr": {
+              "Literal": {
+                "Value": "10D"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "dropShadow": [],
+    "background": [],
+    "visualHeader": [],
+    "visualTooltip": [],
+    "title": [],
+    "general": [],
+    "padding": [],
+    "visualHeaderTooltip": []
+  }
+}

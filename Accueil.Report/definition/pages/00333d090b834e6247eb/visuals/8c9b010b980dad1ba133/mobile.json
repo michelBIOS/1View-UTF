@@ -1,0 +1,82 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainerMobileState/2.1.0/schema.json",
+  "position": {
+    "x": 0,
+    "y": 120,
+    "z": 5000,
+    "height": 60,
+    "width": 100,
+    "tabOrder": 1000
+  },
+  "objects": {
+    "layout": [],
+    "value": [
+      {
+        "properties": {
+          "fontSize": {
+            "expr": {
+              "Literal": {
+                "Value": "10D"
+              }
+            }
+          },
+          "horizontalAlignment": {
+            "expr": {
+              "Literal": {
+                "Value": "'center'"
+              }
+            }
+          }
+        },
+        "selector": {
+          "metadata": "Mesures.Total Ventes"
+        }
+      }
+    ],
+    "label": [
+      {
+        "properties": {
+          "fontSize": {
+            "expr": {
+              "Literal": {
+                "Value": "8D"
+              }
+            }
+          }
+        },
+        "selector": {
+          "metadata": "Mesures.Total Ventes"
+        }
+      }
+    ],
+    "spacing": [],
+    "image": [],
+    "fillCustom": [],
+    "outline": [],
+    "smallMultiplesBorder": [],
+    "border": [],
+    "accentBar": []
+  },
+  "visualContainerObjects": {
+    "border": [
+      {
+        "properties": {
+          "radius": {
+            "expr": {
+              "Literal": {
+                "Value": "10D"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "dropShadow": [],
+    "background": [],
+    "visualHeader": [],
+    "visualTooltip": [],
+    "title": [],
+    "general": [],
+    "padding": []
+  }
+}

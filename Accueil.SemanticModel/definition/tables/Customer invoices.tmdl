@@ -1,0 +1,399 @@
+table 'Customer invoices'
+	lineageTag: 8a7b01ae-c2e9-4eb0-8e37-0c3746849220
+
+	measure 'Soldes Supplier Invoices' = SUM('Supplier invoices'[amount])
+		lineageTag: 1e45145f-ae0f-4607-b2f7-422b9c0d8e66
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column id
+		dataType: string
+		lineageTag: 6c4d9419-0ddf-4aca-957e-2d6d524d3e28
+		summarizeBy: none
+		sourceColumn: id
+
+		annotation SummarizationSetBy = Automatic
+
+	column label
+		dataType: string
+		lineageTag: ecd8a111-a1c3-4041-9e10-8e326742e497
+		summarizeBy: none
+		sourceColumn: label
+
+		annotation SummarizationSetBy = Automatic
+
+	column invoice_number
+		dataType: string
+		lineageTag: 6fd2a23a-2723-4571-8749-e194cdf89df2
+		summarizeBy: none
+		sourceColumn: invoice_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column currency
+		dataType: string
+		lineageTag: df6f2273-4425-4aec-afb7-615815aae02f
+		summarizeBy: none
+		sourceColumn: currency
+
+		annotation SummarizationSetBy = Automatic
+
+	column amount
+		dataType: double
+		formatString: #,0
+		lineageTag: b03fc6ff-ffb3-489b-9bb5-27d4fb0ed4a2
+		summarizeBy: sum
+		sourceColumn: amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	column tax
+		dataType: double
+		lineageTag: a6a79937-3b65-4c73-bd39-5565f6dad336
+		summarizeBy: sum
+		sourceColumn: tax
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column remaining_amount_with_tax
+		dataType: double
+		formatString: #,0
+		lineageTag: 6d1f1f30-c39e-489f-91fe-d221784a082e
+		summarizeBy: sum
+		sourceColumn: remaining_amount_with_tax
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	column remaining_amount_without_tax
+		dataType: double
+		lineageTag: cddcfdf6-65dc-4472-a0a8-0ceeb6639c5e
+		summarizeBy: sum
+		sourceColumn: remaining_amount_without_tax
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column draft
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: b3a348f1-0f89-424a-bd81-4d0f49756be6
+		summarizeBy: none
+		sourceColumn: draft
+
+		annotation SummarizationSetBy = Automatic
+
+	column language
+		dataType: string
+		lineageTag: a7a4d47d-d569-440d-9f4e-50691912c53a
+		summarizeBy: none
+		sourceColumn: language
+
+		annotation SummarizationSetBy = Automatic
+
+	column paid
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 5dd09bdc-dddd-493a-a222-aee7341411c5
+		summarizeBy: none
+		sourceColumn: paid
+
+		annotation SummarizationSetBy = Automatic
+
+	column status
+		dataType: string
+		lineageTag: e2f133e6-c98e-4150-a438-bdfd84462cee
+		summarizeBy: none
+		sourceColumn: status
+
+		annotation SummarizationSetBy = Automatic
+
+	column filename
+		dataType: string
+		lineageTag: fed845f4-6e0a-416c-9c92-3e7319661006
+		summarizeBy: none
+		sourceColumn: filename
+
+		annotation SummarizationSetBy = Automatic
+
+	column date
+		dataType: dateTime
+		formatString: dd/mm/yy
+		lineageTag: d00959fd-e9dd-4dcc-bbab-eeaa7e504860
+		summarizeBy: none
+		sourceColumn: date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column deadline
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 9f96f038-7268-4e72-93f0-76e2073f18ac
+		summarizeBy: none
+		sourceColumn: deadline
+
+		variation Variation
+			isDefault
+			relationship: afaf2015-2652-4de8-aa81-0005df27b307
+			defaultHierarchy: LocalDateTable_96ef29bb-473a-4437-a65f-bc3e21b14a19.'Hiérarchie de dates'
+
+		annotation SummarizationSetBy = Automatic
+
+	column special_mention
+		dataType: string
+		lineageTag: 382db549-880f-44c5-82c9-e81fafb6264e
+		summarizeBy: none
+		sourceColumn: special_mention
+
+		annotation SummarizationSetBy = Automatic
+
+	column created_at
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 7c5f3ab4-3335-49ec-96b5-e8c69a73f8f5
+		summarizeBy: none
+		sourceColumn: created_at
+
+		variation Variation
+			isDefault
+			relationship: 80e101c0-33d0-40d8-b161-d66d437cfd23
+			defaultHierarchy: LocalDateTable_5e9d6374-6dd5-4060-93e9-4b4596c6d76e.'Hiérarchie de dates'
+
+		annotation SummarizationSetBy = Automatic
+
+	column updated_at
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: a08d0fdf-e70b-42ef-a35b-5564c9b352f2
+		summarizeBy: none
+		sourceColumn: updated_at
+
+		variation Variation
+			isDefault
+			relationship: ebe79c18-47e9-4c4d-af5c-099576583b74
+			defaultHierarchy: LocalDateTable_fae4e73d-82f0-4dc6-bf0f-497264d9af25.'Hiérarchie de dates'
+
+		annotation SummarizationSetBy = Automatic
+
+	column archived_at
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 9335cf87-1e1f-46d7-bc38-2f21e812af55
+		summarizeBy: none
+		sourceColumn: archived_at
+
+		variation Variation
+			isDefault
+			relationship: 64f34001-7f50-4d78-a011-ddb5e11b278e
+			defaultHierarchy: LocalDateTable_0514eefc-25d7-4e5c-b7db-591a94ce7f68.'Hiérarchie de dates'
+
+		annotation SummarizationSetBy = Automatic
+
+	column public_file_url
+		dataType: string
+		lineageTag: c3450a0c-8aa1-4afd-a2bc-8a03b92809b9
+		dataCategory: WebUrl
+		summarizeBy: none
+		sourceColumn: public_file_url
+
+		annotation SummarizationSetBy = Automatic
+
+	column exchange_rate
+		dataType: double
+		lineageTag: 1cc91fc6-a6df-4b8b-8dd4-0a633266337d
+		summarizeBy: sum
+		sourceColumn: exchange_rate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column external_reference
+		dataType: string
+		lineageTag: cbde39b3-ad37-40b7-baa2-294a277f2d05
+		summarizeBy: none
+		sourceColumn: external_reference
+
+		annotation SummarizationSetBy = Automatic
+
+	column ID_Ste
+		dataType: string
+		lineageTag: df911f08-6dc1-490d-814c-abf38f4e33ce
+		summarizeBy: none
+		sourceColumn: ID_Ste
+
+		annotation SummarizationSetBy = Automatic
+
+	column discount_type
+		dataType: string
+		lineageTag: 1c647f9a-cdaa-4343-8d4c-bdede9db5ba4
+		summarizeBy: none
+		sourceColumn: discount_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column discount_value
+		dataType: double
+		lineageTag: f69020ef-0e81-4312-8929-47937b689df9
+		summarizeBy: sum
+		sourceColumn: discount_value
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ledger_entry_id
+		dataType: string
+		lineageTag: f6cbd752-fa45-497f-8a49-48494d386d40
+		summarizeBy: none
+		sourceColumn: ledger_entry_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column customer_id
+		dataType: string
+		lineageTag: 0fb0d7df-e39f-4bfa-b33f-c5985e4e3156
+		summarizeBy: none
+		sourceColumn: customer_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column currency_amount
+		dataType: double
+		lineageTag: 9bef83aa-be93-4074-bed2-a0e734868502
+		summarizeBy: sum
+		sourceColumn: currency_amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column currency_amount_before_tax
+		dataType: double
+		lineageTag: 5c01a3ca-756e-46c7-b5c4-53d6f396ddce
+		summarizeBy: sum
+		sourceColumn: currency_amount_before_tax
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column currency_tax
+		dataType: double
+		lineageTag: 353325e4-fc94-4ae7-bda6-ffbfeb30b89c
+		summarizeBy: sum
+		sourceColumn: currency_tax
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column invoice_line_sections_url
+		dataType: string
+		lineageTag: 50a18810-5cc0-4bc4-87e8-b46291f6f870
+		summarizeBy: none
+		sourceColumn: invoice_line_sections_url
+
+		annotation SummarizationSetBy = Automatic
+
+	column invoice_lines_url
+		dataType: string
+		lineageTag: 008a73c7-7f58-4b3d-b961-9051cccab6fb
+		summarizeBy: none
+		sourceColumn: invoice_lines_url
+
+		annotation SummarizationSetBy = Automatic
+
+	column categories_url
+		dataType: string
+		lineageTag: cc507cc8-a032-444b-b68a-07aea46b549b
+		summarizeBy: none
+		sourceColumn: categories_url
+
+		annotation SummarizationSetBy = Automatic
+
+	column payments_url
+		dataType: string
+		lineageTag: 9f5aef60-2cfe-4ee6-ba12-ed5631ea9227
+		summarizeBy: none
+		sourceColumn: payments_url
+
+		annotation SummarizationSetBy = Automatic
+
+	column matched_transactions_url
+		dataType: string
+		lineageTag: 0740f70f-8d01-488e-94ac-bebd83027402
+		summarizeBy: none
+		sourceColumn: matched_transactions_url
+
+		annotation SummarizationSetBy = Automatic
+
+	column appendices_url
+		dataType: string
+		lineageTag: c726a641-ded9-492b-b282-d11e0540e198
+		summarizeBy: none
+		sourceColumn: appendices_url
+
+		annotation SummarizationSetBy = Automatic
+
+	column Catégorie_Balance_Agée = ```
+			
+			VAR JoursEcoules = DATEDIFF('Customer invoices'[deadline], TODAY(), DAY)
+			RETURN
+			    SWITCH(TRUE(),
+			        JoursEcoules <= 0, "Non échue",
+			        JoursEcoules <= 30, "30 j",
+			        JoursEcoules <= 60, "60 j",
+			        JoursEcoules <= 90, "90 j",
+			        JoursEcoules <= 180, "180 j",
+			        JoursEcoules > 180, "+180 j",
+			        "Inconnu"
+			    )
+			
+			```
+		lineageTag: f47b1ae3-ad37-48c4-aabd-afb709a36643
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column fy_keys
+		dataType: string
+		lineageTag: fae33174-9264-44c1-be39-c55189414f0e
+		summarizeBy: none
+		sourceColumn: fy_keys
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Customer invoices' = m
+		mode: import
+		queryGroup: 'model tables'
+		source = ```
+				let
+				    Source = Sql.Databases("mhirzqqnk57e7anmxqvc3cldyq-ad6po2r4ekrefdnhlqka77jyjq.datawarehouse.fabric.microsoft.com"),
+				    Fact_2 = Source{[Name="Fact_2"]}[Data],
+				    Query = "
+				        SELECT *
+				        FROM dbo.fact_2_customer_invoices
+				        WHERE ID_Ste IN (21912624, 21915510, 22276641, 21917322, 21918011)
+				    ",
+				    NativeQuery = Value.NativeQuery(Fact_2, Query),
+				    #"Valeur remplacée" = Table.ReplaceValue(NativeQuery,".",",",Replacer.ReplaceText,{"amount", "tax", "remaining_amount_with_tax", "remaining_amount_without_tax", "discount_value"}),
+				    #"Type modifié" = Table.TransformColumnTypes(#"Valeur remplacée",{{"id", type text}, {"created_at", type datetime}, {"updated_at", type datetime}, {"archived_at", type datetime}, {"ledger_entry_id", type text}, {"amount", type number}, {"currency_amount", type number}, {"currency_amount_before_tax", type number}, {"exchange_rate", type number}, {"currency_tax", type number}, {"tax", type number}, {"remaining_amount_with_tax", type number}, {"remaining_amount_without_tax", type number}, {"discount_value", type number}, {"customer_id", type text}}),
+				    #"Replaced Value" = Table.ReplaceValue(#"Type modifié","FACT-","",Replacer.ReplaceText,{"invoice_number"})
+				    
+				in
+				    #"Replaced Value"
+				```
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Exception
+

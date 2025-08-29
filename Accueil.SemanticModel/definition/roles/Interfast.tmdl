@@ -1,0 +1,7 @@
+role Interfast
+	modelPermission: read
+
+	tablePermission Dim_Companies = [id] == "21915510"
+
+	annotation PBI_Id = 58226b16546a48c181d3f7a99c85f83e
+

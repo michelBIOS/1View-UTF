@@ -1,0 +1,7 @@
+role Kalite
+	modelPermission: read
+
+	tablePermission Dim_Companies = [id] == "22276641"
+
+	annotation PBI_Id = 19c662c16d094e02afa1cf86cb54e9d1
+

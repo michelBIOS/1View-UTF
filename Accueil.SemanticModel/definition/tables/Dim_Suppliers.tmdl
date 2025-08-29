@@ -1,0 +1,185 @@
+table Dim_Suppliers
+	lineageTag: f756ce38-9ec6-4407-80c0-647742ad6873
+
+	column id
+		dataType: string
+		lineageTag: df354a5f-b027-4ef9-af50-c7c039143a02
+		summarizeBy: none
+		sourceColumn: id
+
+		annotation SummarizationSetBy = Automatic
+
+	column name
+		dataType: string
+		lineageTag: d27187b6-c3d5-408c-bfca-b6e79bd5ebd6
+		summarizeBy: none
+		sourceColumn: name
+
+		annotation SummarizationSetBy = Automatic
+
+	column company_id
+		dataType: string
+		lineageTag: b48646cf-c27e-457a-9fd2-073398f80472
+		summarizeBy: none
+		sourceColumn: company_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column company_name
+		dataType: string
+		lineageTag: a150400d-65f2-4ba1-b9f4-c0ddf38dab9d
+		summarizeBy: none
+		sourceColumn: company_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column vat_rate
+		dataType: string
+		lineageTag: 9cc41b68-915a-4ad5-8fa8-b9799ba4b393
+		summarizeBy: none
+		sourceColumn: vat_rate
+
+		annotation SummarizationSetBy = Automatic
+
+	column plan_item_number
+		dataType: string
+		lineageTag: 4540169e-97d1-459a-b8bf-f04ce5e2f423
+		summarizeBy: none
+		sourceColumn: plan_item_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column pnl_plan_item_number
+		dataType: string
+		lineageTag: b1512b5e-4f90-41ba-ad67-f0ada34fc987
+		summarizeBy: none
+		sourceColumn: pnl_plan_item_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column postal_code
+		dataType: string
+		lineageTag: f40886a1-033d-412a-baeb-55e9d0a3a256
+		summarizeBy: none
+		sourceColumn: postal_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column country_alpha2
+		dataType: string
+		lineageTag: fc9c1262-ea5b-4599-89ba-7f46e3df0927
+		summarizeBy: none
+		sourceColumn: country_alpha2
+
+		annotation SummarizationSetBy = Automatic
+
+	column city
+		dataType: string
+		lineageTag: 426ddd49-60b6-4148-818d-5be8c93240e1
+		summarizeBy: none
+		sourceColumn: city
+
+		annotation SummarizationSetBy = Automatic
+
+	column registration_number
+		dataType: string
+		lineageTag: cd71cdb2-5d12-4611-a06d-012bef475eea
+		summarizeBy: none
+		sourceColumn: registration_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column vat_number
+		dataType: string
+		lineageTag: 72ebe25a-2cd2-4eff-bf3d-c8a3d760e1ef
+		summarizeBy: none
+		sourceColumn: vat_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column activity_code
+		dataType: string
+		lineageTag: a307fade-32a0-418a-9b85-2ff86bcf4377
+		summarizeBy: none
+		sourceColumn: activity_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column legal_name
+		dataType: string
+		lineageTag: 02882592-fba5-4b7d-b23c-440c10398ab7
+		summarizeBy: none
+		sourceColumn: legal_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column registration_country_alpha2
+		dataType: string
+		lineageTag: c845a414-177f-478a-a24b-d28c963012de
+		summarizeBy: none
+		sourceColumn: registration_country_alpha2
+
+		annotation SummarizationSetBy = Automatic
+
+	column synchronized_at
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 9e7bcefb-5b7d-4f84-b681-edd08137a492
+		summarizeBy: none
+		sourceColumn: synchronized_at
+
+		variation Variation
+			isDefault
+			relationship: 3820c4f9-b55d-4118-9bc7-cfc3c75a1d40
+			defaultHierarchy: LocalDateTable_db65fc09-6b15-491d-954e-49bb6431e05c.'Hiérarchie de dates'
+
+		annotation SummarizationSetBy = Automatic
+
+	column deleted_at
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: d06f3db6-a9a6-4bd3-a47c-5d1ff3f63741
+		summarizeBy: none
+		sourceColumn: deleted_at
+
+		variation Variation
+			isDefault
+			relationship: 1a7becf8-2a96-4c50-a4a5-800be69231b0
+			defaultHierarchy: LocalDateTable_98fdeaa4-8f57-4d1f-a6f0-04fbc1ebeae3.'Hiérarchie de dates'
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Dim_Suppliers = m
+		mode: import
+		queryGroup: 'model tables'
+		source =
+				let
+				    Redshift = AmazonRedshift.Database(
+				        "pennylane-external.csqwamh5pldr.eu-west-1.redshift.amazonaws.com",
+				        "prod"
+				    ),
+				    Source = Value.NativeQuery(
+				        Redshift,
+				        "
+				        SELECT *
+				        FROM etl.suppliers
+				        WHERE company_id IN (
+				            21912624, 21915510, 22276641, 21917322, 21918011
+				        )
+				        "
+				    ),
+				    #"Type modifié" = Table.TransformColumnTypes(Source,{{"id", type text}, {"company_id", type text}}),
+				    #"Name normalisé" = Table.TransformColumns(
+				        #"Type modifié",
+				        {
+				            {"name", each Text.Proper(Text.Lower(_)), type text}
+				        }
+				    ),
+				    #"Capitalized Each Word" = Table.TransformColumns(#"Name normalisé",{{"city", Text.Proper, type text}, {"vat_rate", Text.Proper, type text}})
+				in
+				    #"Capitalized Each Word"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Exception
+

@@ -1,0 +1,7 @@
+role 'United Tables France'
+	modelPermission: read
+
+	tablePermission Dim_Companies = [id] == "21912624"
+
+	annotation PBI_Id = ca1d18ebf14240f59606fb09ea2de298
+

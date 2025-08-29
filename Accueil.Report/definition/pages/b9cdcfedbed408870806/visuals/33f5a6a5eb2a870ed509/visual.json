@@ -1,0 +1,16 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "name": "33f5a6a5eb2a870ed509",
+  "position": {
+    "x": 341,
+    "y": 150,
+    "z": 35000,
+    "height": 130,
+    "width": 290,
+    "tabOrder": 31000
+  },
+  "visualGroup": {
+    "displayName": "Carte Résultat Net",
+    "groupMode": "ScaleMode"
+  }
+}

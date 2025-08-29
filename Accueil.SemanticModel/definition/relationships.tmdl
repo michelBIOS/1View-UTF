@@ -1,0 +1,138 @@
+relationship 3c0205b7-ad2a-44dc-a362-442549507716
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Fact_GL.created_at
+	toColumn: LocalDateTable_0f5f24ce-3fd4-4b5e-a25a-626d19f523b6.Date
+
+relationship eaf2fc9a-3ff2-480a-a95d-f561f3c8ced3
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Fact_GL.updated_at
+	toColumn: LocalDateTable_70a2922b-7f60-41cd-8c7e-e4314128354f.Date
+
+relationship afaf2015-2652-4de8-aa81-0005df27b307
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Customer invoices'.deadline
+	toColumn: LocalDateTable_96ef29bb-473a-4437-a65f-bc3e21b14a19.Date
+
+relationship 80e101c0-33d0-40d8-b161-d66d437cfd23
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Customer invoices'.created_at
+	toColumn: LocalDateTable_5e9d6374-6dd5-4060-93e9-4b4596c6d76e.Date
+
+relationship ebe79c18-47e9-4c4d-af5c-099576583b74
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Customer invoices'.updated_at
+	toColumn: LocalDateTable_fae4e73d-82f0-4dc6-bf0f-497264d9af25.Date
+
+relationship 64f34001-7f50-4d78-a011-ddb5e11b278e
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Customer invoices'.archived_at
+	toColumn: LocalDateTable_0514eefc-25d7-4e5c-b7db-591a94ce7f68.Date
+
+relationship 9791f2a4-7f2b-98f2-8b96-5a86eca7ba99
+	isActive: false
+	fromColumn: Fact_GL.ledger_entry_id
+	toColumn: 'Customer invoices'.ledger_entry_id
+
+relationship 9aafd98e-9ed7-0a28-29eb-be28066eb480
+	crossFilteringBehavior: bothDirections
+	fromColumn: 'Customer invoices'.customer_id
+	toColumn: Dim_Customers.id
+
+relationship 6c35bc62-f5de-4699-b2ff-f8be17fba437
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Supplier invoices'.archived_at
+	toColumn: LocalDateTable_bef92955-a610-49b0-a3d4-3012df64d73d.Date
+
+relationship 354bb0ec-c2a4-4720-849d-eab60b41220b
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Supplier invoices'.created_at
+	toColumn: LocalDateTable_95473425-04b6-4f3f-9ad0-457509a62bd0.Date
+
+relationship 00e6b263-0369-4141-92e1-bd84ff59055f
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Supplier invoices'.deadline
+	toColumn: LocalDateTable_b4373266-dbe7-41af-8d58-4182ae84605e.Date
+
+relationship 3820c4f9-b55d-4118-9bc7-cfc3c75a1d40
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Dim_Suppliers.synchronized_at
+	toColumn: LocalDateTable_db65fc09-6b15-491d-954e-49bb6431e05c.Date
+
+relationship 1a7becf8-2a96-4c50-a4a5-800be69231b0
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Dim_Suppliers.deleted_at
+	toColumn: LocalDateTable_98fdeaa4-8f57-4d1f-a6f0-04fbc1ebeae3.Date
+
+relationship 1a0cc74a-877d-40ed-9da4-7706b6a113c9
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Dim_Customers.synchronized_at
+	toColumn: LocalDateTable_fe086e9e-1115-406b-908c-d5b3921350f1.Date
+
+relationship 588f5741-3ad0-4e8e-8016-679199119159
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Dim_Customers.deleted_at
+	toColumn: LocalDateTable_5d5425f7-c760-44b8-8bdf-16f4ff2feadb.Date
+
+relationship AutoDetected_caf2de5d-7fce-4f8d-815d-36f0d1be7ad0
+	isActive: false
+	fromColumn: Fact_GL.ledger_entry_id
+	toColumn: 'Supplier invoices'.ledger_entry_id
+
+relationship bcfe88b9-6849-944d-0bd7-91da969cd5a4
+	fromColumn: 'Supplier invoices'.supplier_id
+	toColumn: Dim_Suppliers.id
+
+relationship 040875b0-3257-4fa6-9f46-44d5df80651a
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Supplier invoices'.updated_at
+	toColumn: LocalDateTable_7fb07494-9ac8-47fc-bf21-4b33bbac8759.Date
+
+relationship 4ce63021-fafa-e691-ccc4-306848b0489b
+	fromColumn: Fact_GL.ledger_account_id
+	toColumn: 'Dim_Ledger Accounts'.id
+
+relationship 80377740-4f05-92b0-3851-db14e1d8cb87
+	fromColumn: Fact_GL.journal_id
+	toColumn: Dim_Journals.id_journal
+
+relationship 7af686bb-eb83-8863-95ce-a5c0806cfe93
+	fromColumn: 'Supplier invoices'.ID_Ste
+	toColumn: Dim_Companies.id
+
+relationship 91ce1018-7f39-f547-467c-e83749b5c2ea
+	fromColumn: Fact_GL.ID_Ste
+	toColumn: Dim_Companies.id
+
+relationship 92b22d72-fb1c-f36d-d634-3982732d7f5f
+	fromColumn: 'Customer invoices'.ID_Ste
+	toColumn: Dim_Companies.id
+
+relationship f883934a-aad3-a32e-72ca-5347a2c231d6
+	fromColumn: 'Customer invoices'.Catégorie_Balance_Agée
+	toColumn: TranchesBalanceAgée.Tranche
+
+relationship e64f27ee-ff07-f97e-5abb-2005e527973e
+	fromColumn: 'Supplier invoices'.Catégorie_Balance_Agée
+	toColumn: TranchesBalanceAgée.Tranche
+
+relationship 247921a9-21a4-6b77-7b31-6a52aa9c94f3
+	fromColumn: 'Dynamic Logo'.id
+	toColumn: Dim_Companies.id
+
+relationship a959f8a6-2376-92e9-f250-48b868607635
+	fromColumn: Fact_GL.date
+	toColumn: Dim_Date.Date
+
+relationship eaf32f67-6480-acf5-184d-a334f99b4a83
+	fromColumn: 'Customer invoices'.date
+	toColumn: Dim_Date.Date
+
+relationship 8569ce4a-9bad-a57f-f892-68094f2e4f49
+	fromColumn: 'Supplier invoices'.date
+	toColumn: Dim_Date.Date
+
+relationship f008a4d3-9960-4422-adc0-e0714850bf3f
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Dim_Date.Date
+	toColumn: LocalDateTable_6e490a31-a957-46f6-ab08-079221e1b34c.Date
+

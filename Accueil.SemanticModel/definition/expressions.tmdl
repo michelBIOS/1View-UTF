@@ -1,0 +1,63 @@
+expression 'Ledger Entries' =
+		let
+		    Source = Sql.Databases("mhirzqqnk57e7anmxqvc3cldyq-ad6po2r4ekrefdnhlqka77jyjq.datawarehouse.fabric.microsoft.com"),
+		    Dim_1 = Source{[Name="Fact_4"]}[Data],
+		    Query = "
+		        SELECT *
+		        FROM dbo.fact_4_ledger_entries
+		        WHERE ID_Ste IN (21912624, 21915510, 22276641, 21917322, 21918011)
+		    ",
+		    NativeQuery = Value.NativeQuery(Dim_1, Query),
+		    #"Type modifié" = Table.TransformColumnTypes(NativeQuery,{{"id", type text}, {"journal_id", type text}})
+		in
+		    #"Type modifié"
+	lineageTag: 27e3d906-a4b5-419c-ac8f-e72ea5bb0ec8
+	queryGroup: 'no loading'
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression 'Ledger Entry Lines' =
+		let
+		    Source = Sql.Databases("mhirzqqnk57e7anmxqvc3cldyq-ad6po2r4ekrefdnhlqka77jyjq.datawarehouse.fabric.microsoft.com"),
+		    Fact_3 = Source{[Name="Fact_4"]}[Data],
+		    Query = "
+		        SELECT *
+		        FROM dbo.fact_4_ledger_entry_lines
+		        WHERE ID_Ste IN (21912624, 21915510, 22276641, 21917322, 21918011)
+		
+		    ",
+		    NativeQuery = Value.NativeQuery(Fact_3, Query),
+		    #"Valeur remplacée" = Table.ReplaceValue(NativeQuery,".",",",Replacer.ReplaceText,{"debit", "credit"}),
+		    #"Type modifié" = Table.TransformColumnTypes(#"Valeur remplacée",{{"id", type text}, {"ledger_account_id", type text}, {"journal_id", type text}, {"ledger_entry_id", type text}, {"debit", type number}, {"credit", type number}, {"thirdparty_id", type text}})
+		in
+		    #"Type modifié"
+	lineageTag: 7128cbfb-d683-4f82-9481-b91810d678e1
+	queryGroup: 'no loading'
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression Products =
+		let
+		    Source = Sql.Databases("mhirzqqnk57e7anmxqvc3cldyq-ad6po2r4ekrefdnhlqka77jyjq.datawarehouse.fabric.microsoft.com"),
+		    Dim_1 = Source{[Name="Dim_1"]}[Data],
+		    Query = "
+		        SELECT *
+		        FROM dbo.products
+		        WHERE ID_Ste IN (21912624, 21915510, 22276641, 21917322, 21918011)
+		    ",
+		    NativeQuery = Value.NativeQuery(Dim_1, Query),
+		    #"Valeur remplacée" = Table.ReplaceValue(NativeQuery,".",",",Replacer.ReplaceText,{"price_before_tax", "price"}),
+		    #"Type modifié" = Table.TransformColumnTypes(#"Valeur remplacée",{{"id", type text}, {"price_before_tax", type number}, {"price", type number}, {"created_at", type datetime}, {"updated_at", type datetime}, {"ledger_account_id", type text}})
+		in
+		    #"Type modifié"
+	lineageTag: 20df523e-39b1-4e00-aa5c-99aa33446012
+	queryGroup: 'model tables'
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Exception
+

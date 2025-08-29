@@ -1,0 +1,124 @@
+table Dim_Date
+	lineageTag: fbe6011e-9d94-49aa-a24a-1fcec4fc20ff
+
+	column Date
+		formatString: dd/mm/yy
+		lineageTag: 417005f3-8af3-45cd-be08-9be6b3f12e9b
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Date]
+
+		variation Variation
+			isDefault
+			relationship: f008a4d3-9960-4422-adc0-e0714850bf3f
+			defaultHierarchy: LocalDateTable_6e490a31-a957-46f6-ab08-079221e1b34c.'Hiérarchie de dates'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	column MoisNum
+		formatString: 0
+		lineageTag: 7151b2ec-d6fe-4311-afb1-a147894458b0
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [MoisNum]
+
+		annotation SummarizationSetBy = User
+
+	column Afficher_12M_Glissants =
+			
+			VAR DerniereDate = CALCULATE(
+			    MAX('Customer invoices'[date]),  -- <<< Prend la date max des données
+			    REMOVEFILTERS('Customer invoices')
+			)
+			VAR Date12MoisAvant = EDATE(DerniereDate, -11)
+			
+			RETURN
+			IF(
+			    'Dim_Date'[Date] >= Date12MoisAvant && 'Dim_Date'[Date] <= DerniereDate,
+			    1,
+			    0
+			)
+		formatString: 0
+		lineageTag: 5b120ce7-6328-423b-ad7d-d36d869b48aa
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column Année
+		formatString: 0
+		lineageTag: 923199ef-b553-4362-a703-784e7b014c59
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Année]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Trimestres
+		formatString: 0
+		lineageTag: 732d09d9-d46b-48e6-9fe8-a5134ef6cecf
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Trimestres]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Mois
+		lineageTag: ce920748-6646-4789-857d-5db718931801
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Mois]
+		sortByColumn: MoisNum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation __PBI_SemanticLinks = [{"LinkTarget":{"TableName":"Dim_Date","TableItemName":"Mois (groups)","ObjectType":4},"LinkType":"UsedInGroup"}]
+
+	column Année-Mois
+		lineageTag: dea01a81-6fc2-4b4d-bd09-11a8de6100f3
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Année-Mois]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Mois (groups)' = SWITCH(TRUE, ISBLANK('Dim_Date'[Mois]), "(Blank)", 'Dim_Date'[Mois] IN {"avr"}, "avr", "Other")
+		lineageTag: a79bb202-a747-4feb-8ed6-8029e21f85ff
+		summarizeBy: none
+
+		extendedProperty GroupingMetadata =
+				{
+				  "version": 0,
+				  "groupedColumns": [
+				    {
+				      "Column": {
+				        "Expression": {
+				          "SourceRef": {
+				            "Entity": "Dim_Date"
+				          }
+				        },
+				        "Property": "Mois"
+				      }
+				    }
+				  ]
+				}
+
+		annotation GroupingDesignState = {"Version":0,"Sources":[{"Name":"d","Entity":"Dim_Date"}],"GroupedColumns":[{"Column":{"Expression":{"SourceRef":{"Source":"d"}},"Property":"Mois"}}],"GroupItems":[{"DisplayName":"(Blank)","BlankDefaultPlaceholder":true},{"DisplayName":"avr","Expression":{"In":{"Expressions":[{"Column":{"Expression":{"SourceRef":{"Source":"d"}},"Property":"Mois"}}],"Values":[[{"Literal":{"Value":"'avr'"}}]]}}},{"DisplayName":"Other"}]}
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Dim_Date = calculated
+		mode: import
+		source =
+				ADDCOLUMNS(
+				     CALENDARAUTO(),
+				    "Année",YEAR([Date]),
+				    "Trimestres",QUARTER([Date]),
+				    "Mois",FORMAT([Date],"mmm"),
+				    "MoisNum",MONTH([Date]),
+				    "Année-Mois", FORMAT([Date], "YY-MM"
+				))
+
+	annotation PBI_Id = 903eee4a8b814c918c00199c8a6d2770
+
