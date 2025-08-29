@@ -107,14 +107,6 @@ relationship 92b22d72-fb1c-f36d-d634-3982732d7f5f
 	fromColumn: 'Customer invoices'.ID_Ste
 	toColumn: Dim_Companies.id
 
-relationship f883934a-aad3-a32e-72ca-5347a2c231d6
-	fromColumn: 'Customer invoices'.Catégorie_Balance_Agée
-	toColumn: TranchesBalanceAgée.Tranche
-
-relationship e64f27ee-ff07-f97e-5abb-2005e527973e
-	fromColumn: 'Supplier invoices'.Catégorie_Balance_Agée
-	toColumn: TranchesBalanceAgée.Tranche
-
 relationship 247921a9-21a4-6b77-7b31-6a52aa9c94f3
 	fromColumn: 'Dynamic Logo'.id
 	toColumn: Dim_Companies.id
@@ -135,4 +127,12 @@ relationship f008a4d3-9960-4422-adc0-e0714850bf3f
 	joinOnDateBehavior: datePartOnly
 	fromColumn: Dim_Date.Date
 	toColumn: LocalDateTable_6e490a31-a957-46f6-ab08-079221e1b34c.Date
+
+relationship f883934a-aad3-a32e-72ca-5347a2c231d6
+	fromColumn: 'Customer invoices'.Catégorie_Balance_Agée
+	toColumn: TranchesBalanceAgée.Tranche
+
+relationship e64f27ee-ff07-f97e-5abb-2005e527973e
+	fromColumn: 'Supplier invoices'.Catégorie_Balance_Agée
+	toColumn: TranchesBalanceAgée.Tranche
 

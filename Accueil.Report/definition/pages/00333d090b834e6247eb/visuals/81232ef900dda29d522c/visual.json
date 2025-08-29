@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
   "name": "81232ef900dda29d522c",
   "position": {
     "x": 19.375,
@@ -27,8 +27,8 @@
                 }
               },
               "queryRef": "Mesures.Trésorerie Nette",
-              "nativeQueryRef": "Tréso Nette",
-              "displayName": "Tréso Nette",
+              "nativeQueryRef": "Net Cash",
+              "displayName": "Net Cash",
               "format": "#,0 \"€\";-#,0 \"€\";#,0 \"€\""
             }
           ]

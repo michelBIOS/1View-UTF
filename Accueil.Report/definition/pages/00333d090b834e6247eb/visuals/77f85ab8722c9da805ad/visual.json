@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
   "name": "77f85ab8722c9da805ad",
   "position": {
     "x": 16.25,
@@ -27,8 +27,8 @@
                 }
               },
               "queryRef": "Mesures.Encours Fournisseurs",
-              "nativeQueryRef": "Dettes TTC",
-              "displayName": "Dettes TTC",
+              "nativeQueryRef": "Debts incl. Tax",
+              "displayName": "Debts incl. Tax",
               "format": "#,0 \"€\";-#,0 \"€\";#,0 \"€\""
             }
           ]

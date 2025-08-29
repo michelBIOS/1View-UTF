@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
   "name": "8baa83cb016674d07191",
   "position": {
     "x": 14.47060038953444,
@@ -27,8 +27,8 @@
                 }
               },
               "queryRef": "Mesures.Encours Clients",
-              "nativeQueryRef": "Créances",
-              "displayName": "Créances",
+              "nativeQueryRef": "Receivable",
+              "displayName": "Receivable",
               "format": "#,0 \"€\";-#,0 \"€\";#,0 \"€\""
             }
           ]

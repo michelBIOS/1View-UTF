@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
   "name": "abf4fb78e00bd90a35d1",
   "position": {
     "x": 971.42857142857144,
@@ -46,7 +46,8 @@
                 }
               },
               "queryRef": "Mesures.CA Cumulé(M)",
-              "nativeQueryRef": "CA Cumulé(M)",
+              "nativeQueryRef": "Sales",
+              "displayName": "Sales",
               "format": "#,0€"
             },
             {
@@ -61,7 +62,8 @@
                 }
               },
               "queryRef": "Mesures.Charges Cumulées (M)",
-              "nativeQueryRef": "Charges Cumulées (M)",
+              "nativeQueryRef": "Costs",
+              "displayName": "Costs",
               "format": "#,0€"
             },
             {
@@ -76,8 +78,8 @@
                 }
               },
               "queryRef": "Mesures.Resultat Cumulées(M)",
-              "nativeQueryRef": "Resultat Cumulé",
-              "displayName": "Resultat Cumulé",
+              "nativeQueryRef": "Cumulative Income",
+              "displayName": "Cumulative Income",
               "format": "#,0€"
             }
           ]

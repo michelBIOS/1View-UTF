@@ -776,6 +776,16 @@ cultureInfo fr-FR
 			          }
 			        },
 			        {
+			          "Net Sales": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
 			          "CA HT": {
 			            "State": "Suggested",
 			            "Source": {
@@ -5919,6 +5929,16 @@ cultureInfo fr-FR
 			          }
 			        },
 			        {
+			          "Bank Balance": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
 			          "Solde Banques": {
 			            "State": "Suggested",
 			            "Source": {
@@ -8325,6 +8345,16 @@ cultureInfo fr-FR
 			        {
 			          "résultat opérationnel": {
 			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Net Income": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
 			          }
 			        },
 			        {
@@ -16393,6 +16423,16 @@ cultureInfo fr-FR
 			          }
 			        },
 			        {
+			          "Receivable": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
 			          "Créances": {
 			            "State": "Suggested",
 			            "Source": {
@@ -16730,6 +16770,16 @@ cultureInfo fr-FR
 			        {
 			          "encours fournisseurs": {
 			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Debts incl. Tax": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
 			          }
 			        },
 			        {
@@ -17081,6 +17131,16 @@ cultureInfo fr-FR
 			        {
 			          "trésorerie nette": {
 			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Net Cash": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
 			          }
 			        },
 			        {
@@ -18720,6 +18780,9 @@ cultureInfo fr-FR
 			        }
 			      },
 			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
 			      "Terms": [
 			        {
 			          "id": {
@@ -18756,8 +18819,7 @@ cultureInfo fr-FR
 			            "Weight": 0.714
 			          }
 			        }
-			      ],
-			      "NameType": "Identifier"
+			      ]
 			    },
 			    "dynamic_logo.logo": {
 			      "Definition": {
@@ -19663,6 +19725,16 @@ cultureInfo fr-FR
 			          "ca": {
 			            "State": "Generated"
 			          }
+			        },
+			        {
+			          "Sales": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
 			        }
 			      ]
 			    },
@@ -19779,6 +19851,16 @@ cultureInfo fr-FR
 			            },
 			            "Weight": 0.466
 			          }
+			        },
+			        {
+			          "Costs": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
 			        }
 			      ]
 			    },
@@ -19809,7 +19891,7 @@ cultureInfo fr-FR
 			          }
 			        },
 			        {
-			          "Resultat Cumulé": {
+			          "Cumulative Income": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -19823,9 +19905,683 @@ cultureInfo fr-FR
 			        "meter",
 			        "M"
 			      ]
+			    },
+			    "mesure.color_max_min_TN": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Mesures",
+			          "ConceptualProperty": "Color Max Min TN"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "color max min TN": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "TN": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "min TN": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "max min TN": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "color maximum min tn": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "color max minimum tn": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "maximum min tn": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "max minimum tn": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "minimum tn": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        }
+			      ]
+			    },
+			    "mesure.color_max_min_EC": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Mesures",
+			          "ConceptualProperty": "Color Max Min EC"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "color max min EC": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "EC": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "min EC": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "max min EC": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "color maximum min ec": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "color max minimum ec": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "maximum min ec": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "max minimum ec": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "minimum ec": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        }
+			      ]
+			    },
+			    "mesure.color_max_min_EF": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Mesures",
+			          "ConceptualProperty": "Color Max Min EF"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "color max min EF": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "EF": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "min EF": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "max min EF": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "color maximum min ef": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "color max minimum ef": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "maximum min ef": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "max minimum ef": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "minimum ef": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        }
+			      ]
+			    },
+			    "mesure.color_max_min_RO": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Mesures",
+			          "ConceptualProperty": "Color Max Min RO"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "color max min RO": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "RO": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "min RO": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "max min RO": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "color maximum min ro": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "color max minimum ro": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "maximum min ro": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "max minimum ro": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "minimum ro": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        }
+			      ]
+			    },
+			    "mesure.color_max_min_TV": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Mesures",
+			          "ConceptualProperty": "Color Max Min TV"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "color max min TV": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "TV": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "min TV": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "max min TV": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "color maximum min tv": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "color max minimum tv": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "maximum min tv": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "max minimum tv": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "minimum tv": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        }
+			      ]
+			    },
+			    "mesure.CA_HT_display": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Mesures",
+			          "ConceptualProperty": "CA HT Display"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "CA HT display": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "HT display": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "ca ht exhibition": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "ca ht presentation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "ca ht demonstration": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "ca ht spectacle": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "ca ht ceremony": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "ca ht pageant": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "ht exhibition": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "ht presentation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "ht demonstration": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "ht spectacle": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        }
+			      ]
 			    }
 			  },
 			  "Relationships": {
+			    "dim_supplier_deleted_at_hiérarchie_de_date_has_dim_supplier_deleted_at_année": {
+			      "Binding": {
+			        "ConceptualEntity": "Dim_Suppliers"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_supplier.deleted_at.hiérarchie_de_date": {
+			          "Target": {
+			            "Entity": "dim_supplier.deleted_at.hiérarchie_de_date"
+			          }
+			        },
+			        "dim_supplier.deleted_at.année": {
+			          "Target": {
+			            "Entity": "dim_supplier.deleted_at.année"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_supplier.deleted_at.hiérarchie_de_date"
+			            },
+			            "Object": {
+			              "Role": "dim_supplier.deleted_at.année"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "hiérarchie_de_dates_have_années"
+			        }
+			      ]
+			    },
+			    "dim_supplier_deleted_at_has_hiérarchie_de_date": {
+			      "Binding": {
+			        "ConceptualEntity": "Dim_Suppliers"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_supplier.deleted_at": {
+			          "Target": {
+			            "Entity": "dim_supplier.deleted_at"
+			          }
+			        },
+			        "dim_supplier.deleted_at.hiérarchie_de_date": {
+			          "Target": {
+			            "Entity": "dim_supplier.deleted_at.hiérarchie_de_date"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_supplier.deleted_at"
+			            },
+			            "Object": {
+			              "Role": "dim_supplier.deleted_at.hiérarchie_de_date"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "deleted_at_have_hiérarchie_de_dates"
+			        }
+			      ]
+			    },
+			    "dim_supplier_synchronized_at_mois_has_dim_supplier_synchronized_at_jour": {
+			      "Binding": {
+			        "ConceptualEntity": "Dim_Suppliers"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_supplier.synchronized_at.mois": {
+			          "Target": {
+			            "Entity": "dim_supplier.synchronized_at.mois"
+			          }
+			        },
+			        "dim_supplier.synchronized_at.jour": {
+			          "Target": {
+			            "Entity": "dim_supplier.synchronized_at.jour"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_supplier.synchronized_at.mois"
+			            },
+			            "Object": {
+			              "Role": "dim_supplier.synchronized_at.jour"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "moises_have_jour"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_supplier.synchronized_at.jour"
+			            },
+			            "Object": {
+			              "Role": "dim_supplier.synchronized_at.mois"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "jour_have_moises"
+			        },
+			        {
+			          "Preposition": {
+			            "Subject": {
+			              "Role": "dim_supplier.synchronized_at.jour"
+			            },
+			            "Prepositions": [
+			              {
+			                "in": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Object": {
+			              "Role": "dim_supplier.synchronized_at.mois"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "jour_are_in_moises12"
+			        }
+			      ]
+			    },
 			    "dim_supplier_synchronized_at_trimestre_has_dim_supplier_synchronized_at_mois": {
 			      "Binding": {
 			        "ConceptualEntity": "Dim_Suppliers"
@@ -20086,7 +20842,7 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "hiérarchie_de_dates_have_années"
+			          "ID": "hiérarchie_de_dates_have_années1"
 			        }
 			      ]
 			    },
@@ -20152,7 +20908,7 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "moises_have_jour"
+			          "ID": "moises_have_jour1"
 			        },
 			        {
 			          "Attribute": {
@@ -20165,7 +20921,7 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "jour_have_moises"
+			          "ID": "jour_have_moises1"
 			        },
 			        {
 			          "Preposition": {
@@ -20449,7 +21205,7 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "hiérarchie_de_dates_have_années1"
+			          "ID": "hiérarchie_de_dates_have_années2"
 			        }
 			      ]
 			    },
@@ -20515,7 +21271,7 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "moises_have_jour1"
+			          "ID": "moises_have_jour2"
 			        },
 			        {
 			          "Attribute": {
@@ -20528,7 +21284,7 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "jour_have_moises1"
+			          "ID": "jour_have_moises2"
 			        },
 			        {
 			          "Preposition": {
@@ -20812,7 +21568,7 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "hiérarchie_de_dates_have_années2"
+			          "ID": "hiérarchie_de_dates_have_années3"
 			        }
 			      ]
 			    },
@@ -20878,7 +21634,7 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "moises_have_jour2"
+			          "ID": "moises_have_jour3"
 			        },
 			        {
 			          "Attribute": {
@@ -20891,7 +21647,7 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "jour_have_moises2"
+			          "ID": "jour_have_moises3"
 			        },
 			        {
 			          "Preposition": {
@@ -21175,7 +21931,7 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "hiérarchie_de_dates_have_années3"
+			          "ID": "hiérarchie_de_dates_have_années4"
 			        }
 			      ]
 			    },
@@ -21241,7 +21997,7 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "moises_have_jour3"
+			          "ID": "moises_have_jour4"
 			        },
 			        {
 			          "Attribute": {
@@ -21254,7 +22010,7 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "jour_have_moises3"
+			          "ID": "jour_have_moises4"
 			        },
 			        {
 			          "Preposition": {
@@ -21538,7 +22294,7 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "hiérarchie_de_dates_have_années4"
+			          "ID": "hiérarchie_de_dates_have_années5"
 			        }
 			      ]
 			    },
@@ -21571,7 +22327,7 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "deleted_at_have_hiérarchie_de_dates"
+			          "ID": "deleted_at_have_hiérarchie_de_dates1"
 			        }
 			      ]
 			    },
@@ -21604,7 +22360,7 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "moises_have_jour4"
+			          "ID": "moises_have_jour5"
 			        },
 			        {
 			          "Attribute": {
@@ -21617,7 +22373,7 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "jour_have_moises4"
+			          "ID": "jour_have_moises5"
 			        },
 			        {
 			          "Preposition": {
@@ -21901,7 +22657,7 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "hiérarchie_de_dates_have_années5"
+			          "ID": "hiérarchie_de_dates_have_années6"
 			        }
 			      ]
 			    },
@@ -21967,7 +22723,7 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "moises_have_jour5"
+			          "ID": "moises_have_jour6"
 			        },
 			        {
 			          "Attribute": {
@@ -21980,7 +22736,7 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "jour_have_moises5"
+			          "ID": "jour_have_moises6"
 			        },
 			        {
 			          "Preposition": {
@@ -22264,7 +23020,7 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "hiérarchie_de_dates_have_années6"
+			          "ID": "hiérarchie_de_dates_have_années7"
 			        }
 			      ]
 			    },
@@ -22330,7 +23086,7 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "moises_have_jour6"
+			          "ID": "moises_have_jour7"
 			        },
 			        {
 			          "Attribute": {
@@ -22343,7 +23099,7 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "jour_have_moises6"
+			          "ID": "jour_have_moises7"
 			        },
 			        {
 			          "Preposition": {
@@ -22627,7 +23383,7 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "hiérarchie_de_dates_have_années7"
+			          "ID": "hiérarchie_de_dates_have_années8"
 			        }
 			      ]
 			    },
@@ -22693,7 +23449,7 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "moises_have_jour7"
+			          "ID": "moises_have_jour8"
 			        },
 			        {
 			          "Attribute": {
@@ -22706,7 +23462,7 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "jour_have_moises7"
+			          "ID": "jour_have_moises8"
 			        },
 			        {
 			          "Preposition": {
@@ -22990,7 +23746,7 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "hiérarchie_de_dates_have_années8"
+			          "ID": "hiérarchie_de_dates_have_années9"
 			        }
 			      ]
 			    },
@@ -23056,7 +23812,7 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "moises_have_jour8"
+			          "ID": "moises_have_jour9"
 			        },
 			        {
 			          "Attribute": {
@@ -23069,7 +23825,7 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "jour_have_moises8"
+			          "ID": "jour_have_moises9"
 			        },
 			        {
 			          "Preposition": {
@@ -23353,7 +24109,7 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "hiérarchie_de_dates_have_années9"
+			          "ID": "hiérarchie_de_dates_have_années10"
 			        }
 			      ]
 			    },
@@ -23419,7 +24175,7 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "moises_have_jour9"
+			          "ID": "moises_have_jour10"
 			        },
 			        {
 			          "Attribute": {
@@ -23432,7 +24188,7 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "jour_have_moises9"
+			          "ID": "jour_have_moises10"
 			        },
 			        {
 			          "Preposition": {
@@ -23716,7 +24472,7 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "hiérarchie_de_dates_have_années10"
+			          "ID": "hiérarchie_de_dates_have_années11"
 			        }
 			      ]
 			    },
@@ -23782,7 +24538,7 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "moises_have_jour10"
+			          "ID": "moises_have_jour11"
 			        },
 			        {
 			          "Attribute": {
@@ -23795,7 +24551,7 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "jour_have_moises10"
+			          "ID": "jour_have_moises11"
 			        },
 			        {
 			          "Preposition": {
@@ -24079,7 +24835,7 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "hiérarchie_de_dates_have_années11"
+			          "ID": "hiérarchie_de_dates_have_années12"
 			        }
 			      ]
 			    },
@@ -24145,7 +24901,7 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "moises_have_jour11"
+			          "ID": "moises_have_jour12"
 			        },
 			        {
 			          "Attribute": {
@@ -24158,7 +24914,7 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "jour_have_moises11"
+			          "ID": "jour_have_moises12"
 			        },
 			        {
 			          "Preposition": {
@@ -24442,7 +25198,7 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "hiérarchie_de_dates_have_années12"
+			          "ID": "hiérarchie_de_dates_have_années13"
 			        }
 			      ]
 			    },
@@ -24479,20 +25235,20 @@ cultureInfo fr-FR
 			        }
 			      ]
 			    },
-			    "supplier_invoice_has_dim_date": {
+			    "dynamic_logo_has_dim_company": {
 			      "Binding": {
-			        "ConceptualEntity": "Supplier invoices"
+			        "ConceptualEntity": "Dynamic Logo"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "supplier_invoice": {
+			        "dynamic_logo": {
 			          "Target": {
-			            "Entity": "supplier_invoice"
+			            "Entity": "dynamic_logo"
 			          }
 			        },
-			        "dim_date": {
+			        "dim_company": {
 			          "Target": {
-			            "Entity": "dim_date"
+			            "Entity": "dim_company"
 			          }
 			        }
 			      },
@@ -24500,28 +25256,28 @@ cultureInfo fr-FR
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "supplier_invoice"
+			              "Role": "dynamic_logo"
 			            },
 			            "Object": {
-			              "Role": "dim_date"
+			              "Role": "dim_company"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "supplier_invoices_have_dim_dates"
+			          "ID": "dynamic_logos_have_dim_companies"
 			        },
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "dim_date"
+			              "Role": "dim_company"
 			            },
 			            "Object": {
-			              "Role": "supplier_invoice"
+			              "Role": "dynamic_logo"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "dim_dates_have_supplier_invoices"
+			          "ID": "dim_companies_have_dynamic_logos"
 			        }
 			      ]
 			    },
@@ -24568,6 +25324,52 @@ cultureInfo fr-FR
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "tranches_balance_agées_have_supplier_invoices"
+			        }
+			      ]
+			    },
+			    "supplier_invoice_has_dim_date": {
+			      "Binding": {
+			        "ConceptualEntity": "Supplier invoices"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "supplier_invoice": {
+			          "Target": {
+			            "Entity": "supplier_invoice"
+			          }
+			        },
+			        "dim_date": {
+			          "Target": {
+			            "Entity": "dim_date"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "supplier_invoice"
+			            },
+			            "Object": {
+			              "Role": "dim_date"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "supplier_invoices_have_dim_dates"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_date"
+			            },
+			            "Object": {
+			              "Role": "supplier_invoice"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_dates_have_supplier_invoices"
 			        }
 			      ]
 			    },
@@ -24690,52 +25492,6 @@ cultureInfo fr-FR
 			        }
 			      ]
 			    },
-			    "customer_invoice_has_dim_date": {
-			      "Binding": {
-			        "ConceptualEntity": "Customer invoices"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "customer_invoice": {
-			          "Target": {
-			            "Entity": "customer_invoice"
-			          }
-			        },
-			        "dim_date": {
-			          "Target": {
-			            "Entity": "dim_date"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "customer_invoice"
-			            },
-			            "Object": {
-			              "Role": "dim_date"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "customer_invoices_have_dim_dates"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_date"
-			            },
-			            "Object": {
-			              "Role": "customer_invoice"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_dates_have_customer_invoices"
-			        }
-			      ]
-			    },
 			    "customer_invoice_has_tranches_balance_agée": {
 			      "Binding": {
 			        "ConceptualEntity": "Customer invoices"
@@ -24779,6 +25535,52 @@ cultureInfo fr-FR
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "tranches_balance_agées_have_customer_invoices"
+			        }
+			      ]
+			    },
+			    "customer_invoice_has_dim_date": {
+			      "Binding": {
+			        "ConceptualEntity": "Customer invoices"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "customer_invoice": {
+			          "Target": {
+			            "Entity": "customer_invoice"
+			          }
+			        },
+			        "dim_date": {
+			          "Target": {
+			            "Entity": "dim_date"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "customer_invoice"
+			            },
+			            "Object": {
+			              "Role": "dim_date"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "customer_invoices_have_dim_dates"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_date"
+			            },
+			            "Object": {
+			              "Role": "customer_invoice"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_dates_have_customer_invoices"
 			        }
 			      ]
 			    },
@@ -25072,6 +25874,468 @@ cultureInfo fr-FR
 			        }
 			      ]
 			    },
+			    "fact_GL_has_mesure_CA_HT_display": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_GL"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_GL": {
+			          "Target": {
+			            "Entity": "fact_GL"
+			          }
+			        },
+			        "mesure.CA_HT_display": {
+			          "Target": {
+			            "Entity": "mesure.CA_HT_display"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_GL"
+			            },
+			            "Object": {
+			              "Role": "mesure.CA_HT_display"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_GL_have_CA_HT_display"
+			        }
+			      ]
+			    },
+			    "fact_GL_has_mesure_color_max_min_TV": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_GL"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_GL": {
+			          "Target": {
+			            "Entity": "fact_GL"
+			          }
+			        },
+			        "mesure.color_max_min_TV": {
+			          "Target": {
+			            "Entity": "mesure.color_max_min_TV"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_GL"
+			            },
+			            "Object": {
+			              "Role": "mesure.color_max_min_TV"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_GL_have_color_max_min_TV"
+			        }
+			      ]
+			    },
+			    "dim_date_has_mesure_color_max_min_TV": {
+			      "Binding": {
+			        "ConceptualEntity": "Dim_Date"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_date": {
+			          "Target": {
+			            "Entity": "dim_date"
+			          }
+			        },
+			        "mesure.color_max_min_TV": {
+			          "Target": {
+			            "Entity": "mesure.color_max_min_TV"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_date"
+			            },
+			            "Object": {
+			              "Role": "mesure.color_max_min_TV"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_dates_have_color_max_min_TV"
+			        }
+			      ]
+			    },
+			    "fact_GL_has_mesure_color_max_min_RO": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_GL"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_GL": {
+			          "Target": {
+			            "Entity": "fact_GL"
+			          }
+			        },
+			        "mesure.color_max_min_RO": {
+			          "Target": {
+			            "Entity": "mesure.color_max_min_RO"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_GL"
+			            },
+			            "Object": {
+			              "Role": "mesure.color_max_min_RO"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_GL_have_color_max_min_RO"
+			        }
+			      ]
+			    },
+			    "dim_date_has_mesure_color_max_min_RO": {
+			      "Binding": {
+			        "ConceptualEntity": "Dim_Date"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_date": {
+			          "Target": {
+			            "Entity": "dim_date"
+			          }
+			        },
+			        "mesure.color_max_min_RO": {
+			          "Target": {
+			            "Entity": "mesure.color_max_min_RO"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_date"
+			            },
+			            "Object": {
+			              "Role": "mesure.color_max_min_RO"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_dates_have_color_max_min_RO"
+			        }
+			      ]
+			    },
+			    "supplier_invoice_has_mesure_color_max_min_EF": {
+			      "Binding": {
+			        "ConceptualEntity": "Supplier invoices"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "supplier_invoice": {
+			          "Target": {
+			            "Entity": "supplier_invoice"
+			          }
+			        },
+			        "mesure.color_max_min_EF": {
+			          "Target": {
+			            "Entity": "mesure.color_max_min_EF"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "supplier_invoice"
+			            },
+			            "Object": {
+			              "Role": "mesure.color_max_min_EF"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "supplier_invoices_have_color_max_min_EF"
+			        }
+			      ]
+			    },
+			    "dim_date_has_mesure_color_max_min_EF": {
+			      "Binding": {
+			        "ConceptualEntity": "Dim_Date"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_date": {
+			          "Target": {
+			            "Entity": "dim_date"
+			          }
+			        },
+			        "mesure.color_max_min_EF": {
+			          "Target": {
+			            "Entity": "mesure.color_max_min_EF"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_date"
+			            },
+			            "Object": {
+			              "Role": "mesure.color_max_min_EF"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_dates_have_color_max_min_EF"
+			        }
+			      ]
+			    },
+			    "dim_date_has_mesure_color_max_min_EC": {
+			      "Binding": {
+			        "ConceptualEntity": "Dim_Date"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_date": {
+			          "Target": {
+			            "Entity": "dim_date"
+			          }
+			        },
+			        "mesure.color_max_min_EC": {
+			          "Target": {
+			            "Entity": "mesure.color_max_min_EC"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_date"
+			            },
+			            "Object": {
+			              "Role": "mesure.color_max_min_EC"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_dates_have_color_max_min_EC"
+			        }
+			      ]
+			    },
+			    "customer_invoice_has_mesure_color_max_min_EC": {
+			      "Binding": {
+			        "ConceptualEntity": "Customer invoices"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "customer_invoice": {
+			          "Target": {
+			            "Entity": "customer_invoice"
+			          }
+			        },
+			        "mesure.color_max_min_EC": {
+			          "Target": {
+			            "Entity": "mesure.color_max_min_EC"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "customer_invoice"
+			            },
+			            "Object": {
+			              "Role": "mesure.color_max_min_EC"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "customer_invoices_have_color_max_min_EC"
+			        }
+			      ]
+			    },
+			    "supplier_invoice_has_mesure_color_max_min_TN": {
+			      "Binding": {
+			        "ConceptualEntity": "Supplier invoices"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "supplier_invoice": {
+			          "Target": {
+			            "Entity": "supplier_invoice"
+			          }
+			        },
+			        "mesure.color_max_min_TN": {
+			          "Target": {
+			            "Entity": "mesure.color_max_min_TN"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "supplier_invoice"
+			            },
+			            "Object": {
+			              "Role": "mesure.color_max_min_TN"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "supplier_invoices_have_color_max_min_TN"
+			        }
+			      ]
+			    },
+			    "fact_GL_has_mesure_color_max_min_TN": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_GL"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_GL": {
+			          "Target": {
+			            "Entity": "fact_GL"
+			          }
+			        },
+			        "mesure.color_max_min_TN": {
+			          "Target": {
+			            "Entity": "mesure.color_max_min_TN"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_GL"
+			            },
+			            "Object": {
+			              "Role": "mesure.color_max_min_TN"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_GL_have_color_max_min_TN"
+			        }
+			      ]
+			    },
+			    "dim_date_has_mesure_color_max_min_TN": {
+			      "Binding": {
+			        "ConceptualEntity": "Dim_Date"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_date": {
+			          "Target": {
+			            "Entity": "dim_date"
+			          }
+			        },
+			        "mesure.color_max_min_TN": {
+			          "Target": {
+			            "Entity": "mesure.color_max_min_TN"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_date"
+			            },
+			            "Object": {
+			              "Role": "mesure.color_max_min_TN"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_dates_have_color_max_min_TN"
+			        }
+			      ]
+			    },
+			    "dim_company_has_mesure_color_max_min_TN": {
+			      "Binding": {
+			        "ConceptualEntity": "Dim_Companies"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_company": {
+			          "Target": {
+			            "Entity": "dim_company"
+			          }
+			        },
+			        "mesure.color_max_min_TN": {
+			          "Target": {
+			            "Entity": "mesure.color_max_min_TN"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_company"
+			            },
+			            "Object": {
+			              "Role": "mesure.color_max_min_TN"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_companies_have_color_max_min_TN"
+			        }
+			      ]
+			    },
+			    "customer_invoice_has_mesure_color_max_min_TN": {
+			      "Binding": {
+			        "ConceptualEntity": "Customer invoices"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "customer_invoice": {
+			          "Target": {
+			            "Entity": "customer_invoice"
+			          }
+			        },
+			        "mesure.color_max_min_TN": {
+			          "Target": {
+			            "Entity": "mesure.color_max_min_TN"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "customer_invoice"
+			            },
+			            "Object": {
+			              "Role": "mesure.color_max_min_TN"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "customer_invoices_have_color_max_min_TN"
+			        }
+			      ]
+			    },
 			    "fact_GL_has_mesure_resultat_cumulées": {
 			      "Binding": {
 			        "ConceptualEntity": "Fact_GL"
@@ -25135,6 +26399,33 @@ cultureInfo fr-FR
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "fact_GL_have_charges"
+			        },
+			        {
+			          "Adjective": {
+			            "Subject": {
+			              "Role": "fact_GL"
+			            },
+			            "Adjectives": [
+			              {
+			                "expensive": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Antonyms": [
+			              {
+			                "cheap": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Measurement": {
+			              "Role": "mesure.charges"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "charges_indicates_how_expensive_fact_GL_are"
 			        }
 			      ]
 			    },
@@ -25267,39 +26558,6 @@ cultureInfo fr-FR
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "fact_GL_have_debug_CurrentResult"
-			        }
-			      ]
-			    },
-			    "fact_GL_has_mesure_color_MinMax": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_GL"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_GL": {
-			          "Target": {
-			            "Entity": "fact_GL"
-			          }
-			        },
-			        "mesure.color_MinMax": {
-			          "Target": {
-			            "Entity": "mesure.color_MinMax"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_GL"
-			            },
-			            "Object": {
-			              "Role": "mesure.color_MinMax"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_GL_have_color_MinMax"
 			        }
 			      ]
 			    },
@@ -25564,52 +26822,6 @@ cultureInfo fr-FR
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "dynamic_logos_have_logos"
-			        }
-			      ]
-			    },
-			    "dynamic_logo_has_id": {
-			      "Binding": {
-			        "ConceptualEntity": "Dynamic Logo"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dynamic_logo": {
-			          "Target": {
-			            "Entity": "dynamic_logo"
-			          }
-			        },
-			        "dynamic_logo.id": {
-			          "Target": {
-			            "Entity": "dynamic_logo.id"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dynamic_logo"
-			            },
-			            "Object": {
-			              "Role": "dynamic_logo.id"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dynamic_logos_have_ids"
-			        },
-			        {
-			          "Name": {
-			            "Subject": {
-			              "Role": "dynamic_logo"
-			            },
-			            "Name": {
-			              "Role": "dynamic_logo.id"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "ids_are_names_IDs_of_dynamic_logos"
 			        }
 			      ]
 			    },
@@ -34563,138 +35775,6 @@ cultureInfo fr-FR
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "some_customer_invoices_are_paid_customer_invoices"
-			        }
-			      ]
-			    },
-			    "dim_supplier_synchronized_at_mois_has_dim_supplier_synchronized_at_jour": {
-			      "Binding": {
-			        "ConceptualEntity": "Dim_Suppliers"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dim_supplier.synchronized_at.mois": {
-			          "Target": {
-			            "Entity": "dim_supplier.synchronized_at.mois"
-			          }
-			        },
-			        "dim_supplier.synchronized_at.jour": {
-			          "Target": {
-			            "Entity": "dim_supplier.synchronized_at.jour"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_supplier.synchronized_at.mois"
-			            },
-			            "Object": {
-			              "Role": "dim_supplier.synchronized_at.jour"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "moises_have_jour12"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_supplier.synchronized_at.jour"
-			            },
-			            "Object": {
-			              "Role": "dim_supplier.synchronized_at.mois"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "jour_have_moises12"
-			        },
-			        {
-			          "Preposition": {
-			            "Subject": {
-			              "Role": "dim_supplier.synchronized_at.jour"
-			            },
-			            "Prepositions": [
-			              {
-			                "in": {
-			                  "State": "Generated"
-			                }
-			              }
-			            ],
-			            "Object": {
-			              "Role": "dim_supplier.synchronized_at.mois"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "jour_are_in_moises12"
-			        }
-			      ]
-			    },
-			    "dim_supplier_deleted_at_has_hiérarchie_de_date": {
-			      "Binding": {
-			        "ConceptualEntity": "Dim_Suppliers"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dim_supplier.deleted_at": {
-			          "Target": {
-			            "Entity": "dim_supplier.deleted_at"
-			          }
-			        },
-			        "dim_supplier.deleted_at.hiérarchie_de_date": {
-			          "Target": {
-			            "Entity": "dim_supplier.deleted_at.hiérarchie_de_date"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_supplier.deleted_at"
-			            },
-			            "Object": {
-			              "Role": "dim_supplier.deleted_at.hiérarchie_de_date"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "deleted_at_have_hiérarchie_de_dates1"
-			        }
-			      ]
-			    },
-			    "dim_supplier_deleted_at_hiérarchie_de_date_has_dim_supplier_deleted_at_année": {
-			      "Binding": {
-			        "ConceptualEntity": "Dim_Suppliers"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dim_supplier.deleted_at.hiérarchie_de_date": {
-			          "Target": {
-			            "Entity": "dim_supplier.deleted_at.hiérarchie_de_date"
-			          }
-			        },
-			        "dim_supplier.deleted_at.année": {
-			          "Target": {
-			            "Entity": "dim_supplier.deleted_at.année"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_supplier.deleted_at.hiérarchie_de_date"
-			            },
-			            "Object": {
-			              "Role": "dim_supplier.deleted_at.année"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "hiérarchie_de_dates_have_années13"
 			        }
 			      ]
 			    },
