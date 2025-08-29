@@ -1,0 +1,113 @@
+table Categories_Fact_3
+	lineageTag: 29709fbe-b52e-4f72-98f5-04fa7305148b
+
+	column supplier_invoice_id
+		dataType: string
+		lineageTag: b83e5f69-4d68-4156-8eb6-aa3194cc49c2
+		summarizeBy: none
+		sourceColumn: supplier_invoice_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column weight
+		dataType: double
+		lineageTag: c7d0788a-b3b7-438e-8d3f-f14547436bac
+		summarizeBy: sum
+		sourceColumn: weight
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column category_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 385be877-5a71-448e-bb6b-282e94752018
+		summarizeBy: sum
+		sourceColumn: category_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column label
+		dataType: string
+		lineageTag: e1378a9e-3540-415b-875f-1305fb97ae97
+		summarizeBy: none
+		sourceColumn: label
+
+		annotation SummarizationSetBy = Automatic
+
+	column analytical_code
+		dataType: string
+		lineageTag: a6e0a99d-60e0-4356-842a-9ec51d784646
+		summarizeBy: none
+		sourceColumn: analytical_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column created_at
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 45f2fd70-a30a-4bd0-994e-f634d8d2c541
+		summarizeBy: none
+		sourceColumn: created_at
+
+		variation Variation
+			isDefault
+			relationship: 050c76d3-4b42-41f6-81fa-2e6e28ac18ae
+			defaultHierarchy: LocalDateTable_723e8d7a-3d6d-47fb-a35a-1214772b250c.'Hiérarchie de dates'
+
+		annotation SummarizationSetBy = Automatic
+
+	column updated_at
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 351a7b98-3eea-44ed-a92e-6ffb5423b760
+		summarizeBy: none
+		sourceColumn: updated_at
+
+		variation Variation
+			isDefault
+			relationship: a17873f0-bcbf-4e0f-8219-3eb9d6631268
+			defaultHierarchy: LocalDateTable_06d411b8-64c6-4ce0-9928-14dc034e916e.'Hiérarchie de dates'
+
+		annotation SummarizationSetBy = Automatic
+
+	column category_group_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 5b9fa4cc-aff4-4875-af5d-9e73448552f6
+		summarizeBy: sum
+		sourceColumn: category_group_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column ID_Ste
+		dataType: string
+		lineageTag: f6c6976c-124a-4bd8-b3be-2bafa6307aff
+		summarizeBy: none
+		sourceColumn: ID_Ste
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Categories_Fact_3 = m
+		mode: import
+		queryGroup: 'model tables'
+		source =
+				let
+				    Source = Sql.Databases("mhirzqqnk57e7anmxqvc3cldyq-ad6po2r4ekrefdnhlqka77jyjq.datawarehouse.fabric.microsoft.com"),
+				    Fact_2 = Source{[Name="Fact_2"]}[Data],
+				    Query = "
+				        SELECT *
+				        FROM dbo.fact_2_categories
+				        WHERE ID_Ste IN (21912624, 21915510, 22276641, 21917322, 21918011)
+				    ",
+				    NativeQuery = Value.NativeQuery(Fact_2, Query),
+				    #"Type modifié" = Table.TransformColumnTypes(NativeQuery,{{"created_at", type datetime}, {"updated_at", type datetime}, {"supplier_invoice_id", type text}}),
+				    #"Capitalized Each Word" = Table.TransformColumns(#"Type modifié",{{"label", Text.Proper, type text}})
+				in
+				    #"Capitalized Each Word"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

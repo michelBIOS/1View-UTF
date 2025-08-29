@@ -1,0 +1,126 @@
+table 'CAT Supplier invoices'
+	lineageTag: 924f1a56-5b20-452c-ac22-d74c45841125
+
+	column ID_Ste
+		dataType: string
+		lineageTag: 86e257c0-f5c9-4214-83d1-28984a543e6f
+		summarizeBy: none
+		sourceColumn: ID_Ste
+
+		annotation SummarizationSetBy = Automatic
+
+	column supplier_invoice_id
+		dataType: int64
+		formatString: 0
+		lineageTag: acce936d-cfc5-4565-9379-2bf8c1d02008
+		summarizeBy: sum
+		sourceColumn: supplier_invoice_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column category_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 42f6ee9c-8964-419d-bf4e-528b07a90a52
+		summarizeBy: none
+		sourceColumn: category_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column label
+		dataType: string
+		lineageTag: 8392692d-bc70-4dc7-b213-a95b08e09835
+		summarizeBy: none
+		sourceColumn: label
+
+		annotation SummarizationSetBy = Automatic
+
+	column weight
+		dataType: double
+		lineageTag: a2c3dfa8-0f04-4c8b-b2e0-820d7501933a
+		summarizeBy: sum
+		sourceColumn: weight
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column category_group_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 4c343f61-7963-4bf1-8815-ff6ba117479e
+		summarizeBy: none
+		sourceColumn: category_group_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column analytical_code
+		dataType: string
+		lineageTag: 751485cd-8d61-470f-936b-384644e96010
+		summarizeBy: none
+		sourceColumn: analytical_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column created_at
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: dfbe554a-a00d-412e-95a9-4275232c1759
+		summarizeBy: none
+		sourceColumn: created_at
+
+		variation Variation
+			isDefault
+			relationship: 4d6bf71d-3eb6-4236-96ae-7d3933b3fc54
+			defaultHierarchy: LocalDateTable_c559f65f-dee2-4028-ae59-043f7ebc2283.'Hiérarchie de dates'
+
+		annotation SummarizationSetBy = Automatic
+
+	column updated_at
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: a81be95a-82bb-4dc9-866a-5f124f30f8b1
+		summarizeBy: none
+		sourceColumn: updated_at
+
+		variation Variation
+			isDefault
+			relationship: 0770533d-503e-48d8-9eed-9db2593a5caf
+			defaultHierarchy: LocalDateTable_b93bc9a1-b1b5-4db8-9719-241efe518241.'Hiérarchie de dates'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'id supplier invoices'
+		dataType: string
+		lineageTag: e09ef6b0-5997-477c-8e20-2b969a60b498
+		summarizeBy: none
+		sourceColumn: id supplier invoices
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'CAT Supplier invoices' = m
+		mode: import
+		queryGroup: 'model tables'
+		source =
+				let
+				    Source = Sql.Databases("mhirzqqnk57e7anmxqvc3cldyq-ad6po2r4ekrefdnhlqka77jyjq.datawarehouse.fabric.microsoft.com"),
+				    Fact_2 = Source{[Name="Fact_1"]}[Data],
+				    Query = "
+				        SELECT *
+				        FROM dbo.fact_1_supplier_invoice_categories
+				        WHERE ID_Ste IN (21912624, 21915510, 22276641, 21917322, 21918011)
+				    ",
+				    NativeQuery = Value.NativeQuery(Fact_2, Query),
+				    #"ID extrait" = Table.TransformColumns(
+				        NativeQuery,
+				        {{"categories_url", each Text.BetweenDelimiters(_, "/supplier_invoices/", "/categories"), type text}}
+				    ),
+				    #"Colonne renommée" = Table.RenameColumns(#"ID extrait", {{"categories_url", "id supplier invoices"}}),
+				    #"Capitalized Each Word" = Table.TransformColumns(#"Colonne renommée",{{"label", Text.Proper, type text}})
+				in
+				    #"Capitalized Each Word"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

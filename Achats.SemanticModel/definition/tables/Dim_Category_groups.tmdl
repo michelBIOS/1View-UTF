@@ -1,0 +1,79 @@
+table Dim_Category_groups
+	lineageTag: a31f0ae8-8e0a-4216-ad77-4a809c1671ce
+
+	column id_category_groups
+		dataType: int64
+		formatString: 0
+		lineageTag: c3a179e2-4123-4bd2-957f-d28dfc7a5fb7
+		summarizeBy: none
+		sourceColumn: id_category_groups
+
+		annotation SummarizationSetBy = Automatic
+
+	column label
+		dataType: string
+		lineageTag: ccd03019-d72d-4796-923e-6600f3ac5842
+		summarizeBy: none
+		sourceColumn: label
+
+		annotation SummarizationSetBy = Automatic
+
+	column created_at
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 796f67d2-53cf-4083-abd0-8d9cfa8bfe3c
+		summarizeBy: none
+		sourceColumn: created_at
+
+		variation Variation
+			isDefault
+			relationship: 1121cd30-f4e0-4654-99e7-93e7d851ad90
+			defaultHierarchy: LocalDateTable_0274ce44-fbf1-4f55-a7c1-6453b162947b.'Hiérarchie de dates'
+
+		annotation SummarizationSetBy = Automatic
+
+	column updated_at
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 37ee3013-f7e0-4c62-bf74-54234e60ffe7
+		summarizeBy: none
+		sourceColumn: updated_at
+
+		variation Variation
+			isDefault
+			relationship: f76365f3-c705-4092-8328-6d926f42f49d
+			defaultHierarchy: LocalDateTable_0c9be487-b570-4241-8e8c-78231eb469af.'Hiérarchie de dates'
+
+		annotation SummarizationSetBy = Automatic
+
+	column ID_Ste
+		dataType: string
+		lineageTag: c97f1378-125e-46d5-91b5-cf455f1d027e
+		summarizeBy: none
+		sourceColumn: ID_Ste
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Dim_Category_groups = m
+		mode: import
+		queryGroup: 'model tables'
+		source =
+				let
+				    Source = Sql.Databases("mhirzqqnk57e7anmxqvc3cldyq-ad6po2r4ekrefdnhlqka77jyjq.datawarehouse.fabric.microsoft.com"),
+				    Dim_1 = Source{[Name="Dim_1"]}[Data],
+				    Query = "
+				        SELECT *
+				        FROM dbo.dim_1_category_groups
+				        WHERE ID_Ste IN (21912624, 21915510, 22276641, 21917322, 21918011)
+				        AND label <> 'Famille'
+				    ",
+				    NativeQuery = Value.NativeQuery(Dim_1, Query),
+				    #"Colonnes renommées" = Table.RenameColumns(NativeQuery,{{"id", "id_category_groups"}}),
+				    #"Capitalized Each Word" = Table.TransformColumns(#"Colonnes renommées",{{"label", Text.Proper, type text}})
+				in
+				    #"Capitalized Each Word"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

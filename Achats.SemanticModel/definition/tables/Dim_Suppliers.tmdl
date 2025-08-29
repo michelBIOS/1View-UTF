@@ -1,0 +1,371 @@
+table Dim_Suppliers
+	lineageTag: f756ce38-9ec6-4407-80c0-647742ad6873
+
+	column id
+		dataType: string
+		lineageTag: df354a5f-b027-4ef9-af50-c7c039143a02
+		summarizeBy: none
+		sourceColumn: id
+
+		annotation SummarizationSetBy = Automatic
+
+	column name
+		dataType: string
+		lineageTag: d27187b6-c3d5-408c-bfca-b6e79bd5ebd6
+		summarizeBy: none
+		sourceColumn: name
+
+		annotation SummarizationSetBy = Automatic
+
+	column company_id
+		dataType: string
+		lineageTag: b48646cf-c27e-457a-9fd2-073398f80472
+		summarizeBy: none
+		sourceColumn: company_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column company_name
+		dataType: string
+		lineageTag: a150400d-65f2-4ba1-b9f4-c0ddf38dab9d
+		summarizeBy: none
+		sourceColumn: company_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column vat_rate
+		dataType: string
+		lineageTag: 9cc41b68-915a-4ad5-8fa8-b9799ba4b393
+		summarizeBy: none
+		sourceColumn: vat_rate
+
+		annotation SummarizationSetBy = Automatic
+
+	column plan_item_number
+		dataType: string
+		lineageTag: 4540169e-97d1-459a-b8bf-f04ce5e2f423
+		summarizeBy: none
+		sourceColumn: plan_item_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column pnl_plan_item_number
+		dataType: string
+		lineageTag: b1512b5e-4f90-41ba-ad67-f0ada34fc987
+		summarizeBy: none
+		sourceColumn: pnl_plan_item_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column postal_code
+		dataType: string
+		lineageTag: f40886a1-033d-412a-baeb-55e9d0a3a256
+		summarizeBy: none
+		sourceColumn: postal_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column country_alpha2
+		dataType: string
+		lineageTag: fc9c1262-ea5b-4599-89ba-7f46e3df0927
+		summarizeBy: none
+		sourceColumn: country_alpha2
+
+		annotation SummarizationSetBy = Automatic
+
+	column city
+		dataType: string
+		lineageTag: 426ddd49-60b6-4148-818d-5be8c93240e1
+		summarizeBy: none
+		sourceColumn: city
+
+		annotation SummarizationSetBy = Automatic
+
+	column registration_number
+		dataType: string
+		lineageTag: cd71cdb2-5d12-4611-a06d-012bef475eea
+		summarizeBy: none
+		sourceColumn: registration_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column vat_number
+		dataType: string
+		lineageTag: 72ebe25a-2cd2-4eff-bf3d-c8a3d760e1ef
+		summarizeBy: none
+		sourceColumn: vat_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column activity_code
+		dataType: string
+		lineageTag: a307fade-32a0-418a-9b85-2ff86bcf4377
+		summarizeBy: none
+		sourceColumn: activity_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column legal_name
+		dataType: string
+		lineageTag: 02882592-fba5-4b7d-b23c-440c10398ab7
+		summarizeBy: none
+		sourceColumn: legal_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column registration_country_alpha2
+		dataType: string
+		lineageTag: c845a414-177f-478a-a24b-d28c963012de
+		summarizeBy: none
+		sourceColumn: registration_country_alpha2
+
+		annotation SummarizationSetBy = Automatic
+
+	column synchronized_at
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 9e7bcefb-5b7d-4f84-b681-edd08137a492
+		summarizeBy: none
+		sourceColumn: synchronized_at
+
+		variation Variation
+			isDefault
+			relationship: 3820c4f9-b55d-4118-9bc7-cfc3c75a1d40
+			defaultHierarchy: LocalDateTable_db65fc09-6b15-491d-954e-49bb6431e05c.'Hiérarchie de dates'
+
+		annotation SummarizationSetBy = Automatic
+
+	column deleted_at
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: d06f3db6-a9a6-4bd3-a47c-5d1ff3f63741
+		summarizeBy: none
+		sourceColumn: deleted_at
+
+		variation Variation
+			isDefault
+			relationship: 1a7becf8-2a96-4c50-a4a5-800be69231b0
+			defaultHierarchy: LocalDateTable_98fdeaa4-8f57-4d1f-a6f0-04fbc1ebeae3.'Hiérarchie de dates'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'TVA Lisible' = ```
+			
+			VAR Original = 'Dim_Suppliers'[vat_rate]
+			VAR CleanedRate = 
+			    IF(
+			        SEARCH("fr_", LOWER(Original), 1, 0) > 0,
+			        SUBSTITUTE(
+			            LEFT(
+			                SUBSTITUTE(LOWER(Original), "fr_", ""),
+			                FIND("_", SUBSTITUTE(LOWER(Original), "fr_", "") & "_") - 1
+			            ),
+			            ",", "."
+			        ),
+			        BLANK()
+			    )
+			VAR Pourcentage = 
+			    IF(
+			        ISNUMBER(VALUE(CleanedRate)),
+			        VALUE(CleanedRate) / 10,
+			        BLANK()
+			    )
+			VAR PourcentageFormatte = 
+			    IF(
+			        NOT ISBLANK(Pourcentage),
+			        IF(
+			            MOD(Pourcentage, 1) = 0,
+			            FORMAT(Pourcentage, "0\%"),
+			            FORMAT(Pourcentage, "0.0\%")
+			        ),
+			        BLANK()
+			    )
+			RETURN
+			SWITCH(
+			    TRUE(),
+			    LOWER(Original) = "exempt", "0%",
+			    LOWER(Original) = "extracom", "Hors UE",
+			    LOWER(Original) = "crossborder", "Hors France",
+			    NOT ISBLANK(PourcentageFormatte), PourcentageFormatte,
+			    BLANK()
+			)
+			```
+		lineageTag: 6aa0ff2d-aa91-4232-9b2b-b7880507f555
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'TVA Pourcentage' = ```
+			
+			VAR Original = 'Dim_Suppliers'[vat_rate]
+			VAR CleanedRate = 
+			    IF(
+			        SEARCH("fr_", LOWER(Original), 1, 0) > 0,
+			        SUBSTITUTE(
+			            LEFT(
+			                SUBSTITUTE(LOWER(Original), "fr_", ""),
+			                FIND("_", SUBSTITUTE(LOWER(Original), "fr_", "") & "_") - 1
+			            ),
+			            ",", "."
+			        ),
+			        BLANK()
+			    )
+			VAR Pourcentage = 
+			    IF(
+			        ISNUMBER(VALUE(CleanedRate)),
+			        VALUE(CleanedRate) / 10,
+			        0
+			    )
+			RETURN
+			IF(
+			    MOD(Pourcentage, 1) = 0,
+			    FORMAT(Pourcentage, "0\%"),
+			    FORMAT(Pourcentage, "0.0\%")
+			)
+			```
+		lineageTag: 2ee974b3-0921-41a3-809d-d7a2dde65298
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'TVA Type' =
+			
+			VAR Original = LOWER('Dim_Suppliers'[vat_rate])
+			RETURN
+			SWITCH(
+			    TRUE(),
+			    Original = "exempt", "Exonéré",
+			    Original = "extracom", "Hors UE",
+			    Original = "crossborder", "Hors France",
+			    BLANK()
+			)
+		lineageTag: 7ec80c09-9ae8-4ffb-90fd-11917ad9eef8
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column city_clean
+		dataType: string
+		lineageTag: f187937e-d15e-4e77-8d27-aa17db462f15
+		summarizeBy: none
+		sourceColumn: city_clean
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Dim_Suppliers = m
+		mode: import
+		queryGroup: 'model tables'
+		source =
+				let
+				    Redshift = AmazonRedshift.Database(
+				        "pennylane-external.csqwamh5pldr.eu-west-1.redshift.amazonaws.com",
+				        "prod"
+				    ),
+				    Source = Value.NativeQuery(
+				        Redshift,
+				        "
+				        SELECT *
+				        FROM etl.suppliers
+				        WHERE company_id IN (
+				            21912624, 21915510, 22276641, 21917322, 21918011
+				        )
+				        "
+				    ),
+				    #"Type modifié" = Table.TransformColumnTypes(Source, {{"id", type text}, {"company_id", type text}}),
+				    #"Name normalisé" = Table.TransformColumns(
+				        #"Type modifié",
+				        {{"name", each Text.Proper(Text.Lower(_)), type text}}
+				    ),
+				
+				    RemoveDiacritics = (u as text) as text =>
+				        let
+				            charMap = {
+				                {"à","a"},{"á","a"},{"â","a"},{"ã","a"},{"ä","a"},{"å","a"},
+				                {"ç","c"},
+				                {"è","e"},{"é","e"},{"ê","e"},{"ë","e"},
+				                {"ì","i"},{"í","i"},{"î","i"},{"ï","i"},
+				                {"ñ","n"},
+				                {"ò","o"},{"ó","o"},{"ô","o"},{"õ","o"},{"ö","o"},{"ø","o"},
+				                {"ù","u"},{"ú","u"},{"û","u"},{"ü","u"},
+				                {"ý","y"},{"ÿ","y"},
+				                {"œ","oe"},{"æ","ae"}
+				            },
+				            res = List.Accumulate(charMap, u, (state, pair) => Text.Replace(state, pair{0}, pair{1}))
+				        in res,
+				
+				    fxCleanCity = (t as nullable text) as nullable text =>
+				        let
+				            s0 = if t = null then null else Text.Trim(Text.From(t)),
+				            s1 = if s0 = null or s0 = "" or s0 = "-" or s0 = "0" then null else s0,
+				
+				            s2 = if s1 = null then null else
+				                    Text.Replace(
+				                        Text.Replace(
+				                            Text.Replace(
+				                                Text.Replace(
+				                                    Text.Replace(s1, "_", " "),
+				                                "’", "'"),
+				                            "–", "-"),
+				                        "—", "-"),
+				                    "‐", "-"),
+				            s2b = if s2 = null then null else Text.Replace(Text.Replace(s2, ",", " "), ";", " "),
+				
+				            s3 = if s2b = null then null else Text.Combine(List.Select(Text.Split(s2b, " "), each _ <> ""), " "),
+				
+				            lower = if s3 = null then null else Text.Lower(s3),
+				
+				            lowerA =
+				                if lower = null then null else
+				                let
+				                    a = if Text.StartsWith(lower, "st ") then "saint " & Text.Range(lower, 3) else lower,
+				                    b = if Text.StartsWith(a, "ste ") then "sainte " & Text.Range(a, 4) else a,
+				                    c = Text.Replace(Text.Replace(Text.Replace(Text.Replace(b, " st-", " saint-"), "-st-", "-saint-"), " ste-", " sainte-"), "-ste-", "-sainte-")
+				                in  c,
+				
+				            noAcc = if lowerA = null then null else RemoveDiacritics(lowerA),
+				
+				            stdDash = if noAcc = null then null else
+				                        let
+				                            parts = Text.Split(noAcc, "-"),
+				                            trimmed = List.Transform(parts, each Text.Trim(_))
+				                        in Text.Combine(trimmed, " "),
+				
+				            HasDigit = (tok as text) as logical => Text.Length(Text.Select(tok, {"0","1","2","3","4","5","6","7","8","9"})) > 0,
+				            tokens0 = if stdDash = null then null else List.Select(Text.Split(stdDash, " "), each _ <> ""),
+				            tokens1 = if tokens0 = null then null else List.Select(tokens0, each not HasDigit(_)),
+				            tokens2 = if tokens1 = null then null else List.Select(tokens1, each _ <> "cap" and _ <> "co"),
+				
+				            s4 = if tokens2 = null then null else Text.Combine(tokens2, " "),
+				
+				            s5 =
+				                if s4 = null then null
+				                else if Text.StartsWith(s4, "paris ") then "paris"
+				                else if Text.StartsWith(s4, "lyon ") then "lyon"
+				                else if Text.StartsWith(s4, "marseille ") then "marseille"
+				                else s4,
+				
+				            pairs = {
+				                {"pay bas","pays bas"},
+				                {"londres","london"},
+				                {"munchen","munich"},
+				                {"milano","milan"},
+				                {"guangzhoushi","guangzhou"},
+				                {"leopardstown dublin","leopardstown"},
+				                {"swords dublin","swords"}
+				            },
+				            s6 = if s5 = null then null else List.Accumulate(pairs, s5, (state, pair) => Text.Replace(state, pair{0}, pair{1})),
+				
+				            s7 = if s6 = null then null else Text.Combine(List.Select(Text.Split(s6, " "), each _ <> ""), " "),
+				            result = if s7 = null then null else Text.Proper(s7)
+				        in
+				            result,
+				
+				    #"City clean" = Table.AddColumn(#"Name normalisé", "city_clean", each fxCleanCity([city]), type text),
+				    #"Capitalized Each Word" = Table.TransformColumns(#"City clean",{{"city", Text.Proper, type text}})
+				in
+				    #"Capitalized Each Word"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,164 @@
+table 'Dim_Ledger Accounts'
+	lineageTag: 4098a1dc-740b-4fbe-beaf-9100a7c62f8e
+
+	column label
+		dataType: string
+		lineageTag: bbb5adc0-eaea-465c-ad2c-5de7fa625c62
+		summarizeBy: none
+		sourceColumn: label
+
+		annotation SummarizationSetBy = Automatic
+
+	column vat_rate
+		dataType: string
+		lineageTag: bed49936-9ab0-49f4-b184-74f1dc8102d3
+		summarizeBy: none
+		sourceColumn: vat_rate
+
+		annotation SummarizationSetBy = Automatic
+
+	column country_alpha2
+		dataType: string
+		lineageTag: 0060cdc4-eae8-407a-9285-7d966a09134e
+		summarizeBy: none
+		sourceColumn: country_alpha2
+
+		annotation SummarizationSetBy = Automatic
+
+	column enabled
+		dataType: string
+		lineageTag: f588cbda-bd27-436c-bc43-4ea6a608958a
+		summarizeBy: none
+		sourceColumn: enabled
+
+		annotation SummarizationSetBy = Automatic
+
+	column C1
+		dataType: string
+		lineageTag: fc870a12-6549-4944-8b70-b88415213f93
+		summarizeBy: none
+		sourceColumn: C1
+
+		annotation SummarizationSetBy = Automatic
+
+	column C2
+		dataType: string
+		lineageTag: dd63aeb9-885a-4648-800a-114bb90ccdf4
+		summarizeBy: none
+		sourceColumn: C2
+
+		annotation SummarizationSetBy = Automatic
+
+	column C3
+		dataType: string
+		lineageTag: 48785247-f740-4c18-bc19-9bf6d0a3154b
+		summarizeBy: none
+		sourceColumn: C3
+
+		annotation SummarizationSetBy = Automatic
+
+	column C4
+		dataType: string
+		lineageTag: 6b61bdb9-24a3-4662-a1e6-215fa931f0a4
+		summarizeBy: none
+		sourceColumn: C4
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsVente =
+			
+			IF (
+			    LEFT('Dim_Ledger Accounts'[number], 2) = "70",
+			    1,
+			    0
+			)
+		formatString: 0
+		lineageTag: 6213e532-3b5f-4527-8852-5f0e52105a85
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsAchat =
+			
+			IF(LEFT('Dim_Ledger Accounts'[number], 2) = "60", 1, 0)
+		formatString: 0
+		lineageTag: ac900f7c-4851-49f4-93b3-4f560330e0ae
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column ID_Ste
+		dataType: string
+		lineageTag: d156f635-3b40-4cd9-aecd-52af707de2b6
+		summarizeBy: none
+		sourceColumn: ID_Ste
+
+		annotation SummarizationSetBy = Automatic
+
+	column id
+		dataType: string
+		lineageTag: f3f7128f-d1f0-4b2f-9345-2416f402633d
+		summarizeBy: none
+		sourceColumn: id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Compte
+		dataType: string
+		lineageTag: d9fe8b91-a9a9-4091-a6b9-dce44c4edf35
+		summarizeBy: none
+		sourceColumn: Compte
+
+		annotation SummarizationSetBy = Automatic
+
+	column Type
+		dataType: string
+		lineageTag: 277e86d6-dabf-4a5c-bd2a-6bad0b977357
+		summarizeBy: none
+		sourceColumn: Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column Compte-Label
+		dataType: string
+		lineageTag: 80cfcd80-871d-4228-ae65-acd1ad6d84eb
+		summarizeBy: none
+		sourceColumn: Compte-Label
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Dim_Ledger Accounts' = m
+		mode: import
+		queryGroup: 'model tables'
+		source =
+				let
+				    Source = Sql.Databases("mhirzqqnk57e7anmxqvc3cldyq-ad6po2r4ekrefdnhlqka77jyjq.datawarehouse.fabric.microsoft.com"),
+				    Dim_1 = Source{[Name="Dim_1"]}[Data],
+				    Query = "
+				        SELECT *
+				        FROM dbo.ledger_accounts
+				        WHERE ID_Ste IN (21912624, 21915510, 22276641, 21917322, 21918011)
+				    ",
+				    NativeQuery = Value.NativeQuery(Dim_1, Query),
+				    #"Personnalisée ajoutée" = Table.AddColumn(NativeQuery, "Compte", each Text.PadEnd(
+				    Text.From([number]),   // convertit la valeur en texte
+				    8,                           // longueur cible
+				    "0"                          // caractère de remplissage
+				)),
+				    #"Colonnes supprimées" = Table.RemoveColumns(#"Personnalisée ajoutée",{"number"}),
+				    #"Type modifié" = Table.TransformColumnTypes(#"Colonnes supprimées",{{"id", type text}}),
+				    #"Majuscule à chaque mot" = Table.TransformColumns(#"Type modifié",{{"label", Text.Proper, type text}}),
+				    #"Type modifié1" = Table.TransformColumnTypes(#"Majuscule à chaque mot",{{"C1", Int64.Type}, {"C2", Int64.Type}, {"C3", Int64.Type}, {"Compte", type text}}),
+				    #"Colonne conditionnelle ajoutée" = Table.AddColumn(#"Type modifié1", "Type", each if [C1] = 7 then "vt" else if [C1] = 6 then "ha" else null),
+				    #"Colonnes supprimées1" = Table.RemoveColumns(#"Colonne conditionnelle ajoutée",{"C3", "C4"}),
+				    #"Premiers caractères insérés" = Table.AddColumn(#"Colonnes supprimées1", "C3", each Text.Start([Compte], 3), type text),
+				    #"Premiers caractères insérés1" = Table.AddColumn(#"Premiers caractères insérés", "C4", each Text.Start([Compte], 4), type text),
+				    #"Type modifié2" = Table.TransformColumnTypes(#"Premiers caractères insérés1",{{"C2", type text}, {"C1", type text}}),
+				    #"Added Custom" = Table.AddColumn(#"Type modifié2", "Compte-Label", each [Compte]&"-"&[label])
+				in
+				    #"Added Custom"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Exception
+
