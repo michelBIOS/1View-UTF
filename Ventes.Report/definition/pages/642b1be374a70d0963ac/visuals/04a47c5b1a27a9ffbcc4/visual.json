@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
   "name": "04a47c5b1a27a9ffbcc4",
   "position": {
     "x": 0,
@@ -26,9 +26,9 @@
                 }
               },
               "queryRef": "Dim_Customers.city_clean",
-              "nativeQueryRef": "Villes",
+              "nativeQueryRef": "City",
               "active": true,
-              "displayName": "Villes"
+              "displayName": "City"
             },
             {
               "field": {
@@ -42,9 +42,9 @@
                 }
               },
               "queryRef": "Dim_Customers.name",
-              "nativeQueryRef": "Nom",
+              "nativeQueryRef": "Customer",
               "active": false,
-              "displayName": "Nom"
+              "displayName": "Customer"
             }
           ]
         },
@@ -67,8 +67,8 @@
                 }
               },
               "queryRef": "Sum(Customer invoices.amount)",
-              "nativeQueryRef": "Ventes",
-              "displayName": "Ventes"
+              "nativeQueryRef": "Sales",
+              "displayName": "Sales"
             }
           ]
         }
@@ -102,6 +102,18 @@
               "Dim_Customers.city_clean"
             ],
             "isCollapsed": true,
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dim_Customers"
+                    }
+                  },
+                  "Property": "city_clean"
+                }
+              }
+            ],
             "isPinned": true
           },
           {

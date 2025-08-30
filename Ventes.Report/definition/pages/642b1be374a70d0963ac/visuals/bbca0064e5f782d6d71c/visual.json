@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
   "name": "bbca0064e5f782d6d71c",
   "position": {
     "x": 1226.902921252261,
@@ -32,8 +32,8 @@
                 }
               },
               "queryRef": "Sum(Customer invoices.amount)",
-              "nativeQueryRef": "Total Ventes",
-              "displayName": "Total Ventes",
+              "nativeQueryRef": "Total Sales",
+              "displayName": "Total Sales",
               "format": "#,0\"€\""
             }
           ]
@@ -52,9 +52,9 @@
                 }
               },
               "queryRef": "Dim_Customers.city",
-              "nativeQueryRef": "Villes",
+              "nativeQueryRef": "City",
               "active": true,
-              "displayName": "Villes"
+              "displayName": "City"
             },
             {
               "field": {
@@ -68,9 +68,9 @@
                 }
               },
               "queryRef": "Dim_Customers.name",
-              "nativeQueryRef": "Clients",
+              "nativeQueryRef": "Customer",
               "active": false,
-              "displayName": "Clients"
+              "displayName": "Customer"
             }
           ]
         }
@@ -429,7 +429,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Décomposition par Ville'"
+                  "Value": "'City Breakdown'"
                 }
               }
             },

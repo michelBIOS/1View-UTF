@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
   "name": "1915b3018d0099e56026",
   "position": {
     "x": 22.171769223686052,
@@ -606,8 +606,13 @@
             },
             "text": {
               "expr": {
-                "Literal": {
-                  "Value": "'CA Mensuel - 2024/2025'"
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Mesures"
+                    }
+                  },
+                  "Property": "CA Mensuel et YTD"
                 }
               }
             },

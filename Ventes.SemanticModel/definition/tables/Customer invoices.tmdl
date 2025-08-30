@@ -370,13 +370,13 @@ table 'Customer invoices'
 			VAR JoursEcoules = DATEDIFF('Customer invoices'[deadline], TODAY(), DAY)
 			RETURN
 			    SWITCH(TRUE(),
-			        JoursEcoules <= 0, "Non échue",
-			        JoursEcoules <= 30, "0 - 30 jours",
-			        JoursEcoules <= 60, "31 - 60 jours",
-			        JoursEcoules <= 90, "61 - 90 jours",
-			        JoursEcoules <= 180, "91 - 180 jours",
-			        JoursEcoules > 180, "+180 jours",
-			        "Inconnu"
+			        JoursEcoules <= 0, "Not yet due",
+			        JoursEcoules <= 30, "0 - 30 days",
+			        JoursEcoules <= 60, "31 - 60 days",
+			        JoursEcoules <= 90, "61 - 90 days",
+			        JoursEcoules <= 180, "91 - 180 days",
+			        JoursEcoules > 180, "+180 days",
+			        "Unknown"
 			    )
 			
 			```
@@ -411,15 +411,9 @@ table 'Customer invoices'
 				    #"Valeur remplacée1" = Table.ReplaceValue(#"Type modifié","Facture ","",Replacer.ReplaceText,{"label"}),
 				    #"Valeur remplacée2" = Table.ReplaceValue(#"Valeur remplacée1","(label gnr)","",Replacer.ReplaceText,{"label"}),
 				    #"Majuscule à chaque mot" = Table.TransformColumns(#"Valeur remplacée2",{{"label", Text.Proper, type text}}),
-				    #"Replaced Value" = Table.ReplaceValue(#"Majuscule à chaque mot","FACT-","",Replacer.ReplaceText,{"invoice_number"}),
-				    #"Valeur remplacée3" = Table.ReplaceValue(#"Replaced Value","upcoming","À venir",Replacer.ReplaceText,{"status"}),
-				    #"Valeur remplacée5" = Table.ReplaceValue(#"Valeur remplacée3","paid","Encaissée",Replacer.ReplaceText,{"status"}),
-				    #"Valeur remplacée6" = Table.ReplaceValue(#"Valeur remplacée5","credit_note","Avoir",Replacer.ReplaceText,{"status"}),
-				    #"Valeur remplacée7" = Table.ReplaceValue(#"Valeur remplacée6","late","En retard",Replacer.ReplaceText,{"status"}),
-				    #"Valeur remplacée8" = Table.ReplaceValue(#"Valeur remplacée7","partially_cancelled","Partiellement annulée",Replacer.ReplaceText,{"status"}),
-				    #"Valeur remplacée4" = Table.ReplaceValue(#"Valeur remplacée8","cancelled","Annulée",Replacer.ReplaceText,{"status"})
+				    #"Replaced Value" = Table.ReplaceValue(#"Majuscule à chaque mot","FACT-","",Replacer.ReplaceText,{"invoice_number"})
 				in
-				    #"Valeur remplacée4"
+				    #"Replaced Value"
 
 	annotation PBI_NavigationStepName = Navigation
 
