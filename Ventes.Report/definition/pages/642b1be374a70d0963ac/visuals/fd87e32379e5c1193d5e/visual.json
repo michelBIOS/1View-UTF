@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
   "name": "fd87e32379e5c1193d5e",
   "position": {
-    "x": 16.450499799490942,
-    "y": 16.187925206612196,
+    "x": 15.470504180394428,
+    "y": 17.675488162853995,
     "z": 17250,
-    "height": 69.73365300338655,
-    "width": 135.89122123736865
+    "height": 68.524365133836639,
+    "width": 179.21757035003429
   },
   "visual": {
     "visualType": "cardVisual",
@@ -26,7 +26,8 @@
                 }
               },
               "queryRef": "Mesures.Créances TTC",
-              "nativeQueryRef": "Créances TTC",
+              "nativeQueryRef": "Receivables incl. Tax",
+              "displayName": "Receivables incl. Tax",
               "format": "#,0 \"€\";-#,0 \"€\";#,0 \"€\""
             }
           ]

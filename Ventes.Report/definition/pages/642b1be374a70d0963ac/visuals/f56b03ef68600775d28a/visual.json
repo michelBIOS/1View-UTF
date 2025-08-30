@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
   "name": "f56b03ef68600775d28a",
   "position": {
     "x": 19.565321232385941,
@@ -27,7 +27,8 @@
                 }
               },
               "queryRef": "Mesures.Marge Brute",
-              "nativeQueryRef": "Marge Brute",
+              "nativeQueryRef": "Gross Margin",
+              "displayName": "Gross Margin",
               "format": "#,0 \"€\";-#,0 \"€\";#,0 \"€\""
             }
           ]

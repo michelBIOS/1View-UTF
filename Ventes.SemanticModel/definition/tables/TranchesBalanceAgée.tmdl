@@ -27,12 +27,12 @@ table TranchesBalanceAgée
 				    "Tranche", STRING,
 				    "Index", INTEGER,
 				    {
-				        {"Non échue", 0},
-				        {"0 - 30 jours", 1},
-				        {"31 - 60 jours", 2},
-				        {"61 - 90 jours", 3},
-				        {"91 - 180 jours", 4},
-				        {"+180 jours", 5}
+				        {"Not yet due", 0},
+				        {"0 - 30 days", 1},
+				        {"31 - 60 days", 2},
+				        {"61 - 90 days", 3},
+				        {"91 - 180 days", 4},
+				        {"+180 days", 5}
 				    }
 				)
 

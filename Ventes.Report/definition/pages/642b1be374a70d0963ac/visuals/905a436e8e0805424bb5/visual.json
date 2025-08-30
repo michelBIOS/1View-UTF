@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
   "name": "905a436e8e0805424bb5",
   "position": {
     "x": 934.78853689563084,
@@ -42,7 +42,8 @@
                 }
               },
               "queryRef": "Dim_Ledger Accounts.Compte",
-              "nativeQueryRef": "Compte"
+              "nativeQueryRef": "Account",
+              "displayName": "Account"
             },
             {
               "field": {
@@ -56,8 +57,8 @@
                 }
               },
               "queryRef": "Dim_Ledger Accounts.label",
-              "nativeQueryRef": "Intitulés",
-              "displayName": "Intitulés"
+              "nativeQueryRef": "Label",
+              "displayName": "Label"
             },
             {
               "field": {
@@ -76,8 +77,8 @@
                 }
               },
               "queryRef": "Sum(Fact_GL2.-Soldes2)",
-              "nativeQueryRef": "Soldes",
-              "displayName": "Soldes",
+              "nativeQueryRef": "Balance",
+              "displayName": "Balance",
               "format": "#,0"
             },
             {
@@ -92,8 +93,8 @@
                 }
               },
               "queryRef": "Fact_GL2.thirdparty_plan_item_label",
-              "nativeQueryRef": "Tierces",
-              "displayName": "Tierces"
+              "nativeQueryRef": "Thirdparty",
+              "displayName": "Thirdparty"
             },
             {
               "field": {
@@ -107,8 +108,8 @@
                 }
               },
               "queryRef": "Fact_GL2.invoice_number",
-              "nativeQueryRef": "Factures",
-              "displayName": "Factures"
+              "nativeQueryRef": "Invoices",
+              "displayName": "Invoices"
             },
             {
               "field": {
@@ -122,8 +123,8 @@
                 }
               },
               "queryRef": "Fact_GL2.created_at.Variation.Hiérarchie de dates.Année",
-              "nativeQueryRef": "Ecriture",
-              "displayName": "Ecriture"
+              "nativeQueryRef": "Entry",
+              "displayName": "Entry"
             },
             {
               "field": {
@@ -137,8 +138,8 @@
                 }
               },
               "queryRef": "Fact_GL2.updated_at.Variation.Hiérarchie de dates.Année",
-              "nativeQueryRef": "MAJ Ecriture",
-              "displayName": "MAJ Ecriture"
+              "nativeQueryRef": "Update",
+              "displayName": "Update"
             },
             {
               "field": {

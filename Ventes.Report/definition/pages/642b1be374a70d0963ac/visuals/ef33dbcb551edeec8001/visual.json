@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
   "name": "ef33dbcb551edeec8001",
   "position": {
     "x": 20.27824254226363,
@@ -41,8 +41,8 @@
                 }
               },
               "queryRef": "Dim_Customers.name",
-              "nativeQueryRef": "Clients",
-              "displayName": "Clients"
+              "nativeQueryRef": "Customers",
+              "displayName": "Customers"
             },
             {
               "field": {
@@ -61,8 +61,8 @@
                 }
               },
               "queryRef": "Sum(Customer invoices.currency_amount_before_tax)",
-              "nativeQueryRef": "HT (€)",
-              "displayName": "HT (€)",
+              "nativeQueryRef": "Net Sales (€)",
+              "displayName": "Net Sales (€)",
               "format": "#,0"
             },
             {
@@ -82,8 +82,8 @@
                 }
               },
               "queryRef": "Sum(Customer invoices.amount)",
-              "nativeQueryRef": "TTC (€)",
-              "displayName": "TTC (€)",
+              "nativeQueryRef": "Gross sales (€)",
+              "displayName": "Gross sales (€)",
               "format": "#,0"
             },
             {
@@ -134,8 +134,8 @@
                 }
               },
               "queryRef": "Customer invoices.invoice_number",
-              "nativeQueryRef": "Factures",
-              "displayName": "Factures"
+              "nativeQueryRef": "Invoice",
+              "displayName": "Invoice"
             },
             {
               "field": {
@@ -149,8 +149,8 @@
                 }
               },
               "queryRef": "Customer invoices.deadline",
-              "nativeQueryRef": "Echéances",
-              "displayName": "Echéances"
+              "nativeQueryRef": "Due Date",
+              "displayName": "Due Date"
             },
             {
               "field": {
@@ -169,8 +169,8 @@
                 }
               },
               "queryRef": "Sum(Customer invoices.remaining_amount_without_tax)",
-              "nativeQueryRef": "Reste HT (€)",
-              "displayName": "Reste HT (€)",
+              "nativeQueryRef": "Due excl. Tax (€)",
+              "displayName": "Due excl. Tax (€)",
               "format": "#,0"
             },
             {
@@ -190,8 +190,8 @@
                 }
               },
               "queryRef": "Sum(Customer invoices.remaining_amount_with_tax)",
-              "nativeQueryRef": "Reste TTC (€)",
-              "displayName": "Reste TTC (€)",
+              "nativeQueryRef": "Due incl. Tax (€)",
+              "displayName": "Due incl. Tax (€)",
               "format": "#,0"
             },
             {
@@ -206,8 +206,8 @@
                 }
               },
               "queryRef": "Customer invoices.invoice_lines_url",
-              "nativeQueryRef": "Liens",
-              "displayName": "Liens"
+              "nativeQueryRef": "URL",
+              "displayName": "URL"
             }
           ]
         }

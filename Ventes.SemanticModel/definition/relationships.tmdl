@@ -90,10 +90,6 @@ relationship 80377740-4f05-92b0-3851-db14e1d8cb87
 	fromColumn: Fact_GL.journal_id
 	toColumn: Dim_Journals.id_journal
 
-relationship f883934a-aad3-a32e-72ca-5347a2c231d6
-	fromColumn: 'Customer invoices'.Catégorie_Balance_Agée
-	toColumn: TranchesBalanceAgée.Tranche
-
 relationship a959f8a6-2376-92e9-f250-48b868607635
 	fromColumn: Fact_GL.date
 	toColumn: Dim_Date.Date
@@ -148,4 +144,8 @@ relationship eead2ed3-879c-472e-a9a8-1ff662670d4f
 relationship 991cb521-d341-0875-730a-d93906b98196
 	fromColumn: 'Dynamic Logo'.id
 	toColumn: Dim_Companies.id
+
+relationship f883934a-aad3-a32e-72ca-5347a2c231d6
+	fromColumn: 'Customer invoices'.Catégorie_Balance_Agée
+	toColumn: TranchesBalanceAgée.Tranche
 

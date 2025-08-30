@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
   "name": "7a65b25813b29e620104",
   "position": {
     "x": 815,
@@ -19,7 +19,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Ventes",
+                    "value": "Sales",
                     "textStyle": {
                       "fontFamily": "Segoe (Bold)",
                       "fontSize": "28pt",
