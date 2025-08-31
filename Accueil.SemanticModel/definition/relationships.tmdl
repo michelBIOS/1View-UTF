@@ -107,10 +107,6 @@ relationship 92b22d72-fb1c-f36d-d634-3982732d7f5f
 	fromColumn: 'Customer invoices'.ID_Ste
 	toColumn: Dim_Companies.id
 
-relationship 247921a9-21a4-6b77-7b31-6a52aa9c94f3
-	fromColumn: 'Dynamic Logo'.id
-	toColumn: Dim_Companies.id
-
 relationship a959f8a6-2376-92e9-f250-48b868607635
 	fromColumn: Fact_GL.date
 	toColumn: Dim_Date.Date
