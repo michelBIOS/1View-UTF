@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
   "name": "795a0c020a4ddb7e1d12",
   "position": {
-    "x": 21.000185443257578,
-    "y": 22.734405611007595,
+    "x": 15.211738817063056,
+    "y": 22.4667550565501,
     "z": 5000,
-    "height": 68.478624313350849,
-    "width": 140,
+    "height": 68.524365133836639,
+    "width": 177.89979409746053,
     "tabOrder": 2000
   },
   "visual": {
@@ -27,7 +27,8 @@
                 }
               },
               "queryRef": "Mesures.Solde tréso 512",
-              "nativeQueryRef": "Solde tréso 512",
+              "nativeQueryRef": "Treasury Balance 512",
+              "displayName": "Treasury Balance 512",
               "format": "#,0€"
             }
           ]

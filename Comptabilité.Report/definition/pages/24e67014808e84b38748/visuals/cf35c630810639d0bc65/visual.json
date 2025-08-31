@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
   "name": "cf35c630810639d0bc65",
   "position": {
     "x": 815,
@@ -19,7 +19,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Comptabilité",
+                    "value": "Bank",
                     "textStyle": {
                       "fontFamily": "Segoe (Bold)",
                       "fontSize": "28pt",

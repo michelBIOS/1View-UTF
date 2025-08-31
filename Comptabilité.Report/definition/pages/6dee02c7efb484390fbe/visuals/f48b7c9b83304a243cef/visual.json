@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
   "name": "f48b7c9b83304a243cef",
   "position": {
-    "x": 815,
-    "y": 37,
+    "x": 791.98352779684274,
+    "y": 36.897735072065885,
     "z": 13000,
-    "height": 55,
-    "width": 290,
+    "height": 55.346602608098827,
+    "width": 342.62182566918324,
     "tabOrder": 12000
   },
   "visual": {
@@ -19,7 +19,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Comptabilité",
+                    "value": "Pending Account",
                     "textStyle": {
                       "fontFamily": "Segoe (Bold)",
                       "fontSize": "28pt",

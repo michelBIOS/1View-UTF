@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
   "name": "7e849f5222bcb199d99d",
   "position": {
     "x": 577.53769025881684,
@@ -46,9 +46,9 @@
                 }
               },
               "queryRef": "C1.C1-Lib",
-              "nativeQueryRef": "Compte-Libellé",
+              "nativeQueryRef": "Account-Label",
               "active": true,
-              "displayName": "Compte-Libellé"
+              "displayName": "Account-Label"
             },
             {
               "field": {

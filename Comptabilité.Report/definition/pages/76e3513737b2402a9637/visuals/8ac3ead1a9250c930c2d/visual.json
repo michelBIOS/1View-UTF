@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
   "name": "8ac3ead1a9250c930c2d",
   "position": {
-    "x": 19.565321232385941,
-    "y": 13.451158347265334,
+    "x": 19.495771129279881,
+    "y": 12.683695864550449,
     "z": 24750,
-    "height": 68.478624313350849,
-    "width": 134.51158347265346
+    "height": 68.524365133836639,
+    "width": 167.35758407687027
   },
   "visual": {
     "visualType": "cardVisual",
@@ -26,8 +26,8 @@
                 }
               },
               "queryRef": "Mesures.Capacité d'autofinancement (CAF)",
-              "nativeQueryRef": "CAF",
-              "displayName": "CAF",
+              "nativeQueryRef": "Operating Cash Flow",
+              "displayName": "Operating Cash Flow",
               "format": "#,0 \"€\";-#,0 \"€\";#,0 \"€\""
             }
           ]
@@ -330,7 +330,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'CAF'"
+                  "Value": "'Operating Cash Flow'"
                 }
               }
             }

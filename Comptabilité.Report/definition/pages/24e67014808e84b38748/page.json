@@ -1,7 +1,7 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.0.0/schema.json",
   "name": "24e67014808e84b38748",
-  "displayName": "51-Banque",
+  "displayName": "51-Bank",
   "displayOption": "FitToWidth",
   "height": 2100,
   "width": 1920,

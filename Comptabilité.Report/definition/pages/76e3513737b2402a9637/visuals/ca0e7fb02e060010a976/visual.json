@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
   "name": "ca0e7fb02e060010a976",
   "position": {
     "x": 21.456508616426628,
@@ -203,7 +203,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Variation de l''EBITDA'"
+                  "Value": "'EBITDA Variation'"
                 }
               }
             },

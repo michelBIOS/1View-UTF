@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
   "name": "fd881266095c54b81c00",
   "position": {
     "x": 975.71428571428578,
@@ -41,8 +41,8 @@
                 }
               },
               "queryRef": "Dim_Supplier.name",
-              "nativeQueryRef": "Fournisseurs",
-              "displayName": "Fournisseurs"
+              "nativeQueryRef": "Supplier",
+              "displayName": "Supplier"
             },
             {
               "field": {
@@ -56,8 +56,8 @@
                 }
               },
               "queryRef": "bank accounts.name",
-              "nativeQueryRef": "Banque",
-              "displayName": "Banque"
+              "nativeQueryRef": "Bank",
+              "displayName": "Bank"
             },
             {
               "field": {
@@ -76,8 +76,8 @@
                 }
               },
               "queryRef": "Min(Transaction.label)",
-              "nativeQueryRef": "Libellé",
-              "displayName": "Libellé"
+              "nativeQueryRef": "Description",
+              "displayName": "Description"
             },
             {
               "field": {
@@ -96,8 +96,8 @@
                 }
               },
               "queryRef": "Sum(Transaction.amount)",
-              "nativeQueryRef": "Montant (€)",
-              "displayName": "Montant (€)"
+              "nativeQueryRef": "Amount (€)",
+              "displayName": "Amount (€)"
             },
             {
               "field": {
@@ -111,8 +111,8 @@
                 }
               },
               "queryRef": "transaction_category.category_label",
-              "nativeQueryRef": "Catégorie",
-              "displayName": "Catégorie"
+              "nativeQueryRef": "Category",
+              "displayName": "Category"
             }
           ]
         }
@@ -260,7 +260,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Transactions Fournisseurs'"
+                  "Value": "'Supplier Transactions'"
                 }
               }
             },

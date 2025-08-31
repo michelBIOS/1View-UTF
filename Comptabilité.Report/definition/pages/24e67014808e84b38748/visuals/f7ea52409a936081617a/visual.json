@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
   "name": "f7ea52409a936081617a",
   "position": {
     "x": 969.83412398241569,
@@ -27,9 +27,9 @@
                 }
               },
               "queryRef": "Dim_Ledger Accounts.Compte-Label",
-              "nativeQueryRef": "Compte-Libellé",
+              "nativeQueryRef": "Account-Label",
               "active": true,
-              "displayName": "Compte-Libellé"
+              "displayName": "Account-Label"
             }
           ]
         },
@@ -47,8 +47,8 @@
                 }
               },
               "queryRef": "Mesures.Solde",
-              "nativeQueryRef": "Solde (€)",
-              "displayName": "Solde (€)",
+              "nativeQueryRef": "Balance (€)",
+              "displayName": "Balance (€)",
               "format": "#,0.00"
             }
           ]
