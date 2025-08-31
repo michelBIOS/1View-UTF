@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
   "name": "dd668b500573b31e387e",
   "position": {
     "x": 16.092381462320077,
@@ -27,8 +27,8 @@
                 }
               },
               "queryRef": "Mesures.Soldes",
-              "nativeQueryRef": "Paiements en Attente",
-              "displayName": "Paiements en Attente",
+              "nativeQueryRef": "Pending Payments",
+              "displayName": "Pending Payments",
               "format": "#,0 \"€\";-#,0 \"€\";#,0 \"€\""
             }
           ]

@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
   "name": "b34c171061a117b7120c",
   "position": {
     "x": 17.880423847022143,
@@ -32,8 +32,8 @@
                 }
               },
               "queryRef": "Sum(transaction_category.Sum/Catégorie)",
-              "nativeQueryRef": "Montant Catégorie",
-              "displayName": "Montant Catégorie",
+              "nativeQueryRef": "Category Amount",
+              "displayName": "Category Amount",
               "format": "#,0 \"€\";-#,0 \"€\";#,0 \"€\""
             }
           ]

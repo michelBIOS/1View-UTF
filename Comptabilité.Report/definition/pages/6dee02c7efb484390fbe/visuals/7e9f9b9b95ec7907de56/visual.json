@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
   "name": "7e9f9b9b95ec7907de56",
   "position": {
     "x": 1579,
@@ -45,7 +45,7 @@
             "placeholder": {
               "expr": {
                 "Literal": {
-                  "Value": "'Rechercher'"
+                  "Value": "'Search'"
                 }
               }
             },

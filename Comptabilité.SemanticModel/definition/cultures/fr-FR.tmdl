@@ -917,7 +917,7 @@ cultureInfo fr-FR
 			          }
 			        },
 			        {
-			          "Paiements en Attente": {
+			          "Pending Payments": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -1707,6 +1707,16 @@ cultureInfo fr-FR
 			        {
 			          "résultat opérationnel": {
 			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Net Income": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
 			          }
 			        },
 			        {
@@ -2687,6 +2697,46 @@ cultureInfo fr-FR
 			          }
 			        },
 			        {
+			          "Balance (€)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "Account 47 Balance": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "Credit Balance (€)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "Debit Balance (€)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
 			          "Solde (€)": {
 			            "State": "Suggested",
 			            "Source": {
@@ -2698,26 +2748,6 @@ cultureInfo fr-FR
 			        },
 			        {
 			          "Solde des Comptes 47": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        },
-			        {
-			          "Solde Créditeur (€)": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        },
-			        {
-			          "Solde Débiteur (€)": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -2749,12 +2779,6 @@ cultureInfo fr-FR
 			          }
 			        },
 			        {
-			          "journal": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
 			          "dim newsletter": {
 			            "Type": "Noun",
 			            "State": "Suggested",
@@ -2762,16 +2786,6 @@ cultureInfo fr-FR
 			              "Agent": "Thesaurus"
 			            },
 			            "Weight": 0.5
-			          }
-			        },
-			        {
-			          "newsletter": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
 			          }
 			        },
 			        {
@@ -2845,13 +2859,23 @@ cultureInfo fr-FR
 			          }
 			        },
 			        {
-			          "periodical": {
+			          "dim diary": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.476
+			            "Weight": 0.475
+			          }
+			        },
+			        {
+			          "dim daybook": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.475
 			          }
 			        }
 			      ]
@@ -2868,6 +2892,26 @@ cultureInfo fr-FR
 			        {
 			          "code": {
 			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Jounal": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "Journal": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
 			          }
 			        },
 			        {
@@ -2901,12 +2945,6 @@ cultureInfo fr-FR
 			            "Type": "Noun",
 			            "State": "Generated",
 			            "Weight": 0.99
-			          }
-			        },
-			        {
-			          "journal": {
-			            "State": "Generated",
-			            "Weight": 0.97
 			          }
 			        },
 			        {
@@ -2960,16 +2998,6 @@ cultureInfo fr-FR
 			          }
 			        },
 			        {
-			          "newsletter": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
-			          }
-			        },
-			        {
 			          "id periodical": {
 			            "Type": "Noun",
 			            "State": "Suggested",
@@ -3001,6 +3029,16 @@ cultureInfo fr-FR
 			        },
 			        {
 			          "id monthly": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "id quarterly": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -3353,7 +3391,7 @@ cultureInfo fr-FR
 			          }
 			        },
 			        {
-			          "Libellé de Compte": {
+			          "Account Label": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -3364,6 +3402,16 @@ cultureInfo fr-FR
 			        },
 			        {
 			          "Banque": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "Libellé de Compte": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -4013,6 +4061,16 @@ cultureInfo fr-FR
 			              "Agent": "Thesaurus"
 			            },
 			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "Entry Nb": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
 			          }
 			        },
 			        {
@@ -4772,12 +4830,6 @@ cultureInfo fr-FR
 			          }
 			        },
 			        {
-			          "account": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
 			          "ledger account": {
 			            "State": "Generated",
 			            "Weight": 0.97
@@ -4916,12 +4968,6 @@ cultureInfo fr-FR
 			          }
 			        },
 			        {
-			          "journal": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
 			          "journal identification": {
 			            "Type": "Noun",
 			            "State": "Suggested",
@@ -4959,66 +5005,6 @@ cultureInfo fr-FR
 			              "Agent": "Thesaurus"
 			            },
 			            "Weight": 0.727
-			          }
-			        },
-			        {
-			          "newsletter": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
-			          }
-			        },
-			        {
-			          "periodical": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.476
-			          }
-			        },
-			        {
-			          "paper": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.476
-			          }
-			        },
-			        {
-			          "weekly": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.476
-			          }
-			        },
-			        {
-			          "monthly": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.476
-			          }
-			        },
-			        {
-			          "quarterly": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.476
 			          }
 			        }
 			      ]
@@ -5823,6 +5809,16 @@ cultureInfo fr-FR
 			          }
 			        },
 			        {
+			          "Entry Description": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
 			          "Libellé de l'Écriture": {
 			            "State": "Suggested",
 			            "Source": {
@@ -5921,16 +5917,6 @@ cultureInfo fr-FR
 			          }
 			        },
 			        {
-			          "co": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.736
-			          }
-			        },
-			        {
 			          "corp": {
 			            "Type": "Noun",
 			            "State": "Suggested",
@@ -5952,6 +5938,16 @@ cultureInfo fr-FR
 			        },
 			        {
 			          "corps": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "employer": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -6398,6 +6394,16 @@ cultureInfo fr-FR
 			          "lib": {
 			            "State": "Generated",
 			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "Account-Label": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
 			          }
 			        },
 			        {
@@ -6873,6 +6879,16 @@ cultureInfo fr-FR
 			          }
 			        },
 			        {
+			          "Account-Label": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
 			          "Compte-Libellé": {
 			            "State": "Suggested",
 			            "Source": {
@@ -7150,6 +7166,16 @@ cultureInfo fr-FR
 			          }
 			        },
 			        {
+			          "Operating Cash Flow": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
 			          "CAF": {
 			            "State": "Suggested",
 			            "Source": {
@@ -7294,7 +7320,7 @@ cultureInfo fr-FR
 			          }
 			        },
 			        {
-			          "Nb Écritures en Attente": {
+			          "Pending Entries Count": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -7305,6 +7331,16 @@ cultureInfo fr-FR
 			        },
 			        {
 			          "Nb Ecritures en Attente": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "Nb Écritures en Attente": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -7931,6 +7967,16 @@ cultureInfo fr-FR
 			            },
 			            "Weight": 0.9
 			          }
+			        },
+			        {
+			          "Thirdparty": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
 			        }
 			      ]
 			    },
@@ -8004,6 +8050,16 @@ cultureInfo fr-FR
 			              "Agent": "Thesaurus"
 			            },
 			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "Prev Month Balance": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
 			          }
 			        }
 			      ]
@@ -8142,6 +8198,16 @@ cultureInfo fr-FR
 			        {
 			          "tréso a venir": {
 			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Upcoming": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
 			          }
 			        },
 			        {
@@ -8402,6 +8468,26 @@ cultureInfo fr-FR
 			          }
 			        },
 			        {
+			          "Treasury Balance 512": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "512 Balance": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
 			          "Solde 512": {
 			            "State": "Suggested",
 			            "Source": {
@@ -8649,6 +8735,16 @@ cultureInfo fr-FR
 			          "lettré": {
 			            "State": "Generated"
 			          }
+			        },
+			        {
+			          "Reconciled": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
 			        }
 			      ]
 			    },
@@ -8838,6 +8934,16 @@ cultureInfo fr-FR
 			        {
 			          "compte nettoyé": {
 			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Account": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
 			          }
 			        },
 			        {
@@ -9116,7 +9222,7 @@ cultureInfo fr-FR
 			          }
 			        },
 			        {
-			          "Montant (€)": {
+			          "Amount (€)": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -9283,12 +9389,6 @@ cultureInfo fr-FR
 			          }
 			        },
 			        {
-			          "account": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
 			          "ledger account": {
 			            "State": "Generated",
 			            "Weight": 0.97
@@ -9424,12 +9524,6 @@ cultureInfo fr-FR
 			          }
 			        },
 			        {
-			          "journal": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
 			          "journal identification": {
 			            "Type": "Noun",
 			            "State": "Suggested",
@@ -9467,66 +9561,6 @@ cultureInfo fr-FR
 			              "Agent": "Thesaurus"
 			            },
 			            "Weight": 0.727
-			          }
-			        },
-			        {
-			          "newsletter": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
-			          }
-			        },
-			        {
-			          "periodical": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.476
-			          }
-			        },
-			        {
-			          "paper": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.476
-			          }
-			        },
-			        {
-			          "weekly": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.476
-			          }
-			        },
-			        {
-			          "monthly": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.476
-			          }
-			        },
-			        {
-			          "quarterly": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.476
 			          }
 			        }
 			      ]
@@ -10166,6 +10200,16 @@ cultureInfo fr-FR
 			            },
 			            "Weight": 0.9
 			          }
+			        },
+			        {
+			          "Bank": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
 			        }
 			      ],
 			      "NameType": "Name"
@@ -10231,12 +10275,6 @@ cultureInfo fr-FR
 			          }
 			        },
 			        {
-			          "account": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
 			          "bank explanation": {
 			            "Type": "Noun",
 			            "State": "Suggested",
@@ -10277,46 +10315,6 @@ cultureInfo fr-FR
 			          }
 			        },
 			        {
-			          "explanation": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
-			          }
-			        },
-			        {
-			          "version": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
-			          }
-			        },
-			        {
-			          "interpretation": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
-			          }
-			        },
-			        {
-			          "justification": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
-			          }
-			        },
-			        {
 			          "bank reason": {
 			            "Type": "Noun",
 			            "State": "Suggested",
@@ -10334,6 +10332,46 @@ cultureInfo fr-FR
 			              "Agent": "Thesaurus"
 			            },
 			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "bank description": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.475
+			          }
+			        },
+			        {
+			          "bank relation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.475
+			          }
+			        },
+			        {
+			          "bank story": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.461
+			          }
+			        },
+			        {
+			          "bank report": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.461
 			          }
 			        }
 			      ]
@@ -10502,7 +10540,7 @@ cultureInfo fr-FR
 			          }
 			        },
 			        {
-			          "Montant (€)": {
+			          "Amount (€)": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -10977,12 +11015,6 @@ cultureInfo fr-FR
 			          }
 			        },
 			        {
-			          "journal": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
 			          "journal identification": {
 			            "Type": "Noun",
 			            "State": "Suggested",
@@ -11020,66 +11052,6 @@ cultureInfo fr-FR
 			              "Agent": "Thesaurus"
 			            },
 			            "Weight": 0.727
-			          }
-			        },
-			        {
-			          "newsletter": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
-			          }
-			        },
-			        {
-			          "periodical": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.476
-			          }
-			        },
-			        {
-			          "paper": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.476
-			          }
-			        },
-			        {
-			          "weekly": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.476
-			          }
-			        },
-			        {
-			          "monthly": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.476
-			          }
-			        },
-			        {
-			          "quarterly": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.476
 			          }
 			        }
 			      ]
@@ -11268,7 +11240,7 @@ cultureInfo fr-FR
 			          }
 			        },
 			        {
-			          "Reste (€)": {
+			          "Remaining (€)": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -11459,12 +11431,6 @@ cultureInfo fr-FR
 			          }
 			        },
 			        {
-			          "account": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
 			          "account id": {
 			            "State": "Generated",
 			            "Weight": 0.97
@@ -11549,26 +11515,6 @@ cultureInfo fr-FR
 			            },
 			            "Weight": 0.727
 			          }
-			        },
-			        {
-			          "explanation": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
-			          }
-			        },
-			        {
-			          "version": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
-			          }
 			        }
 			      ]
 			    },
@@ -11591,12 +11537,6 @@ cultureInfo fr-FR
 			            "Type": "Noun",
 			            "State": "Generated",
 			            "Weight": 0.99
-			          }
-			        },
-			        {
-			          "employee": {
-			            "State": "Generated",
-			            "Weight": 0.97
 			          }
 			        },
 			        {
@@ -11637,66 +11577,6 @@ cultureInfo fr-FR
 			              "Agent": "Thesaurus"
 			            },
 			            "Weight": 0.727
-			          }
-			        },
-			        {
-			          "worker": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
-			          }
-			        },
-			        {
-			          "servant": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
-			          }
-			        },
-			        {
-			          "member": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
-			          }
-			        },
-			        {
-			          "underling": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
-			          }
-			        },
-			        {
-			          "operative": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.476
-			          }
-			        },
-			        {
-			          "hand": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.476
 			          }
 			        }
 			      ]
@@ -11951,7 +11831,7 @@ cultureInfo fr-FR
 			          }
 			        },
 			        {
-			          "Num CB": {
+			          "Credit Card Nb": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -11961,7 +11841,7 @@ cultureInfo fr-FR
 			          }
 			        },
 			        {
-			          "CB": {
+			          "Credit Card": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -11997,12 +11877,6 @@ cultureInfo fr-FR
 			          }
 			        },
 			        {
-			          "customer": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
 			          "customer identification": {
 			            "Type": "Noun",
 			            "State": "Suggested",
@@ -12033,73 +11907,73 @@ cultureInfo fr-FR
 			          }
 			        },
 			        {
-			          "client": {
+			          "customer credential": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.736
+			            "Weight": 0.727
 			          }
 			        },
 			        {
-			          "consumer": {
+			          "client id": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.736
+			            "Weight": 0.6
 			          }
 			        },
 			        {
-			          "user": {
+			          "consumer id": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.736
+			            "Weight": 0.6
 			          }
 			        },
 			        {
-			          "buyer": {
+			          "user id": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.736
+			            "Weight": 0.6
 			          }
 			        },
 			        {
-			          "patron": {
+			          "buyer id": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.736
+			            "Weight": 0.6
 			          }
 			        },
 			        {
-			          "purchaser": {
+			          "patron id": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.736
+			            "Weight": 0.6
 			          }
 			        },
 			        {
-			          "shopper": {
+			          "purchaser id": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.736
+			            "Weight": 0.6
 			          }
 			        }
 			      ]
@@ -12126,12 +12000,6 @@ cultureInfo fr-FR
 			            "Type": "Noun",
 			            "State": "Generated",
 			            "Weight": 0.99
-			          }
-			        },
-			        {
-			          "supplier": {
-			            "State": "Generated",
-			            "Weight": 0.97
 			          }
 			        },
 			        {
@@ -12172,66 +12040,6 @@ cultureInfo fr-FR
 			              "Agent": "Thesaurus"
 			            },
 			            "Weight": 0.727
-			          }
-			        },
-			        {
-			          "dealer": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
-			          }
-			        },
-			        {
-			          "contractor": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
-			          }
-			        },
-			        {
-			          "provider": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
-			          }
-			        },
-			        {
-			          "trader": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
-			          }
-			        },
-			        {
-			          "seller": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
-			          }
-			        },
-			        {
-			          "purveyor": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
 			          }
 			        }
 			      ]
@@ -12468,12 +12276,6 @@ cultureInfo fr-FR
 			          }
 			        },
 			        {
-			          "category": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
 			          "transaction classification": {
 			            "Type": "Noun",
 			            "State": "Suggested",
@@ -12481,16 +12283,6 @@ cultureInfo fr-FR
 			              "Agent": "Thesaurus"
 			            },
 			            "Weight": 0.75
-			          }
-			        },
-			        {
-			          "classification": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.736
 			          }
 			        },
 			        {
@@ -12541,36 +12333,6 @@ cultureInfo fr-FR
 			              "Agent": "Thesaurus"
 			            },
 			            "Weight": 0.727
-			          }
-			        },
-			        {
-			          "class": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.714
-			          }
-			        },
-			        {
-			          "grouping": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.714
-			          }
-			        },
-			        {
-			          "kind": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.714
 			          }
 			        }
 			      ]
@@ -12732,12 +12494,6 @@ cultureInfo fr-FR
 			          }
 			        },
 			        {
-			          "category": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
 			          "category identification": {
 			            "Type": "Noun",
 			            "State": "Suggested",
@@ -12768,16 +12524,6 @@ cultureInfo fr-FR
 			          }
 			        },
 			        {
-			          "classification": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.736
-			          }
-			        },
-			        {
 			          "category credential": {
 			            "Type": "Noun",
 			            "State": "Suggested",
@@ -12785,36 +12531,6 @@ cultureInfo fr-FR
 			              "Agent": "Thesaurus"
 			            },
 			            "Weight": 0.727
-			          }
-			        },
-			        {
-			          "class": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.714
-			          }
-			        },
-			        {
-			          "grouping": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.714
-			          }
-			        },
-			        {
-			          "kind": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.714
 			          }
 			        },
 			        {
@@ -12829,6 +12545,36 @@ cultureInfo fr-FR
 			        },
 			        {
 			          "class id": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "type id": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "grouping id": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "kind id": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -12971,7 +12717,7 @@ cultureInfo fr-FR
 			          }
 			        },
 			        {
-			          "Catégorie": {
+			          "Category": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -14312,7 +14058,7 @@ cultureInfo fr-FR
 			          }
 			        },
 			        {
-			          "Fournisseurs": {
+			          "Supplier": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -14392,12 +14138,6 @@ cultureInfo fr-FR
 			          }
 			        },
 			        {
-			          "supplier": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
 			          "dim dealer": {
 			            "Type": "Noun",
 			            "State": "Suggested",
@@ -14458,43 +14198,23 @@ cultureInfo fr-FR
 			          }
 			        },
 			        {
-			          "dealer": {
+			          "dim broker": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.491
+			            "Weight": 0.485
 			          }
 			        },
 			        {
-			          "contractor": {
+			          "dim merchant": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.491
-			          }
-			        },
-			        {
-			          "provider": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
-			          }
-			        },
-			        {
-			          "trader": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
+			            "Weight": 0.485
 			          }
 			        }
 			      ]
@@ -14670,16 +14390,6 @@ cultureInfo fr-FR
 			          }
 			        },
 			        {
-			          "co": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.736
-			          }
-			        },
-			        {
 			          "corp": {
 			            "Type": "Noun",
 			            "State": "Suggested",
@@ -14738,6 +14448,16 @@ cultureInfo fr-FR
 			            },
 			            "Weight": 0.727
 			          }
+			        },
+			        {
+			          "business": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
 			        }
 			      ]
 			    },
@@ -14766,16 +14486,6 @@ cultureInfo fr-FR
 			          "company": {
 			            "State": "Generated",
 			            "Weight": 0.97
-			          }
-			        },
-			        {
-			          "co": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.736
 			          }
 			        },
 			        {
@@ -14866,6 +14576,16 @@ cultureInfo fr-FR
 			              "Agent": "Thesaurus"
 			            },
 			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "business": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
 			          }
 			        }
 			      ]
@@ -16052,12 +15772,6 @@ cultureInfo fr-FR
 			          }
 			        },
 			        {
-			          "customer": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
 			          "dim client": {
 			            "Type": "Noun",
 			            "State": "Suggested",
@@ -16125,36 +15839,6 @@ cultureInfo fr-FR
 			              "Agent": "Thesaurus"
 			            },
 			            "Weight": 0.75
-			          }
-			        },
-			        {
-			          "client": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.736
-			          }
-			        },
-			        {
-			          "consumer": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.736
-			          }
-			        },
-			        {
-			          "user": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.736
 			          }
 			        }
 			      ]
@@ -16241,7 +15925,7 @@ cultureInfo fr-FR
 			          }
 			        },
 			        {
-			          "Clients": {
+			          "Customer": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -16311,16 +15995,6 @@ cultureInfo fr-FR
 			          }
 			        },
 			        {
-			          "co": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.736
-			          }
-			        },
-			        {
 			          "corp": {
 			            "Type": "Noun",
 			            "State": "Suggested",
@@ -16379,6 +16053,16 @@ cultureInfo fr-FR
 			            },
 			            "Weight": 0.727
 			          }
+			        },
+			        {
+			          "business": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
 			        }
 			      ]
 			    },
@@ -16407,16 +16091,6 @@ cultureInfo fr-FR
 			          "company": {
 			            "State": "Generated",
 			            "Weight": 0.97
-			          }
-			        },
-			        {
-			          "co": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.736
 			          }
 			        },
 			        {
@@ -16507,6 +16181,16 @@ cultureInfo fr-FR
 			              "Agent": "Thesaurus"
 			            },
 			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "business": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
 			          }
 			        }
 			      ]
@@ -17687,7 +17371,7 @@ cultureInfo fr-FR
 			          }
 			        },
 			        {
-			          "Employé": {
+			          "Employee": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -17714,6 +17398,12 @@ cultureInfo fr-FR
 			        },
 			        {
 			          "sum catégorie": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "catégorie": {
 			            "State": "Generated",
 			            "Weight": 0.97
 			          }
@@ -17942,6 +17632,666 @@ cultureInfo fr-FR
 			              "Agent": "PowerBI.VisualColumnRename"
 			            },
 			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "mesure.color_max_min_FBD": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Mesures",
+			          "ConceptualProperty": "Color Max Min FBD"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "color max min FBD": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "FBD": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "min FBD": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "max min FBD": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "color maximum min fbd": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "color max minimum fbd": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "maximum min fbd": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "max minimum fbd": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "minimum fbd": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        }
+			      ]
+			    },
+			    "mesure.color_max_min_CO": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Mesures",
+			          "ConceptualProperty": "Color Max Min CO"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "color max min CO": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "CO": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "min CO": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "max min CO": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "color maximum min co": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "color max minimum co": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "maximum min co": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "max minimum co": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "minimum co": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        }
+			      ]
+			    },
+			    "mesure.color_max_min_CI": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Mesures",
+			          "ConceptualProperty": "Color Max Min CI"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "color max min CI": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "CI": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "min CI": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "max min CI": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "color maximum min ci": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "color max minimum ci": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "maximum min ci": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "max minimum ci": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "minimum ci": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        }
+			      ]
+			    },
+			    "mesure.color_max_min_TAV": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Mesures",
+			          "ConceptualProperty": "Color Max Min TAV"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "color max min TAV": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "TAV": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "min TAV": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "max min TAV": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "color maximum min tav": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "color max minimum tav": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "maximum min tav": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "max minimum tav": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "minimum tav": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        }
+			      ]
+			    },
+			    "mesure.color_max_min_NE": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Mesures",
+			          "ConceptualProperty": "Color Max Min NE"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "color max min NE": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "NE": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "min NE": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "max min NE": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "color maximum min ne": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "color max minimum ne": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "maximum min ne": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "max minimum ne": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "minimum ne": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        }
+			      ]
+			    },
+			    "mesure.color_max_min_RO": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Mesures",
+			          "ConceptualProperty": "Color Max Min RO"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "color max min RO": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "RO": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "min RO": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "max min RO": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "color maximum min ro": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "color max minimum ro": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "maximum min ro": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "max minimum ro": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "minimum ro": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        }
+			      ]
+			    },
+			    "mesure.color_max_min_EBITDA": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Mesures",
+			          "ConceptualProperty": "Color Max Min EBITDA"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "color max min EBITDA": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "min EBITDA": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "max min EBITDA": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "color maximum min ebitda": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "color max minimum ebitda": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "maximum min ebitda": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "max minimum ebitda": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "minimum ebitda": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        }
+			      ]
+			    },
+			    "mesure.color_max_min_CAF": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Mesures",
+			          "ConceptualProperty": "Color Max Min CAF"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "color max min CAF": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "min CAF": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "max min CAF": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "color maximum min caf": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "color max minimum caf": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "maximum min caf": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "max minimum caf": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "minimum caf": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
 			          }
 			        }
 			      ]
@@ -22543,26 +22893,6 @@ cultureInfo fr-FR
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "dim_suppliers_have_transactions"
-			        },
-			        {
-			          "Verb": {
-			            "Subject": {
-			              "Role": "dim_supplier"
-			            },
-			            "Verbs": [
-			              {
-			                "supply": {
-			                  "State": "Generated"
-			                }
-			              }
-			            ],
-			            "Object": {
-			              "Role": "transaction"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.75,
-			          "ID": "dim_suppliers_supply_transactions"
 			        }
 			      ]
 			    },
@@ -22771,14 +23101,7 @@ cultureInfo fr-FR
 			        "bank_account": {
 			          "Target": {
 			            "Entity": "bank_account"
-			          },
-			          "Nouns": [
-			            {
-			              "journal": {
-			                "State": "Generated"
-			              }
-			            }
-			          ]
+			          }
 			        }
 			      },
 			      "Phrasings": [
@@ -23182,6 +23505,534 @@ cultureInfo fr-FR
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "c_3_have_Dim_Ledger_accounts"
+			        }
+			      ]
+			    },
+			    "fact_GL_has_mesure_color_max_min_CAF": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_GL"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_GL": {
+			          "Target": {
+			            "Entity": "fact_GL"
+			          }
+			        },
+			        "mesure.color_max_min_CAF": {
+			          "Target": {
+			            "Entity": "mesure.color_max_min_CAF"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_GL"
+			            },
+			            "Object": {
+			              "Role": "mesure.color_max_min_CAF"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_GL_have_color_max_min_CAF"
+			        }
+			      ]
+			    },
+			    "dim_date_has_mesure_color_max_min_CAF": {
+			      "Binding": {
+			        "ConceptualEntity": "Dim_Date"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_date": {
+			          "Target": {
+			            "Entity": "dim_date"
+			          }
+			        },
+			        "mesure.color_max_min_CAF": {
+			          "Target": {
+			            "Entity": "mesure.color_max_min_CAF"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_date"
+			            },
+			            "Object": {
+			              "Role": "mesure.color_max_min_CAF"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_dates_have_color_max_min_CAF"
+			        }
+			      ]
+			    },
+			    "fact_GL_has_mesure_color_max_min_EBITDA": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_GL"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_GL": {
+			          "Target": {
+			            "Entity": "fact_GL"
+			          }
+			        },
+			        "mesure.color_max_min_EBITDA": {
+			          "Target": {
+			            "Entity": "mesure.color_max_min_EBITDA"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_GL"
+			            },
+			            "Object": {
+			              "Role": "mesure.color_max_min_EBITDA"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_GL_have_color_max_min_EBITDA"
+			        }
+			      ]
+			    },
+			    "dim_date_has_mesure_color_max_min_EBITDA": {
+			      "Binding": {
+			        "ConceptualEntity": "Dim_Date"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_date": {
+			          "Target": {
+			            "Entity": "dim_date"
+			          }
+			        },
+			        "mesure.color_max_min_EBITDA": {
+			          "Target": {
+			            "Entity": "mesure.color_max_min_EBITDA"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_date"
+			            },
+			            "Object": {
+			              "Role": "mesure.color_max_min_EBITDA"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_dates_have_color_max_min_EBITDA"
+			        }
+			      ]
+			    },
+			    "fact_GL_has_mesure_color_max_min_RO": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_GL"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_GL": {
+			          "Target": {
+			            "Entity": "fact_GL"
+			          }
+			        },
+			        "mesure.color_max_min_RO": {
+			          "Target": {
+			            "Entity": "mesure.color_max_min_RO"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_GL"
+			            },
+			            "Object": {
+			              "Role": "mesure.color_max_min_RO"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_GL_have_color_max_min_RO"
+			        }
+			      ]
+			    },
+			    "dim_date_has_mesure_color_max_min_RO": {
+			      "Binding": {
+			        "ConceptualEntity": "Dim_Date"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_date": {
+			          "Target": {
+			            "Entity": "dim_date"
+			          }
+			        },
+			        "mesure.color_max_min_RO": {
+			          "Target": {
+			            "Entity": "mesure.color_max_min_RO"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_date"
+			            },
+			            "Object": {
+			              "Role": "mesure.color_max_min_RO"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_dates_have_color_max_min_RO"
+			        }
+			      ]
+			    },
+			    "fact_GL_has_mesure_color_max_min_NE": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_GL"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_GL": {
+			          "Target": {
+			            "Entity": "fact_GL"
+			          }
+			        },
+			        "mesure.color_max_min_NE": {
+			          "Target": {
+			            "Entity": "mesure.color_max_min_NE"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_GL"
+			            },
+			            "Object": {
+			              "Role": "mesure.color_max_min_NE"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_GL_have_color_max_min_NE"
+			        }
+			      ]
+			    },
+			    "dim_date_has_mesure_color_max_min_NE": {
+			      "Binding": {
+			        "ConceptualEntity": "Dim_Date"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_date": {
+			          "Target": {
+			            "Entity": "dim_date"
+			          }
+			        },
+			        "mesure.color_max_min_NE": {
+			          "Target": {
+			            "Entity": "mesure.color_max_min_NE"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_date"
+			            },
+			            "Object": {
+			              "Role": "mesure.color_max_min_NE"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_dates_have_color_max_min_NE"
+			        }
+			      ]
+			    },
+			    "fact_GL_has_mesure_color_max_min_TAV": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_GL"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_GL": {
+			          "Target": {
+			            "Entity": "fact_GL"
+			          }
+			        },
+			        "mesure.color_max_min_TAV": {
+			          "Target": {
+			            "Entity": "mesure.color_max_min_TAV"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_GL"
+			            },
+			            "Object": {
+			              "Role": "mesure.color_max_min_TAV"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_GL_have_color_max_min_TAV"
+			        }
+			      ]
+			    },
+			    "dim_date_has_mesure_color_max_min_TAV": {
+			      "Binding": {
+			        "ConceptualEntity": "Dim_Date"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_date": {
+			          "Target": {
+			            "Entity": "dim_date"
+			          }
+			        },
+			        "mesure.color_max_min_TAV": {
+			          "Target": {
+			            "Entity": "mesure.color_max_min_TAV"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_date"
+			            },
+			            "Object": {
+			              "Role": "mesure.color_max_min_TAV"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_dates_have_color_max_min_TAV"
+			        }
+			      ]
+			    },
+			    "fact_GL_has_mesure_color_max_min_CI": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_GL"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_GL": {
+			          "Target": {
+			            "Entity": "fact_GL"
+			          }
+			        },
+			        "mesure.color_max_min_CI": {
+			          "Target": {
+			            "Entity": "mesure.color_max_min_CI"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_GL"
+			            },
+			            "Object": {
+			              "Role": "mesure.color_max_min_CI"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_GL_have_color_max_min_CI"
+			        }
+			      ]
+			    },
+			    "dim_date_has_mesure_color_max_min_CI": {
+			      "Binding": {
+			        "ConceptualEntity": "Dim_Date"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_date": {
+			          "Target": {
+			            "Entity": "dim_date"
+			          }
+			        },
+			        "mesure.color_max_min_CI": {
+			          "Target": {
+			            "Entity": "mesure.color_max_min_CI"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_date"
+			            },
+			            "Object": {
+			              "Role": "mesure.color_max_min_CI"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_dates_have_color_max_min_CI"
+			        }
+			      ]
+			    },
+			    "fact_GL_has_mesure_color_max_min_CO": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_GL"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_GL": {
+			          "Target": {
+			            "Entity": "fact_GL"
+			          }
+			        },
+			        "mesure.color_max_min_CO": {
+			          "Target": {
+			            "Entity": "mesure.color_max_min_CO"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_GL"
+			            },
+			            "Object": {
+			              "Role": "mesure.color_max_min_CO"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_GL_have_color_max_min_CO"
+			        }
+			      ]
+			    },
+			    "dim_date_has_mesure_color_max_min_CO": {
+			      "Binding": {
+			        "ConceptualEntity": "Dim_Date"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_date": {
+			          "Target": {
+			            "Entity": "dim_date"
+			          }
+			        },
+			        "mesure.color_max_min_CO": {
+			          "Target": {
+			            "Entity": "mesure.color_max_min_CO"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_date"
+			            },
+			            "Object": {
+			              "Role": "mesure.color_max_min_CO"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_dates_have_color_max_min_CO"
+			        }
+			      ]
+			    },
+			    "transaction_has_mesure_color_max_min_FBD": {
+			      "Binding": {
+			        "ConceptualEntity": "Transaction"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "transaction": {
+			          "Target": {
+			            "Entity": "transaction"
+			          }
+			        },
+			        "mesure.color_max_min_FBD": {
+			          "Target": {
+			            "Entity": "mesure.color_max_min_FBD"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "transaction"
+			            },
+			            "Object": {
+			              "Role": "mesure.color_max_min_FBD"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "transactions_have_color_max_min_FBD"
+			        }
+			      ]
+			    },
+			    "dim_date_has_mesure_color_max_min_FBD": {
+			      "Binding": {
+			        "ConceptualEntity": "Dim_Date"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_date": {
+			          "Target": {
+			            "Entity": "dim_date"
+			          }
+			        },
+			        "mesure.color_max_min_FBD": {
+			          "Target": {
+			            "Entity": "mesure.color_max_min_FBD"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_date"
+			            },
+			            "Object": {
+			              "Role": "mesure.color_max_min_FBD"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_dates_have_color_max_min_FBD"
 			        }
 			      ]
 			    },
@@ -26534,6 +27385,26 @@ cultureInfo fr-FR
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "fact_GL_have_tréso_a_venir"
+			        },
+			        {
+			          "Adjective": {
+			            "Subject": {
+			              "Role": "fact_GL"
+			            },
+			            "Adjectives": [
+			              {
+			                "Upcoming": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Measurement": {
+			              "Role": "mesure.tréso_a_venir"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "tréso_a_venir_indicates_how_Upcoming_fact_GL_are"
 			        }
 			      ]
 			    },

@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
   "name": "dccdbe2d0d4484ee8797",
   "position": {
     "x": 0,
@@ -40,8 +40,8 @@
                 }
               },
               "queryRef": "Fact_GL.label_ledger_entries",
-              "nativeQueryRef": "Libellé de l'Écriture",
-              "displayName": "Libellé de l'Écriture"
+              "nativeQueryRef": "Entry Description",
+              "displayName": "Entry Description"
             },
             {
               "field": {
@@ -55,8 +55,8 @@
                 }
               },
               "queryRef": "Mesures.Solde",
-              "nativeQueryRef": "Solde (€)",
-              "displayName": "Solde (€)",
+              "nativeQueryRef": "Balance (€)",
+              "displayName": "Balance (€)",
               "format": "#,0.00"
             },
             {
@@ -76,8 +76,8 @@
                 }
               },
               "queryRef": "Sum(Fact_GL.Débit)",
-              "nativeQueryRef": "Débit (€)",
-              "displayName": "Débit (€)",
+              "nativeQueryRef": "Debit (€)",
+              "displayName": "Debit (€)",
               "format": "#,0.00"
             },
             {
@@ -97,8 +97,8 @@
                 }
               },
               "queryRef": "Sum(Fact_GL.Crédit)",
-              "nativeQueryRef": "Crédit (€)",
-              "displayName": "Crédit (€)",
+              "nativeQueryRef": "Credit (€)",
+              "displayName": "Credit (€)",
               "format": "#,0.00"
             },
             {
@@ -113,8 +113,8 @@
                 }
               },
               "queryRef": "Dim_Ledger Accounts.label",
-              "nativeQueryRef": "Libellé de Compte",
-              "displayName": "Libellé de Compte"
+              "nativeQueryRef": "Account Label",
+              "displayName": "Account Label"
             },
             {
               "field": {
@@ -128,8 +128,8 @@
                 }
               },
               "queryRef": "Dim_Ledger Accounts.Compte Nettoyé",
-              "nativeQueryRef": "Compte",
-              "displayName": "Compte"
+              "nativeQueryRef": "Account",
+              "displayName": "Account"
             },
             {
               "field": {
@@ -143,8 +143,8 @@
                 }
               },
               "queryRef": "Dim_Journals.code",
-              "nativeQueryRef": "Jal",
-              "displayName": "Jal"
+              "nativeQueryRef": "Journal",
+              "displayName": "Journal"
             },
             {
               "field": {
@@ -158,8 +158,8 @@
                 }
               },
               "queryRef": "Fact_GL.id_ledger_entry_lines",
-              "nativeQueryRef": "No Écritures",
-              "displayName": "No Écritures"
+              "nativeQueryRef": "Entry Nb",
+              "displayName": "Entry Nb"
             }
           ]
         }

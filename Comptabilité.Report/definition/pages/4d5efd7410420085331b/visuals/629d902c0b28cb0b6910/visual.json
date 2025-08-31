@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
   "name": "629d902c0b28cb0b6910",
   "position": {
     "x": 25.714285714285715,
@@ -41,8 +41,8 @@
                 }
               },
               "queryRef": "bank accounts.name",
-              "nativeQueryRef": "Banque",
-              "displayName": "Banque"
+              "nativeQueryRef": "Bank",
+              "displayName": "Bank"
             },
             {
               "field": {
@@ -56,8 +56,8 @@
                 }
               },
               "queryRef": "transaction_category.category_label",
-              "nativeQueryRef": "Catégorie",
-              "displayName": "Catégorie"
+              "nativeQueryRef": "Category",
+              "displayName": "Category"
             },
             {
               "field": {
@@ -71,8 +71,8 @@
                 }
               },
               "queryRef": "Transaction.Prénom&Nom",
-              "nativeQueryRef": "Employé",
-              "displayName": "Employé"
+              "nativeQueryRef": "Employee",
+              "displayName": "Employee"
             },
             {
               "field": {
@@ -91,8 +91,8 @@
                 }
               },
               "queryRef": "Min(Transaction.label)",
-              "nativeQueryRef": "Libellé",
-              "displayName": "Libellé"
+              "nativeQueryRef": "Description",
+              "displayName": "Description"
             },
             {
               "field": {
@@ -106,8 +106,8 @@
                 }
               },
               "queryRef": "Sum(Transaction.amount)",
-              "nativeQueryRef": "amount",
-              "displayName": "Montant (€)"
+              "nativeQueryRef": "Amount (€)",
+              "displayName": "Amount (€)"
             },
             {
               "field": {
@@ -121,8 +121,8 @@
                 }
               },
               "queryRef": "Sum(Transaction.outstanding_balance)",
-              "nativeQueryRef": "outstanding_balance",
-              "displayName": "Reste (€)"
+              "nativeQueryRef": "Remaining (€)",
+              "displayName": "Remaining (€)"
             },
             {
               "field": {
@@ -136,8 +136,8 @@
                 }
               },
               "queryRef": "Transaction.card_masked_number",
-              "nativeQueryRef": "CB",
-              "displayName": "CB"
+              "nativeQueryRef": "Credit Card",
+              "displayName": "Credit Card"
             }
           ]
         }
@@ -355,7 +355,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Détails Transactions'"
+                  "Value": "'Transactions Details'"
                 }
               }
             },

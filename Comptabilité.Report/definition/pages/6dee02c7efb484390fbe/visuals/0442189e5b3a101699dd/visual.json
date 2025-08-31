@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
   "name": "0442189e5b3a101699dd",
   "position": {
     "x": 24.119805672760236,
@@ -27,8 +27,8 @@
                 }
               },
               "queryRef": "Mesures.Solde",
-              "nativeQueryRef": "Solde des Comptes 47",
-              "displayName": "Solde des Comptes 47",
+              "nativeQueryRef": "Account 47 Balance",
+              "displayName": "Account 47 Balance",
               "format": "#,0 \"€\";-#,0 \"€\";#,0 \"€\""
             }
           ]

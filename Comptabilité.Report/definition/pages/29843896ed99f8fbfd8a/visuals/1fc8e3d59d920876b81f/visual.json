@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
   "name": "1fc8e3d59d920876b81f",
   "position": {
-    "x": 815,
-    "y": 37,
+    "x": 785.39464653397386,
+    "y": 36.897735072065885,
     "z": 13000,
-    "height": 55,
-    "width": 290,
+    "height": 55.346602608098827,
+    "width": 359.75291695264241,
     "tabOrder": 6000
   },
   "visual": {
@@ -19,7 +19,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Comptabilité",
+                    "value": "Supplier Debtors",
                     "textStyle": {
                       "fontFamily": "Segoe (Bold)",
                       "fontSize": "28pt",

@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
   "name": "629e44c4a2c757ace21d",
   "position": {
     "x": 1280.238347446789,
@@ -213,7 +213,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Actif Circulant vs Passif Circulant'"
+                  "Value": "'Current Assets vs Current Liabilities'"
                 }
               }
             }

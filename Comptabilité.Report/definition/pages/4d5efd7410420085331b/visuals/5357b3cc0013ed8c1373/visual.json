@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
   "name": "5357b3cc0013ed8c1373",
   "position": {
     "x": 25.714285714285715,
@@ -41,8 +41,8 @@
                 }
               },
               "queryRef": "Dim_Customer.name",
-              "nativeQueryRef": "Clients",
-              "displayName": "Clients"
+              "nativeQueryRef": "Customer",
+              "displayName": "Customer"
             },
             {
               "field": {
@@ -56,8 +56,8 @@
                 }
               },
               "queryRef": "bank accounts.name",
-              "nativeQueryRef": "Banque",
-              "displayName": "Banque"
+              "nativeQueryRef": "Bank",
+              "displayName": "Bank"
             },
             {
               "field": {
@@ -76,8 +76,8 @@
                 }
               },
               "queryRef": "Min(Transaction.label)",
-              "nativeQueryRef": "Libellé",
-              "displayName": "Libellé"
+              "nativeQueryRef": "Description",
+              "displayName": "Description"
             },
             {
               "field": {
@@ -96,8 +96,8 @@
                 }
               },
               "queryRef": "Sum(Transaction.amount)",
-              "nativeQueryRef": "Montant (€)",
-              "displayName": "Montant (€)"
+              "nativeQueryRef": "Amount (€)",
+              "displayName": "Amount (€)"
             }
           ]
         }
@@ -264,7 +264,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Transactions Clients'"
+                  "Value": "'Customer Transactions'"
                 }
               }
             },
