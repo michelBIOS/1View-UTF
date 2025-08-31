@@ -2305,31 +2305,6 @@
               ]
             }
           },
-          "c65571daf687c0bc51f4": {
-            "filters": {
-              "byExpr": [
-                {
-                  "name": "4d51f5faa312d4dc41eb",
-                  "type": "Categorical",
-                  "expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Dynamic Logo"
-                        }
-                      },
-                      "Property": "Logo"
-                    }
-                  },
-                  "howCreated": 0
-                }
-              ]
-            },
-            "singleVisual": {
-              "visualType": "advancedSlicerVisual",
-              "objects": {}
-            }
-          },
           "ce0309100bc1605532ba": {
             "filters": {
               "byExpr": [
