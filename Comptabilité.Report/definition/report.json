@@ -124,32 +124,28 @@
           "Where": [
             {
               "Condition": {
-                "Not": {
-                  "Expression": {
-                    "In": {
-                      "Expressions": [
-                        {
-                          "Column": {
-                            "Expression": {
-                              "SourceRef": {
-                                "Source": "d"
-                              }
-                            },
-                            "Property": "name"
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "d"
                           }
-                        }
-                      ],
-                      "Values": [
-                        [
-                          {
-                            "Literal": {
-                              "Value": "null"
-                            }
-                          }
-                        ]
-                      ]
+                        },
+                        "Property": "name"
+                      }
                     }
-                  }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'Zwiesel Fortessa France'"
+                        }
+                      }
+                    ]
+                  ]
                 }
               }
             }
@@ -159,15 +155,7 @@
         "objects": {
           "general": [
             {
-              "properties": {
-                "isInvertedSelectionMode": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "true"
-                    }
-                  }
-                }
-              }
+              "properties": {}
             }
           ]
         }
@@ -294,6 +282,11 @@
         {
           "name": "Logo_UTF8407927324488135.png",
           "path": "Logo_UTF8407927324488135.png",
+          "type": "Image"
+        },
+        {
+          "name": "Logo_UTF6260967868102493.png",
+          "path": "Logo_UTF6260967868102493.png",
           "type": "Image"
         }
       ]
