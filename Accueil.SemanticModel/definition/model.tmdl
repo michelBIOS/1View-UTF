@@ -51,11 +51,5 @@ ref table LocalDateTable_7fb07494-9ac8-47fc-bf21-4b33bbac8759
 ref table TranchesBalanceAgée
 ref table LocalDateTable_6e490a31-a957-46f6-ab08-079221e1b34c
 
-ref role Interfast
-ref role 'United Tables France'
-ref role Kalite
-ref role 'Ami Voyages'
-ref role 88
-
 ref cultureInfo fr-FR
 
