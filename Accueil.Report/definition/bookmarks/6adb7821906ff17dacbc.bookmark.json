@@ -1640,31 +1640,6 @@
               "objects": {}
             }
           },
-          "85c081907137d5914ee3": {
-            "filters": {
-              "byExpr": [
-                {
-                  "name": "f58603a670233c043c00",
-                  "type": "Categorical",
-                  "expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Dynamic Logo"
-                        }
-                      },
-                      "Property": "Logo"
-                    }
-                  },
-                  "howCreated": 0
-                }
-              ]
-            },
-            "singleVisual": {
-              "visualType": "advancedSlicerVisual",
-              "objects": {}
-            }
-          },
           "88ae2eff9b3d03100cb7": {
             "singleVisual": {
               "visualType": "shape",

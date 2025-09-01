@@ -19,7 +19,7 @@ annotation __PBI_TimeIntelligenceEnabled = 1
 
 annotation PBIDesktopVersion = 2.146.1254.0 (25.08)+791a7518fadc83da883d79322a2658aff57c8db3
 
-annotation PBI_QueryOrder = ["Dim_Journals","Dim_Ledger Accounts","Ledger Entries","Ledger Entry Lines","Fact_GL","Customer invoices","Dim_Customers","Products","Supplier invoices","Dim_Suppliers","Dim_Companies","Dynamic Logo"]
+annotation PBI_QueryOrder = ["Dim_Journals","Dim_Ledger Accounts","Ledger Entries","Ledger Entry Lines","Fact_GL","Customer invoices","Dim_Customers","Products","Supplier invoices","Dim_Suppliers","Dim_Companies"]
 
 annotation PBI_ProTooling = ["DevMode"]
 
@@ -49,14 +49,7 @@ ref table LocalDateTable_5d5425f7-c760-44b8-8bdf-16f4ff2feadb
 ref table Dim_Companies
 ref table LocalDateTable_7fb07494-9ac8-47fc-bf21-4b33bbac8759
 ref table TranchesBalanceAgée
-ref table 'Dynamic Logo'
 ref table LocalDateTable_6e490a31-a957-46f6-ab08-079221e1b34c
-
-ref role Interfast
-ref role 'United Tables France'
-ref role Kalite
-ref role 'Ami Voyages'
-ref role 88
 
 ref cultureInfo fr-FR
 

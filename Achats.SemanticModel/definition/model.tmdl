@@ -66,11 +66,5 @@ ref table 'CAT Supplier invoices'
 ref table LocalDateTable_c559f65f-dee2-4028-ae59-043f7ebc2283
 ref table LocalDateTable_b93bc9a1-b1b5-4db8-9719-241efe518241
 
-ref role 'Ami Voyages'
-ref role Interfast
-ref role 'United Tables France'
-ref role Kalite
-ref role 88
-
 ref cultureInfo fr-FR
 
