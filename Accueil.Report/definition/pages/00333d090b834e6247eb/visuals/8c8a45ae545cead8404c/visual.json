@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
   "name": "8c8a45ae545cead8404c",
   "position": {
-    "x": 153.4212567882079,
-    "y": 30,
-    "z": 34000,
-    "height": 70.0077579519007,
+    "x": 208.18181818181816,
+    "y": 29.999999999999996,
+    "z": 33000,
+    "height": 70,
     "width": 150,
-    "tabOrder": 11000
+    "tabOrder": 10000
   },
   "visual": {
     "visualType": "slicer",
@@ -250,5 +250,23 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "4200c5fa6bfddd519e59",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Dim_Customers"
+              }
+            },
+            "Property": "name"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }

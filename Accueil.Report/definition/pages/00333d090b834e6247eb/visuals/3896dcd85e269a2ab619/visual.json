@@ -23,11 +23,11 @@
                       "Entity": "Dim_Date"
                     }
                   },
-                  "Property": "Mois"
+                  "Property": "Month"
                 }
               },
-              "queryRef": "Dim_Date.Mois",
-              "nativeQueryRef": "Mois",
+              "queryRef": "Dim_Date.Month",
+              "nativeQueryRef": "Month",
               "active": true
             }
           ]
@@ -242,5 +242,37 @@
     },
     "drillFilterOtherVisuals": true
   },
-  "parentGroupName": "8553331461db73533293"
+  "parentGroupName": "8553331461db73533293",
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "645c10ef349f0394d849",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Mesures"
+              }
+            },
+            "Property": "Trésorerie"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "3ebfa34626d8b484e0f0",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Dim_Date"
+              }
+            },
+            "Property": "Month"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
 }

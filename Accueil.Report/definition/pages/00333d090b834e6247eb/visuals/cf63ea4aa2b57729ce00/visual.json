@@ -6,8 +6,7 @@
     "y": 91.033633778491065,
     "z": 5000,
     "height": 64.197044334975374,
-    "width": 264.28571428571428,
-    "tabOrder": 1000
+    "width": 264.28571428571428
   },
   "visual": {
     "visualType": "clusteredColumnChart",
@@ -23,11 +22,11 @@
                       "Entity": "Dim_Date"
                     }
                   },
-                  "Property": "Mois"
+                  "Property": "Month"
                 }
               },
-              "queryRef": "Dim_Date.Mois",
-              "nativeQueryRef": "Mois",
+              "queryRef": "Dim_Date.Month",
+              "nativeQueryRef": "Month",
               "active": true
             }
           ]
@@ -302,5 +301,37 @@
     },
     "drillFilterOtherVisuals": true
   },
-  "parentGroupName": "4204e76070ec5b6cba96"
+  "parentGroupName": "4204e76070ec5b6cba96",
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "48970c2ef745898db0f1",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Mesures"
+              }
+            },
+            "Property": "Total Ventes"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "1d6850edf2c6096fbc9a",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Dim_Date"
+              }
+            },
+            "Property": "Month"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
 }

@@ -23,11 +23,11 @@
                       "Entity": "Dim_Date"
                     }
                   },
-                  "Property": "Mois"
+                  "Property": "Month"
                 }
               },
-              "queryRef": "Dim_Date.Mois",
-              "nativeQueryRef": "Mois",
+              "queryRef": "Dim_Date.Month",
+              "nativeQueryRef": "Month",
               "active": true
             }
           ]
@@ -301,5 +301,37 @@
     },
     "drillFilterOtherVisuals": true
   },
-  "parentGroupName": "567546b0969bd729edc9"
+  "parentGroupName": "567546b0969bd729edc9",
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "f135bd3b02bcd0ae3b2f",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Mesures"
+              }
+            },
+            "Property": "Encours Fournisseurs"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "dfa9da74ec06f0eba827",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Dim_Date"
+              }
+            },
+            "Property": "Month"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
 }

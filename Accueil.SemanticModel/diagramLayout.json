@@ -5,13 +5,13 @@
       "ordinal": 0,
       "scrollPosition": {
         "x": 0,
-        "y": 2120.5585169999881
+        "y": 4683.6080314584306
       },
       "nodes": [
         {
           "location": {
             "x": 820.590666852761,
-            "y": 2537.9925735321244
+            "y": 5552.6499128142459
           },
           "nodeIndex": "Dim_Journals",
           "nodeLineageTag": "0aeb72e8-a3c0-4230-a72a-decb7f920f14",
@@ -19,12 +19,12 @@
             "height": 182,
             "width": 168
           },
-          "zIndex": 4
+          "zIndex": 3
         },
         {
           "location": {
             "x": 621.334180681134,
-            "y": 2530.051554463887
+            "y": 5544.7088937460085
           },
           "nodeIndex": "Dim_Ledger Accounts",
           "nodeLineageTag": "4098a1dc-740b-4fbe-beaf-9100a7c62f8e",
@@ -32,12 +32,12 @@
             "height": 187.39867466872761,
             "width": 164.08800223313324
           },
-          "zIndex": 5
+          "zIndex": 4
         },
         {
           "location": {
             "x": 818.59599609201666,
-            "y": 2778.5285807898076
+            "y": 5793.1859200719282
           },
           "nodeIndex": "Fact_GL",
           "nodeLineageTag": "b19373e3-81a5-40b8-9680-ce9eedfabe02",
@@ -45,12 +45,12 @@
             "height": 528.53136899999913,
             "width": 170.58000837424993
           },
-          "zIndex": 6
+          "zIndex": 5
         },
         {
           "location": {
             "x": 1088.7720005582833,
-            "y": 2535.6739072376467
+            "y": 5550.3312465197687
           },
           "nodeIndex": "Dim_Date",
           "nodeLineageTag": "fbe6011e-9d94-49aa-a24a-1fcec4fc20ff",
@@ -58,12 +58,12 @@
             "height": 180.2693359386555,
             "width": 154.12933873007205
           },
-          "zIndex": 8
+          "zIndex": 11
         },
         {
           "location": {
             "x": 526.78575720252138,
-            "y": 2839.8799972007323
+            "y": 5854.5373364828538
           },
           "nodeIndex": "Customer invoices",
           "nodeLineageTag": "8a7b01ae-c2e9-4eb0-8e37-0c3746849220",
@@ -71,12 +71,12 @@
             "height": 549.79010099999914,
             "width": 169.17067522701086
           },
-          "zIndex": 11
+          "zIndex": 9
         },
         {
           "location": {
             "x": 267.58075112293113,
-            "y": 2842.9025782927488
+            "y": 5857.55991757487
           },
           "nodeIndex": "Dim_Customers",
           "nodeLineageTag": "d67bf603-7704-4f77-887f-9beaa580686a",
@@ -84,12 +84,12 @@
             "height": 542.53349698775389,
             "width": 191.72000558283321
           },
-          "zIndex": 3
+          "zIndex": 2
         },
         {
           "location": {
             "x": 1875.1932153282505,
-            "y": 2732.0025917332537
+            "y": 5746.6599310153742
           },
           "nodeIndex": "Mesures",
           "nodeLineageTag": "b17bd7e4-d902-4751-a383-43c863447c06",
@@ -97,12 +97,12 @@
             "height": 200,
             "width": 234
           },
-          "zIndex": 2
+          "zIndex": 1
         },
         {
           "location": {
             "x": 1517.6447075759829,
-            "y": 2943.2788680758431
+            "y": 5957.936207357965
           },
           "nodeIndex": "Dim_Suppliers",
           "nodeLineageTag": "f756ce38-9ec6-4407-80c0-647742ad6873",
@@ -110,12 +110,12 @@
             "height": 303.54312200000004,
             "width": 234
           },
-          "zIndex": 7
+          "zIndex": 6
         },
         {
           "location": {
             "x": 1218.8011385759851,
-            "y": 2945.0504290758431
+            "y": 5959.7077683579646
           },
           "nodeIndex": "Supplier invoices",
           "nodeLineageTag": "37617524-46de-4c62-9d49-0788df8d493e",
@@ -123,12 +123,12 @@
             "height": 300,
             "width": 234
           },
-          "zIndex": 9
+          "zIndex": 7
         },
         {
           "location": {
             "x": 1286.3854908678047,
-            "y": 2587.4194506878307
+            "y": 5602.0767899699513
           },
           "nodeIndex": "Dim_Companies",
           "nodeLineageTag": "56fbc232-00b8-48a5-9b59-b979efc939dd",
@@ -136,32 +136,45 @@
             "height": 128,
             "width": 234
           },
-          "zIndex": 10
+          "zIndex": 8
         },
         {
           "location": {
             "x": 368.76034841397563,
-            "y": 2536.899151025721
+            "y": 5551.556490307843
           },
           "nodeIndex": "TranchesBalanceAgée",
           "size": {
             "height": 145,
             "width": 186.23321176267734
           },
-          "zIndex": 12
+          "zIndex": 10
         },
         {
           "location": {
-            "x": 1693.1976322053204,
-            "y": 2557.3177110230436
+            "x": 1046.5778672053241,
+            "y": 5248.8946861505337
           },
-          "nodeIndex": "Dynamic Logo",
-          "nodeLineageTag": "79d93cab-7f16-4011-a4fe-ad73f694035b",
+          "nodeIndex": "Date–Period Bridge",
+          "nodeLineageTag": "56b8152b-afbe-45a0-8848-3746d6a6d585",
           "size": {
-            "height": 128,
+            "height": 200,
             "width": 234
           },
-          "zIndex": 1
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1032.4053792053242,
+            "y": 4948.4658499713278
+          },
+          "nodeIndex": "Period Slicer",
+          "nodeLineageTag": "25bae99a-f9be-4653-be91-e25aa40cf39d",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
         }
       ],
       "name": "Toutes les tables",

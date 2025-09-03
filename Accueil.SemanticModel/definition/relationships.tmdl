@@ -107,6 +107,19 @@ relationship 92b22d72-fb1c-f36d-d634-3982732d7f5f
 	fromColumn: 'Customer invoices'.ID_Ste
 	toColumn: Dim_Companies.id
 
+relationship f883934a-aad3-a32e-72ca-5347a2c231d6
+	fromColumn: 'Customer invoices'.Catégorie_Balance_Agée
+	toColumn: TranchesBalanceAgée.Tranche
+
+relationship e64f27ee-ff07-f97e-5abb-2005e527973e
+	fromColumn: 'Supplier invoices'.Catégorie_Balance_Agée
+	toColumn: TranchesBalanceAgée.Tranche
+
+relationship b7be012b-f043-4698-a68b-90f3038670b2
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Dim_Date.Date
+	toColumn: LocalDateTable_6e490a31-a957-46f6-ab08-079221e1b34c.Date
+
 relationship a959f8a6-2376-92e9-f250-48b868607635
 	fromColumn: Fact_GL.date
 	toColumn: Dim_Date.Date
@@ -119,16 +132,13 @@ relationship 8569ce4a-9bad-a57f-f892-68094f2e4f49
 	fromColumn: 'Supplier invoices'.date
 	toColumn: Dim_Date.Date
 
-relationship f008a4d3-9960-4422-adc0-e0714850bf3f
-	joinOnDateBehavior: datePartOnly
-	fromColumn: Dim_Date.Date
-	toColumn: LocalDateTable_6e490a31-a957-46f6-ab08-079221e1b34c.Date
+relationship 036c7427-29d6-2b99-07e3-c69dede05a62
+	crossFilteringBehavior: bothDirections
+	fromColumn: 'Date–Period Bridge'.Date
+	toColumn: Dim_Date.Date
 
-relationship f883934a-aad3-a32e-72ca-5347a2c231d6
-	fromColumn: 'Customer invoices'.Catégorie_Balance_Agée
-	toColumn: TranchesBalanceAgée.Tranche
-
-relationship e64f27ee-ff07-f97e-5abb-2005e527973e
-	fromColumn: 'Supplier invoices'.Catégorie_Balance_Agée
-	toColumn: TranchesBalanceAgée.Tranche
+relationship 4380661d-5795-ec20-3ba9-3a97856a36a4
+	crossFilteringBehavior: bothDirections
+	fromColumn: 'Date–Period Bridge'.PeriodKey
+	toColumn: 'Period Slicer'.PeriodKey
 

@@ -137,7 +137,7 @@ table 'Dim_Ledger Accounts'
 				    Query = "
 				        SELECT *
 				        FROM dbo.ledger_accounts
-				        WHERE ID_Ste IN (21912624, 21915510, 22276641, 21917322, 21918011)
+				        WHERE ID_Ste IN (21912624)
 				    ",
 				    NativeQuery = Value.NativeQuery(Dim_1, Query),
 				    #"Personnalisée ajoutée" = Table.AddColumn(NativeQuery, "Compte", each Text.PadEnd(
@@ -160,5 +160,5 @@ table 'Dim_Ledger Accounts'
 
 	annotation PBI_NavigationStepName = Navigation
 
-	annotation PBI_ResultType = Table
+	annotation PBI_ResultType = Exception
 

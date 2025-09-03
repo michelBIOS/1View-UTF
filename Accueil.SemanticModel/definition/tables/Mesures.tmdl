@@ -1162,15 +1162,15 @@ table Mesures
 		displayFolder: Titres Dynamique\Year Legend
 		lineageTag: b8fb9b07-8d1f-4fbb-95ae-44eb4f217787
 
-	measure CA/Charge = "Sales/Costs - "&[ThisYear]
+	measure CA/Charge = "Sales/Costs"
 		displayFolder: Titres Dynamique\Titres
 		lineageTag: dd725b0a-b101-47ca-874a-3ca7bd727894
 
-	measure 'Top 5 Clients Retard' = "Top 5 Clients en Retard de Paiement - "&[ThisYear]
+	measure 'Top 5 Clients Retard' = "Top 5 Clients en Retard de Paiement"
 		displayFolder: Titres Dynamique\Titres
 		lineageTag: 166fded6-baf2-48a9-9693-af56d7eda1bc
 
-	measure 'Balance Agée Clients' = "Aged Receivables - "&[ThisYear]
+	measure 'Balance Agée Clients' = "Aged Receivables"
 		displayFolder: Titres Dynamique\Titres
 		lineageTag: f4b0f50b-6207-4d07-8504-48c0494f5b07
 

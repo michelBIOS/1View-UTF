@@ -959,22 +959,6 @@ cultureInfo fr-FR
 			        }
 			      ]
 			    },
-			    "dim_date.mois": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Dim_Date",
-			          "ConceptualProperty": "Mois"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "mois": {
-			            "State": "Generated"
-			          }
-			        }
-			      ]
-			    },
 			    "fact_GL": {
 			      "Definition": {
 			        "Binding": {
@@ -6258,39 +6242,6 @@ cultureInfo fr-FR
 			          "brute": {
 			            "State": "Generated",
 			            "Weight": 0.97
-			          }
-			        }
-			      ]
-			    },
-			    "dim_date.mois_num": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Dim_Date",
-			          "ConceptualProperty": "MoisNum"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "mois num": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "MoisNum": {
-			            "Type": "Noun",
-			            "State": "Generated",
-			            "Weight": 0.99
-			          }
-			        },
-			        {
-			          "mois number": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.727
 			          }
 			        }
 			      ]
@@ -17227,22 +17178,6 @@ cultureInfo fr-FR
 			        }
 			      ]
 			    },
-			    "dim_date.trimestre": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Dim_Date",
-			          "ConceptualProperty": "Trimestres"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "trimestre": {
-			            "State": "Generated"
-			          }
-			        }
-			      ]
-			    },
 			    "fact_GL.invoice_id": {
 			      "Definition": {
 			        "Binding": {
@@ -17686,22 +17621,6 @@ cultureInfo fr-FR
 			              "Agent": "Thesaurus"
 			            },
 			            "Weight": 0.475
-			          }
-			        }
-			      ]
-			    },
-			    "dim_date.année": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Dim_Date",
-			          "ConceptualProperty": "Année"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "année": {
-			            "State": "Generated"
 			          }
 			        }
 			      ]
@@ -18394,28 +18313,6 @@ cultureInfo fr-FR
 			        }
 			      ]
 			    },
-			    "dim_date.annéemois": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Dim_Date",
-			          "ConceptualProperty": "Année-Mois"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "année-mois": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "année mois": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        }
-			      ]
-			    },
 			    "dim_date.afficher_12M_glissant": {
 			      "Definition": {
 			        "Binding": {
@@ -19091,35 +18988,6 @@ cultureInfo fr-FR
 			              "Agent": "Thesaurus"
 			            },
 			            "Weight": 0.482
-			          }
-			        }
-			      ]
-			    },
-			    "dim_date.mois_groups": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Dim_Date",
-			          "ConceptualProperty": "Mois (groups)"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "mois (groups)": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "mois (group)": {
-			            "Type": "Noun",
-			            "State": "Generated",
-			            "Weight": 0.78
-			          }
-			        },
-			        {
-			          "mois": {
-			            "State": "Generated",
-			            "Weight": 0.75
 			          }
 			        }
 			      ]

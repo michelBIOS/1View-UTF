@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
   "name": "abf4fb78e00bd90a35d1",
   "position": {
     "x": 971.42857142857144,
@@ -7,7 +7,7 @@
     "z": 27000,
     "height": 447.14285714285717,
     "width": 921.42857142857144,
-    "tabOrder": 21000
+    "tabOrder": 20000
   },
   "visual": {
     "visualType": "lineChart",
@@ -23,11 +23,11 @@
                       "Entity": "Dim_Date"
                     }
                   },
-                  "Property": "Année-Mois"
+                  "Property": "Year-Month"
                 }
               },
-              "queryRef": "Dim_Date.Année-Mois",
-              "nativeQueryRef": "Année-Mois",
+              "queryRef": "Dim_Date.Year-Month",
+              "nativeQueryRef": "Year-Month",
               "active": true
             }
           ]
@@ -458,36 +458,6 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "fe5d77c94f747129ec91",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Dim_Date"
-              }
-            },
-            "Property": "MoisNum"
-          }
-        },
-        "type": "Categorical",
-        "howCreated": "User",
-        "objects": {
-          "general": [
-            {
-              "properties": {
-                "isInvertedSelectionMode": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "true"
-                    }
-                  }
-                }
-              }
-            }
-          ]
-        }
-      },
-      {
         "name": "ce4aa34a0adbe0f0347c",
         "field": {
           "Column": {
@@ -540,6 +510,62 @@
           ]
         },
         "howCreated": "User"
+      },
+      {
+        "name": "7ca46b13cf49288d2085",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Mesures"
+              }
+            },
+            "Property": "CA"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "3c99d6be6760f90de3af",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Mesures"
+              }
+            },
+            "Property": "Charges"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "294b6a08e9ad7f85e6e3",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Mesures"
+              }
+            },
+            "Property": "Resultat Cumulées(M)"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "ba74c8be772808396120",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Dim_Date"
+              }
+            },
+            "Property": "Year-Month"
+          }
+        },
+        "type": "Categorical"
       }
     ]
   }

@@ -10,21 +10,12 @@ table Dim_Date
 
 		variation Variation
 			isDefault
-			relationship: f008a4d3-9960-4422-adc0-e0714850bf3f
+			relationship: b7be012b-f043-4698-a68b-90f3038670b2
 			defaultHierarchy: LocalDateTable_6e490a31-a957-46f6-ab08-079221e1b34c.'Hiérarchie de dates'
 
 		annotation SummarizationSetBy = Automatic
 
 		annotation PBI_FormatHint = {"isCustom":true}
-
-	column MoisNum
-		formatString: 0
-		lineageTag: 7151b2ec-d6fe-4311-afb1-a147894458b0
-		summarizeBy: none
-		isNameInferred
-		sourceColumn: [MoisNum]
-
-		annotation SummarizationSetBy = User
 
 	column Afficher_12M_Glissants =
 			
@@ -46,79 +37,102 @@ table Dim_Date
 
 		annotation SummarizationSetBy = Automatic
 
-	column Année
+	column Year
 		formatString: 0
-		lineageTag: 923199ef-b553-4362-a703-784e7b014c59
+		lineageTag: 401f0844-588b-48ce-b60e-9c0bdbc53ff0
 		summarizeBy: sum
 		isNameInferred
-		sourceColumn: [Année]
+		sourceColumn: [Year]
 
 		annotation SummarizationSetBy = Automatic
 
-	column Trimestres
+	column Quarter
 		formatString: 0
-		lineageTag: 732d09d9-d46b-48e6-9fe8-a5134ef6cecf
+		lineageTag: 9b0d4e67-dca3-4559-8eb6-903b87fdc9e6
 		summarizeBy: sum
 		isNameInferred
-		sourceColumn: [Trimestres]
+		sourceColumn: [Quarter]
 
 		annotation SummarizationSetBy = Automatic
 
-	column Mois
-		lineageTag: ce920748-6646-4789-857d-5db718931801
+	column Month
+		lineageTag: 69bc2449-19d2-4380-bc10-cffe2a5fda15
 		summarizeBy: none
 		isNameInferred
-		sourceColumn: [Mois]
-		sortByColumn: MoisNum
+		sourceColumn: [Month]
+		sortByColumn: FiscalMonthNum
 
 		annotation SummarizationSetBy = Automatic
 
-		annotation __PBI_SemanticLinks = [{"LinkTarget":{"TableName":"Dim_Date","TableItemName":"Mois (groups)","ObjectType":4},"LinkType":"UsedInGroup"}]
+	column MonthNum
+		formatString: 0
+		lineageTag: 069ee29c-c3f5-44de-833b-cbbc4fe894f9
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [MonthNum]
 
-	column Année-Mois
-		lineageTag: dea01a81-6fc2-4b4d-bd09-11a8de6100f3
+		annotation SummarizationSetBy = Automatic
+
+	column Year-Month
+		lineageTag: a21eb657-e43b-4b2b-b113-45d5e9809af7
 		summarizeBy: none
 		isNameInferred
-		sourceColumn: [Année-Mois]
+		sourceColumn: [Year-Month]
+		sortByColumn: FiscalMonthNum
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'Mois (groups)' = SWITCH(TRUE, ISBLANK('Dim_Date'[Mois]), "(Blank)", 'Dim_Date'[Mois] IN {"avr"}, "avr", "Other")
-		lineageTag: a79bb202-a747-4feb-8ed6-8029e21f85ff
+	column 'Fiscal Year'
+		lineageTag: bb598998-61b7-4b6a-b8ec-17cdf4d639fa
 		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Fiscal Year]
 
-		extendedProperty GroupingMetadata =
-				{
-				  "version": 0,
-				  "groupedColumns": [
-				    {
-				      "Column": {
-				        "Expression": {
-				          "SourceRef": {
-				            "Entity": "Dim_Date"
-				          }
-				        },
-				        "Property": "Mois"
-				      }
-				    }
-				  ]
-				}
+		annotation SummarizationSetBy = Automatic
 
-		annotation GroupingDesignState = {"Version":0,"Sources":[{"Name":"d","Entity":"Dim_Date"}],"GroupedColumns":[{"Column":{"Expression":{"SourceRef":{"Source":"d"}},"Property":"Mois"}}],"GroupItems":[{"DisplayName":"(Blank)","BlankDefaultPlaceholder":true},{"DisplayName":"avr","Expression":{"In":{"Expressions":[{"Column":{"Expression":{"SourceRef":{"Source":"d"}},"Property":"Mois"}}],"Values":[[{"Literal":{"Value":"'avr'"}}]]}}},{"DisplayName":"Other"}]}
+	column DiffMonths
+		formatString: 0
+		lineageTag: a1173ffd-d3a6-4981-adb0-89ce7c2a7292
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [DiffMonths]
+
+		annotation SummarizationSetBy = Automatic
+
+	column FiscalMonthNum =
+			
+			IF( MONTH([Date]) >= 10, MONTH([Date]) - 9, MONTH([Date]) + 3 )
+		formatString: 0
+		lineageTag: d0822d7d-e0a2-492a-9969-1e3c44a0a8a4
+		summarizeBy: sum
 
 		annotation SummarizationSetBy = Automatic
 
 	partition Dim_Date = calculated
 		mode: import
-		source =
+		source = ```
+				
 				ADDCOLUMNS(
-				     CALENDARAUTO(),
-				    "Année",YEAR([Date]),
-				    "Trimestres",QUARTER([Date]),
-				    "Mois",FORMAT([Date],"mmm"),
-				    "MoisNum",MONTH([Date]),
-				    "Année-Mois", FORMAT([Date], "YY-MM"
-				))
+				    CALENDAR(DATE(2021, 10, 1), DATE(2026, 09, 30)),
+				    "Year", YEAR([Date]),
+				    "Quarter", QUARTER([Date]),
+				    "Month", FORMAT([Date], "mmm", "en-US"),
+				    "MonthNum", MONTH([Date]),
+				    "Year-Month", FORMAT([Date], "YY-MM"),
+				    "Fiscal Year",
+				        SWITCH(
+				            TRUE(),
+				            [Date] >= DATE(2021,10,1) && [Date] <= DATE(2022,9,30), "2022",
+				            [Date] >= DATE(2022,10,1) && [Date] <= DATE(2023,9,30), "2023",
+				            [Date] >= DATE(2023,10,1) && [Date] <= DATE(2024,9,30), "2024",
+				            [Date] >= DATE(2024,10,1) && [Date] <= DATE(2025,9,30), "2025",
+				            [Date] >= DATE(2025,10,1) && [Date] <= DATE(2026,9,30), "2026",
+				            BLANK()
+				        ),
+				    "DiffMonths", DATEDIFF([Date], TODAY(), MONTH)
+				)
+				
+				```
 
 	annotation PBI_Id = 903eee4a8b814c918c00199c8a6d2770
 
