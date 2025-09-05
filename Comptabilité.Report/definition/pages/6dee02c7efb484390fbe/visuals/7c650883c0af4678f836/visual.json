@@ -7,7 +7,7 @@
     "z": 10000,
     "height": 386.66666666666669,
     "width": 925,
-    "tabOrder": 8000
+    "tabOrder": 7000
   },
   "visual": {
     "visualType": "lineClusteredColumnComboChart",
@@ -23,11 +23,11 @@
                       "Entity": "Dim_Date"
                     }
                   },
-                  "Property": "MoisNum"
+                  "Property": "Month"
                 }
               },
-              "queryRef": "Dim_Date.MoisNum",
-              "nativeQueryRef": "MoisNum",
+              "queryRef": "Dim_Date.Month",
+              "nativeQueryRef": "Month",
               "active": true
             }
           ]
@@ -82,7 +82,7 @@
                     "Entity": "Dim_Date"
                   }
                 },
-                "Property": "MoisNum"
+                "Property": "Month"
               }
             },
             "direction": "Ascending"

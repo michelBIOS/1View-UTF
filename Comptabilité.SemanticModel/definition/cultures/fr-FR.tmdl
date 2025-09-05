@@ -136,54 +136,6 @@ cultureInfo fr-FR
 			        }
 			      ]
 			    },
-			    "dim_date.année": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Dim_Date",
-			          "ConceptualProperty": "Année"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "année": {
-			            "State": "Generated"
-			          }
-			        }
-			      ]
-			    },
-			    "dim_date.trimestre": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Dim_Date",
-			          "ConceptualProperty": "Trimestres"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "trimestre": {
-			            "State": "Generated"
-			          }
-			        }
-			      ]
-			    },
-			    "dim_date.mois": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Dim_Date",
-			          "ConceptualProperty": "Mois"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "mois": {
-			            "State": "Generated"
-			          }
-			        }
-			      ]
-			    },
 			    "mesure.EFN_MoM__text": {
 			      "Definition": {
 			        "Binding": {
@@ -956,39 +908,6 @@ cultureInfo fr-FR
 			        {
 			          "ventes mois précédent": {
 			            "State": "Generated"
-			          }
-			        }
-			      ]
-			    },
-			    "dim_date.mois_num": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Dim_Date",
-			          "ConceptualProperty": "MoisNum"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "mois num": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "MoisNum": {
-			            "Type": "Noun",
-			            "State": "Generated",
-			            "Weight": 0.99
-			          }
-			        },
-			        {
-			          "mois number": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.727
 			          }
 			        }
 			      ]
@@ -6041,22 +5960,6 @@ cultureInfo fr-FR
 			        }
 			      ],
 			      "NameType": "Name"
-			    },
-			    "dim_date.aa": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Dim_Date",
-			          "ConceptualProperty": "Aa"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "aa": {
-			            "State": "Generated"
-			          }
-			        }
-			      ]
 			    },
 			    "mesure.dernière_MAJ": {
 			      "Definition": {

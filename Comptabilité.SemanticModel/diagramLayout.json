@@ -5,7 +5,7 @@
       "ordinal": 0,
       "scrollPosition": {
         "x": 0,
-        "y": 56397.210009263559
+        "y": 56186.949815603046
       },
       "nodes": [
         {
@@ -215,6 +215,32 @@
             "width": 234
           },
           "zIndex": 14
+        },
+        {
+          "location": {
+            "x": 1028.773637915353,
+            "y": 56446.947530890029
+          },
+          "nodeIndex": "Period Slicer",
+          "nodeLineageTag": "8e8f77a7-4a06-4b75-8e02-2afe9e169909",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1032.878861345539,
+            "y": 56746.741404125911
+          },
+          "nodeIndex": "Date–Period Bridge",
+          "nodeLineageTag": "c84653f1-4bde-4197-8e91-239dcd6c7e80",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
         }
       ],
       "name": "Toutes les tables",

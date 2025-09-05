@@ -172,7 +172,7 @@ table Dim_Supplier
 				        SELECT *
 				        FROM etl.suppliers
 				        WHERE company_id IN (
-				            21912624, 21915510, 22276641, 21917322, 21918011
+				            21912624
 				        )
 				        "
 				    ),
@@ -272,5 +272,5 @@ table Dim_Supplier
 
 	annotation PBI_NavigationStepName = Navigation
 
-	annotation PBI_ResultType = Exception
+	annotation PBI_ResultType = Table
 

@@ -89,7 +89,7 @@ table 'bank accounts'
 				    Query = "
 				        SELECT *
 				        FROM dbo.fact_1_bank_accounts
-				        WHERE ID_Ste IN (21912624, 21915510, 22276641, 21917322, 21918011)
+				        WHERE ID_Ste IN (21912624)
 				    ",
 				    NativeQuery = Value.NativeQuery(Dim_1, Query),
 				    #"Changed Type" = Table.TransformColumnTypes(NativeQuery,{{"id", type text}}),
@@ -100,5 +100,5 @@ table 'bank accounts'
 
 	annotation PBI_NavigationStepName = Navigation
 
-	annotation PBI_ResultType = Exception
+	annotation PBI_ResultType = Table
 

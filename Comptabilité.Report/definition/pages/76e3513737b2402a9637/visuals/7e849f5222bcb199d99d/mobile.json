@@ -617,18 +617,6 @@
     "title": [
       {
         "properties": {
-          "text": {
-            "expr": {
-              "Measure": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "Mesures"
-                  }
-                },
-                "Property": "Titre Balance Mensuelle"
-              }
-            }
-          },
           "fontSize": {
             "expr": {
               "Literal": {

@@ -5,16 +5,5 @@
   "displayOption": "FitToWidth",
   "height": 1920,
   "width": 1920,
-  "visualInteractions": [
-    {
-      "source": "f1a533c18a4893aee6da",
-      "target": "d916af1583767d120b00",
-      "type": "NoFilter"
-    },
-    {
-      "source": "d916af1583767d120b00",
-      "target": "f1a533c18a4893aee6da",
-      "type": "NoFilter"
-    }
-  ]
+  "visualInteractions": []
 }

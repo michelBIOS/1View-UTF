@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
-  "name": "d916af1583767d120b00",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "name": "dd253e3d762e6c6fe7a7",
   "position": {
-    "x": 25.555555555555554,
-    "y": 30,
-    "z": 9000,
-    "height": 70,
-    "width": 115,
-    "tabOrder": 8000
+    "x": 25.242399342645847,
+    "y": 29.975349219391944,
+    "z": 15001,
+    "height": 69.416598192276084,
+    "width": 154.60969597370581,
+    "tabOrder": 15004
   },
   "visual": {
     "visualType": "slicer",
@@ -20,71 +20,20 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Dim_Date"
+                      "Entity": "Period Slicer"
                     }
                   },
-                  "Property": "Aa"
+                  "Property": "Period"
                 }
               },
-              "queryRef": "Dim_Date.Aa",
-              "nativeQueryRef": "Aa",
+              "queryRef": "Period Slicer.Period",
+              "nativeQueryRef": "Period",
               "active": true
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Dim_Date"
-                    }
-                  },
-                  "Property": "MoisNum"
-                }
-              },
-              "queryRef": "Dim_Date.MoisNum",
-              "nativeQueryRef": "MoisNum",
-              "active": false
             }
           ]
         }
       }
     },
-    "expansionStates": [
-      {
-        "roles": [
-          "Values"
-        ],
-        "levels": [
-          {
-            "queryRefs": [
-              "Dim_Date.Aa"
-            ],
-            "isCollapsed": true,
-            "identityKeys": [
-              {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Dim_Date"
-                    }
-                  },
-                  "Property": "Aa"
-                }
-              }
-            ],
-            "isPinned": true
-          },
-          {
-            "queryRefs": [
-              "Dim_Date.MoisNum"
-            ],
-            "isCollapsed": true,
-            "isPinned": true
-          }
-        ],
-        "root": {}
-      }
-    ],
     "objects": {
       "data": [
         {
@@ -114,8 +63,8 @@
                 "Version": 2,
                 "From": [
                   {
-                    "Name": "d",
-                    "Entity": "Dim_Date",
+                    "Name": "p",
+                    "Entity": "Period Slicer",
                     "Type": 0
                   }
                 ],
@@ -128,10 +77,10 @@
                             "Column": {
                               "Expression": {
                                 "SourceRef": {
-                                  "Source": "d"
+                                  "Source": "p"
                                 }
                               },
-                              "Property": "Aa"
+                              "Property": "Period"
                             }
                           }
                         ],
@@ -139,60 +88,10 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'23'"
+                                "Value": "'Current fiscal year'"
                               }
                             }
                           ]
-                        ]
-                      }
-                    },
-                    "Annotations": {
-                      "filterExpressionMetadata": {
-                        "expressions": [
-                          {
-                            "Column": {
-                              "Expression": {
-                                "SourceRef": {
-                                  "Entity": "Dim_Date"
-                                }
-                              },
-                              "Property": "Aa"
-                            }
-                          }
-                        ],
-                        "decomposedIdentities": {
-                          "values": [
-                            [
-                              {
-                                "0": [
-                                  {
-                                    "Literal": {
-                                      "Value": "'23'"
-                                    }
-                                  }
-                                ]
-                              }
-                            ]
-                          ],
-                          "columns": [
-                            {
-                              "value": {
-                                "Column": {
-                                  "Expression": {
-                                    "SourceRef": {
-                                      "Entity": "Dim_Date"
-                                    }
-                                  },
-                                  "Property": "Aa"
-                                }
-                              }
-                            }
-                          ]
-                        },
-                        "valueMap": [
-                          {
-                            "0": "23"
-                          }
                         ]
                       }
                     }
@@ -223,7 +122,7 @@
             "strictSingleSelect": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "true"
                 }
               }
             }
@@ -504,6 +403,11 @@
           }
         }
       ]
+    },
+    "syncGroup": {
+      "groupName": "Année1",
+      "fieldChanges": true,
+      "filterChanges": true
     },
     "drillFilterOtherVisuals": true
   }

@@ -691,11 +691,11 @@ table Mesures
 		displayFolder: Titres Dynamique\Year Legend
 		lineageTag: 353d5419-1add-40f0-aff8-ac8346aee794
 
-	measure 'Titre Balance' = "Balance - "&[ThisYear]& " (€)"
+	measure 'Titre Balance' = "Balance"& " (€)"
 		displayFolder: Titres Dynamique\Titres
 		lineageTag: 28030f8c-dd09-41d5-a75e-359c1ae10a6e
 
-	measure 'Titre Detail compta' = "Entries - " &[ThisYear]
+	measure 'Titre Detail compta' = "Entries"
 		displayFolder: Titres Dynamique\Titres
 		lineageTag: bed2e5e5-45a7-4679-b2a2-6dbf39055084
 
@@ -784,7 +784,7 @@ table Mesures
 			    [Soldes Balance],
 			    FILTER (
 			        ALL(Dim_Date),
-			        Dim_Date[Année] = MAX(Dim_Date[Année]) - 1
+			        Dim_Date[Fiscal Year] = MAX(Dim_Date[Fiscal Year]) - 1
 			    )
 			)
 		displayFolder: Comptabilité
@@ -792,7 +792,7 @@ table Mesures
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	measure 'Titre Balance Mensuelle' = "Monthly Balance - "&[ThisYear]& " (€)"
+	measure 'Titre Balance Mensuelle' = "Monthly Balance"&" (€)"
 		displayFolder: Titres Dynamique\Titres
 		lineageTag: 13089393-a405-4127-8b2d-6e8e0a5bccbe
 
@@ -816,15 +816,15 @@ table Mesures
 
 		annotation PBI_FormatHint = {"isDecimal":true}
 
-	measure 'Titre Frns deb' = "Supplier Debtors - "&[ThisYear]
+	measure 'Titre Frns deb' = "Supplier Debtors"
 		displayFolder: Titres Dynamique\Titres
 		lineageTag: 22214b37-aeac-411f-9f77-32a014c7f40b
 
-	measure 'Titre Clt Créditeur' = "Customer Creditors - "&[ThisYear]
+	measure 'Titre Clt Créditeur' = "Customer Creditors"
 		displayFolder: Titres Dynamique\Titres
 		lineageTag: b8cbec31-e570-4fd9-b630-b47ae469dbd5
 
-	measure 'Titre Bal 47' = "471 Account Balance - "&[ThisYear]
+	measure 'Titre Bal 47' = "471 Account Balance"
 		displayFolder: Titres Dynamique\Titres
 		lineageTag: 1faab8fc-3664-48cb-86bc-4bbefd06cc0b
 
@@ -836,11 +836,11 @@ table Mesures
 		displayFolder: Comptabilité
 		lineageTag: e57eaebe-f98a-44bb-a95f-1e514941d8f8
 
-	measure 'Titre Bal 51' = "Account 512 Balance - "&[Mois Selectionné]&" "&[ThisYear]
+	measure 'Titre Bal 51' = "Account 512 Balance"
 		displayFolder: Titres Dynamique\Titres
 		lineageTag: d246e64d-db15-462e-a177-55d18a080164
 
-	measure 'Titre Solde 51' = "Monthly Balane (€) - "&[ThisYear]
+	measure 'Titre Solde 51' = "Monthly Balane (€)"
 		displayFolder: Titres Dynamique\Titres
 		lineageTag: c78037b7-b4a5-4bb9-bc2c-44dcf3d95400
 
@@ -873,7 +873,7 @@ table Mesures
 		displayFolder: Titres Dynamique\Titres
 		lineageTag: 6ae2edd1-739b-47d6-88c5-bf8428ee159b
 
-	measure 'Titre Solde-Tiers 51' = "Balance(€) by Thirdparty - "&[Mois Selectionné]&" "&[ThisYear]
+	measure 'Titre Solde-Tiers 51' = "Balance(€) by Thirdparty"
 		displayFolder: Titres Dynamique\Titres
 		lineageTag: 0590ff9e-14db-4688-9f6c-70ac1bf0179f
 

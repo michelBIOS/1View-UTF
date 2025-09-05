@@ -6,7 +6,8 @@
     "y": 99.187580561006087,
     "z": 6000,
     "height": 63.587294005254357,
-    "width": 264.13183663721043
+    "width": 264.13183663721043,
+    "tabOrder": 2000
   },
   "visual": {
     "visualType": "clusteredColumnChart",
@@ -22,11 +23,11 @@
                       "Entity": "Dim_Date"
                     }
                   },
-                  "Property": "Mois"
+                  "Property": "Month"
                 }
               },
-              "queryRef": "Dim_Date.Mois",
-              "nativeQueryRef": "Mois",
+              "queryRef": "Dim_Date.Month",
+              "nativeQueryRef": "Month",
               "active": true
             }
           ]
@@ -49,6 +50,23 @@
             }
           ]
         }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Dim_Date"
+                  }
+                },
+                "Property": "Month"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
       }
     },
     "objects": {
