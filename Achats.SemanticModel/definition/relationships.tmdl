@@ -106,18 +106,6 @@ relationship 92b22d72-fb1c-f36d-d634-3982732d7f5f
 	fromColumn: 'Customer invoices'.ID_Ste
 	toColumn: Dim_Companies.id
 
-relationship a959f8a6-2376-92e9-f250-48b868607635
-	fromColumn: Fact_GL.date
-	toColumn: Dim_Date.Date
-
-relationship eaf32f67-6480-acf5-184d-a334f99b4a83
-	fromColumn: 'Customer invoices'.date
-	toColumn: Dim_Date.Date
-
-relationship 8569ce4a-9bad-a57f-f892-68094f2e4f49
-	fromColumn: 'Supplier invoices'.date
-	toColumn: Dim_Date.Date
-
 relationship fdf03ad6-582f-4425-9ea8-c613032ccf71
 	joinOnDateBehavior: datePartOnly
 	fromColumn: Dim_Categories.created_at
@@ -201,6 +189,18 @@ relationship 3449d9d0-da02-44c7-b9d2-193beb3ba608
 	joinOnDateBehavior: datePartOnly
 	fromColumn: Dim_Date.Date
 	toColumn: LocalDateTable_6e490a31-a957-46f6-ab08-079221e1b34c.Date
+
+relationship a959f8a6-2376-92e9-f250-48b868607635
+	fromColumn: Fact_GL.date
+	toColumn: Dim_Date.Date
+
+relationship eaf32f67-6480-acf5-184d-a334f99b4a83
+	fromColumn: 'Customer invoices'.date
+	toColumn: Dim_Date.Date
+
+relationship 8569ce4a-9bad-a57f-f892-68094f2e4f49
+	fromColumn: 'Supplier invoices'.date
+	toColumn: Dim_Date.Date
 
 relationship ba57c2d0-8461-b2e4-1cc6-0c2fa7349df9
 	crossFilteringBehavior: bothDirections

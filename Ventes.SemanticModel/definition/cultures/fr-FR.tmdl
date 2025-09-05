@@ -5460,16 +5460,6 @@ cultureInfo fr-FR
 			          }
 			        },
 			        {
-			          "N": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        },
-			        {
 			          "Soldes": {
 			            "State": "Suggested",
 			            "Source": {
@@ -5481,6 +5471,16 @@ cultureInfo fr-FR
 			        },
 			        {
 			          "Net Sales": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "N": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",

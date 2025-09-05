@@ -130,13 +130,13 @@ relationship b1af18c4-de3c-7b2d-5265-7fa12ca82782
 	fromColumn: Transaction.date
 	toColumn: Dim_Date.Date
 
-relationship 2a3a08dc-f3cf-8306-642f-a25c9344d03c
-	crossFilteringBehavior: bothDirections
-	fromColumn: 'Date–Period Bridge'.PeriodKey
-	toColumn: 'Period Slicer'.PeriodKey
-
 relationship 47e0c866-9d43-7871-e995-bd3540ed51e8
 	crossFilteringBehavior: bothDirections
 	fromColumn: 'Date–Period Bridge'.Date
 	toColumn: Dim_Date.Date
+
+relationship 2a3a08dc-f3cf-8306-642f-a25c9344d03c
+	crossFilteringBehavior: bothDirections
+	fromColumn: 'Date–Period Bridge'.PeriodKey
+	toColumn: 'Period Slicer'.PeriodKey
 

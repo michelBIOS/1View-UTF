@@ -15,6 +15,16 @@ table 'Period Slicer'
 		summarizeBy: none
 		isNameInferred
 		sourceColumn: [Period]
+		sortByColumn: Order
+
+		annotation SummarizationSetBy = Automatic
+
+	column Order
+		formatString: 0
+		lineageTag: 1970dc98-5888-4c12-8634-b5255695965d
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Order]
 
 		annotation SummarizationSetBy = Automatic
 
@@ -25,14 +35,15 @@ table 'Period Slicer'
 				DATATABLE(
 				    "PeriodKey", INTEGER,
 				    "Period", STRING,
+				    "Order",INTEGER,
 				    {
-				        {1, "Current fiscal year"},
-				        {2, "Previous fiscal year"},
-				        {3, "Current month"},
-				        {4, "Last 7 days"},
-				        {5, "Last month"},
-				        {6, "Current year"},
-				        {7, "Last year"}
+				        {1, "Current fiscal year", 1},
+				        {2, "Previous fiscal year", 2},
+				        {3, "Current month", 5},
+				        {4, "Last 7 days", 7},
+				        {5, "Last month", 6},
+				        {6, "Current year", 3},
+				        {7, "Last year", 4}
 				    }
 				)
 				
