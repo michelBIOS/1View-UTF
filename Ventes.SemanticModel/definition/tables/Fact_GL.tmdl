@@ -146,14 +146,6 @@ table Fact_GL
 
 		annotation SummarizationSetBy = Automatic
 
-	column lettered_ledger_entry_lines_ids_str
-		dataType: string
-		lineageTag: b6568afb-242c-4eaf-b572-f21e1d17fc9a
-		summarizeBy: none
-		sourceColumn: lettered_ledger_entry_lines_ids_str
-
-		annotation SummarizationSetBy = Automatic
-
 	column thirdparty_id
 		dataType: string
 		lineageTag: 556442e0-21fb-4b11-852d-c65fc799187b
@@ -215,6 +207,23 @@ table Fact_GL
 		lineageTag: 2bfb58a3-20cf-48ac-b0ed-430ae2c27d21
 		summarizeBy: none
 		sourceColumn: thirdparty_plan_item_label
+
+		annotation SummarizationSetBy = Automatic
+
+	column lettered_count
+		dataType: int64
+		formatString: 0
+		lineageTag: 4e2ed320-fb47-4271-a015-94cdea817e23
+		summarizeBy: sum
+		sourceColumn: lettered_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column lettered_ids_sample
+		dataType: string
+		lineageTag: cf63c1f5-6b0c-435d-a81c-dd61e652312c
+		summarizeBy: none
+		sourceColumn: lettered_ids_sample
 
 		annotation SummarizationSetBy = Automatic
 
@@ -282,5 +291,5 @@ table Fact_GL
 
 	annotation PBI_NavigationStepName = Navigation
 
-	annotation PBI_ResultType = Exception
+	annotation PBI_ResultType = Table
 

@@ -403,7 +403,7 @@ table 'Customer invoices'
 				    Query = "
 				        SELECT *
 				        FROM dbo.fact_2_customer_invoices
-				        WHERE ID_Ste IN (21912624, 21915510, 22276641, 21917322, 21918011)
+				        WHERE ID_Ste IN (21912624)
 				    ",
 				    NativeQuery = Value.NativeQuery(Fact_2, Query),
 				    #"Valeur remplacée" = Table.ReplaceValue(NativeQuery,".",",",Replacer.ReplaceText,{"amount", "tax", "remaining_amount_with_tax", "remaining_amount_without_tax", "discount_value"}),

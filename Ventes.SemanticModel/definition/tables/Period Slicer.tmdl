@@ -1,0 +1,42 @@
+table 'Period Slicer'
+	lineageTag: 2b54de96-09f1-4d19-a0b6-60e12c385011
+
+	column PeriodKey
+		formatString: 0
+		lineageTag: 03b989a4-5b62-4319-9949-83c5007244ac
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [PeriodKey]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Period
+		lineageTag: 0d83be1e-b171-4ef9-aa5a-1d27aa8bff9d
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Period]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Period Slicer' = calculated
+		mode: import
+		source = ```
+				
+				DATATABLE(
+				    "PeriodKey", INTEGER,
+				    "Period", STRING,
+				    {
+				        {1, "Current fiscal year"},
+				        {2, "Previous fiscal year"},
+				        {3, "Current month"},
+				        {4, "Last 7 days"},
+				        {5, "Last month"},
+				        {6, "Current year"},
+				        {7, "Last year"}
+				    }
+				)
+				
+				```
+
+	annotation PBI_Id = 6e7a1c965e064c1f9966f4bb6f8efa1b
+

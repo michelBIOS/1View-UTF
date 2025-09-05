@@ -28,11 +28,6 @@ relationship 64f34001-7f50-4d78-a011-ddb5e11b278e
 	fromColumn: 'Customer invoices'.archived_at
 	toColumn: LocalDateTable_0514eefc-25d7-4e5c-b7db-591a94ce7f68.Date
 
-relationship bbdfc732-d009-410d-b3c8-3b86c02273cb
-	joinOnDateBehavior: datePartOnly
-	fromColumn: Dim_Date.Date
-	toColumn: LocalDateTable_6e490a31-a957-46f6-ab08-079221e1b34c.Date
-
 relationship 9aafd98e-9ed7-0a28-29eb-be28066eb480
 	crossFilteringBehavior: bothDirections
 	fromColumn: 'Customer invoices'.customer_id
@@ -90,18 +85,6 @@ relationship 80377740-4f05-92b0-3851-db14e1d8cb87
 	fromColumn: Fact_GL.journal_id
 	toColumn: Dim_Journals.id_journal
 
-relationship a959f8a6-2376-92e9-f250-48b868607635
-	fromColumn: Fact_GL.date
-	toColumn: Dim_Date.Date
-
-relationship eaf32f67-6480-acf5-184d-a334f99b4a83
-	fromColumn: 'Customer invoices'.date
-	toColumn: Dim_Date.Date
-
-relationship 8569ce4a-9bad-a57f-f892-68094f2e4f49
-	fromColumn: 'Supplier invoices'.date
-	toColumn: Dim_Date.Date
-
 relationship 7af686bb-eb83-8863-95ce-a5c0806cfe93
 	fromColumn: 'Supplier invoices'.ID_Ste
 	toColumn: Dim_Companies.id
@@ -148,4 +131,26 @@ relationship 991cb521-d341-0875-730a-d93906b98196
 relationship f883934a-aad3-a32e-72ca-5347a2c231d6
 	fromColumn: 'Customer invoices'.Catégorie_Balance_Agée
 	toColumn: TranchesBalanceAgée.Tranche
+
+relationship a959f8a6-2376-92e9-f250-48b868607635
+	fromColumn: Fact_GL.date
+	toColumn: Dim_Date.Date
+
+relationship eaf32f67-6480-acf5-184d-a334f99b4a83
+	fromColumn: 'Customer invoices'.date
+	toColumn: Dim_Date.Date
+
+relationship 8569ce4a-9bad-a57f-f892-68094f2e4f49
+	fromColumn: 'Supplier invoices'.date
+	toColumn: Dim_Date.Date
+
+relationship 00778530-cd75-660c-c588-653310220dea
+	crossFilteringBehavior: bothDirections
+	fromColumn: 'Date–Period Bridge'.Date
+	toColumn: Dim_Date.Date
+
+relationship 9fcd1bc8-46c9-cc54-67af-8b39a2ef4ea7
+	crossFilteringBehavior: bothDirections
+	fromColumn: 'Date–Period Bridge'.PeriodKey
+	toColumn: 'Period Slicer'.PeriodKey
 

@@ -93,14 +93,6 @@ table Fact_GL2
 
 		annotation PBI_FormatHint = {"isDateTimeCustom":true}
 
-	column lettered_ledger_entry_lines_ids_str
-		dataType: string
-		lineageTag: 984ee95c-86e9-4daf-855c-0dd54690936e
-		summarizeBy: none
-		sourceColumn: lettered_ledger_entry_lines_ids_str
-
-		annotation SummarizationSetBy = Automatic
-
 	column ledger_account_id
 		dataType: string
 		lineageTag: 227757bd-b72f-4a70-8305-8f58387d1380
@@ -205,6 +197,23 @@ table Fact_GL2
 
 		annotation SummarizationSetBy = Automatic
 
+	column lettered_count
+		dataType: int64
+		formatString: 0
+		lineageTag: 155613e1-ce82-4adf-9baf-3e6534783e6b
+		summarizeBy: sum
+		sourceColumn: lettered_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column lettered_ids_sample
+		dataType: string
+		lineageTag: 48cf12df-8a5e-4c4c-9525-6005148b2325
+		summarizeBy: none
+		sourceColumn: lettered_ids_sample
+
+		annotation SummarizationSetBy = Automatic
+
 	partition Fact_GL2 = m
 		mode: import
 		queryGroup: 'model tables'
@@ -216,5 +225,5 @@ table Fact_GL2
 
 	annotation PBI_NavigationStepName = Navigation
 
-	annotation PBI_ResultType = Exception
+	annotation PBI_ResultType = Table
 

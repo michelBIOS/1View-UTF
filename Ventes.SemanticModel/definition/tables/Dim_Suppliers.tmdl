@@ -172,7 +172,7 @@ table Dim_Suppliers
 				        SELECT *
 				        FROM etl.suppliers
 				        WHERE company_id IN (
-				            21912624, 21915510, 22276641, 21917322, 21918011
+				            21912624
 				        )
 				        "
 				    ),

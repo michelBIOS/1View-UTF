@@ -1,68 +1,115 @@
 table Dim_Date
 	lineageTag: fbe6011e-9d94-49aa-a24a-1fcec4fc20ff
+	dataCategory: Time
 
 	column Date
+		isKey
 		formatString: dd/mm/yy
 		lineageTag: 417005f3-8af3-45cd-be08-9be6b3f12e9b
 		summarizeBy: none
 		isNameInferred
 		sourceColumn: [Date]
 
-		variation Variation
-			isDefault
-			relationship: bbdfc732-d009-410d-b3c8-3b86c02273cb
-			defaultHierarchy: LocalDateTable_6e490a31-a957-46f6-ab08-079221e1b34c.'Hiérarchie de dates'
-
 		annotation SummarizationSetBy = Automatic
 
 		annotation PBI_FormatHint = {"isCustom":true}
 
-	column Année
+	column Year
 		formatString: 0
-		lineageTag: 08faa9e5-7e08-4c43-a68a-6158bdbcf656
+		lineageTag: 95a34c4e-cf7e-4963-ac3b-5969332a7948
 		summarizeBy: sum
 		isNameInferred
-		sourceColumn: [Année]
+		sourceColumn: [Year]
 
 		annotation SummarizationSetBy = Automatic
 
-	column Trimestres
+	column Quarter
 		formatString: 0
-		lineageTag: 2004a58a-9889-401b-a8e6-a8dcce1e1973
+		lineageTag: e3ced288-6d5b-4966-8163-03298cca41cc
 		summarizeBy: sum
 		isNameInferred
-		sourceColumn: [Trimestres]
+		sourceColumn: [Quarter]
 
 		annotation SummarizationSetBy = Automatic
 
-	column Mois
-		lineageTag: ce920748-6646-4789-857d-5db718931801
+	column Month
+		lineageTag: 816a0aba-7589-4d01-9c09-8114abdd2d57
 		summarizeBy: none
 		isNameInferred
-		sourceColumn: [Mois]
-		sortByColumn: MoisNum
+		sourceColumn: [Month]
+		sortByColumn: FiscalMonthNum
 
 		annotation SummarizationSetBy = Automatic
 
-	column MoisNum
+	column MonthNum
 		formatString: 0
-		lineageTag: 7151b2ec-d6fe-4311-afb1-a147894458b0
+		lineageTag: 1273e56a-2e71-48b1-8f09-11e10d587c88
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [MonthNum]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year-Month
+		lineageTag: f7505770-255c-4a02-8b75-cec0513bb641
 		summarizeBy: none
 		isNameInferred
-		sourceColumn: [MoisNum]
+		sourceColumn: [Year-Month]
+		sortByColumn: FiscalMonthNum
 
-		annotation SummarizationSetBy = User
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Year'
+		lineageTag: 435943e2-a3ed-4b94-a3fc-3c0f08ac44f8
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Fiscal Year]
+
+		annotation SummarizationSetBy = Automatic
+
+	column DiffMonths
+		formatString: 0
+		lineageTag: ba4fb232-d24f-46f6-a273-60fd0dee9469
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [DiffMonths]
+
+		annotation SummarizationSetBy = Automatic
+
+	column FiscalMonthNum =
+			
+			IF( MONTH([Date]) >= 10, MONTH([Date]) - 9, MONTH([Date]) + 3 )
+		formatString: 0
+		lineageTag: 445cbee4-0024-4836-8ccb-eff763a5ef3c
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
 
 	partition Dim_Date = calculated
 		mode: import
-		source =
+		source = ```
+				
 				ADDCOLUMNS(
-				     CALENDARAUTO(),
-				    "Année",YEAR([Date]),
-				    "Trimestres",QUARTER([Date]),
-				    "Mois",FORMAT([Date],"mmm"),
-				    "MoisNum",MONTH([Date])
+				    CALENDAR(DATE(2021, 10, 1), DATE(2026, 09, 30)),
+				    "Year", YEAR([Date]),
+				    "Quarter", QUARTER([Date]),
+				    "Month", FORMAT([Date], "mmm", "en-US"),
+				    "MonthNum", MONTH([Date]),
+				    "Year-Month", FORMAT([Date], "YY-MM"),
+				    "Fiscal Year",
+				        SWITCH(
+				            TRUE(),
+				            [Date] >= DATE(2021,10,1) && [Date] <= DATE(2022,9,30), "2022",
+				            [Date] >= DATE(2022,10,1) && [Date] <= DATE(2023,9,30), "2023",
+				            [Date] >= DATE(2023,10,1) && [Date] <= DATE(2024,9,30), "2024",
+				            [Date] >= DATE(2024,10,1) && [Date] <= DATE(2025,9,30), "2025",
+				            [Date] >= DATE(2025,10,1) && [Date] <= DATE(2026,9,30), "2026",
+				            BLANK()
+				        ),
+				    "DiffMonths", DATEDIFF([Date], TODAY(), MONTH)
 				)
+				
+				```
 
 	annotation PBI_Id = 903eee4a8b814c918c00199c8a6d2770
 
