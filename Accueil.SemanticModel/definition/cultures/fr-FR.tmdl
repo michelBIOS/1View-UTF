@@ -16653,36 +16653,6 @@ cultureInfo fr-FR
 			        }
 			      ]
 			    },
-			    "fact_GL.lettered_ledger_entry_lines_ids_str": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Fact_GL",
-			          "ConceptualProperty": "lettered_ledger_entry_lines_ids_str"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "lettered ledger entry lines ids str": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "lettered ledger entry line id str": {
-			            "Type": "Noun",
-			            "State": "Generated",
-			            "Weight": 0.78
-			          }
-			        },
-			        {
-			          "lettered_ledger_entry_lines_ids_str": {
-			            "Type": "Noun",
-			            "State": "Generated",
-			            "Weight": 0.99
-			          }
-			        }
-			      ]
-			    },
 			    "customer_invoice.catégorie_balance_agée": {
 			      "Definition": {
 			        "Binding": {
