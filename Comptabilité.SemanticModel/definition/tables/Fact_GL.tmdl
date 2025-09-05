@@ -120,14 +120,6 @@ table Fact_GL
 
 		annotation SummarizationSetBy = Automatic
 
-	column lettered_ledger_entry_lines_ids_str
-		dataType: string
-		lineageTag: a7881e76-9c1c-4895-a5e5-b7d3222c3758
-		summarizeBy: none
-		sourceColumn: lettered_ledger_entry_lines_ids_str
-
-		annotation SummarizationSetBy = Automatic
-
 	column thirdparty_id
 		dataType: string
 		lineageTag: 0382e875-9179-4534-aca9-2697f32992c6
@@ -182,7 +174,7 @@ table Fact_GL
 
 		annotation SummarizationSetBy = Automatic
 
-	column Lettré = IF(Fact_GL[lettered_ledger_entry_lines_ids_str] =BLANK(),"Non","Oui")
+	column Lettré = IF(Fact_GL[lettered_ids_sample] =BLANK(),"Non","Oui")
 		lineageTag: b3da805b-37c1-45f5-b465-fcc1b39d1e48
 		summarizeBy: none
 
@@ -194,6 +186,23 @@ table Fact_GL
 		lineageTag: 36c64a5e-d7db-4873-a0f2-7df8ae098f57
 		summarizeBy: sum
 		sourceColumn: id_transaction
+
+		annotation SummarizationSetBy = Automatic
+
+	column lettered_count
+		dataType: int64
+		formatString: 0
+		lineageTag: eb53b31f-0304-403b-9a64-505d6bf68783
+		summarizeBy: sum
+		sourceColumn: lettered_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column lettered_ids_sample
+		dataType: string
+		lineageTag: 12ab602c-b57e-46bf-a7a9-4c600c58cf0c
+		summarizeBy: none
+		sourceColumn: lettered_ids_sample
 
 		annotation SummarizationSetBy = Automatic
 

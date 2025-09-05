@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
   "name": "e97af8db4d34955c0e39",
   "position": {
     "x": 652.63547041631,
@@ -7,7 +7,7 @@
     "z": 20000,
     "height": 375.48890078746604,
     "width": 615.08658033756342,
-    "tabOrder": 4000
+    "tabOrder": 3000
   },
   "visual": {
     "visualType": "lineChart",
@@ -23,11 +23,11 @@
                       "Entity": "Dim_Date"
                     }
                   },
-                  "Property": "Année"
+                  "Property": "Fiscal Year"
                 }
               },
-              "queryRef": "Dim_Date.Année",
-              "nativeQueryRef": "Année",
+              "queryRef": "Dim_Date.Fiscal Year",
+              "nativeQueryRef": "Fiscal Year",
               "active": true
             }
           ]
@@ -61,13 +61,12 @@
                     "Entity": "Dim_Date"
                   }
                 },
-                "Property": "Date"
+                "Property": "Fiscal Year"
               }
             },
             "direction": "Ascending"
           }
-        ],
-        "isDefaultSort": true
+        ]
       }
     },
     "objects": {

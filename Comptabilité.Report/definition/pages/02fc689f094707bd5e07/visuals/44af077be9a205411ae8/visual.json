@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
   "name": "44af077be9a205411ae8",
   "position": {
     "x": 1085.8333333333335,
@@ -7,7 +7,7 @@
     "z": 26750,
     "height": 130,
     "width": 290.83333333333326,
-    "tabOrder": 23000
+    "tabOrder": 21000
   },
   "visualGroup": {
     "displayName": "Carte EBITDA",

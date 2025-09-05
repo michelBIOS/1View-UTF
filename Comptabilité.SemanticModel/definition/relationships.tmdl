@@ -21,11 +21,6 @@ relationship 038f52bd-327c-bc25-c50a-71a88a3f0f2e
 	fromColumn: Fact_GL.ID_Ste
 	toColumn: Dim_Companies.id
 
-relationship 8b302533-ddd3-4d14-bc17-fd0427188cc4
-	joinOnDateBehavior: datePartOnly
-	fromColumn: Dim_Date.Date
-	toColumn: LocalDateTable_6e490a31-a957-46f6-ab08-079221e1b34c.Date
-
 relationship e7e90638-049a-1e5e-d59a-b95d0b5a69bc
 	fromColumn: Fact_GL.date
 	toColumn: Dim_Date.Date
@@ -126,7 +121,18 @@ relationship 40465c96-c142-3596-77f0-52a80a44cbb5
 	fromColumn: Fact_GL.id_transaction
 	toColumn: Transaction.id
 
-relationship 78d7ada6-a6de-c374-2058-b02151db9072
-	fromColumn: 'Dynamic Logo'.id
-	toColumn: Dim_Companies.id
+relationship 6851d681-7811-4f76-be97-dd33dffd083b
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Dim_Date.Date
+	toColumn: LocalDateTable_6e490a31-a957-46f6-ab08-079221e1b34c.Date
+
+relationship 2a3a08dc-f3cf-8306-642f-a25c9344d03c
+	crossFilteringBehavior: bothDirections
+	fromColumn: 'Date–Period Bridge'.PeriodKey
+	toColumn: 'Period Slicer'.PeriodKey
+
+relationship 47e0c866-9d43-7871-e995-bd3540ed51e8
+	crossFilteringBehavior: bothDirections
+	fromColumn: 'Date–Period Bridge'.Date
+	toColumn: Dim_Date.Date
 

@@ -6,7 +6,8 @@
     "y": 0,
     "z": 19500,
     "height": 565.02139356590123,
-    "width": 1870.2923343985212
+    "width": 1870.2923343985212,
+    "tabOrder": 1000
   },
   "visual": {
     "visualType": "tableEx",
@@ -481,18 +482,6 @@
               "expr": {
                 "Literal": {
                   "Value": "true"
-                }
-              }
-            },
-            "text": {
-              "expr": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Mesures"
-                    }
-                  },
-                  "Property": "Titre Detail compta"
                 }
               }
             },

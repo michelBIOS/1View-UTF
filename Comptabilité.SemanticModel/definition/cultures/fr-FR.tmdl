@@ -136,54 +136,6 @@ cultureInfo fr-FR
 			        }
 			      ]
 			    },
-			    "dim_date.année": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Dim_Date",
-			          "ConceptualProperty": "Année"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "année": {
-			            "State": "Generated"
-			          }
-			        }
-			      ]
-			    },
-			    "dim_date.trimestre": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Dim_Date",
-			          "ConceptualProperty": "Trimestres"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "trimestre": {
-			            "State": "Generated"
-			          }
-			        }
-			      ]
-			    },
-			    "dim_date.mois": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Dim_Date",
-			          "ConceptualProperty": "Mois"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "mois": {
-			            "State": "Generated"
-			          }
-			        }
-			      ]
-			    },
 			    "mesure.EFN_MoM__text": {
 			      "Definition": {
 			        "Binding": {
@@ -956,39 +908,6 @@ cultureInfo fr-FR
 			        {
 			          "ventes mois précédent": {
 			            "State": "Generated"
-			          }
-			        }
-			      ]
-			    },
-			    "dim_date.mois_num": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Dim_Date",
-			          "ConceptualProperty": "MoisNum"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "mois num": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "MoisNum": {
-			            "Type": "Noun",
-			            "State": "Generated",
-			            "Weight": 0.99
-			          }
-			        },
-			        {
-			          "mois number": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.727
 			          }
 			        }
 			      ]
@@ -4775,36 +4694,6 @@ cultureInfo fr-FR
 			        }
 			      ]
 			    },
-			    "fact_GL.lettered_ledger_entry_lines_ids_str": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Fact_GL",
-			          "ConceptualProperty": "lettered_ledger_entry_lines_ids_str"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "lettered ledger entry lines ids str": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "lettered ledger entry line id str": {
-			            "Type": "Noun",
-			            "State": "Generated",
-			            "Weight": 0.78
-			          }
-			        },
-			        {
-			          "lettered_ledger_entry_lines_ids_str": {
-			            "Type": "Noun",
-			            "State": "Generated",
-			            "Weight": 0.99
-			          }
-			        }
-			      ]
-			    },
 			    "fact_GL.ledger_account_id": {
 			      "Definition": {
 			        "Binding": {
@@ -6041,22 +5930,6 @@ cultureInfo fr-FR
 			        }
 			      ],
 			      "NameType": "Name"
-			    },
-			    "dim_date.aa": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Dim_Date",
-			          "ConceptualProperty": "Aa"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "aa": {
-			            "State": "Generated"
-			          }
-			        }
-			      ]
 			    },
 			    "mesure.dernière_MAJ": {
 			      "Definition": {
@@ -8222,81 +8095,6 @@ cultureInfo fr-FR
 			        }
 			      ]
 			    },
-			    "dynamic_logo": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Dynamic Logo"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "dynamic logo": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "dynamic emblem": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.5
-			          }
-			        },
-			        {
-			          "dynamic symbol": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.485
-			          }
-			        },
-			        {
-			          "dynamic sign": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.485
-			          }
-			        },
-			        {
-			          "dynamic badge": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.485
-			          }
-			        },
-			        {
-			          "dynamic insigne": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.485
-			          }
-			        },
-			        {
-			          "dynamic design": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.485
-			          }
-			        }
-			      ]
-			    },
 			    "mesure.total_salaires_N1": {
 			      "Definition": {
 			        "Binding": {
@@ -8521,154 +8319,6 @@ cultureInfo fr-FR
 			              "Agent": "PowerBI.VisualColumnRename"
 			            },
 			            "Weight": 0.9
-			          }
-			        }
-			      ]
-			    },
-			    "dynamic_logo.id": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Dynamic Logo",
-			          "ConceptualProperty": "id"
-			        }
-			      },
-			      "State": "Generated",
-			      "Visibility": {
-			        "Value": "Hidden"
-			      },
-			      "Terms": [
-			        {
-			          "id": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "identification": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.736
-			          }
-			        },
-			        {
-			          "identity": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.736
-			          }
-			        },
-			        {
-			          "credential": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.714
-			          }
-			        }
-			      ]
-			    },
-			    "dynamic_logo.logo": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Dynamic Logo",
-			          "ConceptualProperty": "Logo"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "logo": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "emblem": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
-			          }
-			        },
-			        {
-			          "symbol": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.476
-			          }
-			        },
-			        {
-			          "sign": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.476
-			          }
-			        },
-			        {
-			          "badge": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.476
-			          }
-			        },
-			        {
-			          "insigne": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.476
-			          }
-			        },
-			        {
-			          "design": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.476
-			          }
-			        }
-			      ]
-			    },
-			    "dynamic_logo.dyn_logo_html": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Dynamic Logo",
-			          "ConceptualProperty": "DynLogoHtml"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "dyn logo html": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "DynLogoHtml": {
-			            "Type": "Noun",
-			            "State": "Generated",
-			            "Weight": 0.99
 			          }
 			        }
 			      ]
@@ -23133,52 +22783,6 @@ cultureInfo fr-FR
 			        }
 			      ]
 			    },
-			    "dynamic_logo_has_dim_company": {
-			      "Binding": {
-			        "ConceptualEntity": "Dynamic Logo"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dynamic_logo": {
-			          "Target": {
-			            "Entity": "dynamic_logo"
-			          }
-			        },
-			        "dim_company": {
-			          "Target": {
-			            "Entity": "dim_company"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dynamic_logo"
-			            },
-			            "Object": {
-			              "Role": "dim_company"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dynamic_logos_have_dim_companies"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_company"
-			            },
-			            "Object": {
-			              "Role": "dynamic_logo"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_companies_have_dynamic_logos"
-			        }
-			      ]
-			    },
 			    "c_3_has_c_2": {
 			      "Binding": {
 			        "ConceptualEntity": "C3"
@@ -26989,72 +26593,6 @@ cultureInfo fr-FR
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "dim_dates_have_salaires_mensuels"
-			        }
-			      ]
-			    },
-			    "dynamic_logo_has_dyn_logo_html": {
-			      "Binding": {
-			        "ConceptualEntity": "Dynamic Logo"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dynamic_logo": {
-			          "Target": {
-			            "Entity": "dynamic_logo"
-			          }
-			        },
-			        "dynamic_logo.dyn_logo_html": {
-			          "Target": {
-			            "Entity": "dynamic_logo.dyn_logo_html"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dynamic_logo"
-			            },
-			            "Object": {
-			              "Role": "dynamic_logo.dyn_logo_html"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dynamic_logos_have_dyn_logo_html"
-			        }
-			      ]
-			    },
-			    "dynamic_logo_has_logo": {
-			      "Binding": {
-			        "ConceptualEntity": "Dynamic Logo"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dynamic_logo": {
-			          "Target": {
-			            "Entity": "dynamic_logo"
-			          }
-			        },
-			        "dynamic_logo.logo": {
-			          "Target": {
-			            "Entity": "dynamic_logo.logo"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dynamic_logo"
-			            },
-			            "Object": {
-			              "Role": "dynamic_logo.logo"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dynamic_logos_have_logos"
 			        }
 			      ]
 			    },

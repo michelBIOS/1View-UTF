@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
   "name": "b733b9361d5d0aa8a70e",
   "position": {
     "x": 343.21568627450989,
@@ -7,7 +7,7 @@
     "z": 10000,
     "height": 23.224929860888714,
     "width": 65.003921568627462,
-    "tabOrder": 20000
+    "tabOrder": 18000
   },
   "visual": {
     "visualType": "shape",

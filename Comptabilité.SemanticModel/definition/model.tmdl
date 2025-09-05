@@ -19,7 +19,7 @@ annotation __PBI_TimeIntelligenceEnabled = 1
 
 annotation PBIDesktopVersion = 2.146.1254.0 (25.08)+791a7518fadc83da883d79322a2658aff57c8db3
 
-annotation PBI_QueryOrder = ["Ledger Entries","Ledger Entry Lines","Dim_Journals","Dim_Ledger Accounts","Fact_GL","Products","Dim_Companies","C1","C2","C3","Transaction","Dynamic Logo","bank accounts","transaction_category","Dim_Supplier","Dim_Customer"]
+annotation PBI_QueryOrder = ["Ledger Entries","Ledger Entry Lines","Dim_Journals","Dim_Ledger Accounts","Fact_GL","Products","Dim_Companies","C1","C2","C3","Transaction","bank accounts","transaction_category","Dim_Supplier","Dim_Customer"]
 
 annotation PBI_ProTooling = ["DevMode"]
 
@@ -37,7 +37,6 @@ ref table LocalDateTable_bb3cc849-1c69-4392-8ff7-dad418d072d7
 ref table C1
 ref table C2
 ref table C3
-ref table 'Dynamic Logo'
 ref table 'bank accounts'
 ref table LocalDateTable_e6f1bfde-f38b-41c0-98a4-092eb055d9cf
 ref table LocalDateTable_921a5928-0c42-416a-b2d1-3b18d5fbadfd
@@ -53,6 +52,14 @@ ref table LocalDateTable_17fefa79-930a-4317-9a43-f7bb83d0f48f
 ref table Dim_Customer
 ref table LocalDateTable_6e7cc737-29aa-4371-9066-990da6fe3ad8
 ref table LocalDateTable_433991e1-3312-4941-8379-8940ceddb87b
+ref table 'Period Slicer'
+ref table 'Date–Period Bridge'
+
+ref role Interfast
+ref role 'United Tables France'
+ref role Kalite
+ref role 'Ami Voyages'
+ref role 88
 
 ref cultureInfo fr-FR
 

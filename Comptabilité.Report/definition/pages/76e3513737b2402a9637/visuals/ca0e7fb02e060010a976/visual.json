@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
   "name": "ca0e7fb02e060010a976",
   "position": {
     "x": 21.456508616426628,
@@ -7,7 +7,7 @@
     "z": 21000,
     "height": 375.48890078746604,
     "width": 615.08658033756342,
-    "tabOrder": 7000
+    "tabOrder": 6000
   },
   "visual": {
     "visualType": "waterfallChart",
@@ -23,11 +23,11 @@
                       "Entity": "Dim_Date"
                     }
                   },
-                  "Property": "Année"
+                  "Property": "Fiscal Year"
                 }
               },
-              "queryRef": "Dim_Date.Année",
-              "nativeQueryRef": "Année",
+              "queryRef": "Dim_Date.Fiscal Year",
+              "nativeQueryRef": "Fiscal Year",
               "active": true
             }
           ]
@@ -55,13 +55,13 @@
         "sort": [
           {
             "field": {
-              "Measure": {
+              "Column": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "Mesures"
+                    "Entity": "Dim_Date"
                   }
                 },
-                "Property": "EBITDA"
+                "Property": "Fiscal Year"
               }
             },
             "direction": "Ascending"

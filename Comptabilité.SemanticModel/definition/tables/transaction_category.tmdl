@@ -108,7 +108,7 @@ table transaction_category
 				    Query = "
 				        SELECT *
 				        FROM dbo.fact_1_transactions_categories
-				        WHERE ID_Ste IN (21912624, 21915510, 22276641, 21917322, 21918011)
+				        WHERE ID_Ste IN (21912624)
 				    ",
 				    NativeQuery = Value.NativeQuery(Dim_1, Query),
 				    #"Capitalized Each Word" = Table.TransformColumns(NativeQuery,{{"category_label", Text.Proper, type text}})

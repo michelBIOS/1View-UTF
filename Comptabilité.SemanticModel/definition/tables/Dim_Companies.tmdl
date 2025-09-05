@@ -32,7 +32,7 @@ table Dim_Companies
 				        SELECT id, name
 				        FROM etl.companies
 				        WHERE id IN (
-				            21912624, 21915510, 22276641, 21917322, 21918011
+				            21912624
 				        )
 				        "
 				    ),

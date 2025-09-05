@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
   "name": "28e1584d3cb5b542ab53",
   "position": {
     "x": 1605,
@@ -7,7 +7,7 @@
     "z": 12000,
     "height": 130,
     "width": 290.71428571428578,
-    "tabOrder": 16000
+    "tabOrder": 14000
   },
   "visualGroup": {
     "displayName": "Carte Cash-Out",

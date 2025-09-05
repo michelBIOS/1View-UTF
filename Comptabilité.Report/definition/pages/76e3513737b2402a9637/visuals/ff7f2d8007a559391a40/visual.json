@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
   "name": "ff7f2d8007a559391a40",
   "position": {
-    "x": 25.359723048892256,
-    "y": 30,
-    "z": 28000,
-    "height": 70,
-    "width": 115,
-    "tabOrder": 5000
+    "x": 25.032593385831067,
+    "y": 26.820635770533286,
+    "z": 27000,
+    "height": 69.73365300338655,
+    "width": 168.07598416200861,
+    "tabOrder": 4000
   },
   "visual": {
     "visualType": "slicer",
@@ -20,71 +20,20 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Dim_Date"
+                      "Entity": "Period Slicer"
                     }
                   },
-                  "Property": "Aa"
+                  "Property": "Period"
                 }
               },
-              "queryRef": "Dim_Date.Aa",
-              "nativeQueryRef": "Aa",
+              "queryRef": "Period Slicer.Period",
+              "nativeQueryRef": "Period",
               "active": true
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Dim_Date"
-                    }
-                  },
-                  "Property": "MoisNum"
-                }
-              },
-              "queryRef": "Dim_Date.MoisNum",
-              "nativeQueryRef": "MoisNum",
-              "active": false
             }
           ]
         }
       }
     },
-    "expansionStates": [
-      {
-        "roles": [
-          "Values"
-        ],
-        "levels": [
-          {
-            "queryRefs": [
-              "Dim_Date.Aa"
-            ],
-            "isCollapsed": true,
-            "identityKeys": [
-              {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Dim_Date"
-                    }
-                  },
-                  "Property": "Aa"
-                }
-              }
-            ],
-            "isPinned": true
-          },
-          {
-            "queryRefs": [
-              "Dim_Date.MoisNum"
-            ],
-            "isCollapsed": true,
-            "isPinned": true
-          }
-        ],
-        "root": {}
-      }
-    ],
     "objects": {
       "data": [
         {
@@ -114,8 +63,8 @@
                 "Version": 2,
                 "From": [
                   {
-                    "Name": "d",
-                    "Entity": "Dim_Date",
+                    "Name": "p",
+                    "Entity": "Period Slicer",
                     "Type": 0
                   }
                 ],
@@ -128,10 +77,10 @@
                             "Column": {
                               "Expression": {
                                 "SourceRef": {
-                                  "Source": "d"
+                                  "Source": "p"
                                 }
                               },
-                              "Property": "Aa"
+                              "Property": "Period"
                             }
                           }
                         ],
@@ -139,60 +88,10 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'25'"
+                                "Value": "'Current fiscal year'"
                               }
                             }
                           ]
-                        ]
-                      }
-                    },
-                    "Annotations": {
-                      "filterExpressionMetadata": {
-                        "expressions": [
-                          {
-                            "Column": {
-                              "Expression": {
-                                "SourceRef": {
-                                  "Entity": "Dim_Date"
-                                }
-                              },
-                              "Property": "Aa"
-                            }
-                          }
-                        ],
-                        "decomposedIdentities": {
-                          "values": [
-                            [
-                              {
-                                "0": [
-                                  {
-                                    "Literal": {
-                                      "Value": "'25'"
-                                    }
-                                  }
-                                ]
-                              }
-                            ]
-                          ],
-                          "columns": [
-                            {
-                              "value": {
-                                "Column": {
-                                  "Expression": {
-                                    "SourceRef": {
-                                      "Entity": "Dim_Date"
-                                    }
-                                  },
-                                  "Property": "Aa"
-                                }
-                              }
-                            }
-                          ]
-                        },
-                        "valueMap": [
-                          {
-                            "0": "25"
-                          }
                         ]
                       }
                     }
@@ -216,7 +115,7 @@
             "strictSingleSelect": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "true"
                 }
               }
             },

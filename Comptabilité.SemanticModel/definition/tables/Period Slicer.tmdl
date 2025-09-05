@@ -1,0 +1,53 @@
+table 'Period Slicer'
+	lineageTag: 8e8f77a7-4a06-4b75-8e02-2afe9e169909
+
+	column PeriodKey
+		formatString: 0
+		lineageTag: 03863d27-5b5f-411a-b135-302d458d58af
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [PeriodKey]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Period
+		lineageTag: 7bd72d12-af22-44f3-a11b-59426eaa6a48
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Period]
+		sortByColumn: Order
+
+		annotation SummarizationSetBy = Automatic
+
+	column Order
+		formatString: 0
+		lineageTag: 86ccfb3e-df04-41f5-98cd-74cf33cdf1ba
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Order]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Period Slicer' = calculated
+		mode: import
+		source = ```
+				
+				DATATABLE(
+				    "PeriodKey", INTEGER,
+				    "Period", STRING,
+				    "Order",INTEGER,
+				    {
+				        {1, "Current fiscal year", 1},
+				        {2, "Previous fiscal year", 2},
+				        {3, "Current month", 5},
+				        {4, "Last 7 days", 7},
+				        {5, "Last month", 6},
+				        {6, "Current year", 3},
+				        {7, "Last year", 4}
+				    }
+				)
+				
+				```
+
+	annotation PBI_Id = 99f2663030344dd1b943153e23a57e49
+
