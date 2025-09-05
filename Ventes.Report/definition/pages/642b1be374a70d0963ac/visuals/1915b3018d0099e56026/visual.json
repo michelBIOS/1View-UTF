@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
   "name": "1915b3018d0099e56026",
   "position": {
     "x": 22.171769223686052,
@@ -56,13 +56,11 @@
                       "Entity": "Mesures"
                     }
                   },
-                  "Property": "Soldes"
+                  "Property": "CA N"
                 }
               },
-              "queryRef": "Mesures.Soldes",
-              "nativeQueryRef": "N",
-              "displayName": "N",
-              "format": "#,0€"
+              "queryRef": "Mesures.CA N",
+              "nativeQueryRef": "CA N"
             }
           ]
         }
@@ -226,6 +224,43 @@
                 }
               }
             ]
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#EF9F00'"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Mesures.CA N-1 (context shift v2)"
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 2,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Mesures.CA N"
           }
         }
       ],

@@ -49,6 +49,7 @@ ref table LocalDateTable_5d5425f7-c760-44b8-8bdf-16f4ff2feadb
 ref table Dim_Companies
 ref table LocalDateTable_7fb07494-9ac8-47fc-bf21-4b33bbac8759
 ref table TranchesBalanceAgée
+ref table LocalDateTable_6e490a31-a957-46f6-ab08-079221e1b34c
 ref table Dim_Categories
 ref table LocalDateTable_67fcdbc2-2d68-456b-b74b-29f898c64722
 ref table LocalDateTable_05b06fb6-596e-429f-90ae-a025047cdbf5
@@ -64,7 +65,6 @@ ref table LocalDateTable_bd421030-6095-4483-ade5-66d759d03e28
 ref table 'CAT Supplier invoices'
 ref table LocalDateTable_c559f65f-dee2-4028-ae59-043f7ebc2283
 ref table LocalDateTable_b93bc9a1-b1b5-4db8-9719-241efe518241
-ref table LocalDateTable_6e490a31-a957-46f6-ab08-079221e1b34c
 ref table 'Date–Period Bridge'
 ref table 'Period Slicer'
 

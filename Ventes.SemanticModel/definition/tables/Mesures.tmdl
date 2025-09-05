@@ -102,7 +102,7 @@ table Mesures
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	measure 'CA N-1' = CALCULATE( SUM(Fact_GL[-Soldes]), SAMEPERIODLASTYEAR(Dim_Date[Date]) )
+	measure 'CA N-1' = CALCULATE( SUM(Fact_GL[-Soldes]), 'Period Slicer'[Period]="Previous fiscal year")
 		displayFolder: Ventes\CA HT
 		lineageTag: e46d37b1-f27d-4075-8db3-1f2e4a3e432c
 
@@ -436,6 +436,12 @@ table Mesures
 			    )
 			```
 		lineageTag: 74a2bc02-48b0-40ac-84d6-a95c069a6135
+
+	measure 'CA N' = CALCULATE( SUM(Fact_GL[-Soldes]), 'Period Slicer'[Period]="Current fiscal year")
+		displayFolder: Ventes\CA HT
+		lineageTag: 8d37b9bd-b6cd-47a0-8ff7-eb899f3b4cac
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column Column
 		isHidden

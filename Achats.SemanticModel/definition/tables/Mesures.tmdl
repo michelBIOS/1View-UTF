@@ -620,7 +620,7 @@ table Mesures
 		displayFolder: Achats\Factures Impayées Nb
 		lineageTag: 22c38d61-94bf-4207-a48a-f0efb8701a33
 
-	measure 'Total Achats HT' = SUM('Supplier invoices'[currency_amount_before_tax])
+	measure 'Total Achats HT' = CALCULATE(SUM('Supplier invoices'[currency_amount_before_tax]),'Period Slicer'[Period]="Current fiscal year")
 		displayFolder: Achats\Achats
 		lineageTag: bceb22b4-bbdb-4197-8a89-bbb8cd2b4c58
 
@@ -943,7 +943,7 @@ table Mesures
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	measure 'Total Achats HT N-1' = CALCULATE(SUM('Supplier invoices'[currency_amount_before_tax]),SAMEPERIODLASTYEAR(Dim_Date[Date]))
+	measure 'Total Achats HT N-1' = CALCULATE(SUM('Supplier invoices'[currency_amount_before_tax]),'Period Slicer'[Period]="Previous fiscal year")
 		displayFolder: Achats\Achats
 		lineageTag: 24849206-2f38-4361-a5c3-a35e0b649c31
 
