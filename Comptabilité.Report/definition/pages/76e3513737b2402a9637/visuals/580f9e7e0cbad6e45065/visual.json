@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
   "name": "580f9e7e0cbad6e45065",
   "position": {
     "x": 214.56508616426629,
@@ -23,11 +23,11 @@
                       "Entity": "C1"
                     }
                   },
-                  "Property": "C1-Lib"
+                  "Property": "C1_Lib_Court"
                 }
               },
-              "queryRef": "C1.C1-Lib",
-              "nativeQueryRef": "C1-Lib",
+              "queryRef": "C1.C1_Lib_Court",
+              "nativeQueryRef": "C1_Lib_Court",
               "active": true
             },
             {
@@ -38,11 +38,11 @@
                       "Entity": "C2"
                     }
                   },
-                  "Property": "C2-Lib Court"
+                  "Property": "C2_Lib_Court"
                 }
               },
-              "queryRef": "C2.C2-Lib Court",
-              "nativeQueryRef": "C2-Lib Court",
+              "queryRef": "C2.C2_Lib_Court",
+              "nativeQueryRef": "C2_Lib_Court",
               "active": false
             },
             {
@@ -53,11 +53,11 @@
                       "Entity": "C3"
                     }
                   },
-                  "Property": "C3 Lib-Court"
+                  "Property": "C3_Lib_Court"
                 }
               },
-              "queryRef": "C3.C3 Lib-Court",
-              "nativeQueryRef": "C3 Lib-Court",
+              "queryRef": "C3.C3_Lib_Court",
+              "nativeQueryRef": "C3_Lib_Court",
               "active": false
             },
             {
@@ -87,7 +87,7 @@
         "levels": [
           {
             "queryRefs": [
-              "C1.C1-Lib"
+              "C1.C1_Lib_Court"
             ],
             "isCollapsed": true,
             "identityKeys": [
@@ -98,7 +98,7 @@
                       "Entity": "C1"
                     }
                   },
-                  "Property": "C1-Lib"
+                  "Property": "C1_Lib_Court"
                 }
               }
             ],
@@ -106,7 +106,7 @@
           },
           {
             "queryRefs": [
-              "C2.C2-Lib Court"
+              "C2.C2_Lib_Court"
             ],
             "isCollapsed": true,
             "identityKeys": [
@@ -117,7 +117,7 @@
                       "Entity": "C2"
                     }
                   },
-                  "Property": "C2-Lib Court"
+                  "Property": "C2_Lib_Court"
                 }
               }
             ],
@@ -125,7 +125,7 @@
           },
           {
             "queryRefs": [
-              "C3.C3 Lib-Court"
+              "C3.C3_Lib_Court"
             ],
             "isCollapsed": true,
             "identityKeys": [
@@ -136,7 +136,7 @@
                       "Entity": "C3"
                     }
                   },
-                  "Property": "C3 Lib-Court"
+                  "Property": "C3_Lib_Court"
                 }
               }
             ],

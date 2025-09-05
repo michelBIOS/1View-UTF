@@ -23,10 +23,10 @@
                       "Entity": "C1"
                     }
                   },
-                  "Property": "C1-Lib"
+                  "Property": "C1_Lib_Court"
                 }
               },
-              "queryRef": "C1.C1-Lib",
+              "queryRef": "C1.C1_Lib_Court",
               "nativeQueryRef": "Account-Label",
               "active": true,
               "displayName": "Account-Label"
@@ -39,11 +39,11 @@
                       "Entity": "C2"
                     }
                   },
-                  "Property": "C2-Lib Court"
+                  "Property": "C2_Lib_Court"
                 }
               },
-              "queryRef": "C2.C2-Lib Court",
-              "nativeQueryRef": "C2-Lib Court",
+              "queryRef": "C2.C2_Lib_Court",
+              "nativeQueryRef": "C2_Lib_Court",
               "active": false
             },
             {
@@ -54,11 +54,11 @@
                       "Entity": "C3"
                     }
                   },
-                  "Property": "C3 Lib-Court"
+                  "Property": "C3_Lib_Court"
                 }
               },
-              "queryRef": "C3.C3 Lib-Court",
-              "nativeQueryRef": "C3 Lib-Court",
+              "queryRef": "C3.C3_Lib_Court",
+              "nativeQueryRef": "C3_Lib_Court",
               "active": false
             },
             {
@@ -73,8 +73,9 @@
                 }
               },
               "queryRef": "Dim_Ledger Accounts.Compte-Label",
-              "nativeQueryRef": "Compte-Label",
-              "active": false
+              "nativeQueryRef": "Account-Label1",
+              "active": false,
+              "displayName": "Account-Label"
             }
           ]
         },
@@ -128,23 +129,6 @@
             }
           ]
         }
-      },
-      "sortDefinition": {
-        "sort": [
-          {
-            "field": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "C1"
-                  }
-                },
-                "Property": "C1-Lib"
-              }
-            },
-            "direction": "Ascending"
-          }
-        ]
       }
     },
     "expansionStates": [
@@ -155,7 +139,7 @@
         "levels": [
           {
             "queryRefs": [
-              "C1.C1-Lib"
+              "C1.C1_Lib_Court"
             ],
             "isCollapsed": true,
             "identityKeys": [
@@ -166,7 +150,7 @@
                       "Entity": "C1"
                     }
                   },
-                  "Property": "C1-Lib"
+                  "Property": "C1_Lib_Court"
                 }
               }
             ],
@@ -174,7 +158,7 @@
           },
           {
             "queryRefs": [
-              "C2.C2-Lib Court"
+              "C2.C2_Lib_Court"
             ],
             "isCollapsed": true,
             "identityKeys": [
@@ -185,7 +169,7 @@
                       "Entity": "C2"
                     }
                   },
-                  "Property": "C2-Lib Court"
+                  "Property": "C2_Lib_Court"
                 }
               }
             ],
@@ -193,7 +177,7 @@
           },
           {
             "queryRefs": [
-              "C3.C3 Lib-Court"
+              "C3.C3_Lib_Court"
             ],
             "isCollapsed": true,
             "identityKeys": [
@@ -204,7 +188,7 @@
                       "Entity": "C3"
                     }
                   },
-                  "Property": "C3 Lib-Court"
+                  "Property": "C3_Lib_Court"
                 }
               }
             ],
@@ -224,28 +208,7 @@
               "identityValues": [
                 {
                   "Literal": {
-                    "Value": "'2- Immobilisations'"
-                  }
-                }
-              ],
-              "children": [
-                {
-                  "identityValues": [
-                    {
-                      "Literal": {
-                        "Value": "'20-Immo. incorporelles'"
-                      }
-                    }
-                  ],
-                  "isToggled": true
-                }
-              ]
-            },
-            {
-              "identityValues": [
-                {
-                  "Literal": {
-                    "Value": "'1- Capitaux'"
+                    "Value": "'1-Capitaux'"
                   }
                 }
               ],
@@ -264,40 +227,7 @@
                       "identityValues": [
                         {
                           "Literal": {
-                            "Value": "'106 - Réserves'"
-                          }
-                        }
-                      ],
-                      "isToggled": true
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "identityValues": [
-                {
-                  "Literal": {
-                    "Value": "null"
-                  }
-                }
-              ],
-              "children": [
-                {
-                  "identityValues": [
-                    {
-                      "Literal": {
-                        "Value": "null"
-                      }
-                    }
-                  ],
-                  "isToggled": true,
-                  "children": [
-                    {
-                      "identityValues": [
-                        {
-                          "Literal": {
-                            "Value": "null"
+                            "Value": "'101 - Capital'"
                           }
                         }
                       ],
@@ -653,34 +583,6 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "439D"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "C2.C2-Lib Court"
-          }
-        },
-        {
-          "properties": {
-            "value": {
-              "expr": {
-                "Literal": {
-                  "Value": "412D"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "C3.C3 Lib-Court"
-          }
-        },
-        {
-          "properties": {
-            "value": {
-              "expr": {
-                "Literal": {
                   "Value": "665D"
                 }
               }
@@ -688,20 +590,6 @@
           },
           "selector": {
             "metadata": "Dim_Ledger Accounts.Compte-Label"
-          }
-        },
-        {
-          "properties": {
-            "value": {
-              "expr": {
-                "Literal": {
-                  "Value": "166.9172195954146D"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "C1.C1-Lib"
           }
         },
         {
@@ -730,6 +618,20 @@
           },
           "selector": {
             "metadata": "Mesures.Soldes Balance N-1 rectif"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "139D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "C1.C1_Lib_Court"
           }
         }
       ],

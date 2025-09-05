@@ -70,16 +70,6 @@ cultureInfo fr-FR
 			            },
 			            "Weight": 0.736
 			          }
-			        },
-			        {
-			          "period": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.714
-			          }
 			        }
 			      ],
 			      "SemanticType": "Time"
@@ -4364,16 +4354,6 @@ cultureInfo fr-FR
 			            },
 			            "Weight": 0.736
 			          }
-			        },
-			        {
-			          "period": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.714
-			          }
 			        }
 			      ],
 			      "SemanticType": "Time"
@@ -4690,36 +4670,6 @@ cultureInfo fr-FR
 			        {
 			          "updated at jour": {
 			            "State": "Generated"
-			          }
-			        }
-			      ]
-			    },
-			    "fact_GL.lettered_ledger_entry_lines_ids_str": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Fact_GL",
-			          "ConceptualProperty": "lettered_ledger_entry_lines_ids_str"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "lettered ledger entry lines ids str": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "lettered ledger entry line id str": {
-			            "Type": "Noun",
-			            "State": "Generated",
-			            "Weight": 0.78
-			          }
-			        },
-			        {
-			          "lettered_ledger_entry_lines_ids_str": {
-			            "Type": "Noun",
-			            "State": "Generated",
-			            "Weight": 0.99
 			          }
 			        }
 			      ]
@@ -6257,70 +6207,6 @@ cultureInfo fr-FR
 			        }
 			      ]
 			    },
-			    "c_1.libellé": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "C1",
-			          "ConceptualProperty": "Libellé"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "libellé": {
-			            "State": "Generated"
-			          }
-			        }
-			      ]
-			    },
-			    "c_1.C1lib": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "C1",
-			          "ConceptualProperty": "C1-Lib"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "C1-lib": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "C1 lib": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
-			          "lib": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
-			          "Account-Label": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        },
-			        {
-			          "Compte-Libellé": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
-			    },
 			    "c_2": {
 			      "Definition": {
 			        "Binding": {
@@ -6340,140 +6226,6 @@ cultureInfo fr-FR
 			            "Type": "Noun",
 			            "State": "Generated",
 			            "Weight": 0.8613
-			          }
-			        }
-			      ]
-			    },
-			    "c_2.C2lib_court": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "C2",
-			          "ConceptualProperty": "C2-Lib Court"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "C2-lib court": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "C2 lib court": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
-			          "court": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
-			          "lib court": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
-			          "c2-lib law court": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.499
-			          }
-			        },
-			        {
-			          "c2 lib law court": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.492
-			          }
-			        },
-			        {
-			          "c2-lib courtyard": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.489
-			          }
-			        },
-			        {
-			          "c2-lib piazza": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.489
-			          }
-			        },
-			        {
-			          "c2-lib enclosure": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.489
-			          }
-			        },
-			        {
-			          "lib law court": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.485
-			          }
-			        },
-			        {
-			          "c2 lib courtyard": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.482
-			          }
-			        },
-			        {
-			          "c2 lib piazza": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.482
-			          }
-			        },
-			        {
-			          "c2 lib enclosure": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.482
-			          }
-			        },
-			        {
-			          "law court": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.476
 			          }
 			        }
 			      ]
@@ -6520,140 +6272,6 @@ cultureInfo fr-FR
 			            "Type": "Noun",
 			            "State": "Generated",
 			            "Weight": 0.8613
-			          }
-			        }
-			      ]
-			    },
-			    "c_3.C3_libcourt": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "C3",
-			          "ConceptualProperty": "C3 Lib-Court"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "C3 lib-court": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "C3 lib court": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
-			          "court": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
-			          "lib court": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
-			          "c3 lib-law court": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.499
-			          }
-			        },
-			        {
-			          "c3 lib law court": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.492
-			          }
-			        },
-			        {
-			          "c3 lib-courtyard": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.489
-			          }
-			        },
-			        {
-			          "c3 lib-piazza": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.489
-			          }
-			        },
-			        {
-			          "c3 lib-enclosure": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.489
-			          }
-			        },
-			        {
-			          "lib law court": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.485
-			          }
-			        },
-			        {
-			          "c3 lib courtyard": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.482
-			          }
-			        },
-			        {
-			          "c3 lib piazza": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.482
-			          }
-			        },
-			        {
-			          "c3 lib enclosure": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.482
-			          }
-			        },
-			        {
-			          "law court": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.476
 			          }
 			        }
 			      ]
@@ -6954,38 +6572,6 @@ cultureInfo fr-FR
 			              "Agent": "Thesaurus"
 			            },
 			            "Weight": 0.452
-			          }
-			        }
-			      ]
-			    },
-			    "c_2.intitulé": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "C2",
-			          "ConceptualProperty": "Intitulé"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "intitulé": {
-			            "State": "Generated"
-			          }
-			        }
-			      ]
-			    },
-			    "c_3.intitulé": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "C3",
-			          "ConceptualProperty": "Intitulé"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "intitulé": {
-			            "State": "Generated"
 			          }
 			        }
 			      ]
@@ -10715,16 +10301,6 @@ cultureInfo fr-FR
 			              "Agent": "Thesaurus"
 			            },
 			            "Weight": 0.736
-			          }
-			        },
-			        {
-			          "period": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.714
 			          }
 			        }
 			      ],
@@ -18199,6 +17775,1646 @@ cultureInfo fr-FR
 			        }
 			      ]
 			    },
+			    "dim_date.month_num": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Dim_Date",
+			          "ConceptualProperty": "MonthNum"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "month num": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "MonthNum": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "month number": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "mth num": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        }
+			      ]
+			    },
+			    "dim_date.month": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Dim_Date",
+			          "ConceptualProperty": "Month"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "month": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "mth": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        }
+			      ]
+			    },
+			    "dim_date.quarter": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Dim_Date",
+			          "ConceptualProperty": "Quarter"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "quarter": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "qtr": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.818
+			          }
+			        }
+			      ]
+			    },
+			    "dim_date.year": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Dim_Date",
+			          "ConceptualProperty": "Year"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "year": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "yr": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "dim_date.yearmonth": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Dim_Date",
+			          "ConceptualProperty": "Year-Month"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "year-month": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "year month": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "year-mth": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "year mth": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "yr -month": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "yr month": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        }
+			      ]
+			    },
+			    "dim_date.fiscal_year": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Dim_Date",
+			          "ConceptualProperty": "Fiscal Year"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "fiscal year": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "fiscal yr": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "fisc year": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "accounting year": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "budget year": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "fiscal date": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "fiscal day": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "tax year": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        }
+			      ]
+			    },
+			    "dim_date.diff_month": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Dim_Date",
+			          "ConceptualProperty": "DiffMonths"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "diff month": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "DiffMonths": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "diff mth": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        }
+			      ]
+			    },
+			    "dim_date.fiscal_month_num": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Dim_Date",
+			          "ConceptualProperty": "FiscalMonthNum"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "fiscal month num": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "FiscalMonthNum": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "fiscal month number": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "fisc month num": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.615
+			          }
+			        },
+			        {
+			          "fiscal mth num": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        }
+			      ]
+			    },
+			    "c_1.libellé_court": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "C1",
+			          "ConceptualProperty": "Libellé_Court"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "libellé court": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Libellé_Court": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "libellé law court": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "libellé courtyard": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.475
+			          }
+			        },
+			        {
+			          "libellé piazza": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.475
+			          }
+			        },
+			        {
+			          "libellé enclosure": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.475
+			          }
+			        },
+			        {
+			          "libellé square": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.461
+			          }
+			        },
+			        {
+			          "libellé yard": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.461
+			          }
+			        },
+			        {
+			          "libellé quad": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.461
+			          }
+			        },
+			        {
+			          "libellé patio": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.461
+			          }
+			        },
+			        {
+			          "libellé close": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.461
+			          }
+			        }
+			      ]
+			    },
+			    "c_1.C1_lib_court": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "C1",
+			          "ConceptualProperty": "C1_Lib_Court"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "C1 lib court": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "C1_Lib_Court": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "court": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "c1 lib law court": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "c1 lib courtyard": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.482
+			          }
+			        },
+			        {
+			          "c1 lib piazza": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.482
+			          }
+			        },
+			        {
+			          "c1 lib enclosure": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.482
+			          }
+			        },
+			        {
+			          "law court": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "c1 lib square": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.468
+			          }
+			        },
+			        {
+			          "c1 lib yard": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.468
+			          }
+			        },
+			        {
+			          "c1 lib quad": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.468
+			          }
+			        },
+			        {
+			          "c1 lib patio": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.468
+			          }
+			        },
+			        {
+			          "c1 lib close": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.468
+			          }
+			        },
+			        {
+			          "Account-Label": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "c_2.libellé": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "C2",
+			          "ConceptualProperty": "Libellé"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "libellé": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "c_2.lib_court": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "C2",
+			          "ConceptualProperty": "Lib_Court"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "lib court": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Lib_Court": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "court": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "lib law court": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "law court": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "lib courtyard": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.475
+			          }
+			        },
+			        {
+			          "lib piazza": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.475
+			          }
+			        },
+			        {
+			          "lib enclosure": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.475
+			          }
+			        },
+			        {
+			          "courtyard": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "piazza": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "enclosure": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "lib square": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.461
+			          }
+			        },
+			        {
+			          "lib yard": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.461
+			          }
+			        }
+			      ]
+			    },
+			    "c_2.C2_lib_court": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "C2",
+			          "ConceptualProperty": "C2_Lib_Court"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "C2 lib court": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "C2_Lib_Court": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "court": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "c2 lib law court": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "c2 lib courtyard": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.482
+			          }
+			        },
+			        {
+			          "c2 lib piazza": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.482
+			          }
+			        },
+			        {
+			          "c2 lib enclosure": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.482
+			          }
+			        },
+			        {
+			          "law court": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "c2 lib square": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.468
+			          }
+			        },
+			        {
+			          "c2 lib yard": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.468
+			          }
+			        },
+			        {
+			          "c2 lib quad": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.468
+			          }
+			        },
+			        {
+			          "c2 lib patio": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.468
+			          }
+			        },
+			        {
+			          "c2 lib close": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.468
+			          }
+			        }
+			      ]
+			    },
+			    "c_3.lib_long": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "C3",
+			          "ConceptualProperty": "Lib_Long"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "lib long": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Lib_Long": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "c_3.C3_lib_court": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "C3",
+			          "ConceptualProperty": "C3_Lib_Court"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "C3 lib court": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "C3_Lib_Court": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "court": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "c3 lib law court": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "c3 lib courtyard": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.482
+			          }
+			        },
+			        {
+			          "c3 lib piazza": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.482
+			          }
+			        },
+			        {
+			          "c3 lib enclosure": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.482
+			          }
+			        },
+			        {
+			          "law court": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "c3 lib square": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.468
+			          }
+			        },
+			        {
+			          "c3 lib yard": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.468
+			          }
+			        },
+			        {
+			          "c3 lib quad": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.468
+			          }
+			        },
+			        {
+			          "c3 lib patio": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.468
+			          }
+			        },
+			        {
+			          "c3 lib close": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.468
+			          }
+			        }
+			      ]
+			    },
+			    "period_slicer": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Period Slicer"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "period slicer": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "slicer": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        }
+			      ]
+			    },
+			    "period_slicer.period_key": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Period Slicer",
+			          "ConceptualProperty": "PeriodKey"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "period key": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "PeriodKey": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "key": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "main": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "basic": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "fundamental": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "central": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "major": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "keynote": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "essential": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "period solution": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.475
+			          }
+			        },
+			        {
+			          "period explanation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.475
+			          }
+			        },
+			        {
+			          "period basis": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.475
+			          }
+			        }
+			      ]
+			    },
+			    "period_slicer.period": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Period Slicer",
+			          "ConceptualProperty": "Period"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "period": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "era": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "epoch": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "age": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.452
+			          }
+			        },
+			        {
+			          "stage": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.452
+			          }
+			        },
+			        {
+			          "phase": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.452
+			          }
+			        }
+			      ]
+			    },
+			    "period_slicer.order": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Period Slicer",
+			          "ConceptualProperty": "Order"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "order": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "instruction": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "direction": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "edict": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "command": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "directive": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "demand": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "mandate": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "imperative": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "stability": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "harmony": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        }
+			      ]
+			    },
+			    "DatePeriod_bridge": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Date–Period Bridge"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Date–Period bridge": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "date–period connection": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "date–period conduit": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "date–period association": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "date–period bond": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "date–period tie": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "date–period link": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "date–period channel": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "date–period passage": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "date–period join": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "date–period viaduct": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.475
+			          }
+			        }
+			      ]
+			    },
+			    "DatePeriod_bridge.date": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Date–Period Bridge",
+			          "ConceptualProperty": "Date"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "date": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "moment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "DatePeriod_bridge.period_key": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Date–Period Bridge",
+			          "ConceptualProperty": "PeriodKey"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "period key": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "PeriodKey": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "key": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "main": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "basic": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "fundamental": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "central": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "major": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "keynote": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "essential": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "period solution": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.475
+			          }
+			        },
+			        {
+			          "period explanation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.475
+			          }
+			        },
+			        {
+			          "period basis": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.475
+			          }
+			        }
+			      ]
+			    },
 			    "fact_gl.transaction_date": {
 			      "Definition": {
 			        "Binding": {
@@ -18273,6 +19489,27 @@ cultureInfo fr-FR
 			      "Terms": [
 			        {
 			          "Label": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "c1.c1lib": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "C1",
+			          "ConceptualProperty": "C1-Lib"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Compte-Libellé": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -22707,6 +23944,98 @@ cultureInfo fr-FR
 			        }
 			      ]
 			    },
+			    "DatePeriod_bridge_has_period_slicer": {
+			      "Binding": {
+			        "ConceptualEntity": "Date–Period Bridge"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "DatePeriod_bridge": {
+			          "Target": {
+			            "Entity": "DatePeriod_bridge"
+			          }
+			        },
+			        "period_slicer": {
+			          "Target": {
+			            "Entity": "period_slicer"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "DatePeriod_bridge"
+			            },
+			            "Object": {
+			              "Role": "period_slicer"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "DatePeriod_bridges_have_period_slicers"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "period_slicer"
+			            },
+			            "Object": {
+			              "Role": "DatePeriod_bridge"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "period_slicers_have_DatePeriod_bridges"
+			        }
+			      ]
+			    },
+			    "DatePeriod_bridge_has_dim_date": {
+			      "Binding": {
+			        "ConceptualEntity": "Date–Period Bridge"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "DatePeriod_bridge": {
+			          "Target": {
+			            "Entity": "DatePeriod_bridge"
+			          }
+			        },
+			        "dim_date": {
+			          "Target": {
+			            "Entity": "dim_date"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "DatePeriod_bridge"
+			            },
+			            "Object": {
+			              "Role": "dim_date"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "DatePeriod_bridges_have_dim_dates"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_date"
+			            },
+			            "Object": {
+			              "Role": "DatePeriod_bridge"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_dates_have_DatePeriod_bridges"
+			        }
+			      ]
+			    },
 			    "transaction_category_has_transaction": {
 			      "Binding": {
 			        "ConceptualEntity": "transaction_category"
@@ -22750,6 +24079,52 @@ cultureInfo fr-FR
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "transactions_have_transaction_categories"
+			        }
+			      ]
+			    },
+			    "transaction_has_dim_date": {
+			      "Binding": {
+			        "ConceptualEntity": "Transaction"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "transaction": {
+			          "Target": {
+			            "Entity": "transaction"
+			          }
+			        },
+			        "dim_date": {
+			          "Target": {
+			            "Entity": "dim_date"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "transaction"
+			            },
+			            "Object": {
+			              "Role": "dim_date"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "transactions_have_dim_dates"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_date"
+			            },
+			            "Object": {
+			              "Role": "transaction"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_dates_have_transactions"
 			        }
 			      ]
 			    },
@@ -22888,52 +24263,6 @@ cultureInfo fr-FR
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "dim_journals_have_transactions"
-			        }
-			      ]
-			    },
-			    "transaction_has_dim_date": {
-			      "Binding": {
-			        "ConceptualEntity": "Transaction"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "transaction": {
-			          "Target": {
-			            "Entity": "transaction"
-			          }
-			        },
-			        "dim_date": {
-			          "Target": {
-			            "Entity": "dim_date"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "transaction"
-			            },
-			            "Object": {
-			              "Role": "dim_date"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "transactions_have_dim_dates"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_date"
-			            },
-			            "Object": {
-			              "Role": "transaction"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_dates_have_transactions"
 			        }
 			      ]
 			    },
@@ -23411,15 +24740,642 @@ cultureInfo fr-FR
 			        }
 			      ]
 			    },
-			    "fact_GL_has_mesure_color_max_min_CAF": {
+			    "DatePeriod_bridge_has_date": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_GL"
+			        "ConceptualEntity": "Date–Period Bridge"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "fact_GL": {
+			        "DatePeriod_bridge": {
 			          "Target": {
-			            "Entity": "fact_GL"
+			            "Entity": "DatePeriod_bridge"
+			          }
+			        },
+			        "DatePeriod_bridge.date": {
+			          "Target": {
+			            "Entity": "DatePeriod_bridge.date"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "DatePeriod_bridge"
+			            },
+			            "Object": {
+			              "Role": "DatePeriod_bridge.date"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "DatePeriod_bridges_have_dates"
+			        }
+			      ]
+			    },
+			    "period_slicer_has_order": {
+			      "Binding": {
+			        "ConceptualEntity": "Period Slicer"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "period_slicer": {
+			          "Target": {
+			            "Entity": "period_slicer"
+			          }
+			        },
+			        "period_slicer.order": {
+			          "Target": {
+			            "Entity": "period_slicer.order"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "period_slicer"
+			            },
+			            "Object": {
+			              "Role": "period_slicer.order"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "period_slicers_have_orders"
+			        }
+			      ]
+			    },
+			    "period_slicer_has_period": {
+			      "Binding": {
+			        "ConceptualEntity": "Period Slicer"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "period_slicer": {
+			          "Target": {
+			            "Entity": "period_slicer"
+			          }
+			        },
+			        "period_slicer.period": {
+			          "Target": {
+			            "Entity": "period_slicer.period"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "period_slicer"
+			            },
+			            "Object": {
+			              "Role": "period_slicer.period"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "period_slicers_have_periods"
+			        }
+			      ]
+			    },
+			    "period_slicer_has_period_key": {
+			      "Binding": {
+			        "ConceptualEntity": "Period Slicer"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "period_slicer": {
+			          "Target": {
+			            "Entity": "period_slicer"
+			          }
+			        },
+			        "period_slicer.period_key": {
+			          "Target": {
+			            "Entity": "period_slicer.period_key"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "period_slicer"
+			            },
+			            "Object": {
+			              "Role": "period_slicer.period_key"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "period_slicers_have_period_keys"
+			        }
+			      ]
+			    },
+			    "c_3_has_C3_lib_court": {
+			      "Binding": {
+			        "ConceptualEntity": "C3"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "c_3": {
+			          "Target": {
+			            "Entity": "c_3"
+			          }
+			        },
+			        "c_3.C3_lib_court": {
+			          "Target": {
+			            "Entity": "c_3.C3_lib_court"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "c_3"
+			            },
+			            "Object": {
+			              "Role": "c_3.C3_lib_court"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "c_3_have_C3_lib_courts"
+			        }
+			      ]
+			    },
+			    "c_3_has_lib_long": {
+			      "Binding": {
+			        "ConceptualEntity": "C3"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "c_3": {
+			          "Target": {
+			            "Entity": "c_3"
+			          }
+			        },
+			        "c_3.lib_long": {
+			          "Target": {
+			            "Entity": "c_3.lib_long"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "c_3"
+			            },
+			            "Object": {
+			              "Role": "c_3.lib_long"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "c_3_have_lib_longs"
+			        }
+			      ]
+			    },
+			    "c_2_has_C2_lib_court": {
+			      "Binding": {
+			        "ConceptualEntity": "C2"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "c_2": {
+			          "Target": {
+			            "Entity": "c_2"
+			          }
+			        },
+			        "c_2.C2_lib_court": {
+			          "Target": {
+			            "Entity": "c_2.C2_lib_court"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "c_2"
+			            },
+			            "Object": {
+			              "Role": "c_2.C2_lib_court"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "c_2_have_C2_lib_courts"
+			        }
+			      ]
+			    },
+			    "c_2_has_lib_court": {
+			      "Binding": {
+			        "ConceptualEntity": "C2"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "c_2": {
+			          "Target": {
+			            "Entity": "c_2"
+			          }
+			        },
+			        "c_2.lib_court": {
+			          "Target": {
+			            "Entity": "c_2.lib_court"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "c_2"
+			            },
+			            "Object": {
+			              "Role": "c_2.lib_court"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "c_2_have_lib_courts"
+			        }
+			      ]
+			    },
+			    "c_2_has_libellé": {
+			      "Binding": {
+			        "ConceptualEntity": "C2"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "c_2": {
+			          "Target": {
+			            "Entity": "c_2"
+			          }
+			        },
+			        "c_2.libellé": {
+			          "Target": {
+			            "Entity": "c_2.libellé"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "c_2"
+			            },
+			            "Object": {
+			              "Role": "c_2.libellé"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "c_2_have_libellé"
+			        }
+			      ]
+			    },
+			    "c_1_has_C1_lib_court": {
+			      "Binding": {
+			        "ConceptualEntity": "C1"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "c_1": {
+			          "Target": {
+			            "Entity": "c_1"
+			          }
+			        },
+			        "c_1.C1_lib_court": {
+			          "Target": {
+			            "Entity": "c_1.C1_lib_court"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "c_1"
+			            },
+			            "Object": {
+			              "Role": "c_1.C1_lib_court"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "c_1_have_C1_lib_courts"
+			        }
+			      ]
+			    },
+			    "c_1_has_libellé_court": {
+			      "Binding": {
+			        "ConceptualEntity": "C1"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "c_1": {
+			          "Target": {
+			            "Entity": "c_1"
+			          }
+			        },
+			        "c_1.libellé_court": {
+			          "Target": {
+			            "Entity": "c_1.libellé_court"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "c_1"
+			            },
+			            "Object": {
+			              "Role": "c_1.libellé_court"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "c_1_have_libellé_courts"
+			        }
+			      ]
+			    },
+			    "dim_date_has_fiscal_month_num": {
+			      "Binding": {
+			        "ConceptualEntity": "Dim_Date"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_date": {
+			          "Target": {
+			            "Entity": "dim_date"
+			          }
+			        },
+			        "dim_date.fiscal_month_num": {
+			          "Target": {
+			            "Entity": "dim_date.fiscal_month_num"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_date"
+			            },
+			            "Object": {
+			              "Role": "dim_date.fiscal_month_num"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_dates_have_fiscal_month_nums"
+			        }
+			      ]
+			    },
+			    "dim_date_has_diff_month": {
+			      "Binding": {
+			        "ConceptualEntity": "Dim_Date"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_date": {
+			          "Target": {
+			            "Entity": "dim_date"
+			          }
+			        },
+			        "dim_date.diff_month": {
+			          "Target": {
+			            "Entity": "dim_date.diff_month"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_date"
+			            },
+			            "Object": {
+			              "Role": "dim_date.diff_month"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_dates_have_diff_months"
+			        }
+			      ]
+			    },
+			    "dim_date_has_fiscal_year": {
+			      "Binding": {
+			        "ConceptualEntity": "Dim_Date"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_date": {
+			          "Target": {
+			            "Entity": "dim_date"
+			          }
+			        },
+			        "dim_date.fiscal_year": {
+			          "Target": {
+			            "Entity": "dim_date.fiscal_year"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_date"
+			            },
+			            "Object": {
+			              "Role": "dim_date.fiscal_year"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_dates_have_fiscal_years"
+			        }
+			      ]
+			    },
+			    "dim_date_has_yearmonth": {
+			      "Binding": {
+			        "ConceptualEntity": "Dim_Date"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_date": {
+			          "Target": {
+			            "Entity": "dim_date"
+			          }
+			        },
+			        "dim_date.yearmonth": {
+			          "Target": {
+			            "Entity": "dim_date.yearmonth"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_date"
+			            },
+			            "Object": {
+			              "Role": "dim_date.yearmonth"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_dates_have_yearmonths"
+			        }
+			      ]
+			    },
+			    "dim_date_has_year": {
+			      "Binding": {
+			        "ConceptualEntity": "Dim_Date"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_date": {
+			          "Target": {
+			            "Entity": "dim_date"
+			          }
+			        },
+			        "dim_date.year": {
+			          "Target": {
+			            "Entity": "dim_date.year"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_date"
+			            },
+			            "Object": {
+			              "Role": "dim_date.year"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_dates_have_years"
+			        }
+			      ]
+			    },
+			    "dim_date_has_quarter": {
+			      "Binding": {
+			        "ConceptualEntity": "Dim_Date"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_date": {
+			          "Target": {
+			            "Entity": "dim_date"
+			          }
+			        },
+			        "dim_date.quarter": {
+			          "Target": {
+			            "Entity": "dim_date.quarter"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_date"
+			            },
+			            "Object": {
+			              "Role": "dim_date.quarter"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_dates_have_quarters"
+			        }
+			      ]
+			    },
+			    "dim_date_has_month": {
+			      "Binding": {
+			        "ConceptualEntity": "Dim_Date"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_date": {
+			          "Target": {
+			            "Entity": "dim_date"
+			          }
+			        },
+			        "dim_date.month": {
+			          "Target": {
+			            "Entity": "dim_date.month"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_date"
+			            },
+			            "Object": {
+			              "Role": "dim_date.month"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_dates_have_months"
+			        }
+			      ]
+			    },
+			    "dim_date_has_month_num": {
+			      "Binding": {
+			        "ConceptualEntity": "Dim_Date"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_date": {
+			          "Target": {
+			            "Entity": "dim_date"
+			          }
+			        },
+			        "dim_date.month_num": {
+			          "Target": {
+			            "Entity": "dim_date.month_num"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_date"
+			            },
+			            "Object": {
+			              "Role": "dim_date.month_num"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_dates_have_month_nums"
+			        }
+			      ]
+			    },
+			    "mesure_has_color_max_min_CAF": {
+			      "Binding": {
+			        "ConceptualEntity": "Mesures"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "mesure": {
+			          "Target": {
+			            "Entity": "mesure"
 			          }
 			        },
 			        "mesure.color_max_min_CAF": {
@@ -23432,7 +25388,7 @@ cultureInfo fr-FR
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "fact_GL"
+			              "Role": "mesure"
 			            },
 			            "Object": {
 			              "Role": "mesure.color_max_min_CAF"
@@ -23440,52 +25396,19 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "fact_GL_have_color_max_min_CAF"
+			          "ID": "mesures_have_color_max_min_CAF"
 			        }
 			      ]
 			    },
-			    "dim_date_has_mesure_color_max_min_CAF": {
+			    "mesure_has_color_max_min_EBITDA": {
 			      "Binding": {
-			        "ConceptualEntity": "Dim_Date"
+			        "ConceptualEntity": "Mesures"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "dim_date": {
+			        "mesure": {
 			          "Target": {
-			            "Entity": "dim_date"
-			          }
-			        },
-			        "mesure.color_max_min_CAF": {
-			          "Target": {
-			            "Entity": "mesure.color_max_min_CAF"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_date"
-			            },
-			            "Object": {
-			              "Role": "mesure.color_max_min_CAF"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_dates_have_color_max_min_CAF"
-			        }
-			      ]
-			    },
-			    "fact_GL_has_mesure_color_max_min_EBITDA": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_GL"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_GL": {
-			          "Target": {
-			            "Entity": "fact_GL"
+			            "Entity": "mesure"
 			          }
 			        },
 			        "mesure.color_max_min_EBITDA": {
@@ -23498,7 +25421,7 @@ cultureInfo fr-FR
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "fact_GL"
+			              "Role": "mesure"
 			            },
 			            "Object": {
 			              "Role": "mesure.color_max_min_EBITDA"
@@ -23506,52 +25429,19 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "fact_GL_have_color_max_min_EBITDA"
+			          "ID": "mesures_have_color_max_min_EBITDA"
 			        }
 			      ]
 			    },
-			    "dim_date_has_mesure_color_max_min_EBITDA": {
+			    "mesure_has_color_max_min_RO": {
 			      "Binding": {
-			        "ConceptualEntity": "Dim_Date"
+			        "ConceptualEntity": "Mesures"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "dim_date": {
+			        "mesure": {
 			          "Target": {
-			            "Entity": "dim_date"
-			          }
-			        },
-			        "mesure.color_max_min_EBITDA": {
-			          "Target": {
-			            "Entity": "mesure.color_max_min_EBITDA"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_date"
-			            },
-			            "Object": {
-			              "Role": "mesure.color_max_min_EBITDA"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_dates_have_color_max_min_EBITDA"
-			        }
-			      ]
-			    },
-			    "fact_GL_has_mesure_color_max_min_RO": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_GL"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_GL": {
-			          "Target": {
-			            "Entity": "fact_GL"
+			            "Entity": "mesure"
 			          }
 			        },
 			        "mesure.color_max_min_RO": {
@@ -23564,7 +25454,7 @@ cultureInfo fr-FR
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "fact_GL"
+			              "Role": "mesure"
 			            },
 			            "Object": {
 			              "Role": "mesure.color_max_min_RO"
@@ -23572,52 +25462,19 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "fact_GL_have_color_max_min_RO"
+			          "ID": "mesures_have_color_max_min_RO"
 			        }
 			      ]
 			    },
-			    "dim_date_has_mesure_color_max_min_RO": {
+			    "mesure_has_color_max_min_NE": {
 			      "Binding": {
-			        "ConceptualEntity": "Dim_Date"
+			        "ConceptualEntity": "Mesures"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "dim_date": {
+			        "mesure": {
 			          "Target": {
-			            "Entity": "dim_date"
-			          }
-			        },
-			        "mesure.color_max_min_RO": {
-			          "Target": {
-			            "Entity": "mesure.color_max_min_RO"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_date"
-			            },
-			            "Object": {
-			              "Role": "mesure.color_max_min_RO"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_dates_have_color_max_min_RO"
-			        }
-			      ]
-			    },
-			    "fact_GL_has_mesure_color_max_min_NE": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_GL"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_GL": {
-			          "Target": {
-			            "Entity": "fact_GL"
+			            "Entity": "mesure"
 			          }
 			        },
 			        "mesure.color_max_min_NE": {
@@ -23630,7 +25487,7 @@ cultureInfo fr-FR
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "fact_GL"
+			              "Role": "mesure"
 			            },
 			            "Object": {
 			              "Role": "mesure.color_max_min_NE"
@@ -23638,52 +25495,19 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "fact_GL_have_color_max_min_NE"
+			          "ID": "mesures_have_color_max_min_NE"
 			        }
 			      ]
 			    },
-			    "dim_date_has_mesure_color_max_min_NE": {
+			    "mesure_has_color_max_min_TAV": {
 			      "Binding": {
-			        "ConceptualEntity": "Dim_Date"
+			        "ConceptualEntity": "Mesures"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "dim_date": {
+			        "mesure": {
 			          "Target": {
-			            "Entity": "dim_date"
-			          }
-			        },
-			        "mesure.color_max_min_NE": {
-			          "Target": {
-			            "Entity": "mesure.color_max_min_NE"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_date"
-			            },
-			            "Object": {
-			              "Role": "mesure.color_max_min_NE"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_dates_have_color_max_min_NE"
-			        }
-			      ]
-			    },
-			    "fact_GL_has_mesure_color_max_min_TAV": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_GL"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_GL": {
-			          "Target": {
-			            "Entity": "fact_GL"
+			            "Entity": "mesure"
 			          }
 			        },
 			        "mesure.color_max_min_TAV": {
@@ -23696,7 +25520,7 @@ cultureInfo fr-FR
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "fact_GL"
+			              "Role": "mesure"
 			            },
 			            "Object": {
 			              "Role": "mesure.color_max_min_TAV"
@@ -23704,52 +25528,19 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "fact_GL_have_color_max_min_TAV"
+			          "ID": "mesures_have_color_max_min_TAV"
 			        }
 			      ]
 			    },
-			    "dim_date_has_mesure_color_max_min_TAV": {
+			    "mesure_has_color_max_min_CI": {
 			      "Binding": {
-			        "ConceptualEntity": "Dim_Date"
+			        "ConceptualEntity": "Mesures"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "dim_date": {
+			        "mesure": {
 			          "Target": {
-			            "Entity": "dim_date"
-			          }
-			        },
-			        "mesure.color_max_min_TAV": {
-			          "Target": {
-			            "Entity": "mesure.color_max_min_TAV"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_date"
-			            },
-			            "Object": {
-			              "Role": "mesure.color_max_min_TAV"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_dates_have_color_max_min_TAV"
-			        }
-			      ]
-			    },
-			    "fact_GL_has_mesure_color_max_min_CI": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_GL"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_GL": {
-			          "Target": {
-			            "Entity": "fact_GL"
+			            "Entity": "mesure"
 			          }
 			        },
 			        "mesure.color_max_min_CI": {
@@ -23762,7 +25553,7 @@ cultureInfo fr-FR
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "fact_GL"
+			              "Role": "mesure"
 			            },
 			            "Object": {
 			              "Role": "mesure.color_max_min_CI"
@@ -23770,52 +25561,19 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "fact_GL_have_color_max_min_CI"
+			          "ID": "mesures_have_color_max_min_CI"
 			        }
 			      ]
 			    },
-			    "dim_date_has_mesure_color_max_min_CI": {
+			    "mesure_has_color_max_min_CO": {
 			      "Binding": {
-			        "ConceptualEntity": "Dim_Date"
+			        "ConceptualEntity": "Mesures"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "dim_date": {
+			        "mesure": {
 			          "Target": {
-			            "Entity": "dim_date"
-			          }
-			        },
-			        "mesure.color_max_min_CI": {
-			          "Target": {
-			            "Entity": "mesure.color_max_min_CI"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_date"
-			            },
-			            "Object": {
-			              "Role": "mesure.color_max_min_CI"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_dates_have_color_max_min_CI"
-			        }
-			      ]
-			    },
-			    "fact_GL_has_mesure_color_max_min_CO": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_GL"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_GL": {
-			          "Target": {
-			            "Entity": "fact_GL"
+			            "Entity": "mesure"
 			          }
 			        },
 			        "mesure.color_max_min_CO": {
@@ -23828,7 +25586,7 @@ cultureInfo fr-FR
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "fact_GL"
+			              "Role": "mesure"
 			            },
 			            "Object": {
 			              "Role": "mesure.color_max_min_CO"
@@ -23836,52 +25594,19 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "fact_GL_have_color_max_min_CO"
+			          "ID": "mesures_have_color_max_min_CO"
 			        }
 			      ]
 			    },
-			    "dim_date_has_mesure_color_max_min_CO": {
+			    "mesure_has_color_max_min_FBD": {
 			      "Binding": {
-			        "ConceptualEntity": "Dim_Date"
+			        "ConceptualEntity": "Mesures"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "dim_date": {
+			        "mesure": {
 			          "Target": {
-			            "Entity": "dim_date"
-			          }
-			        },
-			        "mesure.color_max_min_CO": {
-			          "Target": {
-			            "Entity": "mesure.color_max_min_CO"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_date"
-			            },
-			            "Object": {
-			              "Role": "mesure.color_max_min_CO"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_dates_have_color_max_min_CO"
-			        }
-			      ]
-			    },
-			    "transaction_has_mesure_color_max_min_FBD": {
-			      "Binding": {
-			        "ConceptualEntity": "Transaction"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "transaction": {
-			          "Target": {
-			            "Entity": "transaction"
+			            "Entity": "mesure"
 			          }
 			        },
 			        "mesure.color_max_min_FBD": {
@@ -23894,7 +25619,7 @@ cultureInfo fr-FR
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "transaction"
+			              "Role": "mesure"
 			            },
 			            "Object": {
 			              "Role": "mesure.color_max_min_FBD"
@@ -23902,40 +25627,7 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "transactions_have_color_max_min_FBD"
-			        }
-			      ]
-			    },
-			    "dim_date_has_mesure_color_max_min_FBD": {
-			      "Binding": {
-			        "ConceptualEntity": "Dim_Date"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dim_date": {
-			          "Target": {
-			            "Entity": "dim_date"
-			          }
-			        },
-			        "mesure.color_max_min_FBD": {
-			          "Target": {
-			            "Entity": "mesure.color_max_min_FBD"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_date"
-			            },
-			            "Object": {
-			              "Role": "mesure.color_max_min_FBD"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_dates_have_color_max_min_FBD"
+			          "ID": "mesures_have_color_max_min_FBD"
 			        }
 			      ]
 			    },
@@ -26598,15 +28290,15 @@ cultureInfo fr-FR
 			        }
 			      ]
 			    },
-			    "dim_date_has_mesure_primes_personnes_par_mois": {
+			    "mesure_has_primes_personnes_par_mois": {
 			      "Binding": {
-			        "ConceptualEntity": "Dim_Date"
+			        "ConceptualEntity": "Mesures"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "dim_date": {
+			        "mesure": {
 			          "Target": {
-			            "Entity": "dim_date"
+			            "Entity": "mesure"
 			          }
 			        },
 			        "mesure.primes_personnes_par_mois": {
@@ -26619,7 +28311,7 @@ cultureInfo fr-FR
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "dim_date"
+			              "Role": "mesure"
 			            },
 			            "Object": {
 			              "Role": "mesure.primes_personnes_par_mois"
@@ -26627,7 +28319,7 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "dim_dates_have_primes_personnes_par_mois"
+			          "ID": "mesures_have_primes_personnes_par_mois"
 			        }
 			      ]
 			    },
@@ -26664,15 +28356,15 @@ cultureInfo fr-FR
 			        }
 			      ]
 			    },
-			    "dim_date_has_mesure_taux_de_charges_sociales_mensuelles": {
+			    "mesure_has_taux_de_charges_sociales_mensuelles": {
 			      "Binding": {
-			        "ConceptualEntity": "Dim_Date"
+			        "ConceptualEntity": "Mesures"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "dim_date": {
+			        "mesure": {
 			          "Target": {
-			            "Entity": "dim_date"
+			            "Entity": "mesure"
 			          }
 			        },
 			        "mesure.taux_de_charges_sociales_mensuelles": {
@@ -26685,7 +28377,7 @@ cultureInfo fr-FR
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "dim_date"
+			              "Role": "mesure"
 			            },
 			            "Object": {
 			              "Role": "mesure.taux_de_charges_sociales_mensuelles"
@@ -26693,19 +28385,19 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "dim_dates_have_taux_de_charges_sociales_mensuelles"
+			          "ID": "mesures_have_taux_de_charges_sociales_mensuelles"
 			        }
 			      ]
 			    },
-			    "dim_date_has_mesure_salaires_personnes_par_mois": {
+			    "mesure_has_salaires_personnes_par_mois": {
 			      "Binding": {
-			        "ConceptualEntity": "Dim_Date"
+			        "ConceptualEntity": "Mesures"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "dim_date": {
+			        "mesure": {
 			          "Target": {
-			            "Entity": "dim_date"
+			            "Entity": "mesure"
 			          }
 			        },
 			        "mesure.salaires_personnes_par_mois": {
@@ -26718,7 +28410,7 @@ cultureInfo fr-FR
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "dim_date"
+			              "Role": "mesure"
 			            },
 			            "Object": {
 			              "Role": "mesure.salaires_personnes_par_mois"
@@ -26726,7 +28418,7 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "dim_dates_have_salaires_personnes_par_mois"
+			          "ID": "mesures_have_salaires_personnes_par_mois"
 			        }
 			      ]
 			    },
@@ -26829,15 +28521,15 @@ cultureInfo fr-FR
 			        }
 			      ]
 			    },
-			    "dim_date_has_mesure_previous_year": {
+			    "mesure_has_previous_year": {
 			      "Binding": {
-			        "ConceptualEntity": "Dim_Date"
+			        "ConceptualEntity": "Mesures"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "dim_date": {
+			        "mesure": {
 			          "Target": {
-			            "Entity": "dim_date"
+			            "Entity": "mesure"
 			          }
 			        },
 			        "mesure.previous_year": {
@@ -26850,7 +28542,7 @@ cultureInfo fr-FR
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "dim_date"
+			              "Role": "mesure"
 			            },
 			            "Object": {
 			              "Role": "mesure.previous_year"
@@ -26858,19 +28550,19 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "dim_dates_have_previous_year"
+			          "ID": "mesures_have_previous_year"
 			        }
 			      ]
 			    },
-			    "dim_date_has_mesure_salaires_mensuels": {
+			    "mesure_has_salaires_mensuels": {
 			      "Binding": {
-			        "ConceptualEntity": "Dim_Date"
+			        "ConceptualEntity": "Mesures"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "dim_date": {
+			        "mesure": {
 			          "Target": {
-			            "Entity": "dim_date"
+			            "Entity": "mesure"
 			          }
 			        },
 			        "mesure.salaires_mensuels": {
@@ -26883,7 +28575,7 @@ cultureInfo fr-FR
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "dim_date"
+			              "Role": "mesure"
 			            },
 			            "Object": {
 			              "Role": "mesure.salaires_mensuels"
@@ -26891,7 +28583,7 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "dim_dates_have_salaires_mensuels"
+			          "ID": "mesures_have_salaires_mensuels"
 			        }
 			      ]
 			    },
@@ -27093,15 +28785,15 @@ cultureInfo fr-FR
 			        }
 			      ]
 			    },
-			    "dim_date_has_mesure_mois_selectionné": {
+			    "mesure_has_mois_selectionné": {
 			      "Binding": {
-			        "ConceptualEntity": "Dim_Date"
+			        "ConceptualEntity": "Mesures"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "dim_date": {
+			        "mesure": {
 			          "Target": {
-			            "Entity": "dim_date"
+			            "Entity": "mesure"
 			          }
 			        },
 			        "mesure.mois_selectionné": {
@@ -27114,7 +28806,7 @@ cultureInfo fr-FR
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "dim_date"
+			              "Role": "mesure"
 			            },
 			            "Object": {
 			              "Role": "mesure.mois_selectionné"
@@ -27122,7 +28814,7 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "dim_dates_have_mois_selectionné"
+			          "ID": "mesures_have_mois_selectionné"
 			        }
 			      ]
 			    },
@@ -27542,15 +29234,15 @@ cultureInfo fr-FR
 			        }
 			      ]
 			    },
-			    "dim_date_has_mesure_titre_soldetiers_51": {
+			    "mesure_has_titre_soldetiers_51": {
 			      "Binding": {
-			        "ConceptualEntity": "Dim_Date"
+			        "ConceptualEntity": "Mesures"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "dim_date": {
+			        "mesure": {
 			          "Target": {
-			            "Entity": "dim_date"
+			            "Entity": "mesure"
 			          }
 			        },
 			        "mesure.titre_soldetiers_51": {
@@ -27563,7 +29255,7 @@ cultureInfo fr-FR
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "dim_date"
+			              "Role": "mesure"
 			            },
 			            "Object": {
 			              "Role": "mesure.titre_soldetiers_51"
@@ -27571,19 +29263,19 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "dim_dates_have_titre_soldetiers_51"
+			          "ID": "mesures_have_titre_soldetiers_51"
 			        }
 			      ]
 			    },
-			    "dim_date_has_mesure_titre_var_solde_51": {
+			    "mesure_has_titre_var_solde_51": {
 			      "Binding": {
-			        "ConceptualEntity": "Dim_Date"
+			        "ConceptualEntity": "Mesures"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "dim_date": {
+			        "mesure": {
 			          "Target": {
-			            "Entity": "dim_date"
+			            "Entity": "mesure"
 			          }
 			        },
 			        "mesure.titre_var_solde_51": {
@@ -27596,7 +29288,7 @@ cultureInfo fr-FR
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "dim_date"
+			              "Role": "mesure"
 			            },
 			            "Object": {
 			              "Role": "mesure.titre_var_solde_51"
@@ -27604,7 +29296,7 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "dim_dates_have_titre_var_solde_51"
+			          "ID": "mesures_have_titre_var_solde_51"
 			        }
 			      ]
 			    },
@@ -27740,15 +29432,15 @@ cultureInfo fr-FR
 			        }
 			      ]
 			    },
-			    "dim_date_has_mesure_titre_solde_51": {
+			    "mesure_has_titre_solde_51": {
 			      "Binding": {
-			        "ConceptualEntity": "Dim_Date"
+			        "ConceptualEntity": "Mesures"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "dim_date": {
+			        "mesure": {
 			          "Target": {
-			            "Entity": "dim_date"
+			            "Entity": "mesure"
 			          }
 			        },
 			        "mesure.titre_solde_51": {
@@ -27761,7 +29453,7 @@ cultureInfo fr-FR
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "dim_date"
+			              "Role": "mesure"
 			            },
 			            "Object": {
 			              "Role": "mesure.titre_solde_51"
@@ -27769,19 +29461,19 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "dim_dates_have_titre_solde_51"
+			          "ID": "mesures_have_titre_solde_51"
 			        }
 			      ]
 			    },
-			    "dim_date_has_mesure_titre_bal_51": {
+			    "mesure_has_titre_bal_51": {
 			      "Binding": {
-			        "ConceptualEntity": "Dim_Date"
+			        "ConceptualEntity": "Mesures"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "dim_date": {
+			        "mesure": {
 			          "Target": {
-			            "Entity": "dim_date"
+			            "Entity": "mesure"
 			          }
 			        },
 			        "mesure.titre_bal_51": {
@@ -27794,7 +29486,7 @@ cultureInfo fr-FR
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "dim_date"
+			              "Role": "mesure"
 			            },
 			            "Object": {
 			              "Role": "mesure.titre_bal_51"
@@ -27802,7 +29494,7 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "dim_dates_have_titre_bal_51"
+			          "ID": "mesures_have_titre_bal_51"
 			        }
 			      ]
 			    },
@@ -27872,15 +29564,15 @@ cultureInfo fr-FR
 			        }
 			      ]
 			    },
-			    "dim_date_has_mesure_titre_bal_47": {
+			    "mesure_has_titre_bal_47": {
 			      "Binding": {
-			        "ConceptualEntity": "Dim_Date"
+			        "ConceptualEntity": "Mesures"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "dim_date": {
+			        "mesure": {
 			          "Target": {
-			            "Entity": "dim_date"
+			            "Entity": "mesure"
 			          }
 			        },
 			        "mesure.titre_bal_47": {
@@ -27893,7 +29585,7 @@ cultureInfo fr-FR
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "dim_date"
+			              "Role": "mesure"
 			            },
 			            "Object": {
 			              "Role": "mesure.titre_bal_47"
@@ -27901,19 +29593,19 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "dim_dates_have_titre_bal_47"
+			          "ID": "mesures_have_titre_bal_47"
 			        }
 			      ]
 			    },
-			    "dim_date_has_mesure_titre_clt_créditeur": {
+			    "mesure_has_titre_clt_créditeur": {
 			      "Binding": {
-			        "ConceptualEntity": "Dim_Date"
+			        "ConceptualEntity": "Mesures"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "dim_date": {
+			        "mesure": {
 			          "Target": {
-			            "Entity": "dim_date"
+			            "Entity": "mesure"
 			          }
 			        },
 			        "mesure.titre_clt_créditeur": {
@@ -27926,7 +29618,7 @@ cultureInfo fr-FR
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "dim_date"
+			              "Role": "mesure"
 			            },
 			            "Object": {
 			              "Role": "mesure.titre_clt_créditeur"
@@ -27934,19 +29626,19 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "dim_dates_have_titre_clt_créditeur"
+			          "ID": "mesures_have_titre_clt_créditeur"
 			        }
 			      ]
 			    },
-			    "dim_date_has_mesure_titre_frns_deb": {
+			    "mesure_has_titre_frns_deb": {
 			      "Binding": {
-			        "ConceptualEntity": "Dim_Date"
+			        "ConceptualEntity": "Mesures"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "dim_date": {
+			        "mesure": {
 			          "Target": {
-			            "Entity": "dim_date"
+			            "Entity": "mesure"
 			          }
 			        },
 			        "mesure.titre_frns_deb": {
@@ -27959,7 +29651,7 @@ cultureInfo fr-FR
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "dim_date"
+			              "Role": "mesure"
 			            },
 			            "Object": {
 			              "Role": "mesure.titre_frns_deb"
@@ -27967,7 +29659,7 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "dim_dates_have_titre_frns_deb"
+			          "ID": "mesures_have_titre_frns_deb"
 			        }
 			      ]
 			    },
@@ -28004,15 +29696,15 @@ cultureInfo fr-FR
 			        }
 			      ]
 			    },
-			    "dim_date_has_mesure_titre_nb_attent": {
+			    "mesure_has_titre_nb_attent": {
 			      "Binding": {
-			        "ConceptualEntity": "Dim_Date"
+			        "ConceptualEntity": "Mesures"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "dim_date": {
+			        "mesure": {
 			          "Target": {
-			            "Entity": "dim_date"
+			            "Entity": "mesure"
 			          }
 			        },
 			        "mesure.titre_nb_attent": {
@@ -28025,7 +29717,7 @@ cultureInfo fr-FR
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "dim_date"
+			              "Role": "mesure"
 			            },
 			            "Object": {
 			              "Role": "mesure.titre_nb_attent"
@@ -28033,7 +29725,7 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "dim_dates_have_titre_nb_attent"
+			          "ID": "mesures_have_titre_nb_attent"
 			        }
 			      ]
 			    },
@@ -28070,15 +29762,15 @@ cultureInfo fr-FR
 			        }
 			      ]
 			    },
-			    "dim_date_has_mesure_titre_balance_mensuelle": {
+			    "mesure_has_titre_balance_mensuelle": {
 			      "Binding": {
-			        "ConceptualEntity": "Dim_Date"
+			        "ConceptualEntity": "Mesures"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "dim_date": {
+			        "mesure": {
 			          "Target": {
-			            "Entity": "dim_date"
+			            "Entity": "mesure"
 			          }
 			        },
 			        "mesure.titre_balance_mensuelle": {
@@ -28091,7 +29783,7 @@ cultureInfo fr-FR
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "dim_date"
+			              "Role": "mesure"
 			            },
 			            "Object": {
 			              "Role": "mesure.titre_balance_mensuelle"
@@ -28099,7 +29791,7 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "dim_dates_have_titre_balance_mensuelle"
+			          "ID": "mesures_have_titre_balance_mensuelle"
 			        }
 			      ]
 			    },
@@ -28268,15 +29960,15 @@ cultureInfo fr-FR
 			        }
 			      ]
 			    },
-			    "dim_date_has_mesure_titre_detail_compta": {
+			    "mesure_has_titre_detail_compta": {
 			      "Binding": {
-			        "ConceptualEntity": "Dim_Date"
+			        "ConceptualEntity": "Mesures"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "dim_date": {
+			        "mesure": {
 			          "Target": {
-			            "Entity": "dim_date"
+			            "Entity": "mesure"
 			          }
 			        },
 			        "mesure.titre_detail_compta": {
@@ -28289,7 +29981,7 @@ cultureInfo fr-FR
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "dim_date"
+			              "Role": "mesure"
 			            },
 			            "Object": {
 			              "Role": "mesure.titre_detail_compta"
@@ -28297,85 +29989,19 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "dim_dates_have_titre_detail_compta"
+			          "ID": "mesures_have_titre_detail_compta"
 			        }
 			      ]
 			    },
-			    "c_3_has_intitulé": {
+			    "mesure_has_titre_balance": {
 			      "Binding": {
-			        "ConceptualEntity": "C3"
+			        "ConceptualEntity": "Mesures"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "c_3": {
+			        "mesure": {
 			          "Target": {
-			            "Entity": "c_3"
-			          }
-			        },
-			        "c_3.intitulé": {
-			          "Target": {
-			            "Entity": "c_3.intitulé"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "c_3"
-			            },
-			            "Object": {
-			              "Role": "c_3.intitulé"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "c_3_have_intitulé"
-			        }
-			      ]
-			    },
-			    "c_2_has_intitulé": {
-			      "Binding": {
-			        "ConceptualEntity": "C2"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "c_2": {
-			          "Target": {
-			            "Entity": "c_2"
-			          }
-			        },
-			        "c_2.intitulé": {
-			          "Target": {
-			            "Entity": "c_2.intitulé"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "c_2"
-			            },
-			            "Object": {
-			              "Role": "c_2.intitulé"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "c_2_have_intitulé"
-			        }
-			      ]
-			    },
-			    "dim_date_has_mesure_titre_balance": {
-			      "Binding": {
-			        "ConceptualEntity": "Dim_Date"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dim_date": {
-			          "Target": {
-			            "Entity": "dim_date"
+			            "Entity": "mesure"
 			          }
 			        },
 			        "mesure.titre_balance": {
@@ -28388,7 +30014,7 @@ cultureInfo fr-FR
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "dim_date"
+			              "Role": "mesure"
 			            },
 			            "Object": {
 			              "Role": "mesure.titre_balance"
@@ -28396,19 +30022,19 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "dim_dates_have_titre_balance"
+			          "ID": "mesures_have_titre_balance"
 			        }
 			      ]
 			    },
-			    "dim_date_has_mesure_this_year": {
+			    "mesure_has_this_year": {
 			      "Binding": {
-			        "ConceptualEntity": "Dim_Date"
+			        "ConceptualEntity": "Mesures"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "dim_date": {
+			        "mesure": {
 			          "Target": {
-			            "Entity": "dim_date"
+			            "Entity": "mesure"
 			          }
 			        },
 			        "mesure.this_year": {
@@ -28421,7 +30047,7 @@ cultureInfo fr-FR
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "dim_date"
+			              "Role": "mesure"
 			            },
 			            "Object": {
 			              "Role": "mesure.this_year"
@@ -28429,7 +30055,7 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "dim_dates_have_this_year"
+			          "ID": "mesures_have_this_year"
 			        }
 			      ]
 			    },
@@ -28499,39 +30125,6 @@ cultureInfo fr-FR
 			        }
 			      ]
 			    },
-			    "c_3_has_C3_libcourt": {
-			      "Binding": {
-			        "ConceptualEntity": "C3"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "c_3": {
-			          "Target": {
-			            "Entity": "c_3"
-			          }
-			        },
-			        "c_3.C3_libcourt": {
-			          "Target": {
-			            "Entity": "c_3.C3_libcourt"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "c_3"
-			            },
-			            "Object": {
-			              "Role": "c_3.C3_libcourt"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "c_3_have_C3_libcourts"
-			        }
-			      ]
-			    },
 			    "c_2_has_c_2": {
 			      "Binding": {
 			        "ConceptualEntity": "C2"
@@ -28562,105 +30155,6 @@ cultureInfo fr-FR
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "c_2_have_c_2"
-			        }
-			      ]
-			    },
-			    "c_2_has_C2lib_court": {
-			      "Binding": {
-			        "ConceptualEntity": "C2"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "c_2": {
-			          "Target": {
-			            "Entity": "c_2"
-			          }
-			        },
-			        "c_2.C2lib_court": {
-			          "Target": {
-			            "Entity": "c_2.C2lib_court"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "c_2"
-			            },
-			            "Object": {
-			              "Role": "c_2.C2lib_court"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "c_2_have_C2lib_courts"
-			        }
-			      ]
-			    },
-			    "c_1_has_C1lib": {
-			      "Binding": {
-			        "ConceptualEntity": "C1"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "c_1": {
-			          "Target": {
-			            "Entity": "c_1"
-			          }
-			        },
-			        "c_1.C1lib": {
-			          "Target": {
-			            "Entity": "c_1.C1lib"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "c_1"
-			            },
-			            "Object": {
-			              "Role": "c_1.C1lib"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "c_1_have_C1libs"
-			        }
-			      ]
-			    },
-			    "c_1_has_libellé": {
-			      "Binding": {
-			        "ConceptualEntity": "C1"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "c_1": {
-			          "Target": {
-			            "Entity": "c_1"
-			          }
-			        },
-			        "c_1.libellé": {
-			          "Target": {
-			            "Entity": "c_1.libellé"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "c_1"
-			            },
-			            "Object": {
-			              "Role": "c_1.libellé"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "c_1_have_libellé"
 			        }
 			      ]
 			    },
@@ -28793,39 +30287,6 @@ cultureInfo fr-FR
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "fact_GL_have_dernière_MAJ"
-			        }
-			      ]
-			    },
-			    "dim_date_has_aa": {
-			      "Binding": {
-			        "ConceptualEntity": "Dim_Date"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dim_date": {
-			          "Target": {
-			            "Entity": "dim_date"
-			          }
-			        },
-			        "dim_date.aa": {
-			          "Target": {
-			            "Entity": "dim_date.aa"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_date"
-			            },
-			            "Object": {
-			              "Role": "dim_date.aa"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_dates_have_aa"
 			        }
 			      ]
 			    },
@@ -30201,15 +31662,15 @@ cultureInfo fr-FR
 			        }
 			      ]
 			    },
-			    "fact_GL_has_mesure_tresor_avg_mo": {
+			    "mesure_has_tresor_avg_mo": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_GL"
+			        "ConceptualEntity": "Mesures"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "fact_GL": {
+			        "mesure": {
 			          "Target": {
-			            "Entity": "fact_GL"
+			            "Entity": "mesure"
 			          }
 			        },
 			        "mesure.tresor_avg_mo": {
@@ -30222,7 +31683,7 @@ cultureInfo fr-FR
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "fact_GL"
+			              "Role": "mesure"
 			            },
 			            "Object": {
 			              "Role": "mesure.tresor_avg_mo"
@@ -30230,73 +31691,7 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "fact_GL_have_tresor_avg_mo"
-			        }
-			      ]
-			    },
-			    "dim_date_has_mesure_tresor_avg_mo": {
-			      "Binding": {
-			        "ConceptualEntity": "Dim_Date"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dim_date": {
-			          "Target": {
-			            "Entity": "dim_date"
-			          }
-			        },
-			        "mesure.tresor_avg_mo": {
-			          "Target": {
-			            "Entity": "mesure.tresor_avg_mo"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_date"
-			            },
-			            "Object": {
-			              "Role": "mesure.tresor_avg_mo"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_dates_have_tresor_avg_mo"
-			        }
-			      ]
-			    },
-			    "dim_company_has_mesure_tresor_avg_mo": {
-			      "Binding": {
-			        "ConceptualEntity": "Dim_Companies"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dim_company": {
-			          "Target": {
-			            "Entity": "dim_company"
-			          }
-			        },
-			        "mesure.tresor_avg_mo": {
-			          "Target": {
-			            "Entity": "mesure.tresor_avg_mo"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_company"
-			            },
-			            "Object": {
-			              "Role": "mesure.tresor_avg_mo"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_companies_have_tresor_avg_mo"
+			          "ID": "mesures_have_tresor_avg_mo"
 			        }
 			      ]
 			    },
@@ -30432,15 +31827,15 @@ cultureInfo fr-FR
 			        }
 			      ]
 			    },
-			    "fact_GL_has_mesure_EBITDA_avg_mo": {
+			    "mesure_has_EBITDA_avg_mo": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_GL"
+			        "ConceptualEntity": "Mesures"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "fact_GL": {
+			        "mesure": {
 			          "Target": {
-			            "Entity": "fact_GL"
+			            "Entity": "mesure"
 			          }
 			        },
 			        "mesure.EBITDA_avg_mo": {
@@ -30453,7 +31848,7 @@ cultureInfo fr-FR
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "fact_GL"
+			              "Role": "mesure"
 			            },
 			            "Object": {
 			              "Role": "mesure.EBITDA_avg_mo"
@@ -30461,40 +31856,7 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "fact_GL_have_EBITDA_avg_mo"
-			        }
-			      ]
-			    },
-			    "dim_date_has_mesure_EBITDA_avg_mo": {
-			      "Binding": {
-			        "ConceptualEntity": "Dim_Date"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dim_date": {
-			          "Target": {
-			            "Entity": "dim_date"
-			          }
-			        },
-			        "mesure.EBITDA_avg_mo": {
-			          "Target": {
-			            "Entity": "mesure.EBITDA_avg_mo"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_date"
-			            },
-			            "Object": {
-			              "Role": "mesure.EBITDA_avg_mo"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_dates_have_EBITDA_avg_mo"
+			          "ID": "mesures_have_EBITDA_avg_mo"
 			        }
 			      ]
 			    },
@@ -30597,15 +31959,15 @@ cultureInfo fr-FR
 			        }
 			      ]
 			    },
-			    "fact_GL_has_mesure_résultat_avg_mo": {
+			    "mesure_has_résultat_avg_mo": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_GL"
+			        "ConceptualEntity": "Mesures"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "fact_GL": {
+			        "mesure": {
 			          "Target": {
-			            "Entity": "fact_GL"
+			            "Entity": "mesure"
 			          }
 			        },
 			        "mesure.résultat_avg_mo": {
@@ -30618,7 +31980,7 @@ cultureInfo fr-FR
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "fact_GL"
+			              "Role": "mesure"
 			            },
 			            "Object": {
 			              "Role": "mesure.résultat_avg_mo"
@@ -30626,40 +31988,7 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "fact_GL_have_résultat_avg_mo"
-			        }
-			      ]
-			    },
-			    "dim_date_has_mesure_résultat_avg_mo": {
-			      "Binding": {
-			        "ConceptualEntity": "Dim_Date"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dim_date": {
-			          "Target": {
-			            "Entity": "dim_date"
-			          }
-			        },
-			        "mesure.résultat_avg_mo": {
-			          "Target": {
-			            "Entity": "mesure.résultat_avg_mo"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_date"
-			            },
-			            "Object": {
-			              "Role": "mesure.résultat_avg_mo"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_dates_have_résultat_avg_mo"
+			          "ID": "mesures_have_résultat_avg_mo"
 			        }
 			      ]
 			    },
@@ -30795,15 +32124,15 @@ cultureInfo fr-FR
 			        }
 			      ]
 			    },
-			    "fact_GL_has_mesure_EFN_avg_mo": {
+			    "mesure_has_EFN_avg_mo": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_GL"
+			        "ConceptualEntity": "Mesures"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "fact_GL": {
+			        "mesure": {
 			          "Target": {
-			            "Entity": "fact_GL"
+			            "Entity": "mesure"
 			          }
 			        },
 			        "mesure.EFN_avg_mo": {
@@ -30816,7 +32145,7 @@ cultureInfo fr-FR
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "fact_GL"
+			              "Role": "mesure"
 			            },
 			            "Object": {
 			              "Role": "mesure.EFN_avg_mo"
@@ -30824,73 +32153,7 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "fact_GL_have_EFN_avg_mo"
-			        }
-			      ]
-			    },
-			    "dim_date_has_mesure_EFN_avg_mo": {
-			      "Binding": {
-			        "ConceptualEntity": "Dim_Date"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dim_date": {
-			          "Target": {
-			            "Entity": "dim_date"
-			          }
-			        },
-			        "mesure.EFN_avg_mo": {
-			          "Target": {
-			            "Entity": "mesure.EFN_avg_mo"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_date"
-			            },
-			            "Object": {
-			              "Role": "mesure.EFN_avg_mo"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_dates_have_EFN_avg_mo"
-			        }
-			      ]
-			    },
-			    "dim_company_has_mesure_EFN_avg_mo": {
-			      "Binding": {
-			        "ConceptualEntity": "Dim_Companies"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dim_company": {
-			          "Target": {
-			            "Entity": "dim_company"
-			          }
-			        },
-			        "mesure.EFN_avg_mo": {
-			          "Target": {
-			            "Entity": "mesure.EFN_avg_mo"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_company"
-			            },
-			            "Object": {
-			              "Role": "mesure.EFN_avg_mo"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_companies_have_EFN_avg_mo"
+			          "ID": "mesures_have_EFN_avg_mo"
 			        }
 			      ]
 			    },
@@ -30960,15 +32223,15 @@ cultureInfo fr-FR
 			        }
 			      ]
 			    },
-			    "dim_date_has_mesure_revenue_MoM_libellé_FR": {
+			    "mesure_has_revenue_MoM_libellé_FR": {
 			      "Binding": {
-			        "ConceptualEntity": "Dim_Date"
+			        "ConceptualEntity": "Mesures"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "dim_date": {
+			        "mesure": {
 			          "Target": {
-			            "Entity": "dim_date"
+			            "Entity": "mesure"
 			          }
 			        },
 			        "mesure.revenue_MoM_libellé_FR": {
@@ -30981,7 +32244,7 @@ cultureInfo fr-FR
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "dim_date"
+			              "Role": "mesure"
 			            },
 			            "Object": {
 			              "Role": "mesure.revenue_MoM_libellé_FR"
@@ -30989,7 +32252,7 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "dim_dates_have_revenue_MoM_libellé_FR"
+			          "ID": "mesures_have_revenue_MoM_libellé_FR"
 			        }
 			      ]
 			    },
@@ -31089,39 +32352,6 @@ cultureInfo fr-FR
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "fact_GL_have_MoM__revenus"
-			        }
-			      ]
-			    },
-			    "dim_date_has_mois_num": {
-			      "Binding": {
-			        "ConceptualEntity": "Dim_Date"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dim_date": {
-			          "Target": {
-			            "Entity": "dim_date"
-			          }
-			        },
-			        "dim_date.mois_num": {
-			          "Target": {
-			            "Entity": "dim_date.mois_num"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_date"
-			            },
-			            "Object": {
-			              "Role": "dim_date.mois_num"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_dates_have_mois_nums"
 			        }
 			      ]
 			    },
@@ -31686,15 +32916,15 @@ cultureInfo fr-FR
 			        }
 			      ]
 			    },
-			    "fact_GL_has_mesure_CP_avg_mo": {
+			    "mesure_has_CP_avg_mo": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_GL"
+			        "ConceptualEntity": "Mesures"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "fact_GL": {
+			        "mesure": {
 			          "Target": {
-			            "Entity": "fact_GL"
+			            "Entity": "mesure"
 			          }
 			        },
 			        "mesure.CP_avg_mo": {
@@ -31707,7 +32937,7 @@ cultureInfo fr-FR
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "fact_GL"
+			              "Role": "mesure"
 			            },
 			            "Object": {
 			              "Role": "mesure.CP_avg_mo"
@@ -31715,40 +32945,7 @@ cultureInfo fr-FR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "fact_GL_have_CP_avg_mo"
-			        }
-			      ]
-			    },
-			    "dim_date_has_mesure_CP_avg_mo": {
-			      "Binding": {
-			        "ConceptualEntity": "Dim_Date"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dim_date": {
-			          "Target": {
-			            "Entity": "dim_date"
-			          }
-			        },
-			        "mesure.CP_avg_mo": {
-			          "Target": {
-			            "Entity": "mesure.CP_avg_mo"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_date"
-			            },
-			            "Object": {
-			              "Role": "mesure.CP_avg_mo"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_dates_have_CP_avg_mo"
+			          "ID": "mesures_have_CP_avg_mo"
 			        }
 			      ]
 			    },
@@ -31881,105 +33078,6 @@ cultureInfo fr-FR
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "dim_companies_have_EFN_MoM__text"
-			        }
-			      ]
-			    },
-			    "dim_date_has_mois": {
-			      "Binding": {
-			        "ConceptualEntity": "Dim_Date"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dim_date": {
-			          "Target": {
-			            "Entity": "dim_date"
-			          }
-			        },
-			        "dim_date.mois": {
-			          "Target": {
-			            "Entity": "dim_date.mois"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_date"
-			            },
-			            "Object": {
-			              "Role": "dim_date.mois"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_dates_have_moises"
-			        }
-			      ]
-			    },
-			    "dim_date_has_trimestre": {
-			      "Binding": {
-			        "ConceptualEntity": "Dim_Date"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dim_date": {
-			          "Target": {
-			            "Entity": "dim_date"
-			          }
-			        },
-			        "dim_date.trimestre": {
-			          "Target": {
-			            "Entity": "dim_date.trimestre"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_date"
-			            },
-			            "Object": {
-			              "Role": "dim_date.trimestre"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_dates_have_trimestres"
-			        }
-			      ]
-			    },
-			    "dim_date_has_année": {
-			      "Binding": {
-			        "ConceptualEntity": "Dim_Date"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dim_date": {
-			          "Target": {
-			            "Entity": "dim_date"
-			          }
-			        },
-			        "dim_date.année": {
-			          "Target": {
-			            "Entity": "dim_date.année"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_date"
-			            },
-			            "Object": {
-			              "Role": "dim_date.année"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_dates_have_années"
 			        }
 			      ]
 			    },

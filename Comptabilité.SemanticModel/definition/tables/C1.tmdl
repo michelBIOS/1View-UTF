@@ -15,32 +15,37 @@ table C1
 
 		annotation SummarizationSetBy = Automatic
 
-	column Libellé
+	column Libellé_Court
 		dataType: string
-		lineageTag: f4be34c4-ddf6-44df-8c57-98d78a639bbe
+		lineageTag: a7911f18-dc03-4a6f-96b2-a525aa1fef91
 		summarizeBy: none
-		sourceColumn: Libellé
+		sourceColumn: Libellé_Court
 
 		annotation SummarizationSetBy = Automatic
 
-	column C1-Lib
+	column C1_Lib_Court
 		dataType: string
-		lineageTag: f29a121a-8373-4e9a-8afa-a174bb2469bf
+		lineageTag: b45f39a8-530a-4d47-9ad1-6a86d39d7e44
 		summarizeBy: none
-		sourceColumn: C1-Lib
+		sourceColumn: C1_Lib_Court
 
 		annotation SummarizationSetBy = Automatic
 
 	partition C1 = m
 		mode: import
 		queryGroup: 'model tables'
-		source =
+		source = ```
 				let
-				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("XY5NCsIwEIWvErJuFv0/gCt3gu5CFlGDDlpTJil4pZ6jF3MeliLu3vu+NzDW6lIXeudHyn56SyyN2porrK6E7YchnulJyWeKrySkMuofYlyLOuZ4eWBTG7VmqEbIiQLDNEZ9I0QLwcucIgemIK0V/QMw6vDk3fMt4L6TH9cC2Qs6cLxOlGF7o7bm3Ac=", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [C1 = _t, Libellé = _t, #"C1-Lib" = _t]),
-				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"C1", Int64.Type}, {"Libellé", type text}, {"C1-Lib", type text}}),
-				    #"Replaced Value" = Table.ReplaceValue(#"Changed Type","- ","-",Replacer.ReplaceText,{"C1-Lib"})
-				in
-				    #"Replaced Value"
+				    Source = Sql.Databases("mhirzqqnk57e7anmxqvc3cldyq-ad6po2r4ekrefdnhlqka77jyjq.datawarehouse.fabric.microsoft.com"),
+				    Dim_1 = Source{[Name="Magasin_table"]}[Data],
+				    Query = "
+				        SELECT *
+				        FROM dbo.c1
+				    ",
+				    NativeQuery = Value.NativeQuery(Dim_1, Query)
+				in 
+				    NativeQuery
+				```
 
 	annotation PBI_NavigationStepName = Navigation
 

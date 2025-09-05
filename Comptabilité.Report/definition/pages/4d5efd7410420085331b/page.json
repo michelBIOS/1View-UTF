@@ -4,5 +4,6 @@
   "displayName": "Journal",
   "displayOption": "FitToWidth",
   "height": 1920,
-  "width": 1920
+  "width": 1920,
+  "visibility": "HiddenInViewMode"
 }
