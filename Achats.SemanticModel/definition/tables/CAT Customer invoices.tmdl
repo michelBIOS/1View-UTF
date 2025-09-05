@@ -120,7 +120,7 @@ table 'CAT Customer invoices'
 				    Query = "
 				        SELECT *
 				        FROM dbo.fact_1_customer_invoice_categories
-				        WHERE ID_Ste IN (21912624, 21915510, 22276641, 21917322, 21918011)
+				        WHERE ID_Ste IN (21912624)
 				    ",
 				    NativeQuery = Value.NativeQuery(Fact_2, Query),
 				    #"ID extrait" = Table.TransformColumns(

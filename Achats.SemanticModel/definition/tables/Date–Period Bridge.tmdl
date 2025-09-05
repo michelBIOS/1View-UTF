@@ -1,0 +1,79 @@
+table 'Date–Period Bridge'
+	lineageTag: 36e909dc-0cbd-43ad-9d92-8c734e5b4ed2
+
+	column Date
+		formatString: General Date
+		lineageTag: ddacfbea-1028-4741-8e6d-7936375d98e5
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Date]
+
+		annotation SummarizationSetBy = Automatic
+
+	column PeriodKey
+		formatString: 0
+		lineageTag: 888886b1-eac5-47f3-9175-492a7481ebec
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [PeriodKey]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Date–Period Bridge' = calculated
+		mode: import
+		source = ```
+				
+				VAR t = TODAY()
+				
+				// Exercice fiscal Oct→Sep
+				VAR FYStart      = DATE( YEAR(t) - IF(MONTH(t) >= 10, 0, 1), 10, 1 )
+				VAR FYEnd        = DATE( YEAR(FYStart) + 1, 9, 30 )
+				VAR PrevFYStart  = EDATE(FYStart, -12)
+				VAR PrevFYEnd    = FYStart - 1
+				
+				// Mois / Année calendaires
+				VAR CurrMonthStart = DATE( YEAR(t), MONTH(t), 1 )
+				VAR CurrMonthEnd   = EOMONTH(t, 0)
+				VAR LastMonthEnd   = EOMONTH(t, -1)
+				VAR LastMonthStart = DATE( YEAR(LastMonthEnd), MONTH(LastMonthEnd), 1 )
+				VAR CurrYearStart  = DATE( YEAR(t), 1, 1 )
+				VAR CurrYearEnd    = DATE( YEAR(t), 12, 31 )
+				VAR LastYearStart  = DATE( YEAR(t) - 1, 1, 1 )
+				VAR LastYearEnd    = DATE( YEAR(t) - 1, 12, 31 )
+				
+				RETURN
+				UNION(
+				    SELECTCOLUMNS(
+				        FILTER(Dim_Date, Dim_Date[Date] >= FYStart && Dim_Date[Date] <= FYEnd),
+				        "Date", Dim_Date[Date], "PeriodKey", 1
+				    ),
+				    SELECTCOLUMNS(
+				        FILTER(Dim_Date, Dim_Date[Date] >= PrevFYStart && Dim_Date[Date] <= PrevFYEnd),
+				        "Date", Dim_Date[Date], "PeriodKey", 2
+				    ),
+				    SELECTCOLUMNS(
+				        FILTER(Dim_Date, Dim_Date[Date] >= CurrMonthStart && Dim_Date[Date] <= CurrMonthEnd),
+				        "Date", Dim_Date[Date], "PeriodKey", 3
+				    ),
+				    SELECTCOLUMNS(
+				        FILTER(Dim_Date, Dim_Date[Date] >= t - 6 && Dim_Date[Date] <= t),
+				        "Date", Dim_Date[Date], "PeriodKey", 4
+				    ),
+				    SELECTCOLUMNS(
+				        FILTER(Dim_Date, Dim_Date[Date] >= LastMonthStart && Dim_Date[Date] <= LastMonthEnd),
+				        "Date", Dim_Date[Date], "PeriodKey", 5
+				    ),
+				    SELECTCOLUMNS(
+				        FILTER(Dim_Date, Dim_Date[Date] >= CurrYearStart && Dim_Date[Date] <= CurrYearEnd),
+				        "Date", Dim_Date[Date], "PeriodKey", 6
+				    ),
+				    SELECTCOLUMNS(
+				        FILTER(Dim_Date, Dim_Date[Date] >= LastYearStart && Dim_Date[Date] <= LastYearEnd),
+				        "Date", Dim_Date[Date], "PeriodKey", 7
+				    )
+				)
+				
+				```
+
+	annotation PBI_Id = b4f6a46765a942cfac1ee5b6cf78e68d
+

@@ -113,7 +113,7 @@
           "text": {
             "expr": {
               "Literal": {
-                "Value": "'Échue'"
+                "Value": "'Due'"
               }
             }
           },

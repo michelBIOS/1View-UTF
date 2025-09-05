@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
   "name": "fa0ef538ed3fa6bae82b",
   "position": {
-    "x": 596.25,
-    "y": 30,
+    "x": 643.07481125600543,
+    "y": 30.308853809196979,
     "z": 20000,
-    "height": 70,
-    "width": 110,
+    "height": 69.842141386410432,
+    "width": 110.69320521619765,
     "tabOrder": 13000
   },
   "visual": {
@@ -434,72 +434,18 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "aeaf0b3b91800c6dae44",
+        "name": "e4bd6c0fc67da2bf23b3",
         "field": {
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "Dim_Date"
+                "Entity": "Supplier invoices"
               }
             },
-            "Property": "Année"
+            "Property": "Échue"
           }
         },
-        "type": "Categorical",
-        "filter": {
-          "Version": 2,
-          "From": [
-            {
-              "Name": "d",
-              "Entity": "Dim_Date",
-              "Type": 0
-            }
-          ],
-          "Where": [
-            {
-              "Condition": {
-                "In": {
-                  "Expressions": [
-                    {
-                      "Column": {
-                        "Expression": {
-                          "SourceRef": {
-                            "Source": "d"
-                          }
-                        },
-                        "Property": "Année"
-                      }
-                    }
-                  ],
-                  "Values": [
-                    [
-                      {
-                        "Literal": {
-                          "Value": "2023L"
-                        }
-                      }
-                    ],
-                    [
-                      {
-                        "Literal": {
-                          "Value": "2024L"
-                        }
-                      }
-                    ],
-                    [
-                      {
-                        "Literal": {
-                          "Value": "2025L"
-                        }
-                      }
-                    ]
-                  ]
-                }
-              }
-            }
-          ]
-        },
-        "howCreated": "User"
+        "type": "Categorical"
       }
     ]
   }

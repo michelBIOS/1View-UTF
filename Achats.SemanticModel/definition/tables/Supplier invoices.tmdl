@@ -356,7 +356,7 @@ table 'Supplier invoices'
 				    Query = "
 				        SELECT *
 				        FROM dbo.fact_2_supplier_invoices
-				        WHERE ID_Ste IN (21912624, 21915510, 22276641, 21917322, 21918011)
+				        WHERE ID_Ste IN (21912624)
 				    ",
 				    NativeQuery = Value.NativeQuery(Fact_2, Query),
 				    #"Autres colonnes supprimées" = Table.SelectColumns(NativeQuery,{"id", "label", "invoice_number", "currency", "amount", "currency_amount", "currency_amount_before_tax", "exchange_rate", "reconciled", "accounting_status", "filename", "public_file_url", "date", "deadline", "currency_tax", "tax", "payment_status", "external_reference", "remaining_amount_with_tax", "remaining_amount_without_tax", "archived_at", "created_at", "updated_at", "ledger_entry_id", "supplier_id", "invoice_lines_url", "payments_url", "matched_tx_url", "ID_Ste", "fy_keys"}),

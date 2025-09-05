@@ -102,7 +102,7 @@
           "text": {
             "expr": {
               "Literal": {
-                "Value": "'Catégories'"
+                "Value": "'Category'"
               }
             }
           },

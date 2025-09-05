@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
   "name": "8d969fdee5696a2c79e7",
   "position": {
     "x": 23.164786041954333,
@@ -994,6 +994,20 @@
           ]
         },
         "howCreated": "User"
+      },
+      {
+        "name": "a769560fd4fadfa7e97f",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "CAT Supplier invoices"
+              }
+            },
+            "Property": "label"
+          }
+        },
+        "type": "Categorical"
       }
     ],
     "filterSortOrder": "Custom"

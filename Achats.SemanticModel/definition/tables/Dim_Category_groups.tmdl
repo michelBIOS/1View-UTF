@@ -64,7 +64,7 @@ table Dim_Category_groups
 				    Query = "
 				        SELECT *
 				        FROM dbo.dim_1_category_groups
-				        WHERE ID_Ste IN (21912624, 21915510, 22276641, 21917322, 21918011)
+				        WHERE ID_Ste IN (21912624)
 				        AND label <> 'Famille'
 				    ",
 				    NativeQuery = Value.NativeQuery(Dim_1, Query),

@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
   "name": "fa3847bdfce4f92d269b",
   "position": {
-    "x": 25.714691772336863,
-    "y": 30,
+    "x": 26.355525051475635,
+    "y": 30.308853809196979,
     "z": 23000,
-    "height": 70,
-    "width": 115,
+    "height": 69.842141386410432,
+    "width": 163.40425531914892,
     "tabOrder": 8000
   },
   "visual": {
@@ -20,71 +20,20 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Dim_Date"
+                      "Entity": "Period Slicer"
                     }
                   },
-                  "Property": "Année"
+                  "Property": "Period"
                 }
               },
-              "queryRef": "Dim_Date.Année",
-              "nativeQueryRef": "Année",
+              "queryRef": "Period Slicer.Period",
+              "nativeQueryRef": "Period",
               "active": true
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Dim_Date"
-                    }
-                  },
-                  "Property": "MoisNum"
-                }
-              },
-              "queryRef": "Dim_Date.MoisNum",
-              "nativeQueryRef": "MoisNum",
-              "active": false
             }
           ]
         }
       }
     },
-    "expansionStates": [
-      {
-        "roles": [
-          "Values"
-        ],
-        "levels": [
-          {
-            "queryRefs": [
-              "Dim_Date.Année"
-            ],
-            "isCollapsed": true,
-            "identityKeys": [
-              {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Dim_Date"
-                    }
-                  },
-                  "Property": "Année"
-                }
-              }
-            ],
-            "isPinned": true
-          },
-          {
-            "queryRefs": [
-              "Dim_Date.MoisNum"
-            ],
-            "isCollapsed": true,
-            "isPinned": true
-          }
-        ],
-        "root": {}
-      }
-    ],
     "objects": {
       "data": [
         {
@@ -139,8 +88,8 @@
                 "Version": 2,
                 "From": [
                   {
-                    "Name": "d",
-                    "Entity": "Dim_Date",
+                    "Name": "p",
+                    "Entity": "Period Slicer",
                     "Type": 0
                   }
                 ],
@@ -153,10 +102,10 @@
                             "Column": {
                               "Expression": {
                                 "SourceRef": {
-                                  "Source": "d"
+                                  "Source": "p"
                                 }
                               },
-                              "Property": "Année"
+                              "Property": "Period"
                             }
                           }
                         ],
@@ -164,60 +113,10 @@
                           [
                             {
                               "Literal": {
-                                "Value": "2025L"
+                                "Value": "'Current fiscal year'"
                               }
                             }
                           ]
-                        ]
-                      }
-                    },
-                    "Annotations": {
-                      "filterExpressionMetadata": {
-                        "expressions": [
-                          {
-                            "Column": {
-                              "Expression": {
-                                "SourceRef": {
-                                  "Entity": "Dim_Date"
-                                }
-                              },
-                              "Property": "Année"
-                            }
-                          }
-                        ],
-                        "decomposedIdentities": {
-                          "values": [
-                            [
-                              {
-                                "0": [
-                                  {
-                                    "Literal": {
-                                      "Value": "2025L"
-                                    }
-                                  }
-                                ]
-                              }
-                            ]
-                          ],
-                          "columns": [
-                            {
-                              "value": {
-                                "Column": {
-                                  "Expression": {
-                                    "SourceRef": {
-                                      "Entity": "Dim_Date"
-                                    }
-                                  },
-                                  "Property": "Année"
-                                }
-                              }
-                            }
-                          ]
-                        },
-                        "valueMap": [
-                          {
-                            "0": "2025"
-                          }
                         ]
                       }
                     }
@@ -348,7 +247,7 @@
             "strictSingleSelect": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "true"
                 }
               }
             }

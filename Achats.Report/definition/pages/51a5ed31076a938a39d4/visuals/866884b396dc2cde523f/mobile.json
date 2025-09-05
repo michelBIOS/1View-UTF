@@ -112,7 +112,7 @@
           "text": {
             "expr": {
               "Literal": {
-                "Value": "'Payée'"
+                "Value": "'Paid'"
               }
             }
           },

@@ -746,6 +746,20 @@
             }
           ]
         }
+      },
+      {
+        "name": "ce63a55e91a3bcdf512e",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "CAT Supplier invoices"
+              }
+            },
+            "Property": "label"
+          }
+        },
+        "type": "Categorical"
       }
     ],
     "filterSortOrder": "Custom"
